@@ -1,0 +1,99 @@
+\documentclass[12pt,a4paper]{article}
+%
+\setlength{\oddsidemargin}{  0mm}
+\setlength{\topmargin}    { -12mm}
+\setlength{\textheight}   { 246mm}
+\setlength{\textwidth}    { 165mm}
+\setlength{\parindent}    {  0   pt}  % not actually required but they
+
+\setlength{\parskip}      {  6   pt}  % make paragraphs look less ugly
+
+%
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\pagestyle{empty}
+
+\include{Init}
+
+\begin{document}
+\begin{center}
+{\bf Quantum Field Theory}\\[\baselineskip]
+\end{center}
+{\bf Problem Sheet 2}
+
+\begin{enumerate}
+  \item {\it Path Integral for free motion}\\
+
+    The Hamiltonian for the free particle is 
+    \[
+      H = P^2/(2m)\, .
+    \]
+    Using the following change of variables:
+    \[
+      q(t) = q_c(t) + r(t)\, ,
+    \]
+    with boundary conditions $q_c(t')=q', q_c(t'')=q''$, and imposing
+    that $q_c$ satisfies the classical equations of motion, show that
+    \[
+      \braket{q'',t''}{q',t'}=N \exp\left[i \frac{m}{2}
+        \frac{(q''-q')^2}{t''-t'}\right]\, .
+    \]
+    Write an expression for the normalization factor $N$. 
+
+    \bigskip
+
+  \item {\it Path Integral for the harmonic oscillator} \\
+
+    Same question for the harmonic oscillator, with 
+    \[
+      H = \frac12 P^2 + \frac12 m \omega^2 Q^2\, .
+    \]
+
+    \bigskip
+
+  \item {\it Weyl ordering}\\
+
+    Find the Weyl ordered product $[A^2 B]$.
+
+    \bigskip
+
+  \item {\it Schr\"odinger equation from path integrals}\\
+    
+    The quantum mechanical amplitude $\braket{q'',t''}{q',t'}$ for a
+    system described by the lagrangian
+    \[
+      \mathcal{L} = \frac12 m \dot{x}^2 - V(x)
+    \]
+    is given by the path integral
+    \[
+      \braket{q'',t''}{q',t'} = \int \mathcal{D}x\, e^{i S[x]}\, .
+    \]
+    Discretise the interval $T=t''-t'$, and write an expression for
+    the path integral (see lecture notes). 
+    
+    Consider the last time slice, closest to $q''$, and show that
+    \[
+      \braket{q'',t''}{q',t'} = \int \frac{dx_{n-1}}{2\pi i \epsilon} 
+      \exp i \left[ 
+        \frac{(q''-x_{n-1})^2}{2\epsilon} - \epsilon V\left(\frac{q''+x_{n-1}}{2}\right)
+      \right]
+       \braket{x_{n-1},t''-\epsilon}{q',t'}\, .
+    \]
+    
+    For $\epsilon\to 0$ the kinetic term in the exponential suppresses
+    contributions for large values of $\delta=(x_{n-1}-q'')$. Expanding the
+    RHS in powers of $\delta$, derive the Schr\"odinger equation for
+    the transition amplitude: 
+    \[
+      i \frac{\partial}{\partial t''} \braket{q'',t''}{q',t'} = 
+      \left[-\frac12 \frac{\partial^2}{\partial q''^2} + V(q'') \right]
+      \braket{q'',t''}{q',t'}\, .
+    \]
+    
+    
+\end{enumerate}
+
+\vfill
+\hspace*{\fill}\tiny L Del Debbio, September 2018.
+\end{document}

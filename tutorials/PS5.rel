@@ -1,0 +1,42 @@
+;; RefTeX parse info file
+;; File: /Users/ldd/sync/ed/teach/MQFT/tutorials/PS5.tex
+;; User: ldd (Luigi Del Debbio)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi t)
+
+(bibview-cache)
+
+(master-dir . "/Users/ldd/sync/ed/teach/MQFT/tutorials/")
+
+(label-numbers ("eq:" . 7))
+
+(bof "/Users/ldd/sync/ed/teach/MQFT/tutorials/PS5.tex")
+
+(bof "/Users/ldd/sync/ed/teach/MQFT/tutorials/Init.tex")
+
+(eof "/Users/ldd/sync/ed/teach/MQFT/tutorials/Init.tex")
+
+("eq:7" "e" nil "/Users/ldd/sync/ed/teach/MQFT/tutorials/PS5.tex" nil "")
+
+("eq:6" "e" nil "/Users/ldd/sync/ed/teach/MQFT/tutorials/PS5.tex" nil "")
+
+("eq:1" "e" "a_1^\\dagger &= \\int d^3k f_1(\\mathbf{k} a^\\dagger(\\mathbf{k})\\, , " "/Users/ldd/sync/ed/teach/MQFT/tutorials/PS5.tex" nil)
+
+("eq:2" "e" "a^\\dagger(\\mathbf{k},t) = -i \\int d^3x\\, e^{-ik\\cdot x} \\overleftrightarrow{\\partial_0} \\phi(x)\\, . " "/Users/ldd/sync/ed/teach/MQFT/tutorials/PS5.tex" nil)
+
+("eq:3" "e" "a_1^\\dagger(+\\infty) - a_1^\\dagger(-\\infty) = -i \\int d^3k\\, f_1(\\mathbf{k}) \\int d^4x\\, e^{-ik\\cdot" "/Users/ldd/sync/ed/teach/MQFT/tutorials/PS5.tex" nil)
+
+("eq:4" "e" "\\langle k_1' k_2';\\mathrm{out} | k_1 k_2; \\mathrm{in} \\rangle &= \\langle 0 | T\\left( a_{1'}(+\\infty)" "/Users/ldd/sync/ed/teach/MQFT/tutorials/PS5.tex" nil)
+
+("eq:5" "e" "\\langle k_1' k_2';\\mathrm{out} | k_1 k_2; \\mathrm{in} \\rangle =& i^{2+2} \\int d^4x_1\\, e^{-i k_1\\cdo" "/Users/ldd/sync/ed/teach/MQFT/tutorials/PS5.tex" nil)
+
+(eof "/Users/ldd/sync/ed/teach/MQFT/tutorials/PS5.tex")
+))
+

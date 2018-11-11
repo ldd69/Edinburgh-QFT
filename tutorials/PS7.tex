@@ -1,0 +1,150 @@
+\documentclass[12pt,a4paper]{article}
+%
+\setlength{\oddsidemargin}{  0mm}
+\setlength{\topmargin}    { -12mm}
+\setlength{\textheight}   { 246mm}
+\setlength{\textwidth}    { 165mm}
+\setlength{\parindent}    {  0   pt}  % not actually required but they
+
+\setlength{\parskip}      {  6   pt}  % make paragraphs look less ugly
+
+%
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{slashed}
+\pagestyle{empty}
+
+\include{Init}
+
+\newcommand{\tphi}{\tilde{\phi}}
+\newcommand{\tj}{\tilde{J}}
+\newcommand{\tchi}{\tilde{\chi}}
+\newcommand{\psibar}{\bar{\psi}}
+\newcommand{\etabar}{\bar{\eta}}
+\newcommand{\munu}{{\mu\nu}}
+
+\begin{document}
+\begin{center}
+{\bf Quantum Field Theory}\\[\baselineskip]
+\end{center}
+{\bf Problem Sheet 7}
+
+\begin{enumerate}
+\item {\it Feynman parameters} \\
+
+  Using the exponentiation
+  \[
+    \frac{1}{A} = \int_0^\infty d\lambda\, e^{-\lambda A}\, ,
+  \]
+  and the definition of the Gamma function,
+  \[
+    \Gamma(z) = \int_0^\infty dt\, t^{z-1} e^{-x}\, ,
+  \]
+  prove the Feynman parametrization formula:
+  \[
+    \frac{1}{A_1^{\alpha_1} \ldots A_n^{\alpha_n}} =
+    \frac{\Gamma(\alpha_1+\ldots+\alpha_n)}{\Gamma(\alpha_1) \ldots
+      \Gamma(\alpha_n)} \int_0^1dx_1 \ldots dx_n\,
+    \delta(1-x_1-\ldots -x_n)\,
+    \frac{x_1^{\alpha_1-1} \ldots x_n^{\alpha_n-1}}{\left[x_1 A_1 +
+        \ldots + x_n A_n\right]^{\alpha_1+\ldots +\alpha_n}}\, .
+  \]
+
+  \bigskip
+  
+\item {\it Cheng-Wu theorem}\\
+
+  Prove that the Feynman parametrization remains true if the
+  integration
+  \[
+    \int_0^1dx_1 \ldots dx_n\,
+    \delta(1-x_1-\ldots -x_n)
+  \]
+  is replaced by
+  \[
+    \int_0^1 \left(\prod_{l\in\nu} dx_l\right)
+    \delta\left(1-\sum_{l\in\nu}x_l\right)
+    \int_0^\infty \left(
+      \prod_{k\not\in\nu}dx_k\, .
+    \right)
+  \]
+
+  \bigskip
+
+\item {\it Schwinger time representation}\\
+
+  Using the exponentiation formula
+  \[
+    \frac{1}{(p^2+M^2)^a} = \frac{1}{\Gamma(a)} \int_0^\infty dT\,
+    T^{a-1} e^{-T (p^2+M^2)}\, ,
+  \]
+  show that
+  \[
+    \int \frac{d^Dp}{(2\pi)^D}\, \frac{1}{p^2+M^2} =
+    \frac{1}{(4\pi)^{D/2}}  \frac{1}{\Gamma(a)} \left(M^2\right)^{D/2-a}\, \int_0^\infty
+    d\tau \tau^{a-D/2-1} e^{-\tau}\, ,
+  \]
+  where $M^2$ is a generic function that does not depend on $p$, and
+  the integral has already been Wick rotated to Euclidean space. \\
+
+  Identify the divergence of the integral, and show that the UV
+  divergence in the $p$ integration translates into a divergence of
+  the integral over $\tau$ near the lower end of the integration
+  interval. \\
+
+  Regularize the integral by introducing a non vanishing lower
+  integration limit
+  \[
+    \int_{T_0}^\infty dT\, T^{a-D/2-1} e^{-T M^2}\,
+  \]
+  and discuss the degree of divergence of the integral. 
+
+\item {\it Massless tadpoles}\\
+
+  Consider the identity
+  \[
+    \int \frac{d^Dp}{(2\pi)^D}\, \frac{m^2}{p^2(p^2+m^2)} =
+    \int \frac{d^Dp}{(2\pi)^D}\, \left[
+      \frac{1}{p^2} - \frac{1}{(p^2+m^2)}
+    \right]\, .
+  \]
+  Evaluate the LHS and the second term on the RHS using Schwinger's
+  proper-time parametrization, and show that
+  \[
+    \int \frac{d^Dp}{(2\pi)^D}\, \frac{1}{p^2} = 0\, .
+  \]
+  This result is known as {\em Veltman's formula}.
+
+  \bigskip
+
+  \item {\it Momentum cut-off and Pauli-Villars}
+
+    Compute
+    \begin{align*}
+      &\int_\Lambda \frac{d^4p}{(2\pi)^4}\, \frac{1}{p^2+m^2}\, , \\
+      &\int_\Lambda \frac{d^4p}{(2\pi)^4}\,
+        \frac{1}{\left[(p-k)^2+m^2\right] \left(p^2+m^2\right)}\, ,
+    \end{align*}
+    where the suffix indicates that the integral over the radial
+    momentum coordinate is cut off at $\Lambda$.
+
+    Remember that the solid angle in $D$ dimensions is given by
+    \[
+      \Omega_D = \frac{2\pi^{D/2}}{\Gamma(D/2)}\, .
+    \]
+   
+    The Pauli-Villars regularizaition is defined by replacing each
+    propagator by a more convergent expression:
+    \[
+      \frac{1}{p^2+m^2} \longrightarrow
+      \frac{1}{p^2+m^2} - \frac{1}{p^2+M^2} \, .
+    \]
+    Discuss what happens to the two integrals above when PV
+    regularization is used. 
+    
+\end{enumerate}
+
+\vfill
+\hspace*{\fill}\tiny L Del Debbio, November 2018.
+\end{document}

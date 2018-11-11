@@ -1,0 +1,866 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdftex 2015.12.27)  5 OCT 2018 19:08
+entering extended mode
+ restricted \write18 enabled.
+ file:line:error style messages enabled.
+ %&-line parsing enabled.
+**\input Init.tex
+(./Init.tex
+./Init.tex:1: Undefined control sequence.
+l.1 \pagestyle
+              {headings}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:3: Undefined control sequence.
+l.3 \textwidth
+              =440pt
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:6: Undefined control sequence.
+l.6 \usepackage
+               {amsmath}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:7: Undefined control sequence.
+l.7 \usepackage
+               {amsfonts}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:8: Undefined control sequence.
+l.8 \usepackage
+               {amssymb}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:9: Undefined control sequence.
+l.9 \usepackage
+               {dsfont}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:10: Undefined control sequence.
+l.10 \usepackage
+                {pifont}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:12: Undefined control sequence.
+l.12 \usepackage
+                {graphicx}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:13: Undefined control sequence.
+l.13 \usepackage
+                {epstopdf}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:14: Undefined control sequence.
+l.14 \usepackage
+                {epsfig}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:17: Undefined control sequence.
+l.17 \usepackage
+                [framed]{ntheorem}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:18: Undefined control sequence.
+l.18 \usepackage
+                {framed}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:20: Undefined control sequence.
+l.20 \usepackage
+                {makeidx}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:21: Undefined control sequence.
+l.21 \usepackage
+                {simplewick}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:22: Undefined control sequence.
+l.22 \usepackage
+                {tikz-feynman}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:24: Undefined control sequence.
+l.24 \tikzfeynmanset
+                    {compat=1.0.0}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:26: Undefined control sequence.
+l.26 \newcommand
+                {\tick}{\ding{52}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:26: Undefined control sequence.
+l.26 \newcommand{\tick
+                      }{\ding{52}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:26: Undefined control sequence.
+l.26 \newcommand{\tick}{\ding
+                             {52}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:27: Undefined control sequence.
+l.27 \newcommand
+                {\notick}{\ding{56}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:27: Undefined control sequence.
+l.27 \newcommand{\notick
+                        }{\ding{56}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:27: Undefined control sequence.
+l.27 \newcommand{\notick}{\ding
+                               {56}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:28: Undefined control sequence.
+l.28 \newcommand
+                {\D}{\displaystyle}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:28: Undefined control sequence.
+l.28 \newcommand{\D
+                   }{\displaystyle}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:28: Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \displaystyle 
+l.28 \newcommand{\D}{\displaystyle
+                                  }
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Init.tex:28: Extra }, or forgotten $.
+l.28 \newcommand{\D}{\displaystyle}
+                                   
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./Init.tex:30: Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.30 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Init.tex:76: Undefined control sequence.
+l.76 {\theoremstyle
+                   {plain} \theorembodyfont{\rmfamily} \newframedtheorem{Ex}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:76: Undefined control sequence.
+l.76 {\theoremstyle{plain} \theorembodyfont
+                                           {\rmfamily} \newframedtheorem{Ex}...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:76: Undefined control sequence.
+l.76 ...remstyle{plain} \theorembodyfont{\rmfamily
+                                                  } \newframedtheorem{Ex}{Ex...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:76: Undefined control sequence.
+l.76 ...eorembodyfont{\rmfamily} \newframedtheorem
+                                                  {Ex}{Exercise}[section]}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:77: Undefined control sequence.
+l.77 {\theoremstyle
+                   {plain} \theorembodyfont{\rmfamily} \newtheorem{Def}{Defi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:77: Undefined control sequence.
+l.77 {\theoremstyle{plain} \theorembodyfont
+                                           {\rmfamily} \newtheorem{Def}{Defi...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:77: Undefined control sequence.
+l.77 ...remstyle{plain} \theorembodyfont{\rmfamily
+                                                  } \newtheorem{Def}{Definit...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:77: Undefined control sequence.
+l.77 ...n} \theorembodyfont{\rmfamily} \newtheorem
+                                                  {Def}{Definition}[section]}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:78: Undefined control sequence.
+l.78 {\theoremstyle
+                   {plain} \theorembodyfont{\rmfamily} \newtheorem{Thm}{Theo...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:78: Undefined control sequence.
+l.78 {\theoremstyle{plain} \theorembodyfont
+                                           {\rmfamily} \newtheorem{Thm}{Theo...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:78: Undefined control sequence.
+l.78 ...remstyle{plain} \theorembodyfont{\rmfamily
+                                                  } \newtheorem{Thm}{Theorem...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:78: Undefined control sequence.
+l.78 ...n} \theorembodyfont{\rmfamily} \newtheorem
+                                                  {Thm}{Theorem}[section]}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:80: Undefined control sequence.
+l.80 \newcommand
+                {\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoub...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:80: Undefined control sequence.
+l.80 \newcommand{\clearemptydoublepage
+                                      }{\newpage{\pagestyle{empty}\cleardoub...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:80: Undefined control sequence.
+l.80 \newcommand{\clearemptydoublepage}{\newpage
+                                                {\pagestyle{empty}\cleardoub...
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:80: Undefined control sequence.
+l.80 ...\clearemptydoublepage}{\newpage{\pagestyle
+                                                  {empty}\cleardoublepage}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:80: Undefined control sequence.
+l.80 ...\newpage{\pagestyle{empty}\cleardoublepage
+                                                  }}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:81: Undefined control sequence.
+l.81 \newcommand
+                {\HRule}{\rule{\linewidth}{0.5mm}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:81: Undefined control sequence.
+l.81 \newcommand{\HRule
+                       }{\rule{\linewidth}{0.5mm}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:81: Undefined control sequence.
+l.81 \newcommand{\HRule}{\rule
+                              {\linewidth}{0.5mm}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:81: Undefined control sequence.
+l.81 \newcommand{\HRule}{\rule{\linewidth
+                                         }{0.5mm}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:82: Undefined control sequence.
+l.82 \newcommand
+                {\iu}{\underline{i}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:82: Undefined control sequence.
+l.82 \newcommand{\iu
+                    }{\underline{i}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:82: Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \underline 
+l.82 \newcommand{\iu}{\underline
+                                {i}}
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+./Init.tex:82: Extra }, or forgotten $.
+l.82 \newcommand{\iu}{\underline{i}}
+                                    
+I've deleted a group-closing symbol because it seems to be
+spurious, as in `$x}$'. But perhaps the } is legitimate and
+you forgot something else, as in `\hbox{$x}'. In such cases
+the way to recover is to insert both the forgotten and the
+deleted material, e.g., by typing `I$}'.
+
+./Init.tex:83: Undefined control sequence.
+l.83 \newcommand
+                {\ju}{\underline{j}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:83: Undefined control sequence.
+l.83 \newcommand{\ju
+                    }{\underline{j}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:84: Undefined control sequence.
+l.84 \newcommand
+                {\ku}{\underline{k}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:84: Undefined control sequence.
+l.84 \newcommand{\ku
+                    }{\underline{k}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:85: Undefined control sequence.
+l.85 \newcommand
+                {\ru}{\underline{r}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:85: Undefined control sequence.
+l.85 \newcommand{\ru
+                    }{\underline{r}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:86: Undefined control sequence.
+l.86 \newcommand
+                {\pu}{\underline{p}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:86: Undefined control sequence.
+l.86 \newcommand{\pu
+                    }{\underline{p}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:87: Undefined control sequence.
+l.87 \newcommand
+                {\Lu}{\underline{L}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:87: Undefined control sequence.
+l.87 \newcommand{\Lu
+                    }{\underline{L}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:88: Undefined control sequence.
+l.88 \newcommand
+                {\Ju}{\underline{J}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:88: Undefined control sequence.
+l.88 \newcommand{\Ju
+                    }{\underline{J}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:89: Undefined control sequence.
+l.89 \newcommand
+                {\lap}{\nabla^2}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:89: Undefined control sequence.
+l.89 \newcommand{\lap
+                     }{\nabla^2}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:90: Undefined control sequence.
+l.90 \newcommand
+                {\ad}{\hat{a}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:90: Undefined control sequence.
+l.90 \newcommand{\ad
+                    }{\hat{a}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:91: Undefined control sequence.
+l.91 \newcommand
+                {\ac}{\hat{a}^\dagger}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:91: Undefined control sequence.
+l.91 \newcommand{\ac
+                    }{\hat{a}^\dagger}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:92: Undefined control sequence.
+l.92 \newcommand
+                {\re}{\mathrm{Re}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:92: Undefined control sequence.
+l.92 \newcommand{\re
+                    }{\mathrm{Re}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:92: Undefined control sequence.
+l.92 \newcommand{\re}{\mathrm
+                             {Re}}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:93: Undefined control sequence.
+l.93 \newcommand
+                {\ket}[1]{| #1 \rangle}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:93: Undefined control sequence.
+l.93 \newcommand{\ket
+                     }[1]{| #1 \rangle}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:93: You can't use `macro parameter character #' in math mode.
+l.93 \newcommand{\ket}[1]{| #
+                             1 \rangle}
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./Init.tex:94: Undefined control sequence.
+l.94 \newcommand
+                {\bra}[1]{\langle #1 |}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:94: Undefined control sequence.
+l.94 \newcommand{\bra
+                     }[1]{\langle #1 |}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:94: You can't use `macro parameter character #' in math mode.
+l.94 \newcommand{\bra}[1]{\langle #
+                                   1 |}
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./Init.tex:95: Undefined control sequence.
+l.95 \newcommand
+                {\braket}[2]{\langle #1 | #2 \rangle}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:95: Undefined control sequence.
+l.95 \newcommand{\braket
+                        }[2]{\langle #1 | #2 \rangle}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:95: You can't use `macro parameter character #' in math mode.
+l.95 \newcommand{\braket}[2]{\langle #
+                                      1 | #2 \rangle}
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./Init.tex:95: You can't use `macro parameter character #' in math mode.
+l.95 \newcommand{\braket}[2]{\langle #1 | #
+                                           2 \rangle}
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./Init.tex:96: Undefined control sequence.
+l.96 \newcommand
+                {\pref}[1]{(\ref{#1})}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:96: Undefined control sequence.
+l.96 \newcommand{\pref
+                      }[1]{(\ref{#1})}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:96: Undefined control sequence.
+l.96 \newcommand{\pref}[1]{(\ref
+                                {#1})}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:96: You can't use `macro parameter character #' in math mode.
+l.96 \newcommand{\pref}[1]{(\ref{#
+                                  1})}
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./Init.tex:97: Undefined control sequence.
+l.97 \newcommand
+                {\Eqref}[1]{Eq.~(\ref{#1})}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:97: Undefined control sequence.
+l.97 \newcommand{\Eqref
+                       }[1]{Eq.~(\ref{#1})}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:97: Undefined control sequence.
+l.97 \newcommand{\Eqref}[1]{Eq.~(\ref
+                                     {#1})}
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:97: You can't use `macro parameter character #' in math mode.
+l.97 \newcommand{\Eqref}[1]{Eq.~(\ref{#
+                                       1})}
+Sorry, but I'm not programmed to handle this case;
+I'll just pretend that you didn't ask for it.
+If you're in the wrong mode, you might be able to
+return to the right one by typing `I}' or `I$' or `I\par'.
+
+./Init.tex:98: Undefined control sequence.
+l.98 \newcommand
+                {\del}{\v{\nabla}}				% Underlined del
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:98: Undefined control sequence.
+l.98 \newcommand{\del
+                     }{\v{\nabla}}				% Underlined del
+The control sequence at the end of the top line
+of your error message was never \def'ed. If you have
+misspelled it (e.g., `\hobx'), type `I' and the correct
+spelling (e.g., `I\hbox'). Otherwise just continue,
+and I'll forget about whatever was undefined.
+
+./Init.tex:98: Please use \mathaccent for accents in math mode.
+\v #1->{\accent 
+                20 #1}
+l.98 \newcommand{\del}{\v{\nabla}
+                                 }				% Underlined del
+I'm changing \accent to \mathaccent here; wish me luck.
+(Accents are not the same in formulas as they are in text.)
+
+./Init.tex:99: Missing $ inserted.
+<inserted text> 
+                $
+<to be read again> 
+                   \par 
+l.99 
+     
+I've inserted a begin-math/end-math symbol since I think
+you left one out. Proceed, with fingers crossed.
+
+)
+! Emergency stop.
+<*> \input Init.tex
+                   
+*** (job aborted, no legal \end found)
+
+!  ==> Fatal error occurred, no output PDF file produced!

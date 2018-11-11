@@ -1,0 +1,105 @@
+\documentclass[12pt,a4paper]{article}
+%
+\setlength{\oddsidemargin}{  0mm}
+\setlength{\topmargin}    { -12mm}
+\setlength{\textheight}   { 246mm}
+\setlength{\textwidth}    { 165mm}
+\setlength{\parindent}    {  0   pt}  % not actually required but they
+
+\setlength{\parskip}      {  6   pt}  % make paragraphs look less ugly
+
+%
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\pagestyle{empty}
+
+\include{Init}
+
+\begin{document}
+\begin{center}
+{\bf Quantum Field Theory}\\[\baselineskip]
+\end{center}
+{\bf Problem Sheet 4}
+
+\begin{enumerate}
+  \item {\it Feynman rules - 1}\\
+
+    Use the Feynman rules in momentum space to compute
+    $G^{(2,2)}_b$. Check that you get the same result by performing a
+    Fourier transform of the result in position space.
+
+    \bigskip
+
+  \item {\it Scattering amplitude} \\
+    
+      Compute the amplitude for the scattering process
+      \[
+        p_1 p_2 \longrightarrow p_1' p_2'
+      \]
+      at order $g^2$ in the $\phi^3$ scalar theory. 
+
+
+    \bigskip
+    
+  \item {\it LSZ reduction for 2 to 2 processes}\\
+    
+    A particle localised in momentum space near $\mathbf{k}_1$ is
+    created in $D=4$ dimensions by the operator
+    \begin{align}
+      \label{eq:1}
+      a_1^\dagger &= \int d^3k  f_1(\mathbf{k}) a^\dagger(\mathbf{k})\, ,
+    \end{align}
+    where $f$ is some function peaked at $\mathbf{k}_1$, and
+    $a^\dagger(\mathbf{k})$ is the creation operator in the free
+    theory. In the interacting theory, we shall assume that a
+    time-dependent creation operator is defined as
+    \begin{align}
+      \label{eq:2}
+      a^\dagger(\mathbf{k},t) = -i \int d^3x\, e^{-ik\cdot x}
+      \overleftrightarrow{\partial_0} \phi(x)\, .
+    \end{align}
+    Show that
+    \begin{align}
+      \label{eq:3}
+      a_1^\dagger(+\infty) - a_1^\dagger(-\infty) = 
+      -i \int d^3k\, f_1(\mathbf{k}) \int d^4x\,
+      e^{-ik\cdot x} (\partial^2+m^2) \phi(x).
+    \end{align}
+ 
+    The scattering amplitude for a $2\rightarrow 2$ process can be
+    written as: 
+    \begin{align}
+      \label{eq:4}
+      \langle k_1' k_2';\mathrm{out} | k_1 k_2; \mathrm{in} \rangle 
+      &= \langle 0 | T\left(
+        a_{1'}(+\infty) a_{2'}(+\infty) 
+        a_1^\dagger(-\infty) a_2^\dagger(-\infty)
+        \right) |0 \rangle\, .
+    \end{align}
+    Show that
+    \begin{align}
+      \label{eq:5}
+      \langle k_1' k_2';\mathrm{out} | k_1 k_2; \mathrm{in} \rangle 
+      =&  i^{2+2} 
+         \int d^4x_1\, e^{-i k_1\cdot x_1} \left(\partial_1^2 + m^2\right)  
+         \int d^4x_2\, e^{-i k_2\cdot x_2} \left(\partial_2^2 +
+         m^2\right)  \nonumber \\
+      & \times \int d^4x_1'\, e^{i k_1'\cdot x_1'} \left(\partial_{1'}^2 + m^2\right)  
+         \int d^4x_2'\, e^{i k_2'\cdot x_2'} \left(\partial_{2'}^2 +
+        m^2\right) \nonumber \\
+      & \times \langle 0 | T\left(
+        \phi(x_1) \phi(x_2) \phi(x_1') \phi(x_2')
+        \right) |0 \rangle\, .        
+    \end{align}
+
+\item {\it Generalised LSZ}
+
+  Generalise the LSZ reduction for arbitrary numbers of particles in
+  the initial and final state. 
+
+\end{enumerate}
+
+\vfill
+\hspace*{\fill}\tiny L Del Debbio, October 2018.
+\end{document}

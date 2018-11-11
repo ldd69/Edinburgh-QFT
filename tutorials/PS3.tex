@@ -1,0 +1,83 @@
+\documentclass[12pt,a4paper]{article}
+%
+\setlength{\oddsidemargin}{  0mm}
+\setlength{\topmargin}    { -12mm}
+\setlength{\textheight}   { 246mm}
+\setlength{\textwidth}    { 165mm}
+\setlength{\parindent}    {  0   pt}  % not actually required but they
+
+\setlength{\parskip}      {  6   pt}  % make paragraphs look less ugly
+
+%
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\pagestyle{empty}
+
+\include{Init}
+
+\begin{document}
+\begin{center}
+{\bf Quantum Field Theory}\\[\baselineskip]
+\end{center}
+{\bf Problem Sheet 3}
+
+\begin{enumerate}
+  \item {\it Combinatorial factors - 1}\\
+
+    The term with $V=2$ and $P=3$ in the expansion of $Z[J]$ includes
+    contractions that give rise to the following topology: 
+    \begin{equation}
+      \begin{tikzpicture}[baseline={([yshift=0.2ex]current bounding box.center)}]
+        \begin{feynman}
+          \vertex (a);
+          \vertex [right=of a](b);
+          \diagram {
+            (a) -- (b),  
+            (a) -- [out=80, in=100] (b),
+            (a) -- [out=-80, in=-100] (b),
+          };
+          \vertex [below=0.2em of a] {\(_{x}\)};  
+          \vertex [below=0.2em of b] {\(_{z}\)};  
+        \end{feynman}
+      \end{tikzpicture} 
+    \end{equation} 
+    Compute the symmetry factor for this diagram. 
+
+    \bigskip
+
+  \item {\it Two-point function} \\
+    
+    Write down the expression for the two-point function
+    \[
+      \langle T \phi(x) \phi(y) \rangle \, ,
+    \]
+    in the $\phi^3$ theory up to order $g^2$. Find the representation
+    of these contributions in terms of Feynman diagrams, and compute
+    their symmetry factors.
+
+    \bigskip
+    
+  \item {\it $\phi^4$ theory}\\
+    
+    Consider the $\phi^4$ theory in $D=4$, defined by the Lagrangian: 
+    \[
+      \mathcal{L} = \frac12 \partial_\mu\phi(x) \partial^\mu\phi(x) 
+      - \frac12 m^2\phi(x)^2 
+      - \frac{1}{4!} \lambda \phi(x)^4\, .
+    \]
+    Compute the mass dimension of the fields, and of the coupling
+    $\lambda$. Write down the generating functional for this theory,
+    and deduce the Feynman rules. 
+    
+    Draw all connected diagrams with two and four external legs, up to
+    order $\lambda^2$. Compute the symmetry factors for each diagram. 
+
+    Using the relation between $Z[J]$ and $W[J]$, write the connected
+    two-point function as a function of ordinary correlators. 
+
+\end{enumerate}
+
+\vfill
+\hspace*{\fill}\tiny L Del Debbio, October 2018.
+\end{document}

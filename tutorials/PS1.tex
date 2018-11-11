@@ -1,0 +1,122 @@
+\documentclass[12pt,a4paper]{article}
+%
+\setlength{\oddsidemargin}{  0mm}
+\setlength{\topmargin}    { -12mm}
+\setlength{\textheight}   { 246mm}
+\setlength{\textwidth}    { 165mm}
+\setlength{\parindent}    {  0   pt}  % not actually required but they
+
+\setlength{\parskip}      {  6   pt}  % make paragraphs look less ugly
+
+%
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\pagestyle{empty}
+\begin{document}
+\begin{center}
+{\bf Quantum Field Theory}\\[\baselineskip]
+\end{center}
+{\bf Problem Sheet 1}
+
+\begin{enumerate}
+
+\item The general Gaussian integral can be readily evaluated:
+  \begin{align}
+    Z_A(b) &= \int d^nx\, \exp\left(
+             -\frac12 \sum_{i,j=1}^n x_i A_{ij} x_j
+             + \sum_{i=1}^n b_i x_i
+             \right) \\
+    \label{eq:GaussIntThree}
+           &=  \left(2\pi\right)^{n/2} \left(\det A \right)^{-1/2}
+             \exp\left(
+             \frac12 \sum_{i,j=1}^n b_i \Delta_{ij} b_j
+             \right) \, ,
+  \end{align}
+  where $\Delta = A^{-1}$. The existence of $\Delta$ is guaranteed by
+  the non-vanishing e.vals of $A$.
+
+  Check the result in Eq.~\ref{eq:GaussIntThree} by changing the
+  integration variables in the integral:
+  \[
+    x_i = y_i + \sum_{j=1}^n \Delta_{ij} b_j\, .
+  \]
+
+\item Let $x$ and $y$ be stochastic variables such that:
+  \begin{align*}
+    \langle x \rangle = \langle y \rangle =0\, ,
+    \langle x^2 \rangle = 5\, ,
+    \langle x y \rangle = 3 \, ,
+    \langle y^2 \rangle = 2\, ,
+  \end{align*}
+  compute $\langle x^4\rangle$, $\langle x^3 y \rangle$, $\langle x^2
+  y^2\rangle$.  
+
+\item Compute the six-point function
+  \[
+    \langle x_{i_1} x_{i_2} x_{i_3} x_{i_4} x_{i_5} x_{i_6} \rangle    
+  \]
+  using Wick's theorem. 
+
+\item Consider 
+  \begin{align}
+    \langle x_k F(x) \rangle_0 = 
+    \int d\mu_0(x) x_k F(x) 
+  \end{align}
+  Show that
+  \begin{align}
+    \langle x_k F(x) \rangle_0  = 
+    \sum_l \langle x_k x_l \rangle_0 \langle \frac{\partial F}{\partial x_l}\rangle_0\, .
+  \end{align}
+  {\em Hint:} 
+  \begin{align}
+    - \sum_l \Delta_{kl} \frac{\partial}{\partial x_l}
+    \exp\left(
+    -\frac12 \sum_{i,j=1}^n x_i A_{ij} x_j
+    \right) = 
+    x_k \exp\left(
+    -\frac12 \sum_{i,j=1}^n x_i A_{ij} x_j
+    \right)\, .
+  \end{align}
+
+\item   Compute the ratio 
+\begin{align}
+  Z(\lambda)/Z(0)
+\end{align}
+for the potential 
+\begin{equation}
+  \label{eq:QuarticPot}
+  V(x) = \frac{1}{4!} \sum_{i=1}^n x_i^4\, ,
+\end{equation}
+to second order in $\lambda$.
+
+\item Show that all the vacuum contributions cancel when computing
+  $\langle x_{i_1} x_{i_2}\rangle$. The final result is
+  \begin{align}
+    \frac{1}{Z(\lambda)} \int d^nx\, e^{-S(x;\lambda)} 
+    x_{i_1} x_{i_2} = & 
+                             \left[
+                             \Delta_{i_1 i_2} - \lambda  \left(\frac12 \sum_{i=1}^n
+                             \Delta_{i i_1} \Delta_{i i_2} \Delta_{i i}\right) 
+                             + \right. \nonumber \\
+                           & \left.
+                             + \lambda^2 \left( 
+                             \frac{1}{4} \sum_{i,j=1}^n \Delta_{i i_1}
+                             \Delta_{i i_2} \Delta_{i j}^2 \Delta_{jj}
+                             + \frac{1}{6} \sum_{i,j=1}^n \Delta_{i i_1}
+                             \Delta_{j i_2} \Delta_{i j}^3 +
+                             \right. \right. \nonumber \\
+    \label{eq:TwoPointNorm}
+                           & + \left. \left.
+                             \frac{1}{4} \sum_{i,j=1}^n \Delta_{i i_1}
+                             \Delta_{j i_2} \Delta_{i j} \Delta_{ii}\Delta_{jj}
+                             \right)
+                             \right]\, .
+  \end{align}
+  Write a diagrammatic representation for the contributions $O(\lambda^2)$.
+
+\end{enumerate}
+
+\vfill
+\hspace*{\fill}\tiny L Del Debbio, September 2018.
+\end{document}
