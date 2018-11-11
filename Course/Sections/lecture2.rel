@@ -1,0 +1,80 @@
+;; RefTeX parse info file
+;; File: /Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex
+;; User: ldd (Luigi Del Debbio)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/")
+
+(label-numbers)
+
+(bof "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex")
+
+(toc "toc" "    1 Free field theory" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil 2 "1" "\\section{Free field theory}" 96)
+
+("sec:real-scalar-field" "s" "The lagrangian for a free real scalar field $\\phi$ is given by \\begin{equation}  \\mathcal{L}_0\\left(" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+("eq:RealScalLagr" "e" "\\mathcal{L}_0\\left(\\phi(x)\\right)= \\frac12 \\partial_\\mu \\phi(x) \\partial^\\mu \\phi(x) - \\frac12 m^2 \\" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+("eq:EulerLagrange" "e" "\\partial_\\mu \\frac{\\partial \\mathcal{L}_0}{\\partial\\left(\\partial_\\mu \\phi(x)\\right)} - \\frac{\\parti" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+("eq:KleinGordonScal" "e" "\\partial_\\mu \\partial^\\mu \\phi(x) + m^2 \\phi(x) = \\left( \\partial^2 + m^2 \\right) \\phi(x) = 0\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+(toc "toc" "          1.0.0.1 Lorentz Invariance" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil 5 "1.0.0.1" "\\paragraph{Lorentz Invariance}" 837)
+
+("eq:LorentzTransfScal" "e" "x^\\mu \\mapsto x'^\\mu = \\Lambda^\\mu_\\nu x^\\nu\\, , \\quad \\quad \\phi(x) \\mapsto \\phi'(x) = \\phi(\\lambda" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+(toc "toc" "          1.0.0.2 Conjugate Momentum" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil 5 "1.0.0.2" "\\paragraph{Conjugate Momentum}" 1121)
+
+("eq:ScalMom" "e" "\\Pi(x) &= \\frac{\\partial \\mathcal{L}_0}{\\partial (\\partial_0\\phi(x))} " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+(toc "toc" "    2 Path Integral " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil 2 "2" "\\section{Path Integral }" 1830)
+
+("sec:path-integral" "s" "The vacuum-to-vacuum amplitude in the presence of a source field $J(x)$ is the straightforward gener" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+("eq:ScalPathIntDef" "e" "Z_0[J] = \\braket{0}{0}_J = \\int \\mathcal{D}\\phi\\, \\exp\\bigg\\{ i \\Big[ S_0[\\phi] + J\\cdot \\phi \\Big] " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+("eq:ScalFieldFourier" "e" "\\phi(x) = \\int \\frac{d^Dp}{(2\\pi)^D}\\, e^{-i p\\cdot x}\\, \\tilde{\\phi}(p)\\, , " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+("eq:ScalFreeMomSpace" "e" "S_0[\\phi] = \\frac12 \\int_p \\bigg\\{ \\tphi(-p) \\left[p^2 - m^2 + i \\epsilon\\right] \\tphi(p) + \\tj(p) \\" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+(toc "toc" "    3 Interacting theory" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil 2 "3" "\\section{Interacting theory}" 7452)
+
+("sec:interacting-theory" "s" "Let us now add an interaction term in the lagrangian: \\begin{align} \\mathcal{L}\\left(\\phi(x)\\right) " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+("eq:DoubleExpExp" "e" "& \\sum_{P=0}^\\infty \\frac{1}{P!} \\left[ \\frac{i}{2} \\int d^Dy\\, d^Dz\\, " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+("eq:DeltaXYFeynDiag" "e" "\\frac{1}{i}\\Delta(x-y) = \\begin{tikzpicture}[baseline={([yshift=1.4ex]current bounding box.center)}]" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+("eq:CurrentXFeynDiag" "e" "i \\int d^Dx\\, J(x) = \\begin{tikzpicture}[baseline={([yshift=0.2ex]current bounding box.center)}] \\be" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+("eq:VertXFeynDiag" "e" "i g \\int d^Dx\\, = \\begin{tikzpicture}[baseline={([yshift=0.2ex]current bounding box.center)}] \\begin" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+("eq:IntWithSymFactOne" "e" "& = g \\frac12 \\int d^Dx\\, d^Dw\\, J(w) \\Delta(w-x) \\Delta(0)\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+(toc "toc" "    4 Disconnected diagrams" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil 2 "4" "\\section{Disconnected diagrams}" 17914)
+
+("sec:disc-diagr" "s" "A disconnected diagram is made of the product of several connected pieces. We denote by $C_I$ the co" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+("eq:TotDiscDiag" "e" "D = \\frac{1}{S_D} \\prod_I \\left(C_I\\right)^{n_I}\\, , " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+("eq:OverallSymFact" "e" "S_D = \\prod_I n_I!\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+("eq:GenFuncSum" "e" "Z[J] &= \\sum_{\\{n_I\\}} D(\\{n_I\\}) \\propto \\sum_{\\{n_I\\}} \\prod_I \\frac{1}{n_I!} \\left(C_I\\right)^{n_" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+("eq:NormGenFunc" "e" "\\frac{Z[J]}{Z[0]} = \\exp\\left\\{ i W[J] \\right\\}\\, , " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+("eq:1" "e" " " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex" nil)
+
+(eof "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture2.tex")
+))
+

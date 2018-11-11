@@ -1,0 +1,819 @@
+\newcommand{\tphi}{\tilde{\phi}}
+\newcommand{\tj}{\tilde{J}}
+\newcommand{\tchi}{\tilde{\chi}}
+
+\section{Field correlators}
+\label{sec:field-correlators}
+
+As discussed in the previous lecture the field correlators are
+obtained from the partition function taking functional derivatives: 
+\begin{align}
+  \label{eq:CorrDefnPts}
+  G^{(n)}\left(x_1, \ldots, x_n\right) 
+  &=
+    \bra{0} T \phi(x_1) \ldots \phi(x_n) \ket{0}  \\
+  \label{eq:CorrDerivGen}
+  &= 
+    \left(\frac{1}{i} \frac{\delta}{\delta J(x_1)}\right)
+    \ldots
+    \left(\frac{1}{i} \frac{\delta}{\delta J(x_n)}\right)
+    Z[J]\Big|_{J=0} \, .
+\end{align}
+The perturbative definition of the path integral has led to an
+expansion where we can classify terms according to the number of
+currents that appear. We denoted this number by $E$ above. Clearly the
+only terms that contribute to an $n$-point function are the ones with
+$E=n$. For a given values of $E$ there will be contibutions from all
+the values of $V$ that satisfy
+\[
+  E =2P- 3V\, ,
+\]
+where $P$ in an integer. Therefore the calculation of correlators can
+be expressed as a perturbative expansion in powers of the coupling:
+\begin{equation}
+  \label{eq:CorrPertTh}
+  G^{(n)}\left(x_1, \ldots, x_n\right) = 
+  \sum_V g^V G^{(n,V)} \left(x_1, \ldots, x_n\right) \, .
+\end{equation}
+Each functional derivative replaces a factor
+of $J$ in the integrand with a Dirac delta. Performing the
+corresponding integration leads to replacing the argument at the end
+of the propagator that was connected to the current with the argument
+of the functional derivative:
+\begin{equation}
+  \label{eq:DeltaReplace}
+  \frac{\delta}{\delta J(x)} \int \ldots d^dy \ldots J(y) \Delta(y,
+  \ldots) \ldots =  \int \ldots \Delta(x,\ldots) \ldots\, .
+\end{equation}
+
+\subsection{Two-point correlator}
+\label{sec:two-point-correlator}
+
+ The two-point function
+\begin{align}
+  \label{eq:TwoPtOne}
+  G^{(2)}(x,y) 
+  &= 
+    \langle T \phi(x) \phi(y) \rangle \\
+  &= 
+    \left(\frac{1}{i} \frac{\delta}{\delta J(x)}\right)
+    \left(\frac{1}{i} \frac{\delta}{\delta J(y)}\right)
+    Z[J]\Big|_{J=0} \, .
+\end{align}
+The only terms in Eq.~(\ref{eq:DoubleExpExp}) that contribute are the
+ones corresponding to $E=2$. 
+
+\paragraph{V=0}
+
+At the lowest order in $g$, \ie for
+$V=0$, we have
+\begin{equation}
+  \label{eq:2ptOrderZero}
+    \begin{tikzpicture}[baseline={([yshift=-0.4ex]current bounding box.center)}]
+      \begin{feynman}[inline=(a)]
+        \vertex (a);
+        \vertex (b);
+        \diagram {
+          a [dot] -- b [dot],
+        };
+        % \vertex [below=0.2em of a] {\(_{x}\)};  
+        % \vertex [below=0.2em of b] {\(_{y}\)};  
+      \end{feynman}
+    \end{tikzpicture} = \frac{i}{2}
+    \int d^Dz_1\, d^Dz_2\, J(z_1) \Delta(z_1-z_2) J(z_2) \, .
+\end{equation}
+Taking the functional derivatives with respect to $J$ we get a factor
+of two, from acting with each derivative on both $J(z_1)$ and
+$J(z_2)$:
+\begin{equation}
+  \label{eq:2ptOrderZeroTwo}
+  G^{(2,0)}(x,y) = \frac{1}{i} \Delta(x-y)\, ,
+\end{equation}
+where the second index in the suffix indicates the order in the
+perturbative expansion as discussed above. 
+
+\noindent
+It is easy to verify that there are no contributions to $Z[J]$ with
+$E=2$ and $V=1$. 
+
+\paragraph{V=2}
+
+The next contributions to the two-point functions
+come from terms with $V=2$, and there are two distinct diagram
+topologies at this order.
+\begin{enumerate}
+\item [a.] The first diagram topology that contributes to $G^{(2)}$ is
+  \begin{align}
+    \begin{tikzpicture}[baseline={([yshift=-0.4ex]current bounding box.center)}]
+      \begin{feynman}[inline=(a)]
+        \vertex (a);
+        \vertex (v1); 
+        \vertex (v2); 
+        \vertex (b);
+        \diagram* {
+          a [dot] -- v1 -- [out=90, in=90] v2 -- b [dot],
+          v1 -- [out=-90, in=-90]  v2,
+        };
+      \end{feynman}
+    \end{tikzpicture} = &\frac{1}{2^2} \int d^Dz_1\, d^Dz_2\, d^Dw_1\,
+      d^Dw_2\, \times \nonumber \\
+    &  \times J(z_1) \Delta(z_1-w_1) \Delta(w_1-w_2)^2 \Delta(w_2-z_2) J(z_2)\, .
+  \end{align}
+  Taking derivatives and inserting the appropriate factor of $i$
+  yields a total contribution of
+  \begin{align}
+    G^{(2,2)}_a(x,y) = - \frac{1}{2} 
+    \int d^Dw_1\, d^Dw_2\, \Delta(x-w_1) \Delta(w_1-w_2)^2
+    \Delta(w_2-y)\, .
+  \end{align}
+
+\item [b.] The other contribution comes from 
+  \begin{align}
+    \begin{tikzpicture}[baseline={([yshift=-2.95ex]current bounding box.center)}]
+      \begin{feynman}[vertical'=i to c]
+        \vertex (c);
+        \vertex [left=1.7em of c, dot] (a) {}; 
+        \vertex [dot, right=1.7em of c](b) {};
+        \vertex [above=1.0em of c](i);
+%      \vertex (j);
+ %     \vertex (k);
+      \vertex [above=1.7em of i] (m);
+      \diagram* {
+%        j -- [draw=none]  i -- [draw=none] k, 
+        (i) -- [half left] (m) -- [half left] (i),
+%        i -- [out=155, in=25, loop, min distance=3cm] i,
+        (a) -- (c) -- (b), 
+        (c) -- (i), 
+      };
+%       \vertex [below=0.2em of a] {\(_{i_1}\)};  
+%       \vertex [below=0.2em of b] {\(_{i_2}\)};  
+% %      \vertex [below=0.2em of c] {\(c\)};  
+%       \vertex [below=0.2em of i] {\(_{i}\)};  
+    \end{feynman}
+    % \begin{feynman}
+    %     \vertex (v1);
+    %     \vertex [left=of v1] (a); 
+    %     \vertex [above=of v1] (v2); 
+    %     \vertex [right=of v1] (b);
+    %     \diagram* {
+    %       (a) -- (v1)-- (b),
+    %       (v1) -- (v2) -- [out=135, in=45, loop, min distance=3cm]  (v2),
+    %     };
+    %   \end{feynman}
+    \end{tikzpicture} = &\frac{1}{2^2} \int d^Dz_1\, d^Dz_2\, d^Dw_1\,
+      d^Dw_2\, \times \nonumber \\
+    &  \times J(z_1) \Delta(z_1-w_1) \Delta(w_1-z_2) \Delta(w_1-w_2)
+      \Delta(0) J(z_2)\, .
+  \end{align}
+  The net contribution from this diagram is
+  \begin{align}
+     G^{(2,2)}_b(x,y) = -\frac{1}{2} 
+    \int d^Dw_1\, d^Dw_2\, \Delta(x-w_1) \Delta(w_1-y) \Delta(w_1-w_2)
+      \Delta(0))\, .
+  \end{align}
+\end{enumerate}
+
+\subsection{Momentum space}
+\label{sec:momentum-space}
+
+It is useful to write this correlators in momentum space. We already
+discussed the representation of the free propagator in momentum space: 
+\begin{align}
+  \Delta(x) = \int \frac{d^Dp}{(2\pi)^D}\, e^{-ip\cdot x}
+  \frac{1}{p^2 - m^2 + i\epsilon}\, .
+\end{align}
+The Fourier transform of the two-point correlator is defined as
+\begin{align}
+  \tilde{G}^{2}\left(p,p'\right) 
+  &= 
+    \int d^Dx\, d^Dy\, e^{ip\cdot x} e^{ip'\cdot y} 
+    G^{(2)}(x,y) \\
+  &= \int d^Dz\, d^Dy\, e^{ip\cdot z} e^{i(p+p')\cdot y} G^{(2)}(z) \\
+  &= \left(2\pi\right)^D \delta(p+p')\, \int d^Dz\, e^{ip\cdot z}
+    G^{(2)}(z)  \\
+  &= \left(2\pi\right)^D \delta(p+p')\, \frac{1}{i} \tilde{\Delta}_F(p)\, .
+\end{align}
+Note that translation invariance of $G^{(2)}(x,y)$ produces an overall
+Dirac delta that implements conservation of the total momentum. Again
+we can look at the contributions to $\tilde{G}^{(2)}(p,p')$ order by
+order in perturbation theory. 
+
+\paragraph{V=0}
+
+At lowest order in $g$, we simply have the Fourier transform of the
+free propagator:
+\begin{align}
+  \tilde{G}^{(2,0)}(p,p') 
+  &= 
+    \left(2\pi\right)^D \delta(p+p')\,
+    \frac{1}{i} \tilde{\Delta}(p) \\
+  &=
+    \left(2\pi\right)^D \delta(p+p')\,
+    \frac{1}{i} \frac{1}{p^2-m^2+i\epsilon}\, .
+\end{align}
+
+\paragraph{V=2}
+
+At order $g^2$, we obtain
+\begin{align}
+  \tilde{G}^{(2,2)}_a(p,p') 
+  =& - \frac12\, \left(2\pi\right)^D \delta(p+p')\,
+     \frac{1}{p^2-m^2+i\epsilon} \times \nonumber \\
+   & \times \left\{
+     \int \frac{d^D\ell}{(2\pi)^D}\, 
+     \frac{1}{\ell^2-m^2+i\epsilon}
+     \frac{1}{(\ell-p)^2-m^2+i\epsilon}
+     \right\}
+     \frac{1}{p^2-m^2+i\epsilon} \, .
+\end{align}
+The above expression can be represented by a Feynman diagram in
+momentum space:
+\begin{equation}
+  \begin{tikzpicture}%[baseline=\plusheight]
+    \begin{feynman}
+      \vertex (a);
+      \vertex [left=0.7cm of a] (i1);
+      \vertex [right= of a] (b);
+      \vertex [right=0.7cm of b] (f1);
+      \diagram [horizontal=a to b, layered layout] {
+        (i1) -- [momentum={\(p\)}] (a)
+        -- [half left, momentum={[arrow shorten=0.4]\(\ell\)}] (b) 
+        -- [half left, momentum={[arrow shorten=0.35]\(\ell-p\)}] (a) ,
+        (f1) -- [momentum'=\(p'\)] (b)
+      };
+    \end{feynman}
+  \end{tikzpicture}
+\end{equation}
+The Feynman rules in momentum space can be summarised as follows
+(adapted from Srednicki's book). 
+\begin{enumerate}
+\item Draw $n$ lines for a $n$-point correlator. 
+\item Leave one end of each external line free, and attach the other
+  to the lines coming out of a vertex. 
+\item The $i$-th external line carries momentum $p_i$, which we assume
+  to be incoming momentum, and represent with a line pointing towards
+  the vertex.
+\item Four-momenta flow along the arrows, and the total momentum is
+  conserved at each vertex. For a diagram without loops, this fixes
+  the momentum of {\em all} internal lines. 
+\item The value of the diagram is given by the product of a factor of
+  $i/(p^2-m^2+i\epsilon)$ for each line with momentum $p$, a factor of
+  $1/i$ for the external end of a line, and a factor $ig (1/i)^\#$ for
+  each vertex, where $\#$ is the number of legs connecting at each
+  vertex. 
+\item A diagram with $L$ loops will have $L$ internal momenta that are
+  not fixed by momentum conservation. We integrate over those momenta,
+  with measure $d^p/(2\pi)^D$. 
+\item Determine the symmetry factor associated to permutations of
+  {\em internal} propagators and vertices. 
+\end{enumerate}
+
+\begin{Ex}
+  Use the Feynman rules in momentum space to compute
+  $G^{(2,2)}_b$. Check that you get the same result by performing a
+  Fourier transform of the result in position space.
+\end{Ex}
+
+\section{Physical states}
+\label{sec:physical-states}
+
+The eigenstates of the Hamiltonian form a complete set of states. They
+can be classified in three categories.
+\begin{enumerate}
+\item The vacuum state $|0\rangle$ is the lowest energy state, and
+  corresponds to a state with no particles.
+\item The one-particle states $|\mathbf{p},\sigma\rangle$ are
+  classified by their spatial momentum. Their energy is given by the
+  relativistic dispersion relation 
+  \begin{equation}
+    \label{eq:RelDispRel}
+    E_p = \sqrt{\mathbf{p}^2 + \mphys^2}\, ,
+  \end{equation}
+  where $\mphys$ denotes the physical mass of the state. Note that the
+  physical mass {\em does not} need to coincide with the mass that
+  appears in the Lagrangian. We will discuss this point in detail
+  later. Any other quantum number necessary to identify the particle
+  is denoted here by $\sigma$.  The states are normalised by imposing
+\begin{equation}
+  \label{eq:OnePartNorm}
+  \langle \mathbf{p}, \sigma | \mathbf{p}', \sigma' \rangle =
+  \delta_{\sigma\sigma'}\, 
+  2 E_p\, (2\pi)^{D-1} \delta(\mathbf{p}-\mathbf{p}')\, .
+\end{equation}
+\item The multiparticle states $|\mathbf{P};n\rangle$ are classified
+  by their total spatial momentum $\mathbf{P}$, plus other parameters
+  such as the relative momenta between the particles, which we denote
+  collectively by $n$. The energy of the mutiparticle states is
+  $\sqrt{\mathbf{P}^2+M^2}$, where $M^2$ is one of the parameters
+  included in $n$. The threshold for producing multiparticle states is
+  given by the energy of two particles at rest $M=2\mphys$.
+\end{enumerate}
+The completeness relation can be written as
+\begin{align}
+  |0\rangle \langle 0| 
+  &+ \sum_\sigma \int d\Omega_p 
+    |\mathbf{p},\sigma\rangle \langle \mathbf{p},\sigma| + \nonumber
+  \\
+  &+ \sum_n \int d\Omega_P 
+    |\mathbf{P},n\rangle \langle \mathbf{P},n|\, = 1\, ,
+\end{align}
+and we have introduced the Lorentz-invariant integration measure
+\begin{align}
+  d\Omega_p = \frac{d^{D-1}p}{(2\pi)^{D-1}}
+    \frac{1}{2E_p} \, .
+\end{align}
+Note that the 'sum' over $n$ is a short-hand notation, which may
+involve integrations over continuum variables such as the relative
+momentum, or the invariant mass of the state. 
+
+\section{Polology}
+\label{sec:polology}
+
+In this section, we shall learn some features about the analytic
+structure of field correlators, and discuss their relevance in order
+to extract physical information from the correlators. Starting from an
+$n$-point correlator in momentum space,
+\begin{align}
+  \tilde{G}^{(n)}\left(p_1, \ldots, p_n\right) 
+  = \int d^Dx_1\, \ldots d^Dx_n\, 
+  e^{-i p_1\cdot x_1} \ldots e^{-i p_n\cdot x_n}\, 
+  \langle T\phi(x_1) \ldots \phi(x_n)\rangle\, ,
+\end{align}
+we want to focus on the contribution coming from the sector where the
+values $x_1^0, \ldots, x_r^0$ are all larger than the values of
+$x_{r+1}^0, \ldots, x_n^0$, for some value of $r$ between 1 and
+$n-1$. This contribution can be written as 
+\begin{align}
+  \tilde{G}^{(n)}\left(p_1, \ldots, p_n\right) 
+  =& \int d^Dx_1\, \ldots d^Dx_n\, 
+  e^{-i p_1\cdot x_1} \ldots e^{-i p_n\cdot x_n}\, \times \nonumber \\
+   &\times \theta\left(
+     \min\{x_1^0 \ldots x_r^0\} - \max\{x_{r+1}^0 \ldots x_n^0\}
+     \right) \nonumber \\
+   &\times \langle T\Big[\phi(x_1) \ldots \phi(x_r)\Big]
+     T\Big[\phi(x_{r+1}) \ldots \phi(x_n)\Big]
+     \rangle\, .
+\end{align}
+We can introduce a complete set of states inbetween the two
+$T$-ordered products, and look at the result coming from the
+one-particle states. Defining new integration variables
+\begin{align}
+  x_i = x_1 + y_i\, , \quad \mathrm{for}\ i=2, \ldots, r\, ,
+\end{align}
+we can write
+\begin{align}
+  \phi(x_1) \ldots \phi(x_r) 
+  &= \phi(x_1) \ldots \phi(x_1+y_i) \ldots \phi(x_1+y_r) \nonumber \\
+  &= e^{i P\cdot x_1} \phi(0) e^{-i P\cdot x_1} \ldots e^{i P\cdot
+    x_1} \phi(y_i) e^{-i P\cdot x_1} \ldots e^{i P\cdot x_1} \phi(y_r)
+    e^{-i P\cdot x_1}\, ,
+\end{align}
+and hence
+\begin{align}
+  \langle 0| T \phi(x_1) \ldots \phi(x_r) | p,\sigma\rangle = 
+  e^{-i p \cdot x_1}  \langle 0| T \phi(0) \ldots \phi(y_r) |
+  p,\sigma\rangle\, .
+\end{align}
+A similar shift of the integration variables can be done using
+\begin{align}
+  x_i = x_{r+1} + y_i\, , \quad \mathrm{for}\ i=r+2, \ldots, n\, ,
+\end{align}
+The argument of the theta function can be rewritten as
+\begin{align}
+  \min\{x_1^0 \ldots x_r^0\} - \max\{x_{r+1}^0 \ldots x_n^0\} = 
+  x_1^0 -x_{r+1}^0 + \min\{0 \ldots y_r^0\} - \max\{0 \ldots y_n^0\}\, .
+\end{align}
+Using the integral representation of the theta,
+\begin{align}
+  \theta(\tau) = -\frac{1}{2\pi i} \int_{-\infty}^{+\infty} d\omega\,
+  \frac{e^{-i\omega \tau}}{\omega + i\epsilon}\, ,
+\end{align}
+and performing the integrals over $x_1$ and $x_{r+1}$, yields
+\begin{align}
+  \tilde{G}^{(n)}(p_1, \ldots, p_n) 
+  &= \int d^Dy_2 \ldots d^Dy_r\, d^Dy_{r+2} \ldots d^Dy_n \, \nonumber
+  \\
+  & \times e^{-ip_2\cdot y_2} \ldots e^{-ip_{r}\cdot y_r} 
+    \, e^{-ip_{r+2}\cdot y_{r+2}} \ldots e^{-ip_{n}\cdot y_n}
+    \nonumber \\
+  & \times \frac{-1}{2\pi i} \int \frac{d\omega}{\omega + i\epsilon}\, 
+    \exp\left\{
+    -i \omega \left[ 
+    \min\{0 \ldots y_r^0\} - \max\{0 \ldots y_n^0\}
+    \right]
+    \right\} \nonumber \\
+  & \times \sum_\sigma \int d\Omega_p
+    \langle 0 |  T \phi(0) \ldots \phi(y_r) |
+    p,\sigma\rangle \langle p, \sigma | T \phi(0) \ldots \phi(y_n)
+    |0\rangle \nonumber \\
+  & \times (2\pi)^D \delta(\mathbf{p} - \mathbf{p}_1 - \ldots -
+    \mathbf{p}_r) \, 
+    \delta(E_p + \omega - p_1^0 - \ldots - p_{r}^0) \nonumber \\
+  & \times (2\pi)^D \delta(\mathbf{p} + \mathbf{p}_{r+1} + \ldots +
+    \mathbf{p}_n) \, 
+    \delta(E_p + \omega + p_{r+1}^0 + \ldots + p_{n}^0) \, .
+\end{align}
+Performing the integrals over the spatial components of $p$ and
+$\omega$ yields
+\begin{align}
+  &\delta(\mathbf{p}_1+ \ldots +\mathbf{p}_n)\, \mathrm{and}\, , \nonumber \\
+  & \delta(p_1^0 + \ldots + p_n^0) \frac{1}{q^0-E_p +i\epsilon}\, ,
+\end{align}
+respectively, where the four-momentum $q$ is defined as
+\begin{align}
+  q=p_1 + \ldots + p_r = -p_{r+1} - \ldots - p_n\, .
+\end{align}
+Finally, if we are interested in the residue at the pole, we can rewrite
+\begin{align}
+  \frac{1}{q^0-E_p + i\epsilon} \longrightarrow \frac{2 E_p}{q^2-\mphys^2 + i\epsilon}\, 
+\end{align}
+Collecting all the terms, and ignoring a phase factor that reduces to
+one at the pole, we find that the one-particle state contribution to the
+integration over the specific sector that we considered above yields
+\begin{align}
+  \tilde{G}^{(n)}(p_1,\ldots,p_n) \longrightarrow
+  \delta(p_1+\ldots+p_n)\, \frac{1}{q^2-\mphys^2+i\epsilon}\, 
+  \sum_\sigma M_{0|q\sigma}(p_2,\ldots,p_r) M_{q\sigma|0}(p_{r+2},
+  \ldots, p_n)\, .
+\end{align}
+In the equation above we have defined
+\begin{align}
+  M_{0|q\sigma}(p_2,\ldots,p_r) 
+  &= \int d^Dy_2 \ldots d^Dy_r\, 
+    e^{-ip_2\cdot y_2} \ldots e^{-ip_r\cdot y_r}
+    \langle 0 |  T \phi(0) \ldots \phi(y_r) |
+    q,\sigma\rangle \, , \\
+ M_{q\sigma|0}(p_{r+2},\ldots, p_n) 
+  &= \int d^Dy_{r+2} \ldots d^Dy_n\, 
+    e^{-ip_{r+2}\cdot y_{r+2}} \ldots e^{-ip_n\cdot y_n}
+    \langle q,\sigma |  T \phi(0) \ldots \phi(y_n) |
+    0\rangle \, ,
+\end{align}
+and we notice that this contribution appears multiplied by a Dirac
+delta that enforces the conservation of total momentum. The important
+result here is that the correlators in momentum space have a pole
+singularity whenever $q=p_1+\ldots+p_r$ {\em goes on-shell}, \ie
+$q^2=\mphys^2$.
+
+Note that these results are completely general, and in particular do
+not rely on the perturbative definition of the correlators. 
+
+\section{K\"allen-Lehmann representation}
+\label{sec:kall-lehm-repr}
+
+Let us now come back to the 2-point function, and find a representation
+that allows us to extract some physical information about the scalar
+field. We define the full propagator as
+\begin{equation}
+  \label{eq:FullProp}
+  \Delta_F(x-y) = i \langle 0| T \phi(x) \phi(y) |0\rangle \, ,
+\end{equation}
+and define the field so that
+\begin{equation}
+  \label{eq:FieldNorm}
+  \langle 0 | \phi(x) | 0\rangle = 0\, ,\ \mathrm{and}\
+  \langle \mathbf{p}| \phi(0) | 0\rangle = 1\, ,
+\end{equation}
+where $|\mathbf{p}\rangle$ represents the physical one-particle state,
+and we have dropped the dependence on $\sigma$. As usual the full
+propagator in momentum space is defined by taking the Fourier
+transform:
+\begin{equation}
+  \label{eq:FullPropMom}
+  \tilde{\Delta}_F(p) = 
+  \int d^Dx\,  e^{ip\cdot(x-y)} \Delta(x-y)\, .
+\end{equation}
+
+\paragraph{Free theory}
+
+With these conventions, the free theory result for the propagator is
+\begin{equation}
+  \label{eq:FreePropAgain}
+  \tilde\Delta(p) = \frac{1}{p^2-m^2+i\epsilon}\, .
+\end{equation}
+Eq.~(\ref{eq:FreePropAgain}) shows that $\tilde{\Delta}$ has a pole at
+$p^2=m^2$. For the free particle we find a pole in the propagator,
+at a value which coincides with the parameter in the Lagrangian.
+
+\paragraph{Interacting theory}
+
+For the interacting theory, we can derive a general expression, which
+again does not rely on the perturbative definition of the two-point
+function. Let us first consider the case where $x^0>y^0$:
+\begin{align}
+  \langle 0| T \phi(x) \phi(y) |0\rangle
+  =& \langle 0| \phi(x) \phi(y) |0\rangle \nonumber \\
+  =& \langle 0| \phi(x) |0\rangle \langle 0 | \phi(y) |0\rangle +
+     \nonumber \\
+  &+ \int d\Omega_p\, \langle 0| \phi(x)| \mathbf{p}\rangle
+    \langle \mathbf{p} | \phi(y) |0\rangle + \nonumber \\
+  &+ \sum_n \int d\Omega_P\, \langle 0| \phi(x) |\mathbf{P}, n\rangle
+    \langle \mathbf{P}, n |\phi(y) |0\rangle\, .
+\end{align}
+The conventions in Eq.~(\ref{eq:FieldNorm}) allow us to simplify the
+expression above.
+\begin{align}
+  \langle 0| T \phi(x) \phi(y) |0\rangle
+  =& \int d\Omega_p\, e^{-ip\cdot (x-y)} + \nonumber \\
+   &+ \sum_n \int d\Omega_p\, e^{-ip\cdot (x-y)}\, \left|
+    \langle \mathbf{p}, n |\phi(0) |0\rangle \right|^2 \, .
+\end{align}
+Because we are working with a scalar field, the matrix element
+$\langle \mathbf{p}, n |\phi(0) |0\rangle$ is invariant under Lorentz
+transformations, and therefore can only depend on $p$ via the
+invariant mass $M^2$. We can therefore introduce the {\em spectral
+  density}
+\begin{align}
+  \label{eq:SpecDen}
+  \rho(s) = \sum_n \left|
+    \langle \mathbf{p}, n |\phi(0) |0\rangle \right|^2 \, 
+  \delta(s-M^2)\, ,
+\end{align}
+and write the two-point correlator as
+\begin{align}
+  \langle 0| T \phi(x) \phi(y) |0\rangle
+  =& \int d\Omega_p\, e^{-ip\cdot (x-y)} + \nonumber \\
+   &+ \int_{4m^2}^\infty ds\, \rho(s) \int d\Omega_p\,  e^{-ip\cdot
+     (x-y)}\, .
+\end{align}
+Similar manipulations for the case $y^0>x^0$ yield
+\begin{align}
+  \langle 0| T \phi(x) \phi(y) |0\rangle
+  =& \int d\Omega_p\, e^{ip\cdot (x-y)} + \nonumber \\
+   &+ \int_{4m^2}^\infty ds\, \rho(s) \int d\Omega_p\,  e^{ip\cdot
+     (x-y)}\, .
+\end{align}
+Collecting both contributions to the $T$-ordered product 
+\begin{align}
+  \langle 0| T \phi(x) \phi(y) |0\rangle
+  = \theta(x^0-y^0)  \langle 0| \phi(x) \phi(y) |0\rangle
+  + \theta(y^0-x^0)  \langle 0| \phi(y) \phi(x) |0\rangle\, ,
+\end{align}
+and using 
+\begin{align}
+  \frac{1}{i} \int \frac{d^Dp}{(2\pi)^D}\,
+  \frac{e^{-ip\cdot(x-y)}}{p^2-\mphys^2+i\epsilon} = 
+  \theta(x^0-y^0) \int d\Omega_p\, e^{-ip\cdot(x-y)} +
+  \theta(y^0-x^0) \int d\Omega_p\, e^{ip\cdot(x-y)}\, , 
+\end{align}
+we finally obtain
+\begin{align}
+  \langle 0| T \phi(x) \phi(y) |0\rangle
+  =& \int \frac{d^Dp}{(2\pi)^D}\,
+     e^{-ip\cdot(x-y)} \Big[
+     \frac{1}{p^2-\mphys^2+i\epsilon} + \nonumber \\
+  \label{eq:KLFourier}
+  & + \int_{4\mphys^2}^\infty ds\, \rho(s) \frac{1}{p^2-s+i\epsilon} 
+     \Big]\, .
+\end{align}
+Eq.~(\ref{eq:KLFourier}) allows us to read the expression for the full
+propagator in momentum space:
+\begin{align}
+  \label{eq:KLusual}
+  \tilde{\Delta}_F(p) = \frac{1}{p^2-\mphys^2+i\epsilon} 
+  + \int_{4\mphys^2}^\infty ds\, \rho(s) \frac{1}{p^2-s+i\epsilon}\, . 
+\end{align}
+We see that the two-point correlator of a field $\phi$ that satisfies
+the conditions in Eq.~(\ref{eq:FieldNorm}) has a pole for
+$p^2=\mphys^2$, with residue exactly equal to one. Note that the field
+$\phi$ does not need to be the field that appears in the
+Lagrangian. Knowledge about the multiparticle states of the theory is
+encoded in the two-point function via the integral on the RHS side of
+Eq.~(\ref{eq:KLusual}). 
+
+\section{S Matrix}
+\label{sec:s-matrix}
+
+In order to compute the quantum amplitude for a physical process
+involving arbitrary numbers of particles in the initial and final
+state, we need to compute the overlap of a state prepared in the
+distant past (the so-called {\em in} state), with the resulting final
+state in the distant future (the so-called {\em out} state). If
+we want to describe a $2\to n$ process -- like a $pp$ collision at
+the LHC -- we need to compute
+\begin{equation}
+  \label{eq:ScattAmpl}
+  \langle \mathbf{p}_1, \ldots, \mathbf{p}_n; \mathrm{out} |
+  \mathbf{k}_1, \mathbf{k}_2; \mathrm{in}\rangle\, .
+\end{equation}
+The $S$-matrix allows us to express this scalar product between in-
+and out-states in terms of states defined at any common reference
+time: 
+\begin{equation}
+  \label{eq:SMatDef}
+   \langle \mathbf{p}_1, \ldots, \mathbf{p}_n; \mathrm{out} |
+  \mathbf{k}_1, \mathbf{k}_2; \mathrm{in}\rangle = 
+   \langle \mathbf{p}_1, \ldots, \mathbf{p}_n | S |
+  \mathbf{k}_1, \mathbf{k}_2\rangle\, .
+\end{equation}
+It is usual to separate the $S$ matrix into the identity operator,
+corresponding to particles not interacting, plus a non-trivial part
+which is usually denoted $T$:
+\begin{equation}
+  \label{eq:TMatDef}
+  S = 1 + i T\, .
+\end{equation}
+
+\section{LSZ reduction}
+\label{sec:lsz-reduction}
+
+An important corollary of the result shown in
+section~\ref{sec:polology} is obtained by setting $r=1$. In this case,
+the previous discussion allows us to conclude that the correlators in
+momentum space have a pole whenever the momentum of one of the fields
+is on-shell. Therefore an $n$-point correlation function has (at
+least) $n$ poles, each corresponding to one of the momenta
+$p_i\to \mphys^2$. The residue at this multiple pole yields the $S$-matrix
+for a scattering process involving $n$-particles:
+\begin{align}
+   \langle p_{1}' \ldots p_{m'}'; \mathrm{out} | p_{1} \ldots p_{m};
+  \mathrm{in} \rangle 
+  =& 
+  \langle p_{1}' \ldots p_{m'}' | S | p_{1} \ldots p_{m} \rangle \\
+  =& 
+  \lim_{p_j^2,p_k'^2 \to \mphys^2} \prod_{k=1}^{m'}
+  (p_k'^2-\mphys^2+i\epsilon)
+  \prod_{j=1}^{m}
+  (p_j^2-\mphys^2+i\epsilon) \, \nonumber \\
+  & \times 
+    \tilde{G}^{(m+m')}(p_1, \ldots, p_{m}, -p_1', \ldots, -p_{m'}')\, ,
+\end{align}
+where $n=m+m'$, and the fields are normalised so that
+\begin{align}
+  \langle \mathbf{p} | \phi(0) | 0\rangle = 1\,.
+\end{align}
+We will return to the question of the normalisation of the field
+later. The LSZ reduction formula provides an elegant way to represent
+quantum amplitudes using Feynman diagrams in momentum space. We adopt
+the same rules discussed above, with the following modifications.
+\begin{enumerate}
+\item We associate an outgoing momentum to the external lines that
+  correspond to particles in the final state. 
+\item We multiply each external line by a factor of
+  $-i(p^2-\mphys^2+i\epsilon)$ -- the correlators multiplied by these
+  factors are called {\em truncated} (or {\em amputated}) correlators.
+\end{enumerate}
+
+A heuristic derivation of the LSZ reduction formula is discussed in
+Problem Sheet 4.
+
+\begin{Ex}
+  Compute the amplitude for the scattering process
+  \[
+    p_1 p_2 \longrightarrow p_1' p_2'
+  \]
+  at order $g^2$ in the $\phi^3$ scalar theory. You can assume that
+  $\mphys=m$ in this calculation.
+\end{Ex}
+
+\section{Optical Theorem}
+\label{sec:optical-theorem}
+
+Physical constraints translate into relations between correlators. It
+is important to be able to derive these relations, and to understand
+their physical content. One example is provided by the unitarity of
+the $S$-matrix, \ie by the conservation of probability in quantum
+mechanics. Unitarity is written as
+\begin{equation}
+  \label{eq:SmatUnit}
+  S^\dagger S = 1\, .
+\end{equation}
+Inserting the representation of $S$ in terms of the transition matrix
+yields
+\begin{equation}
+  \label{eq:TmaUnit}
+  -i \left(T - T^\dagger\right) = T^\dagger T\, .
+\end{equation}
+Let us consider the matrix element of Eq.~(\ref{eq:TmaUnit}) between an
+initial state $a$ and a final state $b$, and let us factor out a Dirac
+delta that corresponds to total momentum conservation, 
+\begin{equation}
+  \label{eq:MAmplitude}
+  \langle b | T | a\rangle = (2\pi)^D \delta(P_a - P_b)\, \mathcal{M}(a
+  \to b)\, .
+\end{equation}
+Some simple algebra yields on the LHS
+\begin{equation}
+  \label{eq:MLHS}
+  -i (2\pi)^D \delta\left(P_a-P_b\right) \left[
+    \mathcal{M}(a\to b) - \mathcal{M}(b \to a)^*
+    \right]\, . 
+\end{equation}
+On the RHS we can insert a complete set of states, and rewrite it as
+\begin{equation}
+  \label{eq:MRHS}
+   (2\pi)^D \delta\left(P_a-P_b\right) \sum_f \int d\Omega_f\,
+   (2\pi)^D \delta\left(P_a-P_f\right) \mathcal{M}(b\to f)^*
+   \mathcal{M}(a\to f)\, .
+ \end{equation}
+The unitarity condition simplifies for $a=b$, 
+\begin{equation}
+  \label{eq:OptThm}
+  2 \mathrm{Im}\ \mathcal{M}(a\to a) = 
+  \sum_f \int d\Omega_f  (2\pi)^D \delta\left(P_a-P_f\right) 
+  \left|
+    \mathcal{M}(a\to f)
+  \right|^2\, .
+\end{equation}
+This is the so-called {\em optical theorem}, which relates the
+imaginary part of the forward $a\to a$ amplitude (LHS) to the total cross
+section $a\to f$ (RHS), summed over {\em all} final states $f$.
+
+\section{Ward identities}
+\label{sec:ward-identities}
+
+The final example of relations between correlators that we are going
+to discuss are the so-called {\em Ward identities}. Ward identities
+are equalities between field correlators that are obtained as a
+consequence of symmetries of the system. In classical mechanics,
+symmetries of the action translate into conserved currents according
+to Noether's theorem. As we will show in this section, the analogue of
+current conservation in quantum field theory is precisely the Ward
+identity. 
+
+In order to derive the identities, let us start by considering a
+symmetry transformation of the field, \ie a transformation
+\begin{equation}
+  \label{eq:FieldTrans}
+  \phi(x) \mapsto \phi'(x)=\phi(x) + \epsilon \delta\phi(x) \, ,
+\end{equation}
+such that for constant $\epsilon$ the action is unchanged. If we introduce
+a dependence on the space-time coordinate, $\epsilon(x)$, then the
+variation of the action can be written
+\begin{align}
+  \label{eq:SVar}
+  \delta S &= \int d^Dx\, \frac{\delta S}{\delta\phi(x)} \epsilon(x)
+             \delta\phi(x) \\
+             &= -\int d^Dx\, \epsilon(x) \partial_\mu j^\mu(x)\, , 
+\end{align}
+where $j^\mu(x)$ is precisely the Noether current that is conserved in
+the classical theory. 
+
+In order to derive the Ward identities, we use
+Eq.~(\ref{eq:FieldTrans}) to perform a change of integration variables
+in the functional integral
+\begin{equation}
+  \label{eq:ChangeOfVars}
+  \int \mathcal{D}\phi\, e^{iS[\phi]} O(\phi) = 
+  \int \mathcal{D}\phi'\, e^{iS[\phi']} O(\phi') \, ,
+\end{equation}
+and then expand the RHS to first order in $\epsilon$:
+\begin{align}
+  \int \mathcal{D}\phi\, e^{iS[\phi]} O(\phi) 
+  =& \int \mathcal{D}\phi\, e^{iS[\phi]}\, 
+     \left[
+     1 + i \delta S[\phi]
+     \right]\, 
+     \left[
+     O(\phi) + \delta O
+     \right]
+     \, ,
+\end{align}
+where $O$ is a generic function of the field $\phi$. We can now
+substitute the expressions for $\delta S$ and $\delta O$:
+\begin{align}
+  \int \mathcal{D}\phi\, e^{iS[\phi]} \left\{
+  -i \int d^Dx\, \epsilon(x) \partial_\mu j^\mu(x)
+  O(\phi) + \int d^Dx\, \frac{\delta O(\phi)}{\delta\phi(x)} \epsilon(x)
+  \delta \phi(x)
+  \right\} = 0\, .
+\end{align}
+Rearranging the terms above allows us to write the identity in a way
+that makes its physical content more obvious: 
+\begin{align}
+  \label{eq:IntWardId}
+  \int d^Dx\, \epsilon(x) \left\{
+  -i \langle \partial_\mu j^\mu(x)
+  O(\phi) \rangle +  
+  \langle \frac{\delta O(\phi)}{\delta\phi(x)}
+  \delta \phi(x) \rangle \right\} = 0\, .
+\end{align}
+Eq.~(\ref{eq:IntWardId}) is sometimes referred to as an {\em
+  integrated Ward identity}. Since it has to be satisfied for every
+function $\epsilon(x)$, we can derive the {\em Ward identity}:
+\begin{align}
+  \label{eq:WardId}
+   -i \langle \partial_\mu j^\mu(x)
+  O(\phi) \rangle +  
+  \langle \frac{\delta O(\phi)}{\delta\phi(x)}
+  \delta \phi(x) \rangle = 0\, .
+\end{align}
+There are two important physical results encoded in Eq.~(\ref{eq:WardId}).
+\begin{enumerate}
+\item Symmetry in QFT translates into a relation between
+  correlators. This is true beyond perturbation theory and is used in
+  defining the renormalization conditions in QFT.
+\item Current conservation in QFT is realised at the level of the
+  insertion of $\partial_\mu j^\mu(x)$ in field correlators, up to
+  the terms that come from the variation of $O$. If $O$ is a product
+  of local fields, this variations is localised in space-time, \ie the
+  contributions are all proportional to Dirac deltas. These terms are
+  called {\em contact terms}.  
+\end{enumerate}
+
+Note that in deriving the Ward identity above we have assumed that the
+integration measure $\mathcal{D}\phi$ is invariant, \ie
+$\mathcal{D}\phi=\mathcal{D}\phi'$. There are examples where the
+measure is {\em not} invariant, which lead to extra terms in the Ward
+identities. In these cases the Ward identities are called {\em
+  anomalous}. 

@@ -1,0 +1,57 @@
+\newcommand{\tphi}{\tilde{\phi}}
+\newcommand{\tj}{\tilde{J}}
+\newcommand{\tchi}{\tilde{\chi}}
+\newcommand{\psibar}{\bar{\psi}}
+\newcommand{\etabar}{\bar{\eta}}
+\newcommand{\munu}{{\mu\nu}}
+\newcommand{\tDelta}{\tilde{\Delta}}
+\newcommand{\SProp}[1]{\frac{1}{#1^2-m^2+i\epsilon}}
+
+
+\section{A first look at divergences}
+\label{sec:a-first-look}
+
+In this lecture we will aim to develop a self-consistent treatment of
+divergences in QFT. This is a vast topic, which can hardly be
+addressed exhaustively in the time that we have. Therefore we will
+follow the following steps.
+\begin{enumerate}
+\item Compute the scalar two-point function beyond the first order in
+  perturbation theory. As we try to perform this calculation we will
+  encounter our first divergent integral.
+\item Discuss the regularization of divergencies; \ie a procedure that
+  allows us to manipulate well-defined mathematical expressions, and
+  to identify the structure of the divergencies.
+\item Discuss the renormalization of divergencies; \ie the conditions
+  that are necessary for a quantum field theory to produce finite,
+  unambiguous predictions. 
+\end{enumerate}
+
+\subsection{Scalar two-point function}
+\label{sec:scalar-two-point}
+
+Working in perturbation theory, we compute the two-point function
+\begin{equation}
+  \label{eq:TwoPtMom}
+  \tilde{G}^{(2)}\left(p,p'\right) =
+  (2\pi)^D \delta\left(p+p'\right) \frac{1}{i} \tilde{\Delta}_F(p)\, ,
+\end{equation}
+as a Taylor expansion in powers of the coupling constant
+\begin{equation}
+  \label{eq:TwoPtMomPert}
+  \tilde{G}^{(2)}\left(p,p'\right) = \sum_k g^k
+  \tilde{G}^{(2,k)}\left(p,p'\right)\, .
+\end{equation}
+As discussed before, the delta function in Eq.~\ref{eq:TwoPtMom}
+ensures momentum conservation. For all practical purposes, we should
+remember that it is there, and work on the perturbative expansion of
+the full propagator $\tilde{\Delta}_F(p)$:
+\begin{equation}
+  \label{eq:PropMomPert}
+  \tilde{\Delta}_F(p) = \sum_k g^k \tilde{\Delta}^{(k)}_F(p)\, .
+\end{equation}
+From our previous computations
+\begin{align}
+  g^2 \frac{1}{i} \tDelta_F^{(2)}(p)
+  &= -\frac{g^2}{2} \SProp{p}
+\end{align}

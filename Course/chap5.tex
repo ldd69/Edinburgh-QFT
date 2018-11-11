@@ -1,0 +1,35 @@
+\documentclass[11pt,twoside]{report}
+
+\include{Init}
+\usepackage{slashed}
+\usepackage{appendix}
+\usepackage{chngcntr}
+\usepackage{etoolbox}
+
+
+\def\plusheight{-\the\dimexpr\fontdimen22\textfont2\relax}
+\newcommand{\mphys}{m_\mathrm{phys}}
+
+\AtBeginEnvironment{subappendices}{%
+\chapter*{Appendix}
+\addcontentsline{toc}{chapter}{Appendices}
+\counterwithin{figure}{section}
+\counterwithin{table}{section}
+}
+
+\makeindex
+
+\begin{document}
+
+\setcounter{chapter}{4}
+
+\chapter{Fermion Fields}
+\label{chap:lec4}
+\include{Sections/lecture4}
+
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

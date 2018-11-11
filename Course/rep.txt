@@ -1,0 +1,7 @@
+This is a good report, with some strong points and some weaknesses. 
+
+The structure of the report is very clear, and makes it very easy to follow the logic from one section to the next. The physical meaning is clearly explained, both for the Levinson theorem and for the anomalies - although it would have been useful to explain better the concept of 'quantum lagrangian' that is used several times in the report. 
+
+The presentation of the background material for Levinson's theorem is good. The part on susy and anomalies is less good - more details about the derivations would have been useful, with exact definitions of the quantities that are used -- e.g. the operator L in chap.3, the states that it acts upon, the connection to Jost functions in eqs. 3.9, 3.10. 
+
+The more interesting results are in sect.4, which unfortunately is way too short. More detailed definitions, and more detailed derivations are needed. In particular a more detailed analysis of eq. 4.16 would have been necessary. 

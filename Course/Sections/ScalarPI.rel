@@ -1,0 +1,30 @@
+;; RefTeX parse info file
+;; File: /Users/ldd/sync/ed/teach/MQFT/Course/Sections/ScalarPI.tex
+;; User: ldd (Luigi Del Debbio)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/")
+
+(label-numbers)
+
+(bof "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/ScalarPI.tex")
+
+(toc "toc" "    1 Everything up to FD in mom space goes here" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/ScalarPI.tex" nil 2 "1" "\\section{Everything up to FD in mom space goes here}" 2)
+
+("sec:everything-up-fd" "s" nil "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/ScalarPI.tex" nil "")
+
+(toc "toc" "    1 Everything up to FD in mom space goes here" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/ScalarPI.tex" nil 2 "1" "\\section{Everything up to FD in mom space goes here}" 2)
+
+(eof "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/ScalarPI.tex")
+))
+

@@ -1,0 +1,38 @@
+;; RefTeX parse info file
+;; File: /Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex
+;; User: ldd (Luigi Del Debbio)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/")
+
+(label-numbers)
+
+(bof "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex")
+
+(toc "toc" "    1 A first look at divergences" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex" nil 2 "1" "\\section{A first look at divergences}" 282)
+
+("sec:a-first-look" "s" "In this lecture we will aim to develop a self-consistent treatment of divergences in QFT. This is a " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex" nil)
+
+(toc "toc" "      1.1 Scalar two-point function" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex" nil 3 "1.1" "\\subsection{Scalar two-point function}" 1143)
+
+("sec:scalar-two-point" "s" "Working in perturbation theory, we compute the two-point function \\begin{equation}  \\tilde{G}^{(2)}\\" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex" nil)
+
+("eq:TwoPtMom" "e" "\\tilde{G}^{(2)}\\left(p,p'\\right) = (2\\pi)^D \\delta\\left(p+p'\\right) \\frac{1}{i} \\tilde{\\Delta}_F(p)\\" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex" nil)
+
+("eq:TwoPtMomPert" "e" "\\tilde{G}^{(2)}\\left(p,p'\\right) = \\sum_k g^k \\tilde{G}^{(2,k)}\\left(p,p'\\right)\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex" nil)
+
+("eq:1" "e" " " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex" nil)
+
+(eof "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex")
+))
+

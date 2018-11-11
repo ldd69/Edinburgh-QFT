@@ -1,0 +1,76 @@
+;; RefTeX parse info file
+;; File: /Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex
+;; User: ldd (Luigi Del Debbio)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/")
+
+(label-numbers)
+
+(bof "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex")
+
+(toc "toc" "    1 Path Integral for Gauge Fields" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil 2 "1" "\\section{Path Integral for Gauge Fields}" 191)
+
+("sec:gauge-fields" "s" "The action for the gauge field, $A_\\mu(x)$, can be written as \\begin{equation}  S[A] = \\int d^Dx\\, \\" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+("eq:GaugeAction" "e" "S[A] = \\int d^Dx\\, \\left(-\\frac14 F_{\\mu\\nu}(x) F^{\\mu\\nu}(x)\\right)\\, , " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+("eq:MaxEqs" "e" "\\partial_\\mu F^{\\mu\\nu}(x) = 0\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+("eq:GaugeTransf" "e" "A_\\mu(x) \\mapsto A^\\Lambda_\\mu(x) = A_\\mu(x) + \\partial_\\mu \\Lambda(x)\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+("eq:GaugeActionTwo" "e" "S[A] = \\frac12 \\int d^Dx\\, A_\\mu(x) \\left[ \\partial^2 g^{\\mu\\nu} - \\partial^\\mu \\partial^\\nu \\right]" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+("eq:WrongPathInt" "e" "Z[J] = \\int \\mathcal{D}A \\exp\\left\\{ i \\int d^Dx\\, \\left[ -\\frac14 F_{\\mu\\nu}(x) F^\\munu(x) + J_\\mu(" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+("eq:GaugeActionMom" "e" "S[A] = \\int \\frac{d^Dk}{(2\\pi)^D} \\tilde{A}_\\mu(k) \\left[ K^\\munu(k) \\right] \\tilde{A}_\\nu(-k)\\, , " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+("eq:GaugeKernel" "e" "K^\\munu(k) = -k^2 g^\\munu + k^\\mu k^\\nu\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+("eq:GaugeProj" "e" "K^\\munu(p) = -k^2 \\Pi^\\munu(k)\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+(toc "toc" "    2 Faddeev-Popov procedure" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil 2 "2" "\\section{Faddeev-Popov procedure}" 3619)
+
+("sec:fadd-popov-proc" "s" "A gauge {\\em orbit} is a set of gauge configurations that are related by gauge transformations: \\beg" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+("eq:GaugeOrbit" "e" "\\Omega_A =\\left\\{ A^\\Lambda_\\mu(x), \\mathrm{for\\ all}\\ \\Lambda(x) \\right\\}\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+("eq:GaugeFixing" "e" "G\\left(A_\\mu(x)\\right) = 0\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+(toc "toc" "          2.0.0.1 A useful identity" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil 5 "2.0.0.1" "\\paragraph{A useful identity}" 4342)
+
+("eq:FaddeevPopovOne" "e" "1 &= \\int \\mathcal{D}G\\, \\delta(G) = \\int \\prod_x \\Big[ dG(x)\\, \\delta\\left(G(x)\\right) \\Big]" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+("eq:FaddeevPopovTwo" "e" "&= \\int \\mathcal{D}\\Lambda\\, \\delta\\left(G\\left( A^\\Lambda_\\mu\\right)\\right) \\det \\left( \\frac{\\de" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+(toc "toc" "          2.0.0.2 Lorentz gauge" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil 5 "2.0.0.2" "\\paragraph{Lorentz gauge}" 4867)
+
+("eq:LorentzGauge" "e" "G\\left(A_\\mu(x)\\right) = \\partial_\\mu A^\\mu(x)\\, ; " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+("eq:GaugeFixDeriv" "e" "\\frac{\\delta G\\left(A^\\Lambda_\\mu(x)\\right)}{\\delta \\Lambda(y)} = \\delta(x-y) \\partial^2\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+(toc "toc" "          2.0.0.3 Gauge-fixed path integral" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil 5 "2.0.0.3" "\\paragraph{Gauge-fixed path integral}" 5782)
+
+("eq:GaugeFixedTwo" "e" "&\\propto \\int \\mathcal{D}\\Lambda\\, \\int \\mathcal{D}A^\\Lambda\\, e^{i S[A^\\Lambda]} \\, \\delta\\left(G\\l" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+("eq:GaugeFixedThree" "e" "\\int \\mathcal{D}A\\, e^{i S[A]} \\propto \\int \\mathcal{D}\\Lambda\\, \\int \\mathcal{D}A\\, e^{i S[A]} \\, \\" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+(toc "toc" "          2.0.0.4 Generalised gauge " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil 5 "2.0.0.4" "\\paragraph{Generalised gauge }" 7532)
+
+("eq:GenGauge" "e" "G\\left(A_\\mu(x)\\right) = \\partial_\\mu A^\\mu(x) - \\omega(x)\\, , " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+("eq:3" "e" " " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex" nil)
+
+(eof "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture5.tex")
+))
+

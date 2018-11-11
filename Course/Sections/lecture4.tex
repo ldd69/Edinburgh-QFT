@@ -1,0 +1,291 @@
+\newcommand{\tphi}{\tilde{\phi}}
+\newcommand{\tj}{\tilde{J}}
+\newcommand{\tchi}{\tilde{\chi}}
+\newcommand{\psibar}{\bar{\psi}}
+\newcommand{\etabar}{\bar{\eta}}
+
+\section{Fermion Path Integral}
+\label{sec:ferm-path-integr}
+
+For the case of fermion fields, we want to define the path integral
+following the recipe we used for the scalar field. We will treat the
+fields $\psi$ and $\bar\psi$ as Grassmann variables, \ie 
+\begin{equation}
+  \label{eq:GrassVar}
+  \left\{\psi_\alpha(x),\psi_\beta(y)\right\}=0\, .
+\end{equation}
+In order to have a consistent implementation of the anticommuting
+properties of the fermion fields, the functional derivative with
+respect to a Grassmann variable must be a Grassmann variable
+itself. As a consequence
+\begin{equation}
+  \label{eq:GrassDer}
+  \frac{\delta^2 F}{\delta \psi_\alpha(x) \delta\psi_\beta(y)} = 
+  -\frac{\delta^2 F}{\delta \psi _\beta(y) \delta\psi_\alpha(x)}\, ,
+\end{equation}
+and 
+\begin{equation}
+  \label{eq:GrassDer2}
+    \frac{\delta^2 F}{\delta \psi_\alpha(x) \delta\psi_\alpha(x)} = 0\,.
+\end{equation}
+In the definition of the generating functional, we introduce
+independent sources for $\psi$ and $\bar{\psi}$:
+\begin{equation}
+  \label{eq:SourceTerm}
+  \int d^Dy\, \left[
+    \bar{\eta}(y) \psi(y) + \bar{\psi}(y) \eta(y)
+    \right]\, ,
+\end{equation}
+such that
+\begin{align}
+  \label{eq:GrassDerivOne}
+  \frac{\delta}{\delta\eta(x)} &\int d^Dy\, \left[
+    \bar{\eta}(y) \psi(y) + \bar{\psi}(y) \eta(y)
+    \right] = - \psibar(x)\, \\
+  \label{eq:GrassDerivOne}
+  \frac{\delta}{\delta\etabar(x)} &\int d^Dy\, \left[
+    \bar{\eta}(y) \psi(y) + \bar{\psi}(y) \eta(y)
+    \right] = \psi(x)\, .
+\end{align}
+
+\paragraph{Free theory}
+
+The action for the free Dirac field is
+\begin{equation}
+  \label{eq:FreeDiracAction}
+  S_0\left[\psi,\psibar\right] = 
+  \int d^Dx\, \psibar(x) \left( i \slashed{\partial} -m \right)
+  \psi(x)\, .
+\end{equation}
+ Using the rules above for the functional derivative, we can find the
+ classical equation of motion, \ie Dirac's equation
+ \begin{align}
+   \frac{\delta}{\delta \psibar(x)} S_0\left[\psi,\psibar \right] = 0
+   \quad \Longrightarrow \quad
+   \left(i \slashed{\partial} - m\right)\psi(x) =0\, .
+ \end{align}
+By analogy with the scalar case, we can write the generating
+functional for the free theory:
+\begin{align}
+  Z_0\left[\etabar, \eta\right] 
+  &= \int \mathcal{D}\psi\, \mathcal{D}\psibar\, 
+    \exp\left\{
+    i \left( S_0[\psi,\psibar] + \etabar \cdot \psi +
+    \psibar \cdot \eta\right)
+    \right\} \\
+  &= \exp \left[
+    - \int d^Dx\, d^Dy\, \etabar(x) S(x-y) \eta(y)
+    \right]\, .
+\end{align}
+The Feynman propagator for the Dirac field is
+\begin{equation}
+  \label{eq:DiracFeynProp}
+  S(x-y) = \int_p e^{-i p\cdot(x-y)}\,
+  \frac{i (\slashed{p}+m)}{p^2-m^2+i\epsilon}\, .
+\end{equation}
+Note that, just like in the case of the scalar field, the propagator
+is the inverse of the quadratic term in the action. The propagator is
+a $4\times 4$ matrix in spin space, which we can write explicitely:
+\begin{align}
+  \langle 0|& T \psi_\alpha(x) \psibar_\beta(y) |0 \rangle 
+  = \nonumber \\ 
+  \label{eq:DiracFeynPropAllIndices}
+  &= S_{\alpha\beta}(x-y) = 
+  \int_pe^{i p\cdot(x-y)}\,
+  \frac{i \left(p_\mu \left(\gamma^\mu\right)_{\alpha\beta}+m\,
+    \delta_{\alpha\beta}\right)}
+  {p^2-m^2+i\epsilon}\, .
+\end{align}
+Because of the linear term in $p$ in the propagator the fermionic
+propagator is not symmetric in its arguments, and will be denoted with
+an arrow pointing from one end to the other:
+  \begin{equation}
+    \label{eq:SPropXYFeynDiag}
+    S(x-y) = 
+    \begin{tikzpicture}[baseline={([yshift=1.4ex]current bounding box.center)}]
+      \begin{feynman}[inline=(a)]
+        \vertex (a);
+        \vertex (b);
+        \diagram {
+          a --[fermion] b,
+        };
+        \vertex [below=0.2em of a] {\(_{x}\)};  
+        \vertex [below=0.2em of b] {\(_{y}\)};  
+      \end{feynman}
+    \end{tikzpicture}\, .
+  \end{equation}
+
+Correlators of fermion fields are computed by taking derivatives with
+respect to the source fields
+\begin{align}
+  \langle 0 |& T \psi_{\alpha_1}(x_1) \ldots \psibar_{\beta_1}(y_1)
+  \ldots |0\rangle_0  = \nonumber \\
+   &=\frac{1}{i} \frac{\delta}{\delta\etabar_{\alpha_1}(x_1)} \ldots
+  i \frac{\delta}{\delta\eta_{\beta_1}(y_1)}\, 
+  \left. Z_0\left[\eta, \etabar\right] \right|_{\eta=\etabar=0}\, .
+\end{align}
+
+\paragraph{Interacting theory}
+
+If the interactions are specified by a potential
+$V\left(\psi,\psibar\right)$, the generating functional is defined as 
+\begin{equation}
+  \label{eq:InterGenFunc}
+  Z\left[\eta,\etabar\right] \propto
+  \exp\left[
+    i \int d^Dx\, V\left( i \frac{\delta}{\delta\eta(x)}, 
+    \frac{1}{i} \frac{\delta}{\delta\etabar(x)}\right)
+  \right] \, 
+  Z_0\left[\eta, \etabar \right]\, , 
+\end{equation}
+and the normalization is fixed by requiring
+\begin{equation}
+  \label{eq:ZNorm}
+  Z[0,0] = 1\, .
+\end{equation}
+A double expansion in powers of the interaction, and in powers of the
+number of propagators defines the interacting path integral, as we did
+for the case of scalars. 
+
+\begin{subappendices}
+  
+\section{Differentiation in Grassmann variables}
+\label{sec:diff-grassm-vari}
+
+\paragraph{Grassmann algebra}
+
+A Grassmann algebra $\mathcal{A}$, over $\mathbb{R}$ or $\mathbb{C}$,
+is constructed from a set of generators $\theta_i$ satisfying
+\begin{equation}
+  \label{eq:AntiCommGen}
+  \theta_i \theta_j + \theta_j \theta_i = 0\, .
+\end{equation}
+Note that 
+\begin{enumerate}
+\item all elements are first degree polynomials in each generator; 
+\item if the number of generators is finite and equal to $n$, the
+  algebra is vector space of dimension $2^n$.
+\end{enumerate}
+
+\paragraph{Grassmannian parity}
+
+Parity is defined as an automorphism on $\mathcal{A}$ is defined by
+\begin{equation}
+  \label{eq:GrassParity}
+  P(\theta_i) = - \theta_i\, .
+\end{equation}
+The action of $P$ on a monomial is
+\begin{equation}
+  \label{eq:GrassParMon}
+  P(\theta_{i_1} \ldots \theta_{i_p}) = (-)^p \theta_{i_1} \ldots
+  \theta_{i_p}\, .
+\end{equation}
+The reflection defines two eigenspaces containing the even and odd
+elements:
+\begin{equation}
+  \label{eq:ParitySubspaces}
+  P(\mathcal{A}^\pm) = \pm \mathcal{A}^\pm\, .
+\end{equation}
+
+\paragraph{Grassmann differentiation}
+
+Differentiation is defined as a linear mapping
+\begin{equation}
+  \label{eq:GrassDiff}
+  D: \mathcal{A} \to \mathcal{A}\, ,
+\end{equation}
+which satisfies
+\begin{equation}
+  \label{eq:GrassDiffProp}
+  D(A_1 A_2) = P(A_1) D(A_2) + D(A_1) A_2\, ,
+\end{equation}
+which guarantees that
+\begin{equation}
+  \label{eq:GrassDiffParity}
+  D P + P D = 0\, .
+\end{equation}
+Note that the image of $\mathcal{A}^\pm$ belongs to
+$\mathcal{A}^\mp$, \ie derivation changes the parity of product of
+Grassmann variables. 
+
+We can introduce the nilpotent differential operators
+$\partial/\partial\theta_i$ by
+\begin{equation}
+  \label{eq:DiffOpsBasis}
+  \frac{\partial}{\partial \theta_i} \theta_j = \delta_{ij}\, . 
+\end{equation}
+The differential operators and the generators can be considered as
+operators acting on the elements of $\mathcal{A}$ from the left. They
+satisfy the anticommutation relations:
+\begin{align}
+  \label{eq:AntiComm1}
+  \theta_i \theta_j + \theta_j \theta_i &= 0\, ,\\
+  \label{eq:AntiComm2}
+  \frac{\partial}{\partial\theta_i} \frac{\partial}{\partial\theta_j}
+  + \frac{\partial}{\partial\theta_j}
+  \frac{\partial}{\partial\theta_i} &= 0\, , \\
+  \label{eq:AntiComm3}
+  \theta_i \frac{\partial}{\partial\theta_j} +
+  \frac{\partial}{\partial\theta_j} \theta_i &= 0\, .
+\end{align}
+
+\paragraph{Chain rule}
+
+If $\sigma(\theta)\in\mathcal{A}^-$, $x(\theta)\in \mathcal{A}^+$,
+then
+\begin{equation}
+  \label{eq:GrassChainRule}
+  \frac{\partial}{\partial\theta} f(\sigma,x) = 
+  \frac{\partial\sigma}{\partial\theta} \frac{\partial
+    f}{\partial\sigma} 
+  + \frac{\partial x}{\partial\theta} \frac{\partial f}{\partial x}\, .
+\end{equation}
+
+\section{Integration in Grassmann variables}
+\label{sec:integr-grassm-vari}
+
+To a given differential operator $D$ we associate an integral
+operator $I$. The idea is to generalise the concept of {\em definite}
+integral to the case of Grassmann variables. $I$ is defined by
+requiring a number of properties that are {\em expected} to hold for
+an integral. 
+\begin{enumerate}
+\item $I$ is linear
+  \begin{equation}
+    \label{eq:LinearGrassInt}
+    I(\lambda_1 A_1 + \lambda_2 A_2) = 
+    \lambda_1 I(A_1) + \lambda_2 I(A_2)\, ;
+  \end{equation}
+\item $I D = D I = 0\, ;$
+\item $D(A) = 0 ~~\Longrightarrow~~ I(BA) = I(B) A\, ;$
+\item $P I + I P = 0$.
+\end{enumerate}
+Note that a nilpotent differentiation operator $D$ satisfies all these
+conditions. We shall therefore define the integration operation to be
+identical to differentiation:
+\begin{equation}
+  \label{eq:GrassIntDef}
+  \int d\theta_i A \equiv \frac{\partial}{\partial\theta_i} A\, .
+\end{equation}
+
+Show that 
+\begin{equation}
+  \label{eq:GrassJacob}
+  \int d\theta f(\theta) = a^{-1} \int d\theta' f(a \theta' + b)\, .
+\end{equation}
+Note that the Jacobian for this change of variables is $a^{-1}$, \ie
+the inverse of the usual Jacobian for commuting variables. You can
+prove the generic result
+\begin{equation}
+  \label{eq:GrassJacobOne}
+  \int d\theta_1 \ldots d\theta_n = 
+  \int d\theta'_1 \ldots d\theta'_n J(\theta')\, , 
+\end{equation}
+where 
+\begin{equation}
+  \label{eq:GrassJacobTwo}
+  J^{-1} = \det \frac{\partial \theta_i}{\partial \theta'_j}\, .
+\end{equation}
+
+\end{subappendices}
+

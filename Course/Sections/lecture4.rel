@@ -1,0 +1,106 @@
+;; RefTeX parse info file
+;; File: /Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex
+;; User: ldd (Luigi Del Debbio)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/")
+
+(label-numbers)
+
+(bof "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex")
+
+(toc "toc" "    1 Fermion Path Integral" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil 2 "1" "\\section{Fermion Path Integral}" 162)
+
+("sec:ferm-path-integr" "s" "For the case of fermion fields, we want to define the path integral following the recipe we used for" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:GrassVar" "e" "\\left\\{\\psi_\\alpha(x),\\psi_\\beta(y)\\right\\}=0\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:GrassDer" "e" "\\frac{\\delta^2 F}{\\delta \\psi_\\alpha(x) \\delta\\psi_\\beta(y)} = -\\frac{\\delta^2 F}{\\delta \\psi _\\beta" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:GrassDer2" "e" "\\frac{\\delta^2 F}{\\delta \\psi_\\alpha(x) \\delta\\psi_\\alpha(x)} = 0\\,. " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:SourceTerm" "e" "\\int d^Dy\\, \\left[ \\bar{\\eta}(y) \\psi(y) + \\bar{\\psi}(y) \\eta(y) \\right]\\, , " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:GrassDerivOne" "e" "\\frac{\\delta}{\\delta\\eta(x)} &\\int d^Dy\\, \\left[ \\bar{\\eta}(y) \\psi(y) + \\bar{\\psi}(y) \\eta(y) \\righ" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:GrassDerivOne" "e" "\\frac{\\delta}{\\delta\\etabar(x)} &\\int d^Dy\\, \\left[ \\bar{\\eta}(y) \\psi(y) + \\bar{\\psi}(y) \\eta(y) \\r" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+(toc "toc" "          1.0.0.1 Free theory" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil 5 "1.0.0.1" "\\paragraph{Free theory}" 1671)
+
+("eq:FreeDiracAction" "e" "S_0\\left[\\psi,\\psibar\\right] = \\int d^Dx\\, \\psibar(x) \\left( i \\slashed{\\partial} -m \\right) \\psi(x)" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:DiracFeynProp" "e" "S(x-y) = \\int_pe^{i p\\cdot(x-y)}\\, \\frac{i (\\slashed{p}+m)}{p^2-m^2+i\\epsilon}\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:DiracFeynPropAllIndices" "e" "&= S_{\\alpha\\beta}(x-y) = \\int_pe^{i p\\cdot(x-y)}\\, \\frac{i \\left(p_\\mu \\left(\\gamma^\\mu\\right)_{\\al" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:SPropXYFeynDiag" "e" "S(x-y) = \\begin{tikzpicture}[baseline={([yshift=1.4ex]current bounding box.center)}] \\begin{feynman}" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+(toc "toc" "          1.0.0.2 Interacting theory" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil 5 "1.0.0.2" "\\paragraph{Interacting theory}" 4375)
+
+("eq:InterGenFunc" "e" "Z\\left[\\eta,\\etabar\\right] \\propto \\exp\\left[ i \\int d^Dx\\, V\\left( i \\frac{\\delta}{\\delta\\eta(x)}, " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:ZNorm" "e" "Z[0,0] = 1\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+(toc "toc" "    2 Differentiation in Grassmann variables" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil 2 "2" "\\section{Differentiation in Grassmann variables}" 5106)
+
+("sec:diff-grassm-vari" "s" "\\paragraph{Grassmann algebra} A Grassmann algebra $\\mathcal{A}$, over $\\mathbb{R}$ or $\\mathbb{C}$, " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+(toc "toc" "          2.0.0.1 Grassmann algebra" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil 5 "2.0.0.1" "\\paragraph{Grassmann algebra}" 5185)
+
+("eq:AntiCommGen" "e" "\\theta_i \\theta_j + \\theta_j \\theta_i = 0\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+(toc "toc" "          2.0.0.2 Grassmannian parity" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil 5 "2.0.0.2" "\\paragraph{Grassmannian parity}" 5679)
+
+("eq:GrassParity" "e" "P(\\theta_i) = - \\theta_i\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:GrassParMon" "e" "P(\\theta_{i_1} \\ldots \\theta_{i_p}) = (-)^p \\theta_{i_1} \\ldots \\theta_{i_p}\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:ParitySubspaces" "e" "P(\\mathcal{A}^\\pm) = \\pm \\mathcal{A}^\\pm\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+(toc "toc" "          2.0.0.3 Grassmann differentiation" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil 5 "2.0.0.3" "\\paragraph{Grassmann differentiation}" 6231)
+
+("eq:GrassDiff" "e" "D: \\mathcal{A} \\to \\mathcal{A}\\, , " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:GrassDiffProp" "e" "D(A_1 A_2) = P(A_1) D(A_2) + D(A_1) A_2\\, , " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:GrassDiffParity" "e" "D P + P D = 0\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:DiffOpsBasis" "e" "\\frac{\\partial}{\\partial \\theta_i} \\theta_j = \\delta_{ij}\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:AntiComm1" "e" "\\theta_i \\theta_j + \\theta_j \\theta_i &= 0\\, ," "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:AntiComm2" "e" "\\frac{\\partial}{\\partial\\theta_i} \\frac{\\partial}{\\partial\\theta_j} + \\frac{\\partial}{\\partial\\theta" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:AntiComm3" "e" "\\theta_i \\frac{\\partial}{\\partial\\theta_j} + \\frac{\\partial}{\\partial\\theta_j} \\theta_i &= 0\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+(toc "toc" "          2.0.0.4 Chain rule" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil 5 "2.0.0.4" "\\paragraph{Chain rule}" 7563)
+
+("eq:GrassChainRule" "e" "\\frac{\\partial}{\\partial\\theta} f(\\sigma,x) = \\frac{\\partial\\sigma}{\\partial\\theta} \\frac{\\partial f" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+(toc "toc" "    3 Integration in Grassmann variables" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil 2 "3" "\\section{Integration in Grassmann variables}" 7920)
+
+("sec:integr-grassm-vari" "s" "To a given differential operator $D$ we associate an integral operator $I$. The idea is to generalis" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:LinearGrassInt" "e" "I(\\lambda_1 A_1 + \\lambda_2 A_2) = \\lambda_1 I(A_1) + \\lambda_2 I(A_2)\\, ; " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:GrassIntDef" "e" "\\int d\\theta_i A \\equiv \\frac{\\partial}{\\partial\\theta_i} A\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:GrassJacob" "e" "\\int d\\theta f(\\theta) = a^{-1} \\int d\\theta' f(a \\theta' + b)\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:GrassJacobComplete" "e" "\\int d\\theta_1 \\ldots d\\theta_n = \\int d\\theta'_1 \\ldots d\\theta'_n J(\\theta')\\, , " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+("eq:2" "e" " " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex" nil)
+
+(eof "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture4.tex")
+))
+

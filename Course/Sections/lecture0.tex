@@ -1,0 +1,929 @@
+\section{Multidimensional Gaussian Integrals}
+\label{sec:mult-gauss-integr}
+
+Consider the $n$-dimensional integral
+\begin{equation}
+  \label{eq:GaussIntOne}
+  Z_A = \int d^nx\, \exp\left(
+    -\frac12 \sum_{i,j=1}^n x_i A_{ij} x_j
+    \right)\, .
+\end{equation}
+If $A$ is a complex, symmetric $n\times n$ matrix such that
+\begin{align}
+  & \re\ A \geq 0 \, ,\\
+  & a_i \neq 0\, , \quad a_i\ \text{e.vals of }\ A\, ,
+\end{align}
+then 
+\begin{equation}
+  \label{eq:GaussIntTwo}
+  Z_A = \left(2\pi\right)^{n/2} \left(\det A \right)^{-1/2}\, .
+\end{equation}
+
+\paragraph{General Gaussian Integral}
+
+\begin{align}
+  Z_A(b) &= \int d^nx\, \exp\left(
+  -\frac12 \sum_{i,j=1}^n x_i A_{ij} x_j
+  + \sum_{i=1}^n b_i x_i
+  \right) \\
+  \label{eq:GaussIntThree}
+  &=  \left(2\pi\right)^{n/2} \left(\det A \right)^{-1/2}
+    \exp\left(
+  \frac12 \sum_{i,j=1}^n b_i \Delta_{ij} b_j
+  \right) \, ,
+\end{align}
+where $\Delta = A^{-1}$. The existence of $\Delta$ is guaranteed by the non-vanishing e.vals of $A$.
+\begin{Ex}
+  Check the result in Eq.~\ref{eq:GaussIntThree} by changing the integration variables in the integral:
+  \[
+    x_i = y_i + \sum_{j=1}^n \Delta_{ij} b_j\, .
+  \]
+\end{Ex}
+
+\section{Generating function}
+\label{sec:generating-function}
+
+Let $\mu$ be a measure in $\mathbb{R}^n$, we define the expectation value 
+\begin{align}
+  \label{eq:ExpValMu}
+  \langle F \rangle_\mu &= \int d\mu(x)\, F(x) \\
+  &= \int d^nx\, \Omega(x)\, F(x)\, .
+\end{align}
+The measure is normalised so that
+\begin{equation}
+  \label{eq:MeasureNorm}
+  \int d\mu(x) = 1\, .
+\end{equation}
+We define the generating function
+\begin{equation}
+  \label{eq:ZGenFunc}
+  Z_\mu(b) = \langle e^{(b,x)}\rangle_\mu = 
+  \int d\mu(x)\, \exp\left(
+    \sum_{i=1}^n b_i x_i
+  \right)\, .
+\end{equation}
+The notation emphasises that $Z_\mu$ is a function of the $n$-dimensional vector $b$. The dependence on the integration measure that defines the expectation value is indicated by the suffix $\mu$. Note that we introduced the notation $(.,.)$ to denote the scalar product of two vectors in $\mathbb{R}^n$.
+
+The integrand can be expanded
+\begin{align}
+  \exp\left(
+    \sum_{i=1}^n b_i x_i
+  \right) &= 
+            \sum_{\ell=0}^\infty \frac{1}{\ell!} \left(
+    \sum_{i=1}^n b_i x_i
+  \right)^n \\
+  &= \sum_{\ell=0}^\infty \frac{1}{\ell!}
+    \sum_{i_1 \ldots i_\ell=1}^n \, b_{i_1} \ldots b_{i_\ell}\,
+    x_{i_1} \ldots x_{i_\ell}\, .
+\end{align}
+Therefore
+\begin{equation}
+  \label{eq:ZExp}
+  Z_\mu(b) =  \sum_{\ell=0}^\infty \frac{1}{\ell!}
+    \sum_{i_1 \ldots i_\ell=1}^n \, b_{i_1} \ldots b_{i_\ell}\,
+    \langle x_{i_1} \ldots x_{i_\ell}\rangle_\mu\, ,
+\end{equation}
+where
+\begin{equation}
+  \label{eq:XCorrel}
+   \langle x_{i_1} \ldots x_{i_\ell}\rangle_\mu = 
+   \int d\mu(x)\, x_{i_1} \ldots x_{i_\ell}
+\end{equation}
+are called correlation functions of the variable $x$ in the measure $\mu$.
+
+It is useful to notice that 
+\begin{equation}
+  \label{eq:DiffGenFunct}
+  \frac{\partial}{\partial b_k} Z_\mu(b) = \int d\mu(x)\, x_k\, \exp\left(
+    \sum_{i=1}^n b_i x_i
+  \right)\, ,
+\end{equation}
+which allows the correlators above to be written as
+\begin{equation}
+  \label{eq:DiffGenFunctCorr}
+  \langle x_{i_1} \ldots x_{i_\ell}\rangle_\mu = \left.
+  \frac{\partial}{\partial b_{i_1}} \ldots \frac{\partial}{\partial b_{i_\ell}}\,
+  Z_\mu(b) \right|_{b=0}\, .
+\end{equation}
+
+\section{Generating Function and Gaussian Integrals}
+\label{sec:gener-funct-gauss}
+
+Let us consider the Gaussian measure
+\begin{equation}
+  \label{eq:GaussMeas}
+  d\mu_0(x) = d^nx\, \Omega_0(x) = d^nx\, \mathcal{N}_0 \exp\left(
+    -\frac12 \sum_{i,j=1}^n x_i A_{ij} x_j
+    \right)\, ,
+\end{equation}
+where the normalization $\mathcal{N}_0$ is fixed by Eq.~\ref{eq:MeasureNorm}
+\begin{equation}
+  \label{eq:GaussNorm}
+  \mathcal{N}_0 = \left(2\pi\right)^{-n/2}\, \left( \det A\right)^{1/2}\, .
+\end{equation}
+
+\begin{Ex}
+  Check that $\mathcal{N}_0=Z_A^{-1}$ yields the correct normalization. 
+\end{Ex}
+
+The generating function in this case can be readily computed using Eq.~\ref{eq:GaussIntThree}:
+\begin{equation}
+  \label{eq:GaussGenFunc}
+  Z_0(b) = \frac{Z_A(b)}{Z_A} =
+  \exp\left(
+  \frac12 \sum_{i,j=1}^n b_i \Delta_{ij} b_j
+  \right) \, .
+\end{equation}
+And therefore
+\begin{equation}
+  \label{eq:GaussCorrFunc}
+  \langle x_{i_1} \ldots x_{i_\ell}\rangle_0 = \left.
+  \frac{\partial}{\partial b_{i_1}} \ldots \frac{\partial}{\partial b_{i_\ell}}\,
+  \exp\left(
+    \frac12 \sum_{i,j=1}^n b_i \Delta_{ij} b_j
+  \right) \right|_{b=0} \, ,
+\end{equation}
+where the suffix '0' on the LHS is a reminder that the expectation
+value si computed for the Gaussian measure in
+Eq.~\ref{eq:GaussMeas}. Eq.~\ref{eq:GaussCorrFunc} allows us to define
+the expectation value for any function $F(x)$ that admits a Taylor
+expansion,
+\begin{equation}
+  \label{eq:TaylorExpF}
+  F(x) = \sum_{\ell=0}^\infty \sum_{i_1 \ldots i_\ell=1}^n \, F_{i_1,\ldots,i_\ell}\,
+    x_{i_1} \ldots x_{i_\ell}\, .
+\end{equation}
+The expectation value of $F$ for a generic measure $\mu$ is defined as
+\begin{equation}
+  \label{eq:GaussExpF}
+  \langle F(x) \rangle_\mu = \sum_{\ell=0}^\infty
+  \sum_{i_1 \ldots i_\ell=1}^n \, F_{i_1,\ldots,i_\ell}\,
+    \langle x_{i_1} \ldots x_{i_\ell}\rangle_\mu\, ;
+\end{equation}
+and for the case of a Gaussian measure we obtain
+\begin{align}
+  \langle F(x) \rangle_0 &= \sum_{\ell=0}^\infty
+  \sum_{i_1 \ldots i_\ell=1}^n \, F_{i_1,\ldots,i_\ell}\,
+       \frac{\partial}{\partial b_{i_1}} \ldots \frac{\partial}{\partial b_{i_\ell}}\,
+  \left. \exp\left(
+    \frac12 \sum_{i,j=1}^n b_i \Delta_{ij} b_j
+  \right) \right|_{b=0} \\
+  \label{eq:FuncOfDeriv}
+                         &= F\left( \frac{\partial}{\partial b}\right) \, 
+    \left. \exp\left(
+    \frac12 \sum_{i,j=1}^n b_i \Delta_{ij} b_j
+  \right) \right|_{b=0}\, ,     
+\end{align}
+where the differential operator $F(\partial/\partial b)$ is defined by the Taylor expansion
+\begin{align}
+  F\left( \frac{\partial}{\partial b}\right) = \sum_{\ell=0}^\infty
+   \sum_{i_1 \ldots i_\ell=1}^n \, F_{i_1,\ldots,i_\ell}\,
+       \frac{\partial}{\partial b_{i_1}} \ldots \frac{\partial}{\partial b_{i_\ell}}\, .
+\end{align}
+
+\section{Gaussian Correlators: Wick's Theorem}
+\label{sec:gauss-corr-wicks}
+
+Eq.~\ref{eq:GaussCorrFunc} allows us to compute all Gaussian correlators. It is instructive to start with a couple of explicit examples, which we will compute in full detail in order to get familiar with the algebraic manipulations. 
+
+\paragraph{One-point function}
+
+Let $k$ be an integer between 1 and $n$, we have
+\begin{align}
+  \langle x_k \rangle_0 &= \frac{\partial}{\partial b_k} \,
+  \left. \exp\left(
+    \frac12 \sum_{i,j=1}^n b_i \Delta_{ij} b_j
+  \right) \right|_{b=0} \\
+  &= \left(
+    \frac12 \sum_{j=1}^n \Delta_{kj} b_j +
+    \frac12 \sum_{i=1}^n b_i \Delta_{ik}  
+    \right)\, 
+\left. \exp\left(
+    \frac12 \sum_{i,j=1}^n b_i \Delta_{ij} b_j
+  \right) \right|_{b=0} \\
+  \label{eq:ToBeUsedBelow}
+  &=  \left(
+     \sum_{j=1}^n \Delta_{kj} b_j
+    \right)\, 
+\left. \exp\left(
+    \frac12 \sum_{i,j=1}^n b_i \Delta_{ij} b_j
+  \right) \right|_{b=0} \\
+  &= 0\, ,
+\end{align}
+where the last equality comes from the fact that the expression is linear in $b$, and we need to set $b=0$. 
+
+\begin{Ex}
+  Check the calculation above in {\bf full} detail. The result is expected, can you figure out why? 
+\end{Ex}
+
+\paragraph{Two-point function}
+
+We now consider a pair of indices $k,l$, and compute
+\begin{equation}
+  \label{eq:GaussTwoPt}
+  \langle x_k x_l \rangle_0 = 
+  \frac{\partial}{\partial b_l} \frac{\partial}{\partial b_k} \,
+  \left. \exp\left(
+    \frac12 \sum_{i,j=1}^n b_i \Delta_{ij} b_j
+  \right) \right|_{b=0} \, .
+\end{equation}
+Starting from Eq.~\ref{eq:ToBeUsedBelow}, we can easily derive
+\begin{align}
+  \langle x_k x_l \rangle_0 &= 
+ \left\{
+   \Delta_{kl} \exp\left(
+     \frac12 \sum_{i,j=1}^n b_i \Delta_{ij} b_j
+   \right)
+ \right. 
+\\
+  & \quad\quad\quad\quad \left. \left. + \left(
+     \sum_{j=1}^n \Delta_{kj} b_j
+    \right)
+    \left(
+     \sum_{m=1}^n \Delta_{lm} b_m
+    \right)\, 
+    \exp\left(
+    \frac12 \sum_{i,j=1}^n b_i \Delta_{ij} b_j
+  \right)
+    \right\} \right|_{b=0} \\
+  &= \left.\left[ \Delta_{kl} + \left(
+     \sum_{j=1}^n \Delta_{kj} b_j
+    \right)
+    \left(
+     \sum_{m=1}^n \Delta_{lm} b_m
+    \right)
+    \right]\, 
+\exp\left(
+    \frac12 \sum_{i,j=1}^n b_i \Delta_{ij} b_j
+  \right)
+   \right|_{b=0} \\
+  &= \Delta_{kl}\, ,
+\end{align}
+where again the simplification in the last line occurs because the vector $b$ is set to zero. We have obtained from the generating function a result that you may have seen already: 
+\begin{align}
+  \langle x_k x_l \rangle_0 &= 
+  \mathcal{N}_0 \int d^nx\, \exp\left(
+    -\frac12 \sum_{i,j=1}^n x_i A_{ij} x_j
+    \right) x_k x_l \\
+  &= A^{-1}_{kl}\, .
+\end{align}
+For the case of $n=1$, the latter simplifies to the familiar formula
+\begin{align}
+  \langle x^2 \rangle_0 = 
+  \mathcal{N}_0 \int dx\, e^{-x^2/(2\sigma^2)} x^2 = \sigma^2\, .
+\end{align}
+The generating function $Z_0(b)$ provides a systematic way to compute all correlators for a multi-dimensional Gaussian distribution. 
+
+\paragraph{General Case}
+
+Having seen two examples in detail, we can try to understand the
+general pattern tath appears when taking derivatives of the Gaussian
+generating function. The generating function is the exponential of a
+bilinear in the vector $b$. A derivative with respect to $b_k$ acting
+on the exponential 'brings down' a term that is linear in $b$ and
+multiplies the exponential. Some other derivative, e.g. with respect
+to $b_l$, {\em must} act on this factor, otherwise the contribution is
+proportional to $b$ and vanishes when we st $b=0$ in the final step of
+the computation - cfr. the terms that vanish in the two explicit
+computations discussed above. When the second derivative acts on the
+linear term a term $\Delta_{kl}$ is generated, and survives when
+$b=0$. Hence we obtain the following recipe to compute
+$\langle x_{i_1} \ldots x_{i_\ell}\rangle_0 $:
+\begin{itemize}
+\item Write {\em all} the possible pairings $(i_p, i_q)$ of the
+  indices $i_1,\ldots,i_\ell$. Note in this step that $\ell$ must be even,
+  otherwise the correlator vanishes!
+\item Denote by $P$ the set of all pairings
+  $\{(P_1,P_2),\ldots,(P_{\ell-1},P_\ell)\}$, where
+  $P_1,\ldots,P_\ell$ is a permutation of the indices
+  $i_1,\ldots,i_\ell$.
+\item To each pair $(P_i,P_j)$ associate a factor $\Delta_{P_i,P_j}$.
+\end{itemize}
+So finally
+\begin{align}
+  \langle x_{i_1} \ldots x_{i_\ell}\rangle_0 &= 
+  \sum_P \langle x_{P_1} x_{P_2} \rangle_0 \ldots \langle x_{P_{\ell-1}} x_{P_\ell} \rangle_0 \\
+  &= \sum_P \Delta_{P_1 P_2} \ldots \Delta_{P_{\ell-1} P_{\ell}}\, .
+\end{align}
+This results is known as Wick's theorem. Let us now see how Wick's theorem is applied in some simple examples.
+
+\paragraph{Two-point function revisited}
+
+We need to compute $\langle x_{i1} x_{i_2}\rangle_0$. In this case there are two indices and therefore only {\em one} possible pairing, $(i_1,i_2)$. The set $P$ of all pairings consists of just the one pair, and therefore
+\begin{align}
+  \langle x_{i1} x_{i_2}\rangle_0 = \Delta_{i_1 i_2}\, .
+\end{align}
+
+\paragraph{Four-point function}
+
+We can now compute the four-point correlator $\langle x_{i_1} x_{i_2} x_{i_3} x_{i_4} \rangle_0 $. First we need to identify the pairings; in this case there are {\em three} different ones
+\begin{align}
+  P =\left\{
+  \{(i_1,i_2),(i_3,i_4)\},
+  \{(i_1,i_3),(i_2,i_4)\},
+  \{(i_1,i_4),(i_2,i_3)\},
+  \right\}\, .
+\end{align}
+Wick's theorem then yields
+\begin{align}
+  \langle x_{i_1} x_{i_2} x_{i_3} x_{i_4} \rangle_0  = 
+  \Delta_{i_1 i_2} \Delta_{i_3 i_4} + \Delta_{i_1 i_3} \Delta_{i_2 i_4} + 
+  \Delta_{i_1 i_4} \Delta_{i_2 i_3}\, .
+\end{align}
+We can represent this result pictorially as
+\begin{align}
+  \label{eq:FourPtGaussContract}
+  \langle x_{i_1} x_{i_2} x_{i_3} x_{i_4} \rangle_0 = 
+  \contraction{}{x_{i_1}}{}{x_{i_2}}
+  \contraction{x_{i_1} x_{i_2}}{x_{i_3}}{}{x_{i_4}}
+  x_{i_1} x_{i_2} x_{i_3} x_{i_4} + 
+  \contraction{}{x_{i_1}}{x_{i_2}}{x_{i_3}}
+  \contraction[2ex]{x_{i_1}}{x_{i_2}}{x_{i_3}}{x_{i_4}}
+  x_{i_1} x_{i_2} x_{i_3} x_{i_4} + 
+  \contraction{}{x_{i_1}}{x_{i_2} x_{i_3}}{x_{i_4}}
+  \contraction[2ex]{x_{i_1}}{x_{i_2}}{}{x_{i_3}}
+  x_{i_1} x_{i_2} x_{i_3} x_{i_4} \,. 
+\end{align}
+The equation above allows you to visualise clearly the three possible pairings. Every {\em Wick contraction} yields a factor of $\Delta$:
+\begin{align}
+  \langle x_i x_j\rangle_0 = 
+  \contraction{}{x_i}{}{x_j}
+  x_i x_j =
+  \Delta_{ij}\, .
+\end{align}
+
+\paragraph{Number of Pairings}
+
+We have seen enough examples now to be able to estimate the number of pairings that will appear when computing an $\ell $-point correlator $\langle x_{i_1} \ldots x_{i_\ell}\rangle_0$. First of all, remember that $\ell $ has to be even, and therefore we can write $\ell=2p$, where $p$ is an integer. Then 
+\begin{align}
+  \text{\#\ of\  pairings} = (2p-1) \times (2p-3) \ldots 3 \times 1\, .
+\end{align}
+You can check that this formula reproduces the right results for $\ell=2,4$.
+
+\paragraph{Six-point function}
+
+For the case of a six-point function, $\ell=6$, $p=3$, and hence 
+\begin{align}
+  \text{\#\ of\  pairings} = 5 \times 3 \times 1 = 15\, .
+\end{align}
+
+\begin{Ex}
+  Try listing all the possible pairings, and write the result for the six-point function using Wick's theorem.  
+\end{Ex}
+
+\begin{Ex}
+  \begin{align}
+    \langle x_k F(x) \rangle_0 = 
+    \int d\mu_0(x) x_k F(x) 
+  \end{align}
+  Show that
+  \begin{align}
+     \langle x_k F(x) \rangle_0  = 
+    \sum_l \langle x_k x_l \rangle_0 \langle \frac{\partial F}{\partial x_l}\rangle_0\, .
+  \end{align}
+  {\em Hint:} 
+  \begin{align}
+    - \sum_l \Delta_{kl} \frac{\partial}{\partial x_l}
+    \exp\left(
+    -\frac12 \sum_{i,j=1}^n x_i A_{ij} x_j
+    \right) = 
+    x_k \exp\left(
+    -\frac12 \sum_{i,j=1}^n x_i A_{ij} x_j
+    \right)\, .
+  \end{align}
+\end{Ex}
+
+\section{Perturbed Gaussian Measure}
+\label{sec:pert-gauss-meas}
+
+Let us consider now a more complicated measure, 
+\begin{align}
+  \label{eq:PertGaussMeas}
+  \Omega(x) = \frac{1}{Z(\lambda)}\, e^{-S(x,\lambda)}\, ,
+\end{align}
+where the normalization is given as usual by
+\begin{align}
+  \label{eq:PertGaussNorm}
+  Z(\lambda) = \int d^nx\, e^{-S(x,\lambda)}\, ,
+\end{align}
+and 
+\begin{align}
+  \label{eq:PertGaussAction}
+  S(x,\lambda) &= \frac12 \sum_{i,j=1}^n x_i A_{ij} x_j + 
+  \lambda V(x) \\
+  &= S_0(x) + \lambda V(x)\, ,
+\end{align}
+where we have introduced $S_0$ to denote the Gaussian part of the
+measure that we have already discussed in the sections above.  The
+term proportional to $\lambda$ in $S$, which we will call the
+potential term, describes the deviation from gaussianity.
+$Z(\lambda)$ can be computed by expanding the exponential of the
+potential and using the results of the previous section.
+\begin{align}
+  Z(\lambda) &= \sum_{k=0}^\infty \frac{(-\lambda)^k}{k!}\, 
+               \int d^nx\, V(x)^k  \exp\left(
+    -\frac12 \sum_{i,j=1}^n x_i A_{ij} x_j
+    \right) \\
+  &= Z(0) \sum_{k=0}^\infty \frac{(-\lambda)^k}{k!}\,
+    \langle V(x)^k\rangle_0\, ,
+\end{align}
+where the expectation value in the last line is a Gaussian average of the kind we have discussed in the previous section. 
+
+Using Eq.~\ref{eq:FuncOfDeriv} 
+\begin{align}
+  \frac{Z(\lambda)}{Z(0)} &= \langle e^{-\lambda V(x)} \rangle_0 \\
+  &= \exp\left[-\lambda V\left(\frac{\partial}{\partial b}\right)\right]
+    \left. \exp\left(
+    \frac12 \sum_{i,j=1}^n b_i \Delta_{ij} b_j
+  \right) \right|_{b=0}\, .
+\end{align}
+
+\begin{Ex}
+  Compute the ratio 
+\begin{align}
+  Z(\lambda)/Z(0)
+\end{align}
+for the potential 
+\begin{equation}
+  \label{eq:QuarticPot}
+  V(x) = \frac{1}{4!} \sum_{i=1}^n x_i^4\, ,
+\end{equation}
+to second order in $\lambda$.
+
+\noindent{\bf 
+This exercise is very important. Make sure you understand all the steps in full detail. }
+\end{Ex}
+
+\noindent
+{\bf Solution}
+\begin{align}
+  \label{eq:PhiFourPartitionFuncOrderLambdaTwo}
+  Z(\lambda)/Z(0) &= 
+                    1 - \frac{1}{4!} \lambda \sum_{i=1}^n \langle x_i^4\rangle_0 
+                    + \frac{1}{2!} \frac{1}{(4!)^2} \lambda^2 \sum_{i,j=1}^n 
+                    \langle x_i^4 x_j^4\rangle_0 + O(\lambda^3) \\
+                  &=
+                    1 - \frac{\lambda}{8} \sum_{i=1}^n \Delta_{ii}^2 +
+                    \nonumber\\
+                  &\quad + \lambda^2
+                    \left[
+                    \frac{1}{128} \sum_i \Delta_{ii}^2 \sum_j \Delta_{jj}^2 +
+                    \frac{1}{16} \sum_{ij} \Delta_{ii} \Delta_{jj} \Delta_{ij}^2 +
+                    \frac{1}{48} \sum_{ij} \Delta_{ij}^4
+                    \right] + O(\lambda^3)\, .
+\end{align}
+You can check that for $n=1$ you recover the well-known result
+\begin{align}
+  Z(\lambda)/Z(0) = 1 - \frac{1}{8} \lambda + \frac{35}{184} \lambda^2 + O(\lambda^3)\, .
+\end{align}
+
+\paragraph{Diagrammatic representation}
+
+We can introduce a convenient diagrammatic representation for the
+expression above. To each factor $\Delta_{ij}$, we associate a line
+with indices $i$ and $j$ at its ends:
+\begin{equation}
+  \label{eq:DeltaFeynDiag}
+  \Delta_{ij} = 
+  \begin{tikzpicture}[baseline={([yshift=1.4ex]current bounding box.center)}]
+    \begin{feynman}[inline=(a)]
+      \vertex (a);
+      \vertex (b);
+      \diagram {
+        a -- b,
+      };
+      \vertex [below=0.2em of a] {\(_{i}\)};  
+      \vertex [below=0.2em of b] {\(_{j}\)};  
+    \end{feynman}
+  \end{tikzpicture}\, .
+\end{equation}
+Whenever the end of a line is part of a closed path, we sum over the
+corresponding index, so for instance:
+\begin{align}
+  \label{eq:SumDeltaOneIndexClosed}
+  \begin{tikzpicture}[baseline={([yshift=0.2ex]current bounding box.center)}]
+  \begin{feynman}
+    \vertex (b);
+    \diagram {
+      b -- [out=45, in=-45, loop, min distance=2cm] b,
+    };
+    \vertex [below=0.5em of b] {\(_{i}\)};  
+  \end{feynman}
+\end{tikzpicture}
+  &= \sum_{i=1}^n \Delta_{ii}\, , \\
+  \label{eq:SumDeltaOneIndexOpen}
+  \begin{tikzpicture}[baseline={([yshift=0.2ex]current bounding box.center)}]
+  \begin{feynman}
+    \vertex (a);
+    \vertex (b);
+    \diagram {
+      a -- b -- [out=45, in=-45, loop, min distance=2cm] b,
+    };
+    \vertex [below=0.2em of a] {\(_{i}\)};  
+    \vertex [below=0.2em of b] {\(_{j}\)};  
+  \end{feynman}
+\end{tikzpicture}
+  &= \sum_{j=1}^n \Delta_{ij} \Delta_{jj}\, .
+\end{align}
+Using this notation, we can rewrite
+Eq.~\ref{eq:PhiFourPartitionFuncOrderLambdaTwo} 
+\begin{align}
+  Z(\lambda)/Z(0) =& 1 - \lambda \left[ \quad \frac{1}{8}
+  \begin{tikzpicture}[baseline={([yshift=0.2ex]current bounding box.center)}]
+  \begin{feynman}
+    \vertex (b);
+    \diagram {
+      b -- [out=45, in=-45, loop, min distance=2cm] b --
+      [out=135, in=-135, loop, min distance=2 cm] b,
+    };
+    \vertex [below=0.2em of b] {\(_{i}\)};  
+  \end{feynman}
+\end{tikzpicture} 
+ \right] + \nonumber \\
+  &+ \lambda^2 \left[
+    \frac{1}{128} 
+    \begin{tikzpicture}[baseline={([yshift=0.2ex]current bounding box.center)}]
+      \begin{feynman}[vertical=a to b]
+        \vertex (a);
+        \vertex (b);
+        \diagram {
+          b -- [out=45, in=-45, loop, min distance=2cm] b --
+          [out=135, in=-135, loop, min distance=2 cm] b,
+          a -- [out=45, in=-45, loop, min distance=2cm] a --
+          [out=135, in=-135, loop, min distance=2 cm] a,
+       };
+        \vertex [below=0.2em of a] {\(_{i}\)};  
+        \vertex [below=0.2em of b] {\(_{j}\)};  
+      \end{feynman}
+    \end{tikzpicture} 
+    + \frac{1}{16}
+    \begin{tikzpicture}[baseline={([yshift=0.2ex]current bounding box.center)}]
+      \begin{feynman}
+        \vertex (a);
+        \vertex (b);
+        \diagram {
+          a -- [out=135, in=-135, loop, min distance=1.25 cm] a -- 
+          [out=60, in=120] b -- [out=45, in=-45, loop, min distance=1.25cm] b 
+          -- [out=-120, in=-60] a,
+        };
+        \vertex [below=0.5em of a] {\(_{i}\)};  
+        \vertex [below=0.5em of b] {\(_{j}\)};  
+      \end{feynman}
+    \end{tikzpicture}
+    + \frac{1}{48} 
+    \begin{tikzpicture}[baseline={([yshift=0.2ex]current bounding box.center)}]
+      \begin{feynman}
+        \vertex (a);
+        \vertex (b);
+        \diagram {
+          a -- 
+          [out=60, in=120] b 
+          -- [out=-120, in=-60] a,
+          a -- [out=25, in=155] b 
+          -- [out=-155, in=-25] a,
+        };
+        \vertex [below=0.2em of a] {\(_{i}\)};  
+        \vertex [below=0.2em of b] {\(_{j}\)};  
+      \end{feynman}
+    \end{tikzpicture}
+    \right]\, .
+\end{align}
+It it clear from the diagrammatic representation that we can
+distinguish connected and disconnected contributions. The connected
+contributions are represented by connected diagrams, i.e. diagrams
+that are made of a single line. The disconnected diagrams are products
+of multiple connected parts, and therefore correspond to products of
+independent sums over subset of indices. In
+Eq.~\ref{eq:PhiFourPartitionFuncOrderLambdaTwo} only the first term in
+the bracket in the second line is a disconnected contribution. 
+
+\paragraph{Connected contribution}
+
+Using the Taylor expansion for the logarithm,
+\begin{equation}
+  \label{eq:TaylorLog}
+  \log(1+x) = \sum_{n=1}^\infty (-)^{n+1} \frac{x^n}{n}\, ,
+\end{equation}
+we can compute
+\begin{align}
+  \label{eq:PhiFourPartitionFuncConnectOrderLambdaTwo}
+  \log\left(Z(\lambda)/Z(0)\right) = 
+                    &- \lambda \frac{1}{8} \sum_{i=1}^n \Delta_{ii}^2
+                                     +\nonumber \\
+                     &+\lambda^2
+                    \left[
+                    \frac{1}{128} \sum_i \Delta_{ii}^2 \sum_j \Delta_{jj}^2 +
+                    \frac{1}{16} \sum_{ij} \Delta_{ii} \Delta_{jj} \Delta_{ij}^2 +
+                    \frac{1}{48} \sum_{ij} \Delta_{ij}^4
+                    \right] -  \nonumber \\
+  &- \lambda^2 \frac{1}{2} \left( - \frac{1}{8}
+    \sum_{i=1}^n \Delta_{ii}^2\right)^2 +  O(\lambda^3)\, . 
+\end{align}
+Eq.~\ref{eq:PhiFourPartitionFuncConnectOrderLambdaTwo} shows
+explicitly the cancellation at order $\lambda^2$ between the first
+term in the square bracket in the second line, and the last term in
+the third line, which comes from squaring the order $\lambda$
+contribution when computing the second term in the Taylor expansion in
+Eq.~\ref{eq:TaylorLog}. This is a general property, taking the
+logarithm of the generating function yields the generating function of
+connected conributions. We shall prove this property later in the
+course. 
+
+\section{Perturbed Gaussian Correlators}
+\label{sec:pert-gauss-corr}
+
+The perturbative treatment discussed above can be extended to compute
+moments of the distribution:
+\begin{equation}
+  \label{eq:lPointCorrPert}
+  \langle x_{i_1} \ldots x_{i_\ell}\rangle =
+  \frac{1}{Z(\lambda)} 
+  \int d^nx\, e^{-S(x;\lambda)} x_{i_1} \ldots x_{i_\ell}\, ,
+\end{equation}
+which often referred to as an $\ell$-point correlator/function. Let us start
+our discussion with a simple example. 
+
+\paragraph{Two-point function}
+
+We need to evaluate
+\begin{align}
+  \int d^nx\, e^{-S(x;\lambda)} x_{i_1} x_{i_2} &= 
+  \int d^nx\, e^{-S_0(x;\lambda)}\, \left[\sum_{k=0}^\infty
+  \frac{(-)^k}{k!} \lambda^k V(x)^k \right]\, x_{i_1} x_{i_2} \\
+  \label{eq:TwoPointCorrPert}
+                                               &=Z(0) \sum_{k=0}^\infty
+  \frac{(-)^k}{k!} \lambda^k \langle V(x)^k x_{i_1} x_{i_2}\rangle_0\, ,
+\end{align}
+where in the second line we have expressed the initial correlator in
+terms of correlators computed in the Gaussian theory, denoted as
+before by $\langle \ldots \rangle_0$. The Gaussian correlators can be
+computed using Wick's theorem as before. We shall consider again a
+quartic potential:
+\begin{equation}
+  V(x) = \frac{1}{4!} \sum_{i=1}^n x_i^4\, ,
+\end{equation}
+and compute all the terms in Eq.~\ref{eq:TwoPointCorrPert} order by
+order in $\lambda$ up to order $\lambda^2$.
+\begin{itemize}
+\item $O(\lambda^0)$ For $k=0$ we simply get the two-point Gaussian
+  correlator: 
+  \begin{align}
+    \langle x_{i_1} x_{i_2} \rangle_0 = \Delta_{i_1 i_2}\, .
+  \end{align}
+\item $O(\lambda^1)$ At first order in $\lambda$ we have one insertion
+  of $V$:
+  \begin{align}
+    \langle V(x) x_{i_1} x_{i_2} \rangle_0 = \frac{1}{4!} \sum_{i=1}^n
+    \langle x_i^4 x_{i_1} x_{i_2} \rangle_0\, .
+  \end{align}
+  This Gaussian expectation value involving six factors of $x$ (four
+  from the potential, and the two coming from the fact that we compute
+  a two-point function) can be evaluated using Wick's
+  theorem. There two types of contractions.
+  \begin{itemize}
+  \item [(i)] $x_1$ is contracted with $x_2$, and the four $x_i$ are
+    contracted amongst themselves:
+    \begin{align}
+      \contraction{}{x_{i_1}}{}{x_{i_2}}
+      x_{i_1} x_{i_2} 
+      \left(
+      \contraction{}{x_{i}}{}{x_{i}}
+      \contraction{x_{i} x_{i}}{x_{i}}{}{x_{i}}
+      x_{i} x_{i} x_{i} x_{i} +
+      \contraction{}{x_{i}}{x_{i}}{x_{i}}
+      \contraction[2ex]{x_{i}}{x_{i}}{ x_{i}}{x_{i}}
+      x_{i} x_{i} x_{i} x_{i} +
+      \contraction{}{x_{i}}{x_{i}x_{i}}{x_{i}}
+      \contraction[2ex]{x_{i}}{x_{i}}{}{x_{i}}
+      x_{i} x_{i} x_{i} x_{i} 
+      \right) = \Delta_{i_1 i_2} \langle x_i^4\rangle_0
+      \, ,
+    \end{align}
+    where we have used the fact that the term inside the bracket on
+    the LHS is simply $\langle x_i^4\rangle_0$ --
+    cfr. Eq.~\ref{eq:FourPtGaussContract}.
+  \item [(ii)] $x_1$ and $x_2$ are contracted with some of the $x_i$;
+    there are 12 such contractions:
+    \begin{align}
+      \contraction{}{x_{i_1}}{x_{i_2}}{x_{i}}
+      \contraction[2ex]{x_{i_1}}{x_{i_2}}{x_{i}}{x_{i}}
+      x_{i_1} x_{i_2}  x_{i} x_{i} x_{i} x_{i} + \ldots = 
+      \Delta_{i i_1} \Delta_{i i_2} \Delta_{i i} \times 4
+      \times 3\, .
+    \end{align}
+  \end{itemize}
+  Collecting all terms yields
+  \begin{align}
+   \frac{1}{4!} \sum_{i=1}^n
+    \langle x_i^4 x_{i_1} x_{i_2} \rangle_0 = 
+    \Delta_{i_1 i_2} \frac{1}{4!} \sum_{i=1}^n \langle x_i^4\rangle_0
+    + \frac{1}{4!} \times 4 \times 3 \sum_{i=1}^n \Delta_{i i_1}
+    \Delta_{i i_2} \Delta_{i i} \, .
+  \end{align}
+\item $O(\lambda^2)$ At this order we need to evaluate
+  \begin{align}
+    \frac{1}{2!} \langle V(x)^2 x_{i_1} x_{i_2} \rangle_0 = 
+    \frac{1}{2!} \frac{1}{(4!)^2} \sum_{i,j=1}^n \langle x_i^4 x_j^4
+    x_{i_1} x_{i_2} \rangle_0\, .
+  \end{align}
+  There are five different types of contractions, each of them coming
+  with a given multiplicity. We encourage the interested reader to
+  compute those contributions, and check carefully that the correct
+  multiplicities are recovered. 
+\end{itemize}
+Collecting all contributions yields
+\begin{align}
+  \int d^nx\, e^{-S(x;\lambda)} 
+  x_{i_1} x_{i_2} = Z(0) & 
+                           \left[
+                           \Delta_{i_1 i_2} - \lambda \left(\Delta_{i_1 i_2}
+                           \frac{1}{4!} \sum_{i=1}^n \langle
+                           x_i^4\rangle_0 +  \frac12 \sum_{i=1}^n
+                           \Delta_{i i_1} \Delta_{i i_2} \Delta_{i i} 
+                           \right) + \right. \nonumber \\
+                         & \left.
+                           + \lambda^2 \left( 
+                           \frac{1}{2!} \Delta_{i_1 i_2} \frac{1}{(4!)^2}
+                           \sum_{i,j=1}^n \langle x_i^4 x_j^4 \rangle_0
+                           + \frac{1}{2!} \sum_{i=1}^n \Delta_{i i_1}
+                           \Delta_{i i_2} \Delta_{i i}  \frac{1}{4!}
+                           \sum_{j=1}^n \langle x_j^4 \rangle_0
+                           + \right. \right. \nonumber \\
+                         & + \left. \left.
+                           \frac{1}{4} \sum_{i,j=1}^n \Delta_{i i_1}
+                           \Delta_{i i_2} \Delta_{i j}^2 \Delta_{jj}
+                           + \frac{1}{6} \sum_{i,j=1}^n \Delta_{i i_1}
+                           \Delta_{j i_2} \Delta_{i j}^3 +
+                           \right. \right. \nonumber \\
+  \label{eq:TwoPointNotNorm}
+                         & + \left. \left.
+                           \frac{1}{4} \sum_{i,j=1}^n \Delta_{i i_1}
+                           \Delta_{j i_2} \Delta_{i j} \Delta_{ii}\Delta_{jj}
+                           \right)
+                           \right]\, .
+\end{align}
+Diagrammatically we have: 
+\begin{align}
+  \label{eq:TwoPtVacuumIncluded}
+  \langle x_{i_1} x_{i_2}\rangle = 
+  \frac{Z(0)}{Z(\lambda)} \Bigg[
+    \begin{tikzpicture}[baseline={([yshift=1.4ex]current bounding box.center)}]
+    \begin{feynman}[inline=(a)]
+      \vertex (a);
+      \vertex (b);
+      \diagram {
+        a -- b,
+      };
+      \vertex [below=0.2em of a] {\(_{i_1}\)};  
+      \vertex [below=0.2em of b] {\(_{i_2}\)};  
+    \end{feynman}
+  \end{tikzpicture}
+  + \frac{\lambda}{8}
+    \begin{tikzpicture}[baseline={([yshift=-5ex]current bounding box.center)}]
+    \begin{feynman}[layered layout, vertical'=i to c]
+      \vertex (a);
+      \vertex (c); 
+      \vertex (b);
+      \vertex (i);
+      \vertex (j);
+      \vertex (k);
+      \diagram {
+        j -- [draw=none]  i -- [draw=none] k, 
+        i -- [out=45, in=-45, loop, min distance=2cm] i --
+        [out=135, in=-135, loop, min distance=2 cm] i,
+        a -- c -- b, 
+        c --[opacity=0.1] i, 
+      };
+      \vertex [below=0.2em of a] {\(_{i_1}\)};  
+      \vertex [below=0.2em of b] {\(_{i_2}\)};  
+%      \vertex [below=0.2em of c] {\(c\)};  
+      \vertex [below=0.2em of i] {\(_{i}\)};  
+    \end{feynman}
+  \end{tikzpicture}
+  + \frac{\lambda}{2}
+    \begin{tikzpicture}[baseline={([yshift=-3ex]current bounding box.center)}]
+    \begin{feynman}[layered layout, vertical'=i to c]
+      \vertex (a);
+      \vertex (b);
+      \vertex (i);
+      \diagram {
+        a -- i -- b, 
+        i -- [out=135, in=45, loop, min distance=2cm] i,
+      };
+      \vertex [below=0.2em of a] {\(_{i_1}\)};  
+      \vertex [below=0.2em of b] {\(_{i_2}\)};  
+%      \vertex [below=0.2em of c] {\(c\)};  
+      \vertex [below=0.2em of i] {\(_{i}\)};  
+    \end{feynman}
+  \end{tikzpicture}
+  + O(\lambda^2)
+  \Bigg]\, ,
+\end{align}
+where for simplicity we have omitted the contribution of order
+$\lambda^2$. A diagram that can be factorised as the product of a
+subdiagram with external lines and a subdiagram that is made of loops
+only is called a {\em vacuum contribution}. For instance the second
+diagram inside the bracket in Eq.~\ref{eq:TwoPtVacuumIncluded} is a
+vacuum contribution, while the first and third ones are not.
+
+Finally, we need to divide this expression by $Z(\lambda)$ in order to
+obtain the two-point correlator as defined in
+Eq.~\ref{eq:lPointCorrPert}.  As a result, we obtain a factor of
+$Z(0)/Z(\lambda)$ multiplying the expression inside the square bracket
+in Eq.~\ref{eq:TwoPointNotNorm}. Inverting
+Eq.~\ref{eq:PhiFourPartitionFuncOrderLambdaTwo} for the ratio
+$Z(0)/Z(\lambda)$ yields
+\begin{align}
+ Z(0)/Z(\lambda) &= 
+                    1 + \frac{1}{4!} \lambda \sum_{i=1}^n \langle x_i^4\rangle_0 
+                    - \frac{1}{2!} \frac{1}{(4!)^2} \lambda^2 \sum_{i,j=1}^n 
+                    \langle x_i^4 x_j^4\rangle_0 
+                   + \frac{1}{(4!)^2} \lambda^2 \left(\sum_{i=1}^n \langle x_i^4\rangle_0\right)^2
+                   + O(\lambda^3) 
+\end{align}
+
+\begin{Ex}
+  Show that all the vacuum contributions cancel when computing $\langle
+  x_{i_1} x_{i_2}\rangle$. The final result is
+  \begin{align}
+  \int d^nx\, e^{-S(x;\lambda)} 
+  x_{i_1} x_{i_2} = Z(0) & 
+                           \left[
+                           \Delta_{i_1 i_2} - \lambda  \frac12 \sum_{i=1}^n
+                           \Delta_{i i_1} \Delta_{i i_2} \Delta_{i i} 
+                            + \right. \nonumber \\
+                         & \left.
+                           + \lambda^2 \left( 
+                           \frac{1}{4} \sum_{i,j=1}^n \Delta_{i i_1}
+                           \Delta_{i i_2} \Delta_{i j}^2 \Delta_{jj}
+                           + \frac{1}{6} \sum_{i,j=1}^n \Delta_{i i_1}
+                           \Delta_{j i_2} \Delta_{i j}^3 +
+                           \right. \right. \nonumber \\
+  \label{eq:TwoPointNorm}
+                         & + \left. \left.
+                           \frac{1}{4} \sum_{i,j=1}^n \Delta_{i i_1}
+                           \Delta_{j i_2} \Delta_{i j} \Delta_{ii}\Delta_{jj}
+                           \right)
+                           \right]\, .
+\end{align}
+Write a diagrammatic representation for the contributions $O(\lambda^2)$.
+\end{Ex}
+This is a general property: when the integral is divided by the
+correct normalization factor $1/Z(\lambda)$, all vacuum contributions
+cancel.
+
+\section{Generating Functions for the Perturbed Gaussian Measure}
+\label{sec:gener-funct-pert}
+
+\paragraph{Correlators}
+
+We can now generalise the idea of a generating function to the case of
+a non Gaussian measure. Introducing
+\begin{equation}
+  \label{eq:GenFunctPert}
+  Z(b;\lambda) = \int d^nx\, \exp\left[
+    -S(x;\lambda) + (b,x)
+    \right]\, ,
+\end{equation}
+where we introduced the notation
+\begin{equation}
+  \label{eq:ScalProd}
+  (b,x) = \sum_{i=1}^n b_i x_i\, .
+\end{equation}
+Note that we can also write
+\begin{equation}
+  \label{eq:GenFunctPertTwo}
+  \langle e^{(b,x)} \rangle = Z(b;\lambda)/Z(\lambda)\, .
+\end{equation}
+The correlators in the perturbed measure are obtained by
+differentiation
+\begin{equation}
+  \label{eq:CorrGenPert}
+  \langle x_{i_1} \ldots x_{i_\ell}\rangle = \frac{1}{Z(\lambda)} \left.
+  \frac{\partial}{\partial b_{i_1}} \ldots \frac{\partial}{\partial b_{i_\ell}}\,
+  Z(b;\lambda)
+\right|_{b=0} \, .
+\end{equation}
+
+\paragraph{Cumulants}
+
+The logarithm of $Z(b;\lambda)$ is usually denoted $W(b;\lambda)$, 
+\begin{equation}
+  \label{eq:WGenDef}
+  Z(b;\lambda) = e^{W(b;\lambda)}\, ;
+\end{equation}
+$W(b;\lambda)$ is the generator is the generator of the connected
+$\ell$-point correlators, $W_{i_1 \ldots i_\ell}$, i.e. the correlators that can be represented as a single
+diagram, with $\ell$ open ends:
+\begin{equation}
+  \label{eq:DiffWGen}
+  W_{i_1 \ldots i_\ell} = \left.
+  \frac{\partial}{\partial b_{i_1}} \ldots \frac{\partial}{\partial b_{i_\ell}}\,
+  W(b;\lambda)
+\right|_{b=0} \, .
+\end{equation}
+In statistics, the $W_{i_1 \ldots i_\ell}$ are called the {\em
+  cumulants} of the probability distribution $e^{-S(x;\lambda)}$.
+
+
+

@@ -1,0 +1,160 @@
+;; RefTeX parse info file
+;; File: /Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex
+;; User: ldd (Luigi Del Debbio)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/")
+
+(label-numbers)
+
+(bof "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex")
+
+(toc "toc" "    1 Multidimensional Gaussian Integrals" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 2 "1" "\\section{Multidimensional Gaussian Integrals}" 1)
+
+("sec:mult-gauss-integr" "s" "Consider the $n$-dimensional integral \\begin{equation}  Z_A = \\int d^nx\\, \\exp\\left( -\\frac12 \\sum_{" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:GaussIntOne" "e" "Z_A = \\int d^nx\\, \\exp\\left( -\\frac12 \\sum_{i,j=1}^n x_i A_{ij} x_j \\right)\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:GaussIntTwo" "e" "Z_A = \\left(2\\pi\\right)^{n/2} \\left(\\det A \\right)^{-1/2}\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+(toc "toc" "          1.0.0.1 General Gaussian Integral" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 5 "1.0.0.1" "\\paragraph{General Gaussian Integral}" 557)
+
+("eq:GaussIntThree" "e" "&= \\left(2\\pi\\right)^{n/2} \\left(\\det A \\right)^{-1/2} \\exp\\left( \\frac12 \\sum_{i,j=1}^n b_i \\Delta_" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+(toc "toc" "    2 Generating function" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 2 "2" "\\section{Generating function}" 1181)
+
+("sec:generating-function" "s" "Let $\\mu$ be a measure in $\\mathbb{R}^n$, we define the expectation value \\begin{align}  \\langle F \\" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:ExpValMu" "e" "\\langle F \\rangle_\\mu &= \\int d\\mu(x)\\, F(x) " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:MeasureNorm" "e" "\\int d\\mu(x) = 1\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:ZGenFunc" "e" "Z_\\mu(b) = \\langle e^{(b,x)}\\rangle_\\mu = \\int d\\mu(x)\\, \\exp\\left( \\sum_{i=1}^n b_i x_i \\right)\\, ." "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:ZExp" "e" "Z_\\mu(b) = \\sum_{\\ell=0}^\\infty \\frac{1}{\\ell!} \\sum_{i_1 \\ldots i_\\ell=1}^n \\, b_{i_1} \\ldots b_{i_" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:XCorrel" "e" "\\langle x_{i_1} \\ldots x_{i_\\ell}\\rangle_\\mu = \\int d\\mu(x)\\, x_{i_1} \\ldots x_{i_\\ell} " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:DiffGenFunct" "e" "\\frac{\\partial}{\\partial b_k} = \\int d\\mu(x)\\, x_k\\, \\exp\\left( \\sum_{i=1}^n b_i x_i \\right)\\, , " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:DiffGenFunctCorr" "e" "\\langle x_{i_1} \\ldots x_{i_\\ell}\\rangle_\\mu = \\left. \\frac{\\partial}{\\partial b_{i_1}} \\ldots \\frac" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+(toc "toc" "    3 Generating Function and Gaussian Integrals" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 2 "3" "\\section{Generating Function and Gaussian Integrals}" 3333)
+
+("sec:gener-funct-gauss" "s" "Let us consider the Gaussian measure \\begin{equation}  d\\mu_0(x) = d^nx\\, \\Omega_0(x) = d^nx\\, \\math" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:GaussMeas" "e" "d\\mu_0(x) = d^nx\\, \\Omega_0(x) = d^nx\\, \\mathcal{N}_0 \\exp\\left( -\\frac12 \\sum_{i,j=1}^n x_i A_{ij} " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:GaussNorm" "e" "\\mathcal{N}_0 = \\left(2\\pi\\right)^{-n/2}\\, \\left( \\det A\\right)^{1/2}\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:GaussGenFunc" "e" "Z_0(b) = \\frac{Z_A(b)}{Z_A} = \\exp\\left( \\frac12 \\sum_{i,j=1}^n b_i \\Delta_{ij} b_j \\right) \\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:GaussCorrFunc" "e" "\\langle x_{i_1} \\ldots x_{i_\\ell}\\rangle_0 = \\left. \\frac{\\partial}{\\partial b_{i_1}} \\ldots \\frac{\\" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:TaylorExpF" "e" "F(x) = \\sum_{i_1 \\ldots i_\\ell=1}^n \\, F_{i_1,\\ldots,i_\\ell}\\, x_{i_1} \\ldots x_{i_\\ell}\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:GaussExpF" "e" "\\langle F(x) \\rangle_\\mu = \\sum_{i_1 \\ldots i_\\ell=1}^n \\, F_{i_1,\\ldots,i_\\ell}\\, \\langle x_{i_1} \\" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:FuncOfDeriv" "e" "&= F\\left( \\frac{\\partial}{\\partial b}\\right) \\, \\left. \\exp\\left( \\frac12 \\sum_{i,j=1}^n " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+(toc "toc" "    4 Gaussian Correlators: Wick's Theorem" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 2 "4" "\\section{Gaussian Correlators: Wick's Theorem}" 6039)
+
+("sec:gauss-corr-wicks" "s" "Eq.~\\ref{eq:GaussCorrFunc} allows us to compute all Gaussian correlators. It is instructive to start" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+(toc "toc" "          4.0.0.1 One-point function" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 5 "4.0.0.1" "\\paragraph{One-point function}" 6351)
+
+("eq:ToBeUsedBelow" "e" "&= \\left( \\sum_{j=1}^n \\Delta_{kj} b_j \\right)\\, \\left. \\exp\\left( \\frac12 \\sum_{i,j=1}^n b_i \\Delta" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+(toc "toc" "          4.0.0.2 Two-point function" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 5 "4.0.0.2" "\\paragraph{Two-point function}" 7241)
+
+("eq:GaussTwoPt" "e" "\\langle x_k x_l \\rangle_0 = \\frac{\\partial}{\\partial b_l} \\frac{\\partial}{\\partial b_k} \\, \\left. \\e" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+(toc "toc" "          4.0.0.3 General Case" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 5 "4.0.0.3" "\\paragraph{General Case}" 9013)
+
+(toc "toc" "          4.0.0.4 Two-point function revisited" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 5 "4.0.0.4" "\\paragraph{Two-point function revisited}" 10694)
+
+(toc "toc" "          4.0.0.5 Four-point function" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 5 "4.0.0.5" "\\paragraph{Four-point function}" 11042)
+
+("eq:FourPtGaussContract" "e" "\\langle x_{i_1} x_{i_2} x_{i_3} x_{i_4} \\rangle_0 = \\contraction{}{x_{i_1}}{}{x_{i_2}} \\contraction{" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+(toc "toc" "          4.0.0.6 Number of Pairings" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 5 "4.0.0.6" "\\paragraph{Number of Pairings}" 12438)
+
+(toc "toc" "          4.0.0.7 Six-point function" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 5 "4.0.0.7" "\\paragraph{Six-point function}" 12952)
+
+(toc "toc" "    5 Perturbed Gaussian Measure" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 2 "5" "\\section{Perturbed Gaussian Measure}" 13802)
+
+("sec:pert-gauss-meas" "s" "Let us consider now a more complicated measure, \\begin{align}  \\Omega(x) = \\frac{1}{Z(\\lambda)}\\, e^" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:PertGaussMeas" "e" "\\Omega(x) = \\frac{1}{Z(\\lambda)}\\, e^{-S(x,\\lambda)}\\, , " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:PertGaussNorm" "e" "Z(\\lambda) = \\int d^nx\\, e^{-S(x,\\lambda)}\\, , " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:PertGaussAction" "e" "S(x,\\lambda) &= \\frac12 \\sum_{i,j=1}^n x_i A_{ij} x_j + \\lambda V(x) " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:QuarticPot" "e" "V(x) = \\frac{1}{4!} \\sum_{i=1}^n x_i^4\\, , " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:PhiFourPartitionFuncOrderLambdaTwo" "e" "Z(\\lambda)/Z(0) &= 1 - \\frac{1}{4!} \\lambda \\sum_{i=1}^n \\langle x_i^4\\rangle_" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+(toc "toc" "          5.0.0.1 Diagrammatic representation" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 5 "5.0.0.1" "\\paragraph{Diagrammatic representation}" 16740)
+
+("eq:DeltaFeynDiag" "e" "\\Delta_{ij} = \\begin{tikzpicture}[baseline={([yshift=1.4ex]current bounding box.center)}] \\begin{fey" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:SumDeltaOneIndexClosed" "e" "\\begin{tikzpicture}[baseline={([yshift=0.2ex]current bounding box.center)}] \\begin{feynman} \\vertex " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:SumDeltaOneIndexOpen" "e" "\\begin{tikzpicture}[baseline={([yshift=0.2ex]current bounding box.center)}] \\begin{feynman} \\vertex " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+(toc "toc" "          5.0.0.2 Connected contribution" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 5 "5.0.0.2" "\\paragraph{Connected contribution}" 20904)
+
+("eq:TaylorLog" "e" "\\log(1+x) = \\sum_{n=1}^\\infty (-)^{n+1} \\frac{x^n}{n}\\, , " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:PhiFourPartitionFuncConnectOrderLambdaTwo" "e" "\\log\\left(Z(\\lambda)/Z(0)\\right) = &- \\lambda \\frac{1}{8} \\sum_{i=1}^n " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+(toc "toc" "    6 Perturbed Gaussian Correlators" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 2 "6" "\\section{Perturbed Gaussian Correlators}" 22326)
+
+("sec:pert-gauss-corr" "s" "The perturbative treatment discussed above can be extended to compute moments of the distribution: \\" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:lPointCorrPert" "e" "\\langle x_{i_1} \\ldots x_{i_\\ell}\\rangle = \\frac{1}{Z(\\lambda)} \\int d^nx\\, e^{-S(x;\\lambda)} x_{i_1" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+(toc "toc" "          6.0.0.1 Two-point function" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 5 "6.0.0.1" "\\paragraph{Two-point function}" 22803)
+
+("eq:TwoPointCorrPert" "e" "&=Z(0) \\sum_{k=0}^\\infty \\frac{(-)^k}{k!} \\lambda^k \\langle V(x)^k x_{" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:TwoPointNotNorm" "e" "& + \\left. \\left. \\frac{1}{4} \\sum_{i,j=1}^n \\Delta_{i i_1} " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:TwoPtVacuumIncluded" "e" "\\langle x_{i_1} x_{i_2}\\rangle = \\frac{Z(0)}{Z(\\lambda)} \\Bigg[ \\begin{tikzpicture}[baseline={([yshi" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:TwoPointNorm" "e" "& + \\left. \\left. \\frac{1}{4} \\sum_{i,j=1}^n \\Delta_{i i_1} " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+(toc "toc" "    7 Generating Function for the Perturbed Gaussian Measure" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 2 "7" "\\section{Generating Function for the Perturbed Gaussian Measure}" 32380)
+
+("sec:gener-funct-pert" "s" "We can now generalise the idea of a generating function. Introducing \\begin{equation}  Z(b;\\lambda) " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+(toc "toc" "          7.0.0.1 Correlators" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 5 "7.0.0.1" "\\paragraph{Correlators}" 32476)
+
+("eq:GenFunctPert" "e" "Z(b;\\lambda) = \\int d^nx\\, \\exp\\left[ -S(x;\\lambda) + (b,x) \\right]\\, , " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:ScalProd" "e" "(b,x) = \\sum_{i=1}^n\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:GenFunctPertTwo" "e" "\\langle e^{(b,x)} \\rangle = Z(b;\\lambda)/Z(\\lambda)\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:CorrGenPert" "e" "\\langle x_{i_1} \\ldots x_{i_\\ell}\\rangle = \\frac{1}{Z(\\lambda)} \\left. \\frac{\\partial}{\\partial b_{i" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+(toc "toc" "          7.0.0.2 Cumulants" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil 5 "7.0.0.2" "\\paragraph{Cumulants}" 33337)
+
+("eq:WGenDef" "e" "Z(b;\\lambda) = e^{W(b;\\lambda)}\\, ; " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+("eq:2" "e" " " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex" nil)
+
+(eof "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture0.tex")
+))
+

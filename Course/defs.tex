@@ -1,0 +1,105 @@
+\def\bfx{{\mathbf x}}
+\def\bfxp{{\mathbf x^\prime}}
+\def\bfy{{\mathbf y}}
+\def\bfyp{{\mathbf y^\prime}}
+\def\bfp{{\mathbf p}}
+\def\bfpp{{\mathbf p^\prime}}
+\def\ddt{\frac{d}{dt}}
+\def\ddtt{\frac{d^2}{dt^2}}
+\def\ie{{\it i.e.}\ }
+\def\eg{{\it e.g.}\ }
+\def\viz{{\it viz.}\ }
+\def\matF{\mathcal F}
+\def\matE{\mathcal E}
+\def\matH{\mathcal H}
+\def\matB{\mathcal B}
+\def\GL{\mathrm{GL}}
+\def\kpsi{|\psi\rangle}
+\def\kpsione{|\psi_1\rangle}
+\def\kpsitwo{|\psi_2\rangle}
+\def\kpsionep{|\psi_1^\prime\rangle}
+\def\kpsitwop{|\psi_2^\prime\rangle}
+\def\kpsii{|\psi_i\rangle}
+\def\kpsin{|\psi_n\rangle}
+\def\kpsip{|\psi^\prime\rangle}
+\def\bpsi{\langle\psi |}
+\def\bpsione{\langle\psi_1 |}
+\def\bpsitwo{\langle\psi_2 |}
+\def\bpsii{\langle\psi_i |}
+\def\bpsip{\langle\psi^\prime |}
+\def\kphi{|\phi\rangle}
+\def\kphione{|\phi_1\rangle}
+\def\kphitwo{|\phi_2\rangle}
+\def\kphii{|\phi_i\rangle}
+\def\kphip{|\phi^\prime\rangle}
+\def\bphi{\langle\phi |}
+\def\bphione{\langle\phi_1 |}
+\def\bphitwo{\langle\phi_2 |}
+\def\bphii{\langle\phi_i |}
+\def\bphip{\langle\phi^\prime |}
+\def\bchi{\langle\chi |}
+\def\bchione{\langle\chi_1 |}
+\def\bchitwo{\langle\chi_2 |}
+\def\bchii{\langle\chi_i |}
+\def\bchip{\langle\chi^\prime |}
+\def\kjm{|j,m\rangle}
+\def\tr{\mathrm{Tr}}
+\def\id{\mathds{1}}
+
+%% {\theoremstyle{plain} \theorembodyfont{\rmfamily} \newframedtheorem{Ex}{Exercise}[section]}
+%% {\theoremstyle{plain} \theorembodyfont{\rmfamily} \newtheorem{Def}{Definition}[section]}
+%% {\theoremstyle{plain} \theorembodyfont{\rmfamily} \newtheorem{Thm}{Theorem}[section]}
+
+\newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\iu}{\underline{i}}
+\newcommand{\ju}{\underline{j}}
+\newcommand{\ku}{\underline{k}}
+\newcommand{\ru}{\underline{r}}
+\newcommand{\vu}{\underline{v}}
+\newcommand{\pu}{\underline{p}}
+\newcommand{\Lu}{\underline{L}}
+\newcommand{\Ju}{\underline{J}}
+\newcommand{\Ku}{\underline{K}}
+\newcommand{\Ru}{\underline{R}}
+\newcommand{\lap}{\nabla^2}
+\newcommand{\ad}{\hat{a}}
+\newcommand{\ac}{\hat{a}^\dagger}
+\newcommand{\tick}{\ding{52}}
+\newcommand{\notick}{\ding{56}}
+\newcommand{\D}{\displaystyle}
+\newcommand{\ket}[1]{| #1 \rangle}
+\newcommand{\bra}[1]{\langle #1 |}
+\newcommand{\braket}[2]{\langle #1 | #2 \rangle}
+\newcommand{\pref}[1]{(\ref{#1})}
+\newcommand{\Eqref}[1]{Eq.~(\ref{#1})}
+\newcommand{\del}{\v{\nabla}}				% Underlined del
+%\newcommand{\del}{\mbox{\boldmath $\nabla$}}		%Also BOLD del?
+\newcommand{\grad}{\del}  				% del
+\newcommand{\Div}{\del \cdot}				% del dot
+\newcommand{\curl}{\del \times}				% del cross
+\newcommand{\equals}{~ = ~}
+\newcommand{\plus}{~ + ~}
+\newcommand{\minus}{~ - ~}
+\newcommand{\vr}{\v{r}}
+% \newcommand{\vs}{\v{s}}
+% \newcommand{\vt}{\v{t}}
+\newcommand{\vk}{\v{k}}
+\newcommand{\vv}{\v{v}}
+\newcommand{\pdiff}[1]{\frac{\partial}{\partial x_{#1}}}
+\newcommand{\parpar}[2]{\frac{\partial #1}{\partial #2}}  % the original
+\newcommand{\pdiffI}[1]{\frac{\partial   }{\partial #1}} % d / d [1]
+\newcommand{\pdiffII}[2]{\frac{\partial #1}{\partial #2}} % d [1] / d [2]
+\newcommand{\ds}{\displaystyle}
+\newcommand{\oper}[1] {\hat{#1}}			% O 
+%\newcommand{\oper}[1] {\widehat{#1}}			% O 
+\newcommand{\operH}[1]{\widehat{#1}_{ H}}		% O_H Heisenberg
+\newcommand{\operS}[1]{\widehat{#1}_{ S}}		% O_S Schrodinger
+\newcommand{\operD}[1]{\widehat{#1}_{ D}}		% O_D Dirac
+
+%\renewcommand{\chaptername}{Lecture}
+\renewcommand{\v}[1]{\mbox{\underline{\rule[-.3ex]{0ex}{1ex}${#1}$}}}
+								% underlined
+\newcommand{\piccy}[2]{\setlength{\epsfxsize}{#2}\epsfbox{#1}}
+\newcommand{\piccyxy}[3]
+	{\setlength{\epsfxsize}{#2} \setlength{\epsfysize}{#3} \epsfbox{#1}}

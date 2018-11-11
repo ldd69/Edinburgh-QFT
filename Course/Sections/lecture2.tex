@@ -1,0 +1,524 @@
+\newcommand{\tphi}{\tilde{\phi}}
+\newcommand{\tj}{\tilde{J}}
+\newcommand{\tchi}{\tilde{\chi}}
+
+\section{Free field theory}
+\label{sec:real-scalar-field}
+
+The lagrangian for a free real scalar field $\phi$ is given by
+\begin{equation}
+  \label{eq:RealScalLagr}
+  \mathcal{L}_0\left(\phi(x)\right)=
+  \frac12 \partial_\mu \phi(x) \partial^\mu \phi(x) - 
+  \frac12 m^2 \phi(x)^2\, .
+\end{equation}
+The Euler-Lagrange equations of motion, 
+\begin{equation}
+  \label{eq:EulerLagrange}
+  \partial_\mu \frac{\partial \mathcal{L}_0}{\partial\left(\partial_\mu \phi(x)\right)} 
+  - \frac{\partial \mathcal{L}_0}{\partial \phi(x)}\, ,
+\end{equation}
+yields the Klein-Gordon equation
+\begin{equation}
+  \label{eq:KleinGordonScal}
+  \partial_\mu \partial^\mu \phi(x) + m^2 \phi(x) = \left( \partial^2 + m^2 \right) \phi(x) = 0\, . 
+\end{equation}
+
+\paragraph{Lorentz Invariance}
+
+Note that $\mathcal{L}_0$ is invariant under Lorentz transformations:
+\begin{equation}
+  \label{eq:LorentzTransfScal}
+  x^\mu \mapsto x'^\mu =  \Lambda^\mu_\nu x^\nu\, , \quad \quad 
+  \phi(x) \mapsto \phi'(x) = \phi(\lambda^{-1}x)\, .
+\end{equation}
+
+\paragraph{Conjugate Momentum} 
+
+The momentum conjugate to $\phi(x)$ can be readily computed:
+\begin{align}
+  \label{eq:ScalMom}
+  \Pi(x) &= \frac{\partial \mathcal{L}_0}{\partial (\partial_0\phi(x))} \\
+  &= \partial_0 \phi(x) = \dot{\phi}(x)\, .
+\end{align}
+And therefore the Hamiltonian is 
+\begin{align}
+  \mathcal{H} &= \Pi(x) \dot{\phi}(x) - \mathcal{L}_0\left(\phi(x)\right) \\
+  &= \frac12 \Pi(x)^2 + \frac12 \sum_{k=1}^3 \left(\partial_k \phi(x)\right)^2
+    + \frac12 m^2 \phi(x)^2\, .
+\end{align}
+The quadratic Hamiltonian is the generalization of the harmonic oscillator to the case where we have an infinite number of canonical coordinates, indexed by the continuous spatial coordinate $\bfx$. 
+
+\section{Path Integral }
+\label{sec:path-integral}
+
+The vacuum-to-vacuum amplitude in the presence of a source field $J(x)$ is the straightforward generalization of the expression we have derived for the quantum mechanical system. The correspondence between the two systems is as follows:
+
+\bigskip
+
+\begin{center}
+  \begin{tabular}[!h]{lcl}
+    $q(t)$ & $\longrightarrow$ & $\phi(t,\bfx)$ \\
+    $\hat{Q}(t)$ & $\longrightarrow$ & $\hat{\phi}(t,\bfx)$ (operator) \\
+    $f(t)$ & $\longrightarrow$ & $J(t,\bfx)$ (source) \\
+  \end{tabular}
+\end{center}
+
+\bigskip
+
+The projection onto the ground state is implemented by the $\epsilon$
+trick that we introduced in the case of quantum mechanics, \ie by
+replacing the Hamiltonian with $(1-i\epsilon) H$. In the case of the
+scalar field theory, this is conveniently achieved by the substitution
+$m^2 \mapsto m^2 - i\epsilon$. In all subsequent formulae we will
+assume that the squared mass has an infinitesimal (negative) imaginary
+part.   
+
+By analogy with the QM computation, we can write the expression for
+the path integral representation of the vacuum amplitude 
+\begin{align}
+  \label{eq:ScalPathIntDef}
+  Z_0[J] = \braket{0}{0}_J = 
+  \int \mathcal{D}\phi\, \exp\bigg\{
+  i \Big[
+  S_0[\phi] + J\cdot \phi
+  \Big]
+  \bigg\}\, ,
+\end{align}
+where 
+\begin{align}
+  S_0[\phi] = \int d^Dx\, \mathcal{L}_0\left(\phi(x)\right)\, ,
+  \quad
+  J \cdot \phi = \int d^Dx\, J(x) \phi(x)\, .
+\end{align}
+For a free theory the integral in \Eqref{eq:ScalPathIntDef} is a
+Gaussian integral, similar to the ones we have seen in the first
+lecture. In order to make the correspondence more explicit, we can
+write the action as
+\begin{align}
+  S_0[\phi] = \int d^Dx d^Dx'\, \phi(x) K(x,x') \phi(x') + 
+  \int d^Dx\, J(x) \phi(x)\, ,
+\end{align}
+where we recognise a quadratic term, with $K(x,x')$ playing the role
+of $A_{ij}$, and $J(x)$ playing the role of the lienar term $b_i$. The
+explicit expression for the kernel $K$ is
+\begin{align}
+  K(x,x') = \Big[ -\partial^2 - m^2\Big] \delta(x-x')\, .
+\end{align}
+
+It is convenient to work in momentum space, where the kernel
+in the action is diagonal. Introducing the Fourier transforms
+\begin{equation}
+  \label{eq:ScalFieldFourier}
+  \phi(x) = \int \frac{d^Dp}{(2\pi)^D}\, e^{-i p\cdot x}\,
+  \tilde{\phi}(p)\, ,
+\end{equation}
+we can rewrite the kinetic term: 
+\begin{align}
+  \int d^Dx\, \partial_\mu \phi(x) \partial^\mu \phi(x) 
+  &= \int d^Dx\, \int_{p,p'}\, (-ip_\mu) e^{-ip \cdot x} \tilde{\phi}(p) 
+  (-ip'^\mu) e^{-ip'\cdot x} \tilde{\phi}(p') \\
+  &= \int_p \, p^2 \tilde{\phi}(p) \tilde{\phi}(-p)
+    =  \int_p p^2 \left|\tilde{\phi}(p)\right|^2\, ,
+\end{align}
+where we have introduced the notation
+\begin{align}
+  \int_p  = \int \frac{d^Dp}{(2\pi)^D}\, ,
+\end{align}
+and used the fact that $\phi(x)$ is real, and hence $\tilde{\phi}(-p) =
+\tilde{\phi}(p)^*$. Hence the action for the free field in momentum
+space can be written as
+\begin{align}
+  \label{eq:ScalFreeMomSpace}
+  S_0[\phi] = \frac12 \int_p \bigg\{
+  \tphi(-p) \left[p^2 - m^2 + i \epsilon\right] \tphi(p) +
+  \tj(p) \tphi(-p) + \tj(-p) \tphi(p)
+  \bigg\}\, .
+\end{align}
+Note that the contribution from the $\epsilon$ term to the exponential
+is 
+\begin{align}
+  \exp\bigg\{
+  -\epsilon \int_p \left|\tphi(p)\right|^2
+  \bigg\}\, ,
+\end{align}
+which clearly is convergent for large values of $|\tphi(p)|$.
+It is also important to note that the action for the free field is
+quadratic, and the kernel is diagonal in momentum space. Therefore the
+path integral for the free field is a simple extension of the Gaussian
+integrals that we have been discussing in previous lectures. We will
+use these previous results extensively. 
+
+The Gaussian integral can be computed by performing the {\em usual}
+shift of the integration variables
+\[
+  \tilde{\chi}(p) = \tphi(p) + \frac{\tj(p)}{p^2-m^2+i\epsilon}\, ,
+\]
+so that
+\begin{align}
+  S_0[\chi] = 
+  \frac12 \int_p \bigg\{
+  \tchi(-p) \left[p^2-m^2+i\epsilon\right] \tchi(p)
+  + \tj(-p) \frac{1}{p^2-m^2+i\epsilon} \tj(p)
+  \bigg\} \,.
+\end{align}
+Up to a normalization factor
+\begin{align}
+  Z_0[J] &\propto \exp \frac{i}{2} \int_p \tj(-p)
+           \frac{1}{p^2-m^2+i\epsilon} \tj(p) \\
+  &= \exp \frac{i}{2} \int d^Dx d^Dx'\,  J(x) \Delta(x,x') J(x') \, ,
+\end{align}
+where
+\begin{align}
+  \Delta(x,x') = \Delta(x-x') = 
+  \int_p e^{-i p\cdot (x-x')} \frac{1}{p^2-m^2+i\epsilon}\, .
+\end{align}
+You can easily verify that $\Delta=K^{-1}$, \ie
+\begin{align}
+  \int d^Dz \, K(x,z) \Delta(z,x') = \delta(x-x')\, .
+\end{align}
+$\Delta$ is called the {\em Feynman propagator}.
+
+Following our previous derivations for Gaussian integrals and QM, you
+can show that
+ \begin{align}
+   \bra{0} T \phi(x_1) \phi(x_2) \ket{0}_0 &= 
+   \left(\frac{1}{i} \frac{\delta}{\delta J(x_1)}\right)
+   \left(\frac{1}{i} \frac{\delta}{\delta J(x_2)}\right)
+   Z_0[J]\Big|_{J=0} \\ 
+   &= \frac{1}{i} \Delta(x_1-x_2)\, .
+ \end{align}
+Further correlators are obtained by taking further more derivatives
+\begin{align}
+  \bra{0} T \phi(x_1) \ldots \phi(x_n) \ket{0}_0 
+  &= 
+    \left(\frac{1}{i} \frac{\delta}{\delta J(x_1)}\right)
+    \ldots
+    \left(\frac{1}{i} \frac{\delta}{\delta J(x_n)}\right)
+    Z_0[J]\Big|_{J=0} \, .
+\end{align}
+They can be computed in the free theory using Wick's theorem, again
+following the arguments we used for Gaussian integrals: 
+\begin{align}
+  \bra{0} T \phi(x_1) \phi(x_2) \phi(x_3) 
+  &\phi(x_4) \ket{0}_0 
+    = \frac{1}{i^2} \left[
+    \Delta(x_1-x_2) \Delta(x_3-x_4) + \right. \nonumber \\
+  & \left. + \Delta(x_1-x_2) \Delta(x_3-x_4) + 
+    \Delta(x_1-x_2) \Delta(x_3-x_4)
+    \right]\, .
+\end{align}
+
+\section{Interacting theory}
+\label{sec:interacting-theory}
+
+Let us now add an interaction term in the lagrangian:
+\begin{align}
+  \mathcal{L}\left(\phi(x)\right) = 
+  \mathcal{L}_0\left(\phi(x)\right) + V\left(\phi(x)\right)\, .
+\end{align}
+We are going to consider several examples, \eg
+\begin{align}
+  V\left(\phi(x)\right) = \frac{1}{3!} g \phi(x)^3\, .
+\end{align}
+What is the dimension of the coupling $g$ as a function of $D$?
+
+Denoting by $S_0[\phi]$ the action of the free theory, we can write
+the path integral for the interacting theory
+\begin{align}
+  Z[J] = \braket{0}{0}_J = \int \mathcal{D}\phi\, 
+  \exp\Bigg\{i \left( S_0[\phi] + \int d^Dx\,  V\left(\phi(x)\right) 
+  + J \cdot \phi \right) \Bigg\}\, .
+\end{align}
+By performing the same manipulations that we discusssed for 
+gaussian integrals we obtain
+\begin{align}
+  Z[J] &= \exp \Bigg\{i \int d^Dx\,  
+         V\left(\frac{1}{i}\frac{\delta}{\delta J(x)}\right) \Bigg\}\, 
+         \int \mathcal{D}\phi\, 
+         \exp\Bigg\{i \left( S_0[\phi]  
+         + J \cdot \phi \right) \Bigg\} \\
+       &= \exp \Bigg\{i \int d^Dx\,  
+         V\left(\frac{1}{i}\frac{\delta}{\delta J(x)}\right) \Bigg\}\, 
+         Z_0[J]\, .
+\end{align}
+A useful expression is obtained by expanding both exponentials
+\begin{align}
+  Z[J] \propto 
+  \sum_{V=0}^\infty & \frac{1}{V!} \left[
+                      \frac{i g}{3!} \int d^Dx\, 
+                      \left(\frac{1}{i}\frac{\delta}{\delta J(x)}\right)^3
+                      \right]^V \times \\
+  \label{eq:DoubleExpExp}
+                    & \sum_{P=0}^\infty \frac{1}{P!} \left[
+                      \frac{i}{2} \int d^Dy\, d^Dz\, 
+                      J(y) \Delta(y-z) J(z)
+                      \right]^P
+\end{align}
+Consider now the contribution for fixed values of $P$ and $V$, we are
+left with $E=2P-3V$ sources. Let us look at the details that enter in
+this contribution. 
+\begin{itemize}
+\item the overall factor of '$i$': 
+  \begin{align}
+    i^V \left(\frac{1}{i}\right)^{3V} i^P = i^{P-2V} = i^{E-P+V}\, .
+  \end{align}
+\item derivatives acting on sources: 
+  \begin{align}
+    \frac{(2P)!}{E!}\ \mathrm{combinations}\, .
+  \end{align}
+\end{itemize}
+Many contractions yield the same result, which we will represent again
+using a diagrammatic representation. 
+\begin{itemize}
+\item Propagators, $\Delta(x-y)$, are
+  represented by a line connecting the points $x$ and $y$. 
+  \begin{equation}
+    \label{eq:DeltaXYFeynDiag}
+    \frac{1}{i}\Delta(x-y) = 
+    \begin{tikzpicture}[baseline={([yshift=1.4ex]current bounding box.center)}]
+      \begin{feynman}[inline=(a)]
+        \vertex (a);
+        \vertex (b);
+        \diagram {
+          a -- b,
+        };
+        \vertex [below=0.2em of a] {\(_{x}\)};  
+        \vertex [below=0.2em of b] {\(_{y}\)};  
+      \end{feynman}
+    \end{tikzpicture}\, .
+  \end{equation}
+  External sources are represented with a solid dot at the end of a
+  line. Note that the solid dot includes the integration over $x$. 
+  \begin{equation}
+    \label{eq:CurrentXFeynDiag}
+    i \int d^Dx\, J(x) = 
+    \begin{tikzpicture}[baseline={([yshift=0.2ex]current bounding box.center)}]
+      \begin{feynman}[inline=(a)]
+        \vertex (a);
+        \vertex (b);
+        \diagram {
+          a [dot] -- b,
+        };
+        \vertex [below=0.7em of a] {\(_{x}\)};  
+        % \vertex [below=0.2em of b] {\(y\)};  
+      \end{feynman}
+    \end{tikzpicture}\, .
+  \end{equation}
+\item Interactions are represented as three-prong vertices, again
+  including the integration over x.
+  \begin{equation}
+    \label{eq:VertXFeynDiag}
+    i g \int d^Dx\,  = 
+    \begin{tikzpicture}[baseline={([yshift=0.2ex]current bounding box.center)}]
+      \begin{feynman}[small, inline=(v)]
+        \vertex (v);
+        \vertex [above=of v](i1);
+        \vertex [below right=of v](i2); 
+        \vertex [below left=of v](i3); 
+        \diagram {
+          (i1) -- (v),
+          (v) -- (i2),
+          (v) -- (i3),
+        };
+      \end{feynman}
+    \end{tikzpicture}\, .
+  \end{equation}  
+\end{itemize}
+We can then count the number of contractions that yield a particular
+diagram, \ie. a particular contribution. Assuming that there is no
+symmetry in the structure of the diagram, we have the following
+possibilities. 
+\begin{itemize}
+\item permutations of the functional derivatives: $(3!)^V$;
+\item permutations of the vertices: $V!$;
+\item permutations of the sources at the end of propagators: $2^P$;
+\item permutations of propagators: $P!$.
+\end{itemize}
+These factors match {\em exactly} the ones that appear in the
+expansions of the exponentials above. So in the absence of any
+symmetry in the diagram, each diagram contributes to
+Eq.~(\ref{eq:DoubleExpExp}) multiplied by a factor of 1. However, this
+procedure results in a double counting of the possible contributions
+if there are symmetries in the structure of the diagram, \ie if a
+permutation of derivatives results in the same operations as a
+permutation of the sources. 
+
+\bigskip
+
+\noindent
+{\bf Example:} let us consider the case $P=2$, $V=1$, and hence
+$E=4-3=1$. The term in the double expansion is
+\begin{align}
+  \frac{i g}{3!} \int d^Dx\, 
+  & \left(\frac{1}{i}\frac{\delta}{\delta J(x)}\right)
+    \left(\frac{1}{i}\frac{\delta}{\delta J(x)}\right)
+    \left(\frac{1}{i}\frac{\delta}{\delta J(x)}\right)\,
+    \frac{1}{2!} \frac{i}{2}\, 
+    \int d^Dy_1\, d^Dz_1\, J(y_1) \Delta(y_1-z_1) J(z_1) \nonumber \\  
+  & \times \int d^Dy_2\, d^Dz_2\, J(y_2) \Delta(y_2-z_2) J(z_2)\, .
+\end{align}
+It can be rewritten as 
+\begin{align}
+  g \frac{1}{3! \times 2! \times 2 \times 2}\, 
+  & \int d^Dx\, d^Dy_1\, d^Dz_1\, d^Dy_2\, d^Dz_2\, 
+    \Delta(y_1-z_1) \Delta(y_2-z_2) \times \nonumber \\
+  & \times \left(\frac{\delta}{\delta J(x)}\right)
+    \left(\frac{\delta}{\delta J(x)}\right)
+    \left(\frac{\delta}{\delta J(x)}\right)\,
+    J(y_1) J(z_1) J(y_2) J(z_2)\, .
+\end{align}
+We are going to count the possible contractions in two different ways. 
+\begin{enumerate}
+\item Just counting: there are 4 possible choice to decide which $J$
+  is not paired with a derivative. Then there are $3!$ possible ways
+  of pairing the derivatives with the three $J$s. The derivatives
+  acting on the $J$s produce Dirac deltas, which we use to evaluate
+  some of the integrals. The final result is
+  \begin{align}
+    g & \frac{1}{3! \times 2! \times 2 \times 2}\, 4 \times 3! 
+    \int d^Dx\, d^Dw\,  J(w) \Delta(w-x) \Delta(x-x) = \nonumber \\
+    \label{eq:IntWithSymFactOne}
+      & = g \frac12 \int d^Dx\, d^Dw\, J(w) \Delta(w-x) \Delta(0)\, .
+  \end{align}
+The integral can be represented diagrammatically as
+\begin{equation}
+  \begin{tikzpicture}[baseline={([yshift=0.2ex]current bounding box.center)}]
+    \begin{feynman}
+      \vertex (a);
+      \vertex (b);
+      \diagram {
+        a [dot] -- b -- [out=45, in=-45, loop, min distance=2cm] b,
+      };
+      \vertex [below=0.7em of a] {\(_{w}\)};  
+      \vertex [below=0.2em of b] {\(_{x}\)};  
+    \end{feynman}
+  \end{tikzpicture}
+\end{equation}
+Note that there is one source left in the integral, corresponding to
+$E=1$, and hence one external 'dot' in the diagram. 
+\item Let us now try to figure out the symmetry factor by working out
+  the double counting in the general argument spelled out above. In
+  that counting, swapping derivatives and swapping the ends of a
+  propagator have been counted as distinct operations. However you can
+  check that in this particular example swapping \eg $J(y_1)$ and
+  $J(z_1)$ is equivalent to swapping the two derivatives that act on
+  the currents. Hence, in order to take into account this double
+  counting, we need to divide the integral that is
+  represented by the diagram by a symmetry factor $S=2$, which
+  precisely the factor of $1/2$ that appears in front of the integral
+  in Eq.~(\ref{eq:IntWithSymFactOne}).
+\end{enumerate}
+
+\bigskip
+
+\noindent {\bf Another example:} let us now take $P=3$ and $V=2$. The
+number of external legs is $E=2\times 3 - 3 \times 2=0$. The overall
+factor of i is $i^{P-2V}=-i$. The terms appearing in the expansion
+are: 
+\begin{align}
+  \frac{1}{2!} 
+  & g^2\, \frac{1}{(3!)^2} \frac{1}{2^3}\, 
+    \int d^Dx_1\, d^Dx_2\, d^Dy_1\, d^Dz_1\, d^Dy_2\, d^Dz_2\,
+    d^Dy_3\, d^Dz_3\, %\nonumber \\
+  \Delta(y_1-z_1) \Delta(y_2-z_2) \Delta(y_3-z_3) \times
+  \nonumber \\
+  & \times \left(\frac{\delta}{\delta J(x_1)}\right)^3
+    \left(\frac{\delta}{\delta J(x_2)}\right)^3
+    J(y_1) J(z_1) J(y_2) J(z_2) J(y_3) J(z_3) \, .
+\end{align}
+Let us focus on the contractions that yield the following diagrammatic
+representation
+\begin{equation}
+  \begin{tikzpicture}[baseline={([yshift=0.2ex]current bounding box.center)}]
+    \begin{feynman}
+      \vertex (a);
+      \vertex (b);
+      \diagram {
+        a -- [out=120, in=-120, loop, min distance=2cm] a -- b -- [out=60, in=-60, loop, min distance=2cm] b,
+      };
+      \vertex [below=0.2em of a] {\(_{x}\)};  
+      \vertex [below=0.2em of b] {\(_{x'}\)};  
+    \end{feynman}
+  \end{tikzpicture} 
+\end{equation} 
+and let us try to work out the
+combinatorial factor in two ways. 
+\begin{enumerate}
+\item Just counting: we need to pair each of the sources in the
+  integrand with one of the derivatives. Starting from $y_1$ we have
+  2 ways of choosing which group of derivatives to use, then 3 choices
+  for picking one derivative. The source in $z_1$ then needs to couple
+  with the one the remaining derivatives in the same group, so there
+  are 2 choices. The three remaining sources need then to be paired
+  with the three remaining derivatives, for which there are $3\times
+  2$ choices. Hence we obtain
+  \begin{align}
+    g^2 \frac{1}{2^3} \int d^Dx d^Dx' \Delta(0)^2 \Delta(x-x')\, .
+  \end{align}
+\item Symmetry factor: swapping the ends of the propagator that
+  appears as a loop closing at $x$ is equivalent to swapping two
+  derivatives at $x$, which yields a factor of 2; swapping the ends of
+  the propagator that appears as a loop closing at $x'$ is equivalent
+  to swapping two derivatives at $x'$, which yields another factor of
+  2; and finally swapping the ends of the propagator from $x$ to $x'$
+  is equivalent to swapping the two groups of three derivatives, which
+  yields yet another factor of 2. Hence in total we have $S=2^3$,
+  which is consistent with the result above. 
+\end{enumerate}
+
+The only way to get these things right is by practicing -- a lot. There are
+plenty of examples in Srednicki's book! We should try them together,
+maybe in a tutorial. 
+
+\section{Disconnected diagrams}
+\label{sec:disc-diagr}
+
+A disconnected diagram is made of the product of several connected
+pieces. We denote by $C_I$ the contribution of a given connected
+region, including its symmetry factor, and $D$ the total contribution
+of the diagram. Then
+\begin{equation}
+  \label{eq:TotDiscDiag}
+  D = \frac{1}{S_D} \prod_I \left(C_I\right)^{n_I}\, ,
+\end{equation}
+where $n_I$ is the number of times that the subdiagram $C_I$ appears.
+In order to evaluate properly the contribution of the total
+disconnected diagram we need to evaluate $S_D$, \ie find out the
+possible double counting that is left after the symmetry factors of
+each connected subdiagram has been worked out. The only residual
+symmetry that is left in the total diagram comes from the exchange of
+{\em all} propagators and vertices amongst different but identical
+connected subdiagrams. The symmetry factor can be readily evaluated
+\begin{equation}
+  \label{eq:OverallSymFact}
+  S_D = \prod_I n_I!\, .
+\end{equation}
+We now have all the ingredients to write the sum of diagrams that
+contribute to the generating functional:
+\begin{align}
+  \label{eq:GenFuncSum}
+  Z[J] &= \sum_{\{n_I\}} D(\{n_I\}) 
+  \propto \sum_{\{n_I\}} \prod_I \frac{1}{n_I!} \left(C_I\right)^{n_I}
+  \\
+       &= \prod_I \left\{ \sum_{n_I=0}^\infty \frac{1}{n_I!}
+         \left(C_I\right)^{n_I}\right\} \\
+       &= \exp\left\{\sum_I C_I\right\}\, ,
+\end{align}
+which shows that $\log Z[j]$ is the sum of all connected diagrams.
+
+We can now address the issue of the normalization of $Z[J]$. We can
+request that $Z[0]=1$, or equivalently define
+\begin{equation}
+  \label{eq:NormGenFunc}
+  \frac{Z[J]}{Z[0]} = \exp\left\{ 
+    i W[J]
+    \right\}\, ,
+\end{equation}
+where 
+\begin{equation}
+  \label{eq:ConnectGenerator}
+  i W[J] = \sum_I{\vphantom{\sum}}' C_I\, , 
+\end{equation}
+and the prime in the sum indicates that we do not include the vacuum
+diagrams in the sum, \ie the diagrams with $E=0$.

@@ -1,0 +1,65 @@
+\documentclass[11pt,twoside]{report}
+
+ \include{Init}
+
+\makeindex
+
+\begin{document}
+
+\title{Quantum Field Theory}
+\author{L. Del Debbio, University of Edinburgh \\
+  Version 0.1}
+
+\pagenumbering{roman}
+\maketitle
+\clearemptydoublepage
+\tableofcontents
+\clearemptydoublepage
+
+\pagenumbering{arabic}
+
+\chapter{Introductory Thoughts}
+\label{chap:intro}
+\include{Sections/intro}
+
+\chapter{Gaussian Integrals}
+\label{chap:lec0}
+\include{Sections/lecture0}
+
+\chapter{Path Integrals in QM}
+\label{chap:lec1}
+\include{Sections/lecture1}
+
+\chapter{Path Integrals for Scalar Fields}
+\label{cha:path-integr-scal}
+\include{Sections/ScalarPI}
+
+\chapter{Path Integrals for Fermion Fields}
+\label{cha:path-integr-ferm}
+
+\chapter{Path Integrals for Gauge Fields}
+\label{cha:path-integrals-gauge}
+
+\chapter{Divergences I - the Scalar Propagator}
+\label{cha:divergences-i-scalar}
+
+\chapter{Divergences II - the Vertex Function}
+\label{cha:diverg-ii-vert}
+
+\chapter{Renormalization}
+\label{cha:renormalization}
+\include{Sections/Renorm}
+
+\chapter{Renormalization Group}
+\label{cha:renorm-group}
+
+\chapter{Scales - Decoupling}
+\label{cha:scales-decoupling}
+
+\printindex
+\end{document}
+
+%%% Local Variables:
+%%% mode: latex
+%%% TeX-master: t
+%%% End:

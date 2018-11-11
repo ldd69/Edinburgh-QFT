@@ -1,0 +1,494 @@
+\newcommand{\epsstep}{\left(e^{-i \hat{H} \epsilon}\right)}
+
+\section{Preliminaries}
+\label{sec:preliminaries-1}
+
+In this lecture we introduce Path Integrals in the context of
+QM. Despite the simpler setting (QM compared to QFT), all the
+important features of Path Integrals will be discussed. We consider a
+point particle in one-dimension, and denote by $\hat{Q}$ the position
+operator, and by $\ket{q}$ the eigenstate corresponding to the eigenvalue
+$q$:
+\begin{equation}
+  \label{eq:QEigen}
+  \hat{Q} \ket{q} = q \ket{q}\, .
+\end{equation}
+The completeness condition for the states $\ket{q}$ is
+\begin{equation}
+  \label{eq:qComplete}
+  \int dq\, \ket{q}\bra{q} = 1\, .
+\end{equation}
+The aim of this section is to find an expression for the quantum
+amplitude $\braket{q't'}{qt}$ for a system in state $\ket{q}$ at time
+$t$ to evolve in state $\ket{q'}$ at time $t'$,
+\begin{equation}
+  \label{eq:AmplitudeDef}
+  \braket{q't'}{qt} = \langle q' | e^{-i \hat{H} (t'-t)}|q\rangle\, ,
+\end{equation}
+where $\hat{H}$ is the Hamiltonian of the system. 
+
+\section{Setting Up the Path Integral}
+\label{sec:setting-up-path}
+
+In order to proceed with the calculation, let us define $T=t'-t$ to be
+the size of the time interval, and $\epsilon=T/n$, where $n$ is an
+integer. Then 
+\begin{align}
+  t_0 &= t \\
+  t_k &= t_0 = k \epsilon, \quad \text{for}\ k=1, \ldots, n-1 \\
+  t_n &= t + n \epsilon = t'\, .
+\end{align}
+\begin{align}
+  \langle q' | e^{-i \hat{H} (t'-t)}|q\rangle &= 
+                 \langle q' | e^{-i \hat{H} T} | q\rangle \\
+               &= \langle q' | \left(e^{-i \hat{H} \epsilon}\right)
+                 \ldots \left(e^{-i \hat{H} \epsilon}\right) |
+                 q\rangle\, ,
+\end{align}
+where the expression in the second line contains $n$ factors. 
+
+Inserting the completeness relation $n-1$ times,
+\begin{align}
+  \label{eq:AmplitudeStepOne}
+  \braket{q't'}{qt} = \int \prod_{k=1}^{n-1}dq_k\,
+  \langle q' | \left(e^{-i \hat{H} \epsilon}\right) |q_{n-1}\rangle
+  \langle q_{n-1} | \left(e^{-i \hat{H} \epsilon}\right) |
+  q_{n-2}\rangle \ldots \langle q_1 | \left(e^{-i \hat{H}
+  \epsilon}\right) | q\rangle\, .
+\end{align}
+For small $\epsilon$ we can expand the exponential to first order and
+evaluate the matrix elements:
+\begin{align}
+  e^{-i \hat{H} \epsilon} &= 1 - i \hat{H} \epsilon + O(\epsilon^2)\\
+\hat{H} &= \frac12 \hat{P}^2 + V(\hat{Q})\, ,
+\end{align}
+From the potential energy we get
+\begin{align}
+  \langle q_k | V(\hat{Q}) | q_{k-1}\rangle &= V(q_{k-1}) \langle q_k
+                                              | q_{k-1} \rangle \\
+                                            &= V\left(\frac{q_k +
+                                              q_{k-1}}{2}\right)
+                                              \delta(q_k-q_{k-1}) \\
+                                            & = \int \frac{dp}{2\pi} V\left(\frac{q_k +
+                                              q_{k-1}}{2}\right) 
+                                              e^{ip (q_k-q_{k-1})}
+\end{align}
+In order to evaluate the contribution of the kinetic term, we
+introduce eigenstates of the momentum operator $\ket{p}$
+\begin{align}
+  \hat{P} \ket{p} = p \ket{p} \\
+  \braket{q}{p} = e^{ipq}\, ,
+\end{align}
+and use the completeness of the states $\ket{p}$:
+\begin{align}
+  \langle q_k | \hat{P}^2 | q_{k-1}\rangle = 
+  \int \frac{dp}{2\pi}\, p^2 e^{ip(q_k-q_{k-1})}\, .
+\end{align}
+Hence
+\begin{align}
+  \langle q_k | e^{-i\hat{H}\epsilon} | q_{k-1}\rangle = 
+  \int \frac{dp}{2\pi}\, \exp\left\{i\epsilon \left[
+  p \frac{q_k-q_{k-1}}{\epsilon} - H\left(p,\tilde{q}\right)
+  \right]
+  \right\} + O(\epsilon^2)\, ,
+\end{align}
+where $\tilde{q}=\frac{q_k-q_{k-1}}{2}$. Therefore
+\begin{align}
+  \braket{q't'}{qt} =& \lim_{n\to\infty} \int \prod_{k=1}^{n-1}dq_k\, 
+  \prod_{j=1}^{n} \frac{dp_j}{2\pi}\, \times \\
+  &\times \exp \left\{
+    i\epsilon \sum_{m=1}^{n} \left[
+    p_m \frac{q_m-q_{m-1}}{\epsilon} - H\left(p_m, 
+    \frac{q_m+q_{m-1}}{2}\right)
+    \right]
+    \right\}\, ,
+\end{align}
+where $q_0 = q$, and $q_n = q'$. The limit above defines the {\em
+  path integral} evaluation of the quantum amplitude, which we denote 
+\begin{align}
+  \label{eq:PathIntDefZero}
+  \braket{q't'}{qt} = 
+  \int \mathcal{D}q \mathcal{D}p \exp \left\{
+  i \int_t^{t'} d\tau\, \left[
+  p \dot{q} - H(p,q)
+  \right]
+  \right\}\, .
+\end{align}
+
+\section{Quadratic P dependence}
+\label{sec:quadr-kinet-term}
+
+For hamiltonians like the one above, \ie hamiltonians that are only
+quadratic in the momentum $\hat{P}$, the expression above can be
+simplified by performing the integral over the momenta $p_j$:
+\begin{align}
+  \int \frac{dp}{2\pi}\, \exp\left\{
+  i\epsilon\left[
+  p \left(\frac{q_k-q_{k-1}}{\epsilon}\right) - \frac12 p^2
+  \right]
+  \right\} = \left(2\pi i \epsilon\right)^{-1/2}\,
+  \exp\left\{i\epsilon
+  \frac12\left(\frac{q_k-q_{k-1}}{\epsilon}\right)^2\right\}\, .
+\end{align}
+Using this result, we can rewrite the path integral in
+\Eqref{eq:PathIntDefZero} as
+\begin{align}
+  \label{eq:PathIntDefOne}
+  \braket{q't'}{qt} = \lim_{n\to\infty}
+  \left(2\pi i \epsilon\right)^{-n/2}\,
+  \int \prod_{k=1}^{n-1}dq_k\, 
+  \exp \left\{
+  i \epsilon \sum_{m=1}^{n}
+  \, \left[
+  \frac12 \left(\frac{q_m-q_{m-1}}{\epsilon}\right)^2
+  -V\left(\frac{q_m+q_{m-1}}{2}\right)
+  \right]
+  \right\}\, .
+\end{align}
+Assuming that the limit exists, we have obtained the definition of the
+path integral as an integral over the position of the system only: 
+\begin{align}
+  \label{eq:PathIntDef}
+  \braket{q't'}{qt} = 
+  \int_{q,q'} \mathcal{D}q \exp \left\{
+  i \int_t^{t'} d\tau\,  \mathcal{L}(q,\dot{q})
+  \right\}\, ,
+\end{align}
+where $\mathcal{L}$ is the lagrangian of the system. Note that the
+suffix of the integral keeps track of the initial- and final-state
+configurations $q$ and $q'$. 
+
+\section{Correlators}
+\label{sec:correlators}
+
+We are now going to work out expressions for the matrix element of the
+position operator inbetween the initial and final state considered
+above. 
+
+\subsection{One-point Function}
+\label{sec:one-point-function}
+
+The first example that we are going to consider is the matrix element
+\begin{align}
+  \label{eq:OnePtDef}
+  \langle q't' | \hat{Q}(\bar{t}) | q t\rangle = 
+  \langle q' | e^{-i \hat{H}(t'-t)} \hat{Q} e^{-i \hat{H}(\bar{t}-t)}
+  | q\rangle\, ,
+\end{align}
+where we assume $t<\bar{t}<t'$, and we have used
+\begin{equation}
+  \label{eq:HeisenOpEvol}
+  \hat{Q}(t) = e^{i\hat{H} t} \hat{Q} e^{-i\hat{H} t}\, .
+\end{equation}
+Proceeding as we did in the previous section, we can write
+\begin{align}
+  \label{eq:CorrOne}
+  \langle q't' | \hat{Q}(\bar{t}) | q t\rangle = 
+  \bra{q'} \epsstep \ldots \epsstep \hat{Q} \epsstep \ldots
+  \epsstep \ket{q}\, ,
+\end{align}
+where we assumed that $\bar{t}=t_k$, and the first and second ellipses
+denote respectively $(n-k)$, and $k$ factors of $\epsstep$. Performing
+the same manipulations as before we obtain
+\begin{align}
+  \langle q't' | \hat{Q}(\bar{t}) | q t\rangle =& 
+  \lim_{n\to\infty} \int \prod_{k=1}^{n-1}dq_k\, 
+  \prod_{j=1}^{n} \frac{dp_j}{2\pi}\, q_k \times \\
+  &\times \exp \left\{
+    i\epsilon \sum_{m=1}^{n} \left[
+    p_m \frac{q_m-q_{m-1}}{\epsilon} - H\left(p_m, 
+    \frac{q_m+q_{m-1}}{2}\right)
+    \right]
+    \right\}\, .
+\end{align}
+Note that now there is an extra factor of $q_k$ in the integrand,
+corresponding to the insertion of the operator $\hat{Q}(\bar{t})$. The
+limit above  is denoted
+\begin{align}
+  \langle q't' | \hat{Q}(\bar{t}) | q t\rangle &= 
+  \int \mathcal{D}q \mathcal{D}p \, q(\bar{t}) 
+  \exp \left\{
+  i \int_t^{t'} d\tau\, \left[
+  p \dot{q} - H(p,q)
+  \right]
+  \right\}\\
+&= \int_{qq'} \mathcal{D}q \, q(\bar{t}) 
+  \exp \left\{
+  i \int_t^{t'} d\tau\, \mathcal{L}(q,\dot{q})
+  \right\}\, .
+\end{align}
+
+\subsection{Two-point function}
+\label{sec:two-point-function}
+
+Let us now consider the slightly more complicated case of the matrix
+element of the product of two position operators
+\begin{align}
+  \label{eq:TwoPtDef}
+  \bra{q't'} \hat{Q}(\bar{t}_1) \hat{Q}(\bar{t}_2)\ket{qt}\, , 
+\end{align}
+where now we assume $\bar{t}_1=t_k$, $\bar{t}_2=t_\ell$,
+$t<\bar{t}_2<\bar{t}_1<t'$. We can write this correlator as:
+\begin{align}
+    \bra{q't'} \hat{Q}(\bar{t}_1) \hat{Q}(\bar{t}_2)\ket{qt} = 
+  \bra{q'} \epsstep \dots \hat{Q} \ldots \hat{Q} \ldots \epsstep
+  \ket{q}\, ,
+\end{align}
+where the three ellipses here denote respectively $(n-k)$, $(k-\ell)$,
+and $\ell$ factors of $\epsstep$. Proceeding exactly as above yields: 
+\begin{align}
+  \label{eq:TwoPtPathInt}
+  \bra{q't'} \hat{Q}(\bar{t}_1) \hat{Q}(\bar{t}_2)\ket{qt} = 
+  \int_{qq'} \mathcal{D}q\, q(\bar{t}_1) q(\bar{t}_2) 
+  \exp \left\{
+  i \int_t^{t'} d\tau\, \mathcal{L}(q,\dot{q})
+  \right\}\, .
+\end{align}
+
+There is a subtlety here that it is worth noting. The ordering of
+times in \Eqref{eq:TwoPtDef} matters, while it clearly does not in the
+RHS of \Eqref{eq:TwoPtPathInt} where $q(\bar{t}_1)$ and $q(\bar{t}_1)$
+are just integration variables. If $\bar{t}_2>\bar{t}_1$, then the RHS
+of \Eqref{eq:TwoPtPathInt} corresponds to
+\begin{align}
+  \bra{q't'} \hat{Q}(\bar{t}_2) \hat{Q}(\bar{t}_1) \ket{qt}\, .
+\end{align}
+Both results can be summarised as
+\begin{align}
+  \label{eq:TOrderPathInt}
+  \bra{q't'} T\left(\hat{Q}(\bar{t}_1) \hat{Q}(\bar{t}_2)
+  \right)\ket{qt} = 
+  \int_{qq'} \mathcal{D}q\, q(\bar{t}_1) q(\bar{t}_2) 
+  \exp \left\{
+  i \int_t^{t'} d\tau\, \mathcal{L}(q,\dot{q})
+  \right\}\, ,
+\end{align}
+where we have introduced the T-ordered product of operators: 
+\begin{align}
+  \label{eq:TOrderDef}
+   T\left(\hat{Q}(t) \hat{Q}(t')\right) = \theta(t-t') \hat{Q}(t)
+  \hat{Q}(t') + \theta(t'-t) \hat{Q}(t') \hat{Q}(t)\, .
+\end{align}
+
+You can easily verify that the derivation can be extended to
+an arbitrary number of insertions of the operator $\hat{Q}$:
+\begin{align}
+\label{eq:TOrderNPt}
+\bra{q't'} T\left(\hat{Q}(\bar{t}_1) \ldots \hat{Q}(\bar{t}_n)
+  \right)\ket{qt} = 
+  \int_{qq'} \mathcal{D}q\, q(\bar{t}_1) \ldots q(\bar{t}_n) 
+  \exp \left\{
+  i \int_t^{t'} d\tau\, \mathcal{L}(q,\dot{q})
+  \right\}\, .
+\end{align}
+
+\section{Generating functional}
+\label{sec:gener-funct}
+
+\subsection{Functional derivative}
+\label{sec:funct-deriv}
+
+Consider a functional $F$ that associates a number, which we denote
+$F[u]$, to a given function $u(x)$. The functional derivative
+describes the change of the functional to an infinitesimal variation
+of the function $u$: 
+\[
+  u(x) \mapsto u(x) + \delta u(x)\, .
+\]
+We define
+\begin{equation}
+  \label{eq:FuncDer}
+  \delta F = F[u+\delta u] - F[u] = \int dx\, \frac{\delta F}{\delta
+    u(x)} \delta u(x)\, .
+\end{equation}
+You can see the analogy to the case of a function of several
+variables, where the variation to a change $\delta x_k$ in the
+variables is given by
+\begin{equation}
+  \label{eq:NormDer}
+  \delta F = F(x+\delta x) - F(x) = \sum_k \frac{\partial F}{\partial
+    x_k} \delta x_k\, .
+\end{equation}
+In particular we have
+\begin{equation}
+  \label{eq:DiracDelta}
+  \frac{\delta}{\delta f(x)} f(y) = \delta(x-y)\, , 
+\end{equation}
+again to be compared with its discrete analogue
+\begin{equation}
+  \label{eq:KroneckerDelta}
+  \frac{\partial}{\partial x_j} x_i = \delta_{ij}\, .
+\end{equation}
+
+\subsection{Sources in the path integral}
+\label{sec:sourc-path-integr}
+
+Let $f(t)$ and $h(t)$ be two functions, we can add so-called source
+terms to the path integral, and define
+\begin{equation}
+  \label{eq:PathIntegralSources}
+  \braket{q't'}{qt}_{f,h} = \int \mathcal{D}p \mathcal{D}q\,\exp 
+  \left\{
+    i \int_{t}^{t'} d\tau \left[
+      p(\tau) \dot{q}(\tau) - H(p(\tau),q(\tau)) + f(\tau) q(\tau) +
+      h(\tau) p(\tau)
+      \right]
+  \right\}\, .
+\end{equation}
+Taking functional derivatives with respect to the source fields yields
+e.g.
+\begin{align}
+  \left(\frac{1}{i} \frac{\delta}{\delta f(\bar\tau)} \right)&
+  \braket{q't'}{qt}_{f,h} = \nonumber \\
+  =&\int \mathcal{D}p \mathcal{D}q\,
+  q(\bar{\tau})\,
+  \exp \left\{
+  i \int_{t}^{t'} d\tau \left[
+  p(\tau) \dot{q}(\tau) - H(p(\tau),q(\tau)) + f(\tau) q(\tau) +
+  h(\tau) p(\tau)
+  \right]
+  \right\}\, ,
+\end{align}
+\begin{align}
+  \left(\frac{1}{i} \frac{\delta}{\delta f(\bar\tau_1)} \right)&
+  \left(\frac{1}{i} \frac{\delta}{\delta f(\bar\tau_2)} \right)
+  \braket{q't'}{qt}_{f,h} = \nonumber \\
+  =&\int \mathcal{D}p \mathcal{D}q\,
+  q(\bar{\tau}_1) q(\bar{\tau}_2)\,
+  \exp \left\{
+  i \int_{t}^{t'} d\tau \left[
+  p(\tau) \dot{q}(\tau) - H(p(\tau),q(\tau)) + f(\tau) q(\tau) +
+  h(\tau) p(\tau)
+  \right]
+  \right\}\, , 
+\end{align}
+and similarly for the derivatives with respect to $h$ pulling down
+factors of $p$ in the integrand. 
+
+As we have seen in the previous section, we have
+\begin{align}
+  \bra{q't'}  T\left(
+  \hat{Q}(t_1)\ldots \hat{Q}(t_n) 
+  \right)
+  \ket{qt} =& \nonumber \\
+  =& \left(\frac{1}{i} \frac{\delta}{\delta f(t_1)} \right) \ldots
+    \left(\frac{1}{i} \frac{\delta}{\delta f(t_n)} \right)\,
+    \braket{q't'}{qt}_{f,h}\Bigg|_{f=h=0}\, .
+\end{align}
+
+\section{Projection onto the ground state}
+\label{sec:proj-onto-ground}
+
+It is useful to be able to compute the amplitude for the system to
+evolve from the vacuum state at time $t$ into the vacuum state at time
+$t'$ under the action of the external sources $f,h$. Having computed
+$\braket{q't'}{qt}$, the above amplitude is given by
+\begin{align}
+  \label{eq:VacToVacAmpl}
+  \braket{0,t'}{0,t} = 
+  \int dq dq'\, \phi_0(q')^*\, \braket{q't'}{qt}_{f,h}\, \phi_0(q)\, ,
+\end{align}
+where $\phi_0(q)=\braket{q}{0}$ is the wave function of the ground
+state, and $\ket{n}$ denote the eigenstates of the
+Hamiltonian. \Eqref{eq:VacToVacAmpl} yields the right amplitude, but
+requires the convolution of $\braket{q't'}{qt}$ with the ground state
+wave function. We shall now describe a procedure that allows the
+compute the vacuum-to-vacuum amplitude directly as a path integral. 
+
+The energy eigenstates are
+\begin{equation}
+  \label{eq:EnEigen}
+  \hat{H} \ket{n} = E_n \ket{n}\, ,
+\end{equation}
+and their wave functions are denoted as
+\begin{equation}
+  \label{eq:EnEigenFun}
+  \phi_n(q) = \braket{q}{n}\, .
+\end{equation}
+We assume that the vacuum energy vanishes, $E_0=0$. We want to
+evaluate the amplitude
+\begin{equation}
+  \label{eq:LargeQAmpl}
+  \braket{Q'T'}{QT}_{f,h}
+\end{equation}
+where the sources $h$ and $f$ have support in the interval $[t,t']$,
+with $T < t < t' < T'$. The sources behind switched off between $T$
+and $t$, we can readily compute
+\begin{align}
+  \braket{qt}{QT} &= \int \mathcal{D}q \mathcal{D}p \,
+                    \exp\left\{
+                    i \int_T^t d\tau\, \left[
+                    p \dot{q} - H(p,q)
+                    \right]
+                    \right\} \\
+  &= \bra{q} \exp\left[-i \hat{H} (t-T)\right] \ket{Q} \\
+  &= \sum_n \phi_n(q) \phi_n(Q)^* e^{-i E_n(t-T)}\, .
+\end{align}
+We can now analytically continue the result to $T_I=(1-i\epsilon)T$,
+and consider the limit $T\to -\infty$:
+\begin{align}
+  \lim_{T\to -\infty} \braket{qt}{QT_I} = \phi_0(q) \phi_0(Q)^*\, .
+\end{align}
+A similar result can be obtained for $\braket{Q'T'}{q't'}$. We can
+therefore write
+\begin{align}
+  \braket{Q'T'}{QT}_{f,h} = \int dq' dq\, \braket{Q'T'}{q't'} \braket{q't'}{qt}_{f,h}
+  \braket{qt}{QT}\, .
+\end{align}
+And therefore
+\begin{align}
+ \lim_{T'\to\infty,T\to -\infty} 
+\frac{\braket{Q', (1-i\epsilon)T'}{Q, (1-i\epsilon)T}_{f,h}}{\phi_0(Q)^* \phi_0(Q')} = 
+  \int dq dq'\, \phi_0(q')^* \braket{q't'}{qt}_{f,h} \phi_0(q)\, .
+\end{align}
+The expresson on the RHS is the vacuum-to-vacuum amplitude,
+$\braket{0,t'}{0,t}_{f,h}$, that we want to compute. The expression on
+the LHS is the limit of the path integral for $T\to\infty$,
+$T'\to\infty$. The only dependence on the boundary values $Q$ and $Q'$
+appears in the denominator on LHS: it is a normalization factor
+independent of $f$ and $h$, which disappears when taking derivatives
+with respect to the sources. Instead of analytically continuing to
+complex values of $T$ and $T'$, we can simply add an imaginary part to
+the Hamiltonian,
+\begin{equation}
+  \label{eq:ComplexTermHam}
+  \hat{H} \to (1-i\epsilon) \hat{H}\, .
+\end{equation}
+Taking the limit $T\to\infty$, $T'\to\infty$, we obtain the amplitude
+\begin{equation}
+  \label{eq:VacToVac}
+  \braket{0}{0}_{f,h} = \int \mathcal{D}p \mathcal{D}q \, \exp
+  \left\{
+    i \int_{-\infty}^\infty d\tau\, \Big[
+      p \dot{q} - (1-i\epsilon) H(p,q) + f q + h p 
+      \Big]
+  \right\}
+\end{equation}
+
+
+\section{Weyl ordering}
+\label{sec:weyl-ordering}
+
+If we are interested in more general Hamiltonians, with terms that
+involve products of $\hat{P}$ and $\hat{Q}$, then we need to give a
+prescription for the ordering of the operators in the Hamiltonian, so
+that the quantum mechanical amplitude is actually described by the
+path integral. 
+
+As discussed by Berezin in 1971, the mid-point prescription we adopted
+in \Eqref{eq:PathIntDefOne} is equivalent to the Weyl-ordering of the
+Hamiltonian. 
+
+The Weyl product of two operators $\hat{A}$ and $\hat{B}$ is defined
+by considering the operator $\left(\alpha \hat{A} + \beta
+  \hat{B}\right)^n$, and expanding it in powers of $\alpha$ and $\beta$: 
+\begin{equation}
+  \label{eq:WeylOrder}
+  \left(\alpha \hat{A} + \beta
+    \hat{B}\right)^n = \sum_k \frac{n!}{k! l!}\, 
+  \alpha^k \beta^l\, \left[\hat{A}^k
+    \hat{B}^l\right]\, .
+\end{equation}
+The quantity in the square bracket is the Weyl ordered product of
+$\hat{A}^k$ and $\hat{B}^l$. 
+

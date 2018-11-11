@@ -1,0 +1,34 @@
+;; RefTeX parse info file
+;; File: /Users/ldd/sync/ed/teach/MQFT/Course/Sections/Renorm.tex
+;; User: ldd (Luigi Del Debbio)
+
+(set reftex-docstruct-symbol '(
+
+
+(xr nil "\\\\\\\\\\\\")
+
+(index-tags)
+
+(is-multi nil)
+
+(bibview-cache)
+
+(master-dir . "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/")
+
+(label-numbers)
+
+(bof "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/Renorm.tex")
+
+(toc "toc" "    1 Regularization" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/Renorm.tex" nil 2 "1" "\\section{Regularization}" 2)
+
+("sec:regularization" "s" nil "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/Renorm.tex" nil "")
+
+(toc "toc" "    2 Renormalization schemes" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/Renorm.tex" nil 2 "2" "\\section{Renormalization schemes}" 55)
+
+("sec:renorm-schem" "s" nil "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/Renorm.tex" nil "")
+
+(toc "toc" "    1 Regularization" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/Renorm.tex" nil 2 "1" "\\section{Regularization}" 2)
+
+(eof "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/Renorm.tex")
+))
+
