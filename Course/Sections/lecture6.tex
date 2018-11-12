@@ -6,6 +6,7 @@
 \newcommand{\munu}{{\mu\nu}}
 \newcommand{\tDelta}{\tilde{\Delta}}
 \newcommand{\SProp}[1]{\frac{1}{#1^2-m^2+i\epsilon}}
+\newcommand{\ESProp}[2]{\frac{1}{\left(#1^2+m^2\right)^#2}}
 
 
 \section{A first look at divergences}
@@ -27,7 +28,7 @@ follow the following steps.
   unambiguous predictions. 
 \end{enumerate}
 
-\subsection{Scalar two-point function}
+\subsection{Two-point function in perturbation theory}
 \label{sec:scalar-two-point}
 
 Working in perturbation theory, we compute the two-point function
@@ -45,13 +46,302 @@ as a Taylor expansion in powers of the coupling constant
 As discussed before, the delta function in Eq.~\ref{eq:TwoPtMom}
 ensures momentum conservation. For all practical purposes, we should
 remember that it is there, and work on the perturbative expansion of
-the full propagator $\tilde{\Delta}_F(p)$:
+the full propagator 
 \begin{equation}
   \label{eq:PropMomPert}
   \tilde{\Delta}_F(p) = \sum_k g^k \tilde{\Delta}^{(k)}_F(p)\, .
 \end{equation}
 From our previous computations
 \begin{align}
-  g^2 \frac{1}{i} \tDelta_F^{(2)}(p)
-  &= -\frac{g^2}{2} \SProp{p}
+   \frac{1}{i} \tDelta_F^{(2)}(p)
+  &= -\frac{1}{2} \SProp{p} \left(\int \frac{d^D\ell}{(2\pi)^D}\,
+    \SProp{\ell} \SProp{(\ell-p)}\right) \times \nonumber \\
+  &\quad \times \SProp{p}\, .,
 \end{align}
+and therefore the $O(g^2)$ contribution to the correlator can be
+written as
+\begin{equation}
+  \label{eq:OneLoopPi}
+  \frac{1}{i} \tDelta(p) \left(i\Pi(p^2)\right) \frac{1}{i}
+  \tDelta(p)\, ,
+\end{equation}
+where
+\begin{equation}
+  \label{eq:PiFun}
+  i\Pi(p^2) = \frac{g^2}{2} \int  \frac{d^D\ell}{(2\pi)^D}\,
+  \SProp{\ell} \SProp{(\ell-p)}\, .
+\end{equation}
+
+\subsection{Evaluation of $\Pi(p^2)$}
+\label{sec:evaluation-pi}
+
+\paragraph{Feynman parameters}
+
+The product of propagators in Eq.~(\ref{eq:PiFun}) can be rewritten
+using Feynman parameters. The general formula
+\begin{align}
+  \frac{1}{A_1^{\alpha_1} \ldots A_n^{\alpha_n}}
+  = & \frac{\Gamma(\alpha_1+\ldots +\alpha_n)}{\Gamma(\alpha_1)\ldots
+      \Gamma(\alpha_n)}\, \int_0^1 dx_1\, x_1^{\alpha_1 -1} \ldots
+      \int_0^1 dx_n\, x_n^{\alpha_n -1} \nonumber \\
+    & \quad \times \delta\left(1-x_1-\ldots -x_n\right)\,
+      \frac{1}{\left(\alpha_1 A_1 + \ldots + \alpha_n
+      A_n\right)^{\alpha_1 + \ldots + \alpha_n}}\, , 
+\end{align}
+can be applied to the integrand above, yielding
+\begin{align}
+  \SProp{\ell} \SProp{(\ell-p)} = \int_0^1dx\,
+  \frac{1}{\left(q^2-M^2 +i\epsilon\right)}\, ,
+\end{align}
+where $q=\ell-xp$, and $M^2(x,p)=m^2-x(1-x)p^2$. Hence, we have
+\begin{equation}
+  \label{eq:PiAfterFeynPar}
+  i\Pi(p) = \frac{g^2}{2} \int_0^1dx\, \int \frac{d^Dq}{(2\pi)^D}\, 
+  \frac{1}{\left(q^2-M^2 +i\epsilon\right)^2}\, .
+\end{equation}
+
+\paragraph{Wick rotation}
+
+It is useful to introduce Euclidean momenta in order to perform the
+integration. Because of the location of the poles, we can rotate the
+integration contour clockwise by $\pi/2$ to run along the purely
+imaginary axis. Introducing
+\begin{equation}
+  \label{eq:EuclideanMom}
+  q^0 = i q^0_E\, , \quad \mathbf{q} = \mathbf{q}_E\, ,
+\end{equation}
+we can rewrite
+\begin{equation}
+  \label{eq:PiEuclMom}
+  \Pi(p^2) = \frac{g^2}{2} \int_0^1dx\, \int \frac{d^Dq_E}{(2\pi)^D}\, 
+  \ESProp{q_E}{2}\, .
+\end{equation}
+
+\paragraph{A comment on divergencies}
+
+The integral in Eq.~(\ref{eq:PiEuclMom}) is clearly divergent for
+$D\geq 4$. In particular, it is quadratically divergent in the UV for
+the case $D=6$, which is the one we will be interested in. Before
+developing more sophisticated tool, we can make a simple, but rather
+deep, observation. If we take the derivative of $\Pi(p^2)$ with
+respect to $p^2$:
+\begin{equation}
+  \label{eq:PiPrimeInt}
+  \Pi'(p^2) = -g^2 \int_0^1dx\, x(x-1) \int \frac{d^Dq_E}{(2\pi)^D}\,
+  \ESProp{q_E}{3}\, ,
+\end{equation}
+which is still divergent, but only for $D\geq 6$. Similarly
+\begin{equation}
+  \label{eq:PiDoublePrimeInt}
+  \Pi''(p^2) = 3g^2 \int_0^1dx\, x^2(x-1)^2 \int \frac{d^Dq_E}{(2\pi)^D}\,
+  \ESProp{q_E}{4}
+\end{equation}
+is divergent only for $D\geq 8$, and in particular is finite for
+$D=6$. Therefore the function $\Pi(p^2)$ can be reconstructed by
+integrating its second derivative twice,
+\begin{equation}
+  \label{eq:IntTwicePi}
+  \Pi(p^2) = \Pi(\mu_1^2) + \Pi'(\mu_2^2) \left(p^2-\mu_1^2\right) +
+  \int_{\mu_1^2}^{p^2} ds'\, \int_{\mu_2^2}^{s'} ds\, \Pi''(s)\, .  
+\end{equation}
+Eq.~(\ref{eq:IntTwicePi}) shows clearly that $\Pi(p^2)$ in $D=6$ is well
+defined for all values of $p^2$ provided we fix the values of
+$\Pi(\mu_1^2)$, and $\Pi'(\mu_2^2)$, \ie the values of the function
+and its derivative at two {\em arbitrary} values of the scale.
+
+\section{Regularization}
+\label{sec:regularization}
+
+In order to make progress in our understanding of these divergencies,
+we need to first regulate the theory, \ie we need to choose a
+prescription that makes the loop integrals mathematically well
+defined. This is clearly a necessary condition in order to be able to
+manipulate these expressions, and eventually define a predictive
+theory that yields finite results for physical quantities.
+
+There are several ways of regularizing the theory, here we list some
+of the most common procedures, some of which we will explore in
+tutorials.
+\begin{enumerate}
+\item Sharp cutoff in Euclidean momenta, $q_E^2\leq \Lambda^2$.
+\item Pauli-Villars regulator. The propagators are modifed in order to
+  have a less divergent behaviour at large values of the momenta:
+  \begin{equation}
+    \label{eq:PVReg}
+    \SProp{p} \mapsto \SProp{p} - \frac{1}{p^2-M^2+i\epsilon}\, ,
+  \end{equation}
+  where $M$ is a mass scale that plays the role of the UV cutoff.
+\item Schwinger-time regularization -- see PS7.
+\item Work in generic dimension $D$, and define the divergent
+  integrals by analytical continuation. 
+\end{enumerate}
+
+\subsection{Dimensional Regularization}
+\label{sec:dimens-regul}
+
+In dimensional regularization (DimReg), loop integrals are computed in
+a generic dimension $D$, where the intregration is actually
+convergent, and then defined for arbitrary values of $D$ by analytical
+continuation. Let us look at the integral that we encountered above
+for the two-point function. After Wick rotation, we are interested in
+\begin{equation}
+  \label{eq:FirstExDimReg}
+  I_D = \int \frac{d^Dq_E}{(2\pi)^D}\, \ESProp{q_E}{2}\, ,
+\end{equation}
+which is easily computed in spherical coordinates:
+\begin{align}
+  I_D &= \int \frac{d\Omega_D}{(2\pi)^D}\,
+        \frac12 \int_0^\infty dq_E^2\, (q_E^2)^{D/2-1} \ESProp{q_E}{2}
+  \\
+      &= \frac{1}{(2\pi)^{D/2}} \frac{2\pi^D}{\Gamma(D/2)}\,
+        \frac12 \left(\frac{1}{M^2}\right)^{2-D/2} \int_0^1 d\xi \,
+        \xi^{1-D/2} (1-\xi)^{D/2-1} \\
+  \label{eq:IDResult}
+      &= \frac{1}{(4\pi)^{D/2}} \frac{\Gamma(2-D/2)}{\Gamma(2)}
+        \left(\frac{1}{M^2}\right)^{2-D/2}\, .
+\end{align}
+
+\paragraph{Mathematical aside}
+
+In deriving the above result we have made use of a number of useful
+properties/tricks, which we summarise here.
+
+\begin{enumerate}
+\item The solid angle in $D$ dimension is
+  \begin{equation}
+    \label{eq:SoliAngleDDim}
+    \Omega_D = \int \frac{d\Omega_D} =
+    \frac{2\pi^{D/2}}{\Gamma(D/2)}\, .
+  \end{equation}
+\item We made a change of integration variable:
+  \begin{equation}
+    \label{eq:IntegVarChange}
+    \xi = \frac{M^2}{q_E^2+M^2}\, .
+  \end{equation}
+\item The Euler gamma function is defined as
+  \begin{equation}
+    \label{eq:GammaFunDef}
+    \Gamma(z) = \int_0^\infty dt\, t^{z-1} e^{-t}\, .
+  \end{equation}
+\item It can be readily shown that
+  \begin{equation}
+    \label{eq:GammRec}
+    \Gamma(z+1) = z \Gamma(z)\, .
+  \end{equation}
+\item The beta function (Euler integral of the first kind) is defined
+  as
+  \begin{equation}
+    \label{eq:BetaFunDef}
+    B(\alpha,\beta) = \frac{\Gamma(\alpha)
+      \Gamma(\beta)}{\Gamma(\alpha+\beta)} =
+    \int_0^1 d\xi\, \xi^{\alpha-1} \left(1-\xi\right)^{\beta-1}\, .
+  \end{equation}
+\item For $n\geq 0$, and small $\epsilon$, we have
+  \begin{align}
+    \Gamma(n+1) &= n! \, , \\
+    \Gamma\left(n+\frac12\right) &= \frac{(2n)!}{n!2^{(2n)}}
+                                   \sqrt{\pi}\, , \\
+    \Gamma(-n+\epsilon) &= \frac{(-)^n}{n!} \left[
+                          \frac{1}{\epsilon} - \gamma + \sum_{k=1}^n
+                          \frac{1}{k} + O(\epsilon)
+                          \right]\, ,
+  \end{align}
+  where $\gamma=0.5772...$ is the Euler-Mascheroni constant. 
+\end{enumerate}
+
+\paragraph{Divergences of $I_D$}
+
+Eq.~(\ref{eq:IDResult}) provides an expression for $I_D$ which can be
+extended by analytical continuation to arbitrary values of $D$. It is
+interesting to note that the divergences that we identified in $D=4$
+and $D=6$ appear in the regularized version as poles of the gamma
+function for negative integer values of its argument. 
+
+\paragraph{General formula}
+
+It is useful to generalise the result in Eq.~(\ref{eq:IDResult}):
+\begin{equation}
+  \boxed{
+  \int \frac{d^Dq_E}{(2\pi)^D}\,
+  \frac{\left(q_E^2\right)^a}{\left(q_E^2+M^2\right)^b}
+  = \frac{\Gamma(b-a-D/2) \Gamma(a+D/2)}{(4\pi)^{D/2} \Gamma(b)
+  \Gamma(D/2)} \left(M^2\right)^{-(b-a-D/2)}\, .}
+\end{equation}
+Manipulations similar to the ones above allow you to derive the
+general formula. 
+
+\subsection{Structure of divergences}
+\label{sec:struct-diverg}
+
+Let us now consider the case $D=6$, and work out in more detail the
+structure of the divergences that appear in $\Pi(p^2)$. As discussed
+above, for $D=6$ the integral $I_D$ is logarithmically divergent, and
+therefore it is convergent as soon as $D<6$. We will therefore use
+dimensional regularization, and define the integral in
+$D=6-2\epsilon$.
+
+Before we start manipulating the integral, we need to do some
+dimensional analysis first. For $D=6$, the scalar field has mass
+dimensions
+\[
+  \left[\phi\right] = \frac{D-2}{2}= 2\, ,
+\]
+and therefore the coupling constant $g$ is dimensionless. This is a
+useful property that we want to preserve; as we continue our
+expressions to $D=6-2\epsilon$ we replace $g$ in the action by
+$g\tilde{\mu}^\epsilon$, where $\tilde{\mu}$ is an arbitrary scale,
+and $g$ remains a dimensionless coupling. This seemingly harmful
+rescaling has deep consequences: the regularization procedure -- in
+this case changing the number of space-time dimensions -- has
+automatically introduced a new scale in the problem.
+
+With these choices for the regulator, we find
+\begin{align}
+  \Pi(p^2) = \frac12 \alpha \Gamma(\epsilon-1) \int_0^1dx\,
+  M^2(x,p^2)
+  \left(\frac{4\pi\tilde{\mu}^2}{M^2(x,p^2)}\right)^\epsilon\, .
+\end{align}
+
+\paragraph{$\epsilon$ dependence}
+
+We can now compute explicitly the dependence on $\epsilon$:
+\begin{align}
+  \Gamma(\epsilon-1) &= -\left[
+                       \frac{1}{\epsilon} - \gamma + 1 +O(\epsilon)
+                       \right] \, , \\
+  \left(\frac{4\pi\tilde{\mu}^2}{M^2(x,p^2)}\right)^\epsilon
+                     &= 1 + \epsilon \log
+                       \left(\frac{4\pi\tilde{\mu}^2}{M^2(x,p^2)}\right)
+                       + O(\epsilon^2)\, ,
+\end{align}
+and hence
+\begin{align}
+  \Gamma(\epsilon-1)
+  \left(\frac{4\pi\tilde{\mu}^2}{M^2(x,p^2)}\right)^\epsilon
+  &= - \left[
+    \frac{1}{\epsilon} - \gamma +1 + \log
+    \left(\frac{4\pi\tilde{\mu}^2}{M^2(x,p^2)}\right) 
+    + O(\epsilon)
+    \right]\, .
+\end{align}
+Collecting all contributions yields
+\begin{align}
+  \Pi(p^2) &= -\frac{\alpha}{2} \int_0^1 dx\,
+             M^2(x,p^2) \left[
+             \frac{1}{\epsilon} +1 + \log
+             \left(\frac{4\pi\tilde{\mu}^2}{e^\gamma M^2(x,p^2)}\right) 
+    + O(\epsilon)
+             \right] \\
+           &= \frac{\alpha}{2} \left[
+             \left(\frac{1}{\epsilon}+1\right) \left(\frac{1}{6}
+             p^2-m^2\right)
+             + \int_0^1dx\, M^2(x,p^2) \log\left(\frac{\mu^2}{M^2}\right)
+             \right]
+             +O(\epsilon) \, ,
+\end{align}
+where
+\begin{equation}
+  \label{eq:DefAlpha}
+  \alpha = \frac{g^2}{(4\pi)^3}\, , \quad \mu^2 =
+  \frac{4\pi}{e^\gamma} \tilde{\mu}^2\, .
+\end{equation}
