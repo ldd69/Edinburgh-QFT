@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     15255,        376]
-NotebookOptionsPosition[     14489,        343]
-NotebookOutlinePosition[     14847,        359]
-CellTagsIndexPosition[     14804,        356]
+NotebookDataLength[     17900,        470]
+NotebookOptionsPosition[     16791,        425]
+NotebookOutlinePosition[     17149,        441]
+CellTagsIndexPosition[     17106,        438]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -338,6 +338,88 @@ Z42sndMU1smrNtQukDBq4eBWqXGZHmt6aYmEGxMpXmtmKPw/HvcUpA==
      Scaled[0.02]}, {0, 0}},
   Ticks->{Automatic, Automatic}]], "Output",
  CellChangeTimes->{{3.7508336266581573`*^9, 3.7508336530990677`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Integrals that appear in the finite part", "Subsection",
+ CellChangeTimes->{{3.7514916983936567`*^9, 3.75149170634286*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"x", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", "x"}], ")"}], " ", 
+    RowBox[{"Log", "[", 
+     RowBox[{"x", 
+      RowBox[{"(", 
+       RowBox[{"1", "-", "x"}], ")"}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.751491711647753*^9, 3.7514917340615263`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox["5", "18"]}]], "Output",
+ CellChangeTimes->{3.751491740002595*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"1", "/", "12"}], "-", 
+   RowBox[{
+    RowBox[{"1", "/", "2"}], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{"x", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", "x"}], ")"}], " ", 
+         RowBox[{"Log", "[", 
+          RowBox[{"x", 
+           RowBox[{"(", 
+            RowBox[{"1", "-", "x"}], ")"}]}], "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}], "-", 
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{"x", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", "x"}], ")"}], " ", 
+         RowBox[{"Log", "[", 
+          RowBox[{"1", "-", 
+           RowBox[{"x", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", "x"}], ")"}]}]}], "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}]}], ")"}]}]}], "//",
+   "Simplify"}]], "Input",
+ CellChangeTimes->{{3.751491711647753*^9, 3.7514917340615263`*^9}, {
+  3.751491774891369*^9, 3.751491858872571*^9}, {3.751492344104289*^9, 
+  3.7514923470644693`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "12"], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "3"}], "+", 
+    RowBox[{
+     SqrtBox["3"], " ", "\[Pi]"}]}], ")"}]}]], "Output",
+ CellChangeTimes->{
+  3.7514918103219013`*^9, {3.751491842498564*^9, 3.751491863690886*^9}, 
+   3.751492351695751*^9}]
+}, Open  ]],
+
+Cell["Same result as in Srednicki... OK. ", "Text",
+ CellChangeTimes->{{3.751492363284281*^9, 3.751492376368585*^9}}]
 }, Open  ]]
 }, Open  ]]
 },
@@ -376,6 +458,18 @@ Cell[1987, 74, 1362, 41, 96, "Input"],
 Cell[CellGroupData[{
 Cell[3374, 119, 1641, 48, 96, "Input"],
 Cell[5018, 169, 9443, 170, 238, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[14498, 344, 129, 1, 44, "Subsection"],
+Cell[CellGroupData[{
+Cell[14652, 349, 400, 12, 32, "Input"],
+Cell[15055, 363, 109, 3, 49, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15201, 371, 1125, 34, 75, "Input"],
+Cell[16329, 407, 302, 10, 48, "Output"]
+}, Open  ]],
+Cell[16646, 420, 117, 1, 30, "Text"]
 }, Open  ]]
 }, Open  ]]
 }
