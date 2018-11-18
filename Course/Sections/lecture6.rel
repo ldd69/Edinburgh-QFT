@@ -1,5 +1,5 @@
 ;; RefTeX parse info file
-;; File: /Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex
+;; File: /Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex
 ;; User: ldd (Luigi Del Debbio)
 
 (set reftex-docstruct-symbol '(
@@ -13,26 +13,126 @@
 
 (bibview-cache)
 
-(master-dir . "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/")
+(master-dir . "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/")
 
-(label-numbers)
+(label-numbers ("eq:" . 1))
 
-(bof "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex")
+(bof "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex")
 
-(toc "toc" "    1 A first look at divergences" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex" nil 2 "1" "\\section{A first look at divergences}" 282)
+(toc "toc" "    1 A first look at divergences" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 2 "1" "\\section{A first look at divergences}" 342)
 
-("sec:a-first-look" "s" "In this lecture we will aim to develop a self-consistent treatment of divergences in QFT. This is a " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex" nil)
+("sec:a-first-look" "s" "In this lecture we will aim to develop a self-consistent treatment of divergences in QFT. This is a " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
 
-(toc "toc" "      1.1 Scalar two-point function" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex" nil 3 "1.1" "\\subsection{Scalar two-point function}" 1143)
+(toc "toc" "      1.1 Two-point function in perturbation theory" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 3 "1.1" "\\subsection{Two-point function in perturbation theory}" 1203)
 
-("sec:scalar-two-point" "s" "Working in perturbation theory, we compute the two-point function \\begin{equation}  \\tilde{G}^{(2)}\\" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex" nil)
+("sec:scalar-two-point" "s" "Working in perturbation theory, we compute the two-point function \\begin{equation}  \\tilde{G}^{(2)}\\" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
 
-("eq:TwoPtMom" "e" "\\tilde{G}^{(2)}\\left(p,p'\\right) = (2\\pi)^D \\delta\\left(p+p'\\right) \\frac{1}{i} \\tilde{\\Delta}_F(p)\\" "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex" nil)
+("eq:TwoPtMom" "e" "\\tilde{G}^{(2)}\\left(p,p'\\right) = (2\\pi)^D \\delta\\left(p+p'\\right) \\frac{1}{i} \\tilde{\\Delta}_F(p)\\" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
 
-("eq:TwoPtMomPert" "e" "\\tilde{G}^{(2)}\\left(p,p'\\right) = \\sum_k g^k \\tilde{G}^{(2,k)}\\left(p,p'\\right)\\, . " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex" nil)
+("eq:TwoPtMomPert" "e" "\\tilde{G}^{(2)}\\left(p,p'\\right) = \\sum_k g^k \\tilde{G}^{(2,k)}\\left(p,p'\\right)\\, . " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
 
-("eq:1" "e" " " "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex" nil)
+("eq:PropMomPert" "e" "\\tilde{\\Delta}_F(p) = \\sum_k g^k \\tilde{\\Delta}^{(k)}_F(p)\\, . " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
 
-(eof "/Users/ldd/sync/ed/teach/MQFT/Course/Sections/lecture6.tex")
+("eq:OneLoopPi" "e" "\\frac{1}{i} \\tDelta(p) \\left(i\\Pi(p^2)\\right) \\frac{1}{i} \\tDelta(p)\\, , " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+("eq:PiFun" "e" "i\\Pi(p^2) = \\frac{g^2}{2} \\int \\frac{d^D\\ell}{(2\\pi)^D}\\, \\SProp{\\ell} \\SProp{(\\ell-p)}\\, . " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+(toc "toc" "      1.2 Evaluation of $\\Pi(p^2)$" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 3 "1.2" "\\subsection{Evaluation of $\\Pi(p^2)$}" 2678)
+
+("sec:evaluation-pi" "s" "\\paragraph{Feynman parameters} The product of propagators in Eq.~(\\ref{eq:PiFun}) can be rewritten u" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+(toc "toc" "          1.2.0.1 Feynman parameters" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 5 "1.2.0.1" "\\paragraph{Feynman parameters}" 2743)
+
+("eq:PiAfterFeynPar" "e" "i\\Pi(p) = \\frac{g^2}{2} \\int_0^1dx\\, \\int \\frac{d^Dq}{(2\\pi)^D}\\, \\frac{1}{\\left(q^2-M^2 +i\\epsilon\\" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+(toc "toc" "          1.2.0.2 Wick rotation" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 5 "1.2.0.2" "\\paragraph{Wick rotation}" 3733)
+
+("eq:EuclideanMom" "e" "q^0 = i q^0_E\\, , \\quad \\mathbf{q} = \\mathbf{q}_E\\, , " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+("eq:PiEuclMom" "e" "\\Pi(p^2) = \\frac{g^2}{2} \\int_0^1dx\\, \\int \\frac{d^Dq_E}{(2\\pi)^D}\\, \\ESProp{q_E}{2}\\, . " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+(toc "toc" "          1.2.0.3 A comment on divergencies" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 5 "1.2.0.3" "\\paragraph{A comment on divergencies}" 4269)
+
+("eq:PiPrimeInt" "e" "\\Pi'(p^2) = -g^2 \\int_0^1dx\\, x(x-1) \\int \\frac{d^Dq_E}{(2\\pi)^D}\\, \\ESProp{q_E}{3}\\, , " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+("eq:PiDoublePrimeInt" "e" "\\Pi''(p^2) = 3g^2 \\int_0^1dx\\, x^2(x-1)^2 \\int \\frac{d^Dq_E}{(2\\pi)^D}\\, \\ESProp{q_E}{4} " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+("eq:IntTwicePi" "e" "\\Pi(p^2) = \\Pi(\\mu_1^2) + \\Pi'(\\mu_2^2) \\left(p^2-\\mu_1^2\\right) + \\int_{\\mu_1^2}^{p^2} ds'\\, \\int_{" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+(toc "toc" "    2 Regularization" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 2 "2" "\\section{Regularization}" 5656)
+
+("sec:regularization" "s" "In order to make progress in our understanding of these divergencies, we need to first regulate the " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+("eq:PVReg" "e" "\\SProp{p} \\mapsto \\SProp{p} - \\frac{1}{p^2-M^2+i\\epsilon}\\, , " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+(toc "toc" "      2.1 Dimensional Regularization" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 3 "2.1" "\\subsection{Dimensional Regularization}" 6819)
+
+("sec:dimens-regul" "s" "In dimensional regularization (DimReg), loop integrals are computed in a generic dimension $D$, wher" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+("eq:FirstExDimReg" "e" "I_D = \\int \\frac{d^Dq_E}{(2\\pi)^D}\\, \\ESProp{q_E}{2}\\, , " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+("eq:IDResult" "e" "&= \\frac{1}{(4\\pi)^{D/2}} \\frac{\\Gamma(2-D/2)}{\\Gamma(2)} \\left(\\frac{1}{M^2}\\right)^{2-D/2}\\, . " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+(toc "toc" "          2.1.0.1 Mathematical aside" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 5 "2.1.0.1" "\\paragraph{Mathematical aside}" 7841)
+
+("eq:SoliAngleDDim" "e" "\\Omega_D = \\int \\frac{d\\Omega_D} = \\frac{2\\pi^{D/2}}{\\Gamma(D/2)}\\, . " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+("eq:IntegVarChange" "e" "\\xi = \\frac{M^2}{q_E^2+M^2}\\, . " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+("eq:GammaFunDef" "e" "\\Gamma(z) = \\int_0^\\infty dt\\, t^{z-1} e^{-t}\\, . " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+("eq:GammRec" "e" "\\Gamma(z+1) = z \\Gamma(z)\\, . " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+("eq:BetaFunDef" "e" "B(\\alpha,\\beta) = \\frac{\\Gamma(\\alpha) \\Gamma(\\beta)}{\\Gamma(\\alpha+\\beta)} = \\int_0^1 d\\xi\\, \\xi^{\\" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+(toc "toc" "          2.1.0.2 Divergences of $I_D$" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 5 "2.1.0.2" "\\paragraph{Divergences of $I_D$}" 9436)
+
+(toc "toc" "          2.1.0.3 General formula" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 5 "2.1.0.3" "\\paragraph{General formula}" 9801)
+
+(toc "toc" "      2.2 Structure of divergences" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 3 "2.2" "\\subsection{Structure of divergences}" 10224)
+
+("sec:struct-diverg" "s" "Let us now consider the case $D=6$, and work out in more detail the structure of the divergences tha" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+(toc "toc" "          2.2.0.1 $\\epsilon$ dependence" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 5 "2.2.0.1" "\\paragraph{$\\epsilon$ dependence}" 11543)
+
+("eq:ExplicitDivs" "e" "&= \\frac{\\alpha}{2} \\left[ \\left(\\frac{1}{\\epsilon}+1\\right) \\left(\\frac{1}{6} p^2-m^2" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+("eq:DefAlpha" "e" "\\alpha = \\frac{g^2}{(4\\pi)^3}\\, , \\quad \\mu^2 = \\frac{4\\pi}{e^\\gamma} \\tilde{\\mu}^2\\, . " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+(toc "toc" "          2.2.0.2 A geometric series" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 5 "2.2.0.2" "\\paragraph{A geometric series}" 13651)
+
+("eq:PiGeometricSeries" "e" "\\frac{1}{i} \\tDelta_F(p^2) =&\\, \\begin{tikzpicture}[baseline=\\plusheight] \\begin{feynman} \\v" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+("eq:FullPropOneLoop" "e" "\\tDelta_F(p^2) = \\frac{1}{p^2-m^2-\\Pi(p^2) + i\\epsilon}\\, , " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+(toc "toc" "          2.2.0.3 Comparison with K-L" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 5 "2.2.0.3" "\\paragraph{Comparison with K-L}" 15976)
+
+("eq:MphysPole" "e" "\\mphys^2 - m^2 - \\Pi(\\mphys^2) = 0 " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+("eq:ResDenExp" "e" "p^2-m^2-\\Pi(p^2) = \\left(p^2 - \\mphys^2\\right) \\left[1 - \\Pi'(\\mphys^2)\\right] + O\\left(\\left(p^2 - " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+(toc "toc" "    3 Renormalization" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 2 "3" "\\section{Renormalization}" 17528)
+
+("sec:renormalization" "s" "\\paragraph{Renormalization of the field} As suggested by the comparison with K-L, we define a {\\em r" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+(toc "toc" "      3.1 Renormalized perturbation theory" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 3 "3.1" "\\subsection{Renormalized perturbation theory}" 17583)
+
+("sec:renorm-pert-theory" "s" nil "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil "")
+
+(toc "toc" "          3.0.0.1 Renormalization of the field" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 5 "3.0.0.1" "\\paragraph{Renormalization of the field}" 17661)
+
+("eq:RenormField" "e" "\\phi(x) = Z^{1/2} \\phi_R(x)\\, . " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+(toc "toc" "          3.0.0.2 Renormalization of mass and coupling" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 5 "3.0.0.2" "\\paragraph{Renormalization of mass and coupling}" 18230)
+
+(toc "toc" "          3.0.0.3 Renormalized perturbation theory" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 5 "3.0.0.3" "\\paragraph{Renormalized perturbation theory}" 18531)
+
+(toc "toc" "          3.0.0.4 Renormalization conditions" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 5 "3.0.0.4" "\\paragraph{Renormalization conditions}" 20805)
+
+("eq:1" "e" nil "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil "")
+
+("eq:2" "e" " " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
+
+(eof "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex")
 ))
 

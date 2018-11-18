@@ -10,16 +10,21 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     15014,        367]
-NotebookOptionsPosition[     14320,        337]
-NotebookOutlinePosition[     14678,        353]
-CellTagsIndexPosition[     14635,        350]
+NotebookDataLength[     15255,        376]
+NotebookOptionsPosition[     14489,        343]
+NotebookOutlinePosition[     14847,        359]
+CellTagsIndexPosition[     14804,        356]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
+Cell["Integrals for the self-energy bubble in phi^3", "Section",
+ CellChangeTimes->{{3.7514656590263777`*^9, 3.751465690782817*^9}}],
+
+Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{"Integrate", "[", 
   RowBox[{
@@ -334,6 +339,7 @@ Z42sndMU1smrNtQukDBq4eBWqXGZHmt6aYmEGxMpXmtmKPw/HvcUpA==
   Ticks->{Automatic, Automatic}]], "Output",
  CellChangeTimes->{{3.7508336266581573`*^9, 3.7508336530990677`*^9}}]
 }, Open  ]]
+}, Open  ]]
 },
 WindowSize->{808, 655},
 WindowMargins->{{-1074, Automatic}, {-41, Automatic}},
@@ -353,21 +359,24 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 282, 8, 32, "Input"],
-Cell[865, 32, 114, 2, 49, "Output"]
+Cell[580, 22, 132, 1, 64, "Section"],
+Cell[CellGroupData[{
+Cell[737, 27, 282, 8, 32, "Input"],
+Cell[1022, 37, 114, 2, 49, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1016, 39, 333, 9, 32, "Input"],
-Cell[1352, 50, 139, 3, 49, "Output"]
+Cell[1173, 44, 333, 9, 32, "Input"],
+Cell[1509, 55, 139, 3, 49, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1528, 58, 162, 4, 32, "Input"],
-Cell[1693, 64, 122, 2, 32, "Output"]
+Cell[1685, 63, 162, 4, 32, "Input"],
+Cell[1850, 69, 122, 2, 32, "Output"]
 }, Open  ]],
-Cell[1830, 69, 1362, 41, 96, "Input"],
+Cell[1987, 74, 1362, 41, 96, "Input"],
 Cell[CellGroupData[{
-Cell[3217, 114, 1641, 48, 96, "Input"],
-Cell[4861, 164, 9443, 170, 272, "Output"]
+Cell[3374, 119, 1641, 48, 96, "Input"],
+Cell[5018, 169, 9443, 170, 238, "Output"]
+}, Open  ]]
 }, Open  ]]
 }
 ]
