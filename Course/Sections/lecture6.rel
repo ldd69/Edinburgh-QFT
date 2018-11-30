@@ -129,6 +129,10 @@
 
 (toc "toc" "          3.0.0.4 Renormalization conditions" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 5 "3.0.0.4" "\\paragraph{Renormalization conditions}" 20805)
 
+(toc "toc" "      3.1 Renormalization scheme" "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil 3 "3.1" "\\subsection{Renormalization scheme}" 21193)
+
+("sec:renorm-scheme" "s" nil "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil "")
+
 ("eq:1" "e" nil "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil "")
 
 ("eq:2" "e" " " "/Users/ldd/Dropbox 2/Dropbox/Edinburgh-QFT/Course/Sections/lecture6.tex" nil)
