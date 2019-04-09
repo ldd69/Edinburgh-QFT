@@ -206,7 +206,7 @@ As we will see, this allows us to express
     C_{\phi^2} = 1 + (g/16\pi^2)c_1(x^2)
 \end{align}
 for some $c_1$ which we will calculate. The two momentum regions contribute to the two terms respectively, and they correspond to the decomposition of Figure \ref{fig:10.1.3abc}(a) into (b) and (c), where (b) is simply performing renormalisation to $\phi(0)^2$ by cutting off the UV divergence, and (c) takes care of the remaining contribution. 
-\subsection{Momentum region 1: $q$ finite, $x\rightarrow 0$}
+\subsection{Momentum Region 1: $q$ finite, $x\rightarrow 0$}
 
 In the region where $q$ is finite, sending $x\rightarrow 0$ (so $e^{-iq\cdot x} \rightarrow 1$) will get  us the standard logarithmic divergent term of the form 
 
@@ -232,7 +232,7 @@ Identifying $A=(q^2-m^2)$ and $B=((q-p)^2-m^2)$, with $p=p_1+p_2$, the integral 
     \label{b4dimreg}
 \end{split}
 \end{equation}
-where $M^2=M^2(s,m)=m^2-sx(1-x)$ and $s$ is the centre-of-mass energy, $s=p^2$.
+where $M^2=M^2(s,x)=m^2-sx(1-x)$ and $s$ is the centre-of-mass energy, $s=p^2$. In the following, we will suppress the arguments of $M$ for brevity.
 
 Next, we can Wick rotate to Euclidean momenta and generalise this integral to $D$-dimensions. This is captured by the following identity, 
 \begin{equation}
@@ -283,7 +283,7 @@ Now, we apply the MS subtraction scheme, where the $\epsilon$ terms are removed 
 \end{equation}
 And this is the order 1 contribution to the correction from the first momentum region.
 
-\subsection{Momentum region 2: large $q \sim O(1/x)$}\label{large q}
+\subsection{Momentum Region 2: large $q \sim O(1/x)$}\label{large q}
 The remaining contribution is in equation (10.1.13):
 \begin{equation} \label{eq:div_eg_large_q}
     \frac{i^2}{(p_1^2-m^2)(p_2^2-m^2)}\frac{ig}{(2\pi)^4}\cross\qty{\int d^4q \frac{e^{iq\cdot x}-1}{(q^2-m^2)[(q-p_1-p^2)^2-m^2]}-\text{UV divergence}}
@@ -342,7 +342,7 @@ As we can see, this term has the same pole/UV-divergence as that from the first 
 \end{equation}
 
 \section{Some Pre-requisites} \label{prerequesites}
-\subsection{Weinberg's theorem}
+\subsection{Weinberg's Theorem}
 In the divergent example, we have seen how to treat the contribution from the large $q$ region for the specific diagram. There we can easily see that the leading order $q$ contribution (Equation \ref{eq:div_eg_large_q}) has to come from the single loop, then can we argue from there that the leading power contribution from the loop does not depend on the external momenta/mass. In this case, identifying and isolating the large $q$ behaviour is easy. To be able to generalise the discussion to any diagrams, we have to understand the behaviour of a general graph when the internal momentum $q$ is large; this is where Weinberg's theorem \cite{weinberg} comes in. In essence, Weinberg's theorem allows us to identify and isolate/factorise the largest power contribution from a given diagram. Before we can discuss the theorem itself, we have to understand the concept of subgraphs.\\
 
 
@@ -350,7 +350,7 @@ In the divergent example, we have seen how to treat the contribution from the la
 \subsubsection{Subgraphs}
 \textbf{Definition}: A set $\mathcal{G'}$ of internal and external lines $j$ form a subgraph of $\mathcal{G}$ provided that there is no vertex in $\mathcal{G}$ to which is attached just one line of those in $\mathcal{G'}$. In other words, a subgraph $\mathcal{G'}$ is composed of a number of paths which begin and end in external lines or each other, but never end abruptly within $\mathcal{G}$. 
 
-\subsubsection{Example of subgraphs}
+\subsubsection{Example of Subgraphs}
 For this diagram:
 \begin{center}
     \feynmandiagram [small, horizontal=a to b] {
@@ -430,6 +430,7 @@ The corresponding integral (excluding external legs) is roughly (ignoring vertex
 \begin{split}    
     \int \frac{d^4q}{(2\pi)^4}\frac{k+p-q}{(k+p-q)^2+m^2}\frac{k+p-p'}{(k+p-p')^2+m^2}\frac{1}{(q-p')^2+\mu^2}\frac{1}{(q-p)^2+\mu^2}\frac{q}{q^2+m^2}
 \end{split}
+\label{example graph integral}
 \end{equation}
 Part 2 of the theorem tells us to look at all subgraphs with the two external legs containing $k$, i.e. the two external legs on the left hand side, and no other external legs. This gives us the three subgraphs we presented before:\\
 \begin{center}
@@ -461,10 +462,10 @@ The dimensionality of each graph could be calculated by summing $-2$ for each in
     &\mathcal{D}_a= -1,\\ &\mathcal{D}_b= -2-1-2=-5,\\ &\mathcal{D}_c= -1-1-2-2+4=-2,  
 \end{split}
 \end{equation}
-The maximum is $\mathcal{D}_a= -1$, therefore as $k \rightarrow \infty$, the integral goes as $k^{-1}$ (times some log). 
+The maximum is $\mathcal{D}_a= -1$, therefore as $k \rightarrow \infty$, the integral goes as $k^{-1}$ (times some log). Note that this result is different from what we would naively expect from power counting in Equation \ref{example graph integral}. There, in the large $k$ regime, we would expect the integrand to scale as $\sim k^{-2}$. This highlights the importance of identifying divergent subgraphs in Weinberg's theorem. 
 
 \subsection{Strategy of Proof}
-\subsubsection{Large $q$ subgraphs: $U$}
+\subsubsection{Large $q$ Subgraphs: $U$}
 Weinberg's theorem tells us that to identify the leading power behaviour of a diagram when the momentum $q$ is large, we have to look at the subgraph with the largest power of momentum. In the case of our OPE expansion (in momentum space), we have to consider those subgraphs which contains $\phi(q)$ and $\phi(0)$ as external legs. 
 
 For our scalar $\phi^4$ theory, we can show that subgraphs with the greatest power of momentum must only have 2 extra external legs other than $\phi(0)$ and $\phi(q)$. We can see this by using the usual divergence counting method:
@@ -531,7 +532,7 @@ As mentioned before, we will work in $\phi^4$-theory as an example, but this can
 
 Let $\Gamma$ represent the Feynman graph we are interested in. The renormalised graph, which we will call $R(\Gamma)$, is $\Gamma$ minus the counterterms which subtract away the UV divergences. Then, $R(\Gamma)$ is a contribution of $\Gamma$ to the Green's function, $G_{N+2}$. Looking back at Equation \ref{green's decomposed}, we still have the remainder term to consider. Let's call it $r(\Gamma)$. This remainder term contains other counterterms that remove not only the UV divergent terms but also the leading $x\rightarrow 0$ or $q \rightarrow \infty$ behaviour of $\Gamma$. In this sense, $R(\Gamma) - r(\Gamma)$ will give us the Wilson coefficient, that is, the first term in Equation \ref{green with remainder} and \ref{green with remainder in momentum}.
 
-To determine the form of $r(\Gamma)$, we take inspiration from looking at how the renormalised graph, $R(\Gamma)$, is constructed. Recall that UV divergences arise from regions with high loop momenta. We employ the following expression to represent the standard programme of regularisation,
+To determine the form of $r(\Gamma)$, we take inspiration from looking at how the renormalised graph, $R(\Gamma)$, is constructed. Recall that UV divergences arise from regions with high loop momenta. We employ the following expression to represent the standard programme of renormalisation,
 
 \begin{equation}
     R(\Gamma) = \Gamma - \sum_\gamma C_\gamma(\Gamma),
