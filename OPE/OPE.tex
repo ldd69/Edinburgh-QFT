@@ -58,7 +58,7 @@ We are interested in two highly related questions regarding these objects:
 
 \begin{enumerate}
     \item \textbf{small-x limit}: What is the behaviour of $T\phi(x)\phi(0)$ when $x\rightarrow 0$? 
-    \item \textbf{large-q limit}: What is the behaviour of $T\Tilde{\phi}(q)\phi(0)$ when $\vert q^2\vert \rightarrow\infty$?
+    \item \textbf{large-q limit}: What is the behaviour of $T\Tilde{\phi}(q)\phi(0)$ when $\vert q\vert \rightarrow\infty$?
 \end{enumerate}
 
 Thanks to efforts made by Wilson \cite{wilson} and company, we have a strategy to tackle these problems. Regarding the small-$x$ limit, the possibility of OPE tells us that we can express 
@@ -122,7 +122,7 @@ Note that Equation \ref{time ordered} is the $\mathcal{O}(1)$ term in our $\phi^
         &= \int \frac{d^4x_1d^4x_2d^4k_1d^4k_2}{(2\pi)^8} e^{ip_1\cdot x_1}e^{ip_2\cdot x_2} \left(\frac{ie^{-ik_1\cdot (x-x_1)}}{k_1^2-m^2}\frac{ie^{-ik_2\cdot x_2}}{k_2^2-m^2}+ x_1\leftrightarrow x_2 \right),\\
         &= \int_{x_1,x_2,k_1,k_2}  \left(\frac{ie^{-ix_1\cdot (k_1-p_1)}e^{-ik_1\cdot x}}{k_1^2-m^2}\frac{ie^{-ix_2\cdot (k_2-p_2)}}{k_2^2-m^2}+ x_1\leftrightarrow x_2 + \dots\right),\\
         &= \int_{k_1,k_2}  \left(\frac{i\delta^3(k_1-p_1)e^{-ik_1\cdot x}}{k_1^2-m^2}\frac{i\delta^3(k_2-p_2)}{k_2^2-m^2}+ x_1\leftrightarrow x_2 \right),\\
-        \mel{0}{T\phi(x)\phi(0)\Tilde{\phi}(p_1)\Tilde{\phi}(p_2)}{0}&= \frac{i}{k_1^2-m^2}\frac{i}{k_2^2-m^2}(e^{-ip_1\cdot x}+e^{-ip_2\cdot x}),\\
+        \mel{0}{T\phi(x)\phi(0)\Tilde{\phi}(p_1)\Tilde{\phi}(p_2)}{0}&= \frac{i}{p_1^2-m^2}\frac{i}{p_2^2-m^2}(e^{-ip_1\cdot x}+e^{-ip_2\cdot x}),\\
     \end{split}
 \end{equation}
 where the $\dots$ represent any normal-ordered products (which annihilates the vacuum) and any disconnected diagrams(\textit{e.g} $\overbrace{\phi(x)\phi(0)}$ ).
@@ -177,9 +177,10 @@ where the $\dots$ indicate terms with higher powers of $q$. We identify these fi
 
 \section{Divergent Example}\label{10.1.2}
 In \S\ref{10.1.1}, we have been exploring the tree-level expansion of the two point function $T\phi(x)\phi(0)$. As explained at the end of \S\ref{10.1.1}, we will be restricting our attention to the leading-power behaviour, i.e. studying
-\begin{align*}
+\begin{align}
+\label{c_phi2}
     T\phi(x)\phi(0) \sim C_{\phi^2}(x)[\phi^2]
-\end{align*}
+\end{align}
 where $[\phi^2]$ is the renormalised Green's function. \\
 
 In this `divergent example', we evaluate the correction to $T\phi(x)\phi(0)$. At order $\mathcal{O}(g)$, the correction is given by
@@ -604,6 +605,7 @@ where we note that the $L_{\gamma\cup\delta'}(\delta_1)$ term vanishes trivially
 
 \begin{equation}
     r(\Gamma_1) = \Gamma_1 - L(\delta_1).
+    \label{rGamma1}
 \end{equation}
 Given the definition of the remainder term, and that Figure \ref{fig:example1} is only a tree-level graph, it is clear in hindsight that the remainder is exactly the original graph minus its Wilson expansion.\\
 
@@ -764,18 +766,74 @@ r(\Gamma_3) &= R(\Gamma_3) - \sum_\delta \sum_\gamma L_{\gamma \cup \delta} (\Ga
 \end{split}
 \end{equation}
 
-The Wilson coefficient of the expansion is then precisely:
+The Wilson coefficient contribution of the diagram is then precisely (this will examined in more detail in the next section):
 \begin{equation}
     W(\Gamma_3) = \sum_\delta \sum_\gamma L_{\gamma \cup \delta} (\Gamma_3) = \text{I} + \text{II} + \text{III} + \text{IV}.
 \end{equation}
 
 The other $\mathcal{O}(g^2)$ term can be constructed similarly using the procedure listed above.
 
-\subsection{Recap}
-What we have essentially done here is we obtained a general procedure to obtain $R(\Gamma) - r(\Gamma) = \sum_\delta \sum_\gamma L_{\gamma \cup \delta}(\Gamma)$; through this procedure we are left with an expansion in subgraphs that is UV and IR finite. The next step is then to show that the sum of this expansion in subgraphs will give us the Wilson coefficient. Equipped with the discussion from the previous sections, we refer the reader back to \S10.3.3 of Collins where he (relatively clearly) demonstrates how to define the Wilson coefficient by choosing $U$ to be the largest possible subgraph, such that all possible divergences would be taken care of by the above procedure, and that the singular coefficient is completely factorized out of the remaining local operator $\phi^2$, thus giving us the Wilson coefficient. 
+\subsubsection{Recap}
+What we have essentially done here is we obtained a general procedure to obtain $R(\Gamma) - r(\Gamma) = \sum_\delta \sum_\gamma L_{\gamma \cup \delta}(\Gamma)$; through this procedure we are left with an expansion in subgraphs that is UV and IR finite (this is explained quite well in Collins \S 10.3.2). This expression contains the leading $x \rightarrow 0$ behaviour of $R(\Gamma)$, and is all-important for obtaining the Wilson expansion. The next step is then to show that the sum of this expansion in subgraphs will give us the Wilson coefficient.
+
+\subsection{Obtaining Wilson Coefficients}
+Let us remind ourselves again what we are trying to obtain here: we wish to obtain the $C_{\phi^2}(x)$ term in equation \ref{small x ope}, as explained at the end of section \S\ref{10.1.1}. From the above discussion, we know that each diagram $\Gamma$ will have many subgraphs $\delta$'s which contribute to $C_{\phi^2}(x)$, and we need to sum over these contribution to obtain the full $C_{\phi^2}(x)$. More concretely, for a specific diagram $\Gamma$, \textit{if} $W(\Gamma)$ (which contains the leading $x \rightarrow 0$ behaviour of $R(\Gamma)$) could be put in the form of the final line:
+\begin{equation}
+\begin{split}
+\label{wilson_coeff_1}
+    W(\Gamma) &\equiv R(\Gamma) - r(\Gamma)\\ 
+    &= \sum_\delta \bar{C}(\delta) R(\Gamma/\delta)
+\end{split}
+\end{equation}
+where $\Gamma/\delta$ is $\Gamma$ contracted to a point, i.e., replaced by a $\phi^2$ vertex, \textit{then} the contribution to the Wilson coefficient $C_{\phi^2}(x)$ from the particular graph is
+\begin{equation}
+    C_{\phi^2}(x) = \sum_\delta \bar{C}(\delta)
+\end{equation}
+This can be seen because when we sum over the $\Gamma$ in equation \ref{wilson_coeff_1}, this is equivalent to summing over $\delta$ and $\Gamma/\delta$ independently.
+
+In the previous section, we have obtained an expression for $W(\Gamma)$:
+\begin{equation}
+    W(\Gamma) = \sum_\delta L_\delta\qty(\sum_{\substack{\gamma \\ \gamma \cap \delta \neq \varnothing}}C_\gamma (\Gamma))
+\end{equation}
+and we need to massage it into the form in equation \ref{wilson_coeff_1}. The crucial point to note now is that for a general graph $\Gamma$ and its subgraphs $\delta$, we do not necessarily know what $\bar{C}(\delta)$ is, nor do we know that it can be converted into the form of equation \ref{wilson_coeff_1}. However, we do know what $\bar{C}(\delta)$ is for the smallest, lowest-order subgraph. From the discussion in \S\ref{10.1.1} and our example 1 in the previous section, the following subgraph
+\begin{figure}[H]
+\centering
+\includegraphics*[width=0.5\textwidth]{Graphs/Fig1011a.eps}
+\caption{Lowest order subgraph}
+\end{figure}\\
+gives $W(\Gamma_1) = R(\Gamma_1)-r(\Gamma_1) = L(\delta_1) = 2$ (see equation \ref{rGamma1}); and from the taylor expansion discussion in \S\ref{10.1.1}, we know that $\bar{C}(\Gamma_1)=1$. Equipped with this, we can now \textit{define} for an arbitrary graph $U$:
+\begin{equation}
+    2\bar{C}(U) = W(U) - \sum_{\delta \varsubsetneq U}\bar{C}(\delta)R(U/\delta)
+\label{CbarU}
+\end{equation}
+with the factor of 2 accounting for the lowest-order operator as mentioned. This equation gives a recursive definition to build up $\bar{C}(U)$ for larger subgraphs, up to the biggest subgraph $U = \Gamma$. What remains to be shown is that this definition can in fact consistently allow us to massage $W(\Gamma)$ into the desired form. 
+
+Let us now choose $U$ to be the biggest possible subgraph of $\Gamma$ that is in the form of figure \ref{fig:10.2.1} (which by Weinberg's theorem are the only important ones). In this case, all subgraphs $\delta$ are contained in $U$, and so $W(\Gamma)$ are separable into its $U$ and $I$:
+\begin{equation}
+\begin{split}
+    W(\Gamma) &= \int \frac{d^4k d^4l}{(2\pi)^8}W(U)R(I)\\
+    &\equiv W(U) \otimes R(I)
+\end{split}
+\end{equation}
+since no divergent 1PI subgraphs include parts of both $U$ and $I$. Now, because of how $\bar{C}(U)$ is defined in equation \ref{CbarU}, $W(U)$ can in fact be decomposed into the form in equation \ref{wilson_coeff_1}. Then, 
+\begin{equation}
+\begin{split}
+    W(\Gamma) &= \sum_\delta \bar{C}(\delta) R(U/\delta) \otimes R(I)\\
+    &=\sum_\delta \bar{C}(\delta) R(\Gamma/\delta)
+\end{split}
+\end{equation}
+The last step is possible since
+\begin{enumerate}
+    \item the graphs for $\Gamma/\delta$ are of the form $U/\delta$ times $I$, and
+    \item UV divergent 1PI subgraphs are entirely within $U/\delta$ or within $I$. 
+\end{enumerate}
+It is important to realise that it is because of the use of power-counting arguments, that we can restrict ultra-violet divergences to within $U/\delta$. 
 
 
-\newpage
+\subsection{Conclusion}
+And there we have it: a systematic procedure for obtaining the wilson coefficients $C_{\phi^2}(x)$ in equation \ref{small x ope}. This can easily be generalised to obtain the Wilson coefficients for other operators. These can be shown to be independent of $m, k, l$, and is a purely ultra-violet object, as Collins shows in \S 10.3.3. 
+
+
 
 \bibliographystyle{ieeetr} 
 \bibliography{opeBib.bib}
