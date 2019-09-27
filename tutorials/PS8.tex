@@ -1,0 +1,103 @@
+\documentclass[12pt,a4paper]{article}
+%
+\setlength{\oddsidemargin}{  0mm}
+\setlength{\topmargin}    { -12mm}
+\setlength{\textheight}   { 246mm}
+\setlength{\textwidth}    { 165mm}
+\setlength{\parindent}    {  0   pt}  % not actually required but they
+
+\setlength{\parskip}      {  6   pt}  % make paragraphs look less ugly
+
+%
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{slashed}
+\pagestyle{empty}
+
+\include{Init}
+
+\newcommand{\tphi}{\tilde{\phi}}
+\newcommand{\tj}{\tilde{J}}
+\newcommand{\tchi}{\tilde{\chi}}
+\newcommand{\psibar}{\bar{\psi}}
+\newcommand{\etabar}{\bar{\eta}}
+\newcommand{\munu}{{\mu\nu}}
+
+\begin{document}
+\begin{center}
+{\bf Quantum Field Theory}\\[\baselineskip]
+\end{center}
+{\bf Problem Sheet 8}
+
+\begin{enumerate}
+\item {\it One-loop vertex} \\
+
+  Write the one-loop contribution to the three-point function for the
+  $\phi^3$ theory in $D$ dimensions using the Feynman rules for
+  correlators. Check the computation of the diagram discussed in the
+  lectures. 
+  
+  \bigskip
+  
+\item {\it $\phi^4$ theory}\\
+
+  The $\phi^4$ theory is defined by the interaction term
+  \[
+    \frac{\lambda}{4!} \int d^Dx\, \phi(x)^4\, .
+  \]
+  Compute the one-loop contribution to the scalar propagator at
+  $O(\lambda)$ in $D=4$. Identify the relevant diagrams, compute the symmetry
+  factors, and write them as integrals in momentum space. Regularise
+  the integrals using DimReg, and discuss the divergences.
+
+  Write the renormalization conditions for the field and the mass in
+  the on-shell renormalization scheme, and determine the corresponding
+  counter terms at $O(\lambda)$.
+  
+  \bigskip
+
+\item {\it Superficial degree of  divergence}\\
+
+  Find the superficial degree of divergence of a diagram with $E$
+  external legs in $D$ dimensions for a scalar $\phi^n$ theory, and for
+  the Yukawa theory discussed in PS6.
+
+  \bigskip 
+  
+\item {\it Four-point 1PI vertex}\\
+  
+  Check the computation of $V^{(4)}$ in $\phi^3$ in $D=6$.
+  
+  \bigskip
+  
+\item {\it Renormalizable interactions in $D=4$}
+  
+  Consider fermionic interactions of the form $g_n (\psibar\psi)^n$,
+  for $n \geq 2$. Find the mass dimension of $g_n$ in $D$ dimensions.
+  
+  Consider interactions of the form $g_{nm} \phi^m
+  (\psibar\psi)^n$. Find the mass dimension of $g_{nm}$ in $D$
+  dimensions.
+  
+  List the renormalizable interactions for $D=4$. Do they look
+  familiar? 
+
+  \bigskip
+
+\item {\it Two-particle amplitude at one-loop}
+
+  Using the skeleton expansion compute the one-loop contribution to
+  the scattering process:
+  \[
+    p_1 p_2 \rightarrow p_1' p_2'\, .
+  \]
+
+  The tree-level contribution was already computed in PS4, and the
+  four-point vertex $V^{(4)}$ has been discussed in lectures.
+  
+\end{enumerate}
+
+\vfill
+\hspace*{\fill}\tiny L Del Debbio, November 2018.
+\end{document}

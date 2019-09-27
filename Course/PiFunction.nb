@@ -10,16 +10,21 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       158,          7]
-NotebookDataLength[     15014,        367]
-NotebookOptionsPosition[     14320,        337]
-NotebookOutlinePosition[     14678,        353]
-CellTagsIndexPosition[     14635,        350]
+NotebookDataLength[     18546,        494]
+NotebookOptionsPosition[     17330,        445]
+NotebookOutlinePosition[     17687,        461]
+CellTagsIndexPosition[     17644,        458]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
 
 Cell[CellGroupData[{
+Cell["Integrals for the self-energy bubble in phi^3", "Section",
+ CellChangeTimes->{{3.7514656590263777`*^9, 3.751465690782817*^9}}],
+
+Cell[CellGroupData[{
+
 Cell[BoxData[
  RowBox[{"Integrate", "[", 
   RowBox[{
@@ -52,6 +57,26 @@ Cell[BoxData[
  FractionBox["1", "6"]], "Output",
  CellChangeTimes->{3.7507135697284327`*^9, 3.750713762572259*^9, 
   3.750833471276445*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"1", "-", 
+    RowBox[{"x", 
+     RowBox[{"(", 
+      RowBox[{"1", "-", "x"}], ")"}]}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.7507135519787617`*^9, 3.750713567734593*^9}, {
+  3.7507137577742453`*^9, 3.750713761370751*^9}, {3.751720131741066*^9, 
+  3.751720136669106*^9}}],
+
+Cell[BoxData[
+ FractionBox["5", "6"]], "Output",
+ CellChangeTimes->{3.751720137643024*^9}]
 }, Open  ]],
 
 Cell[CellGroupData[{
@@ -333,10 +358,93 @@ Z42sndMU1smrNtQukDBq4eBWqXGZHmt6aYmEGxMpXmtmKPw/HvcUpA==
      Scaled[0.02]}, {0, 0}},
   Ticks->{Automatic, Automatic}]], "Output",
  CellChangeTimes->{{3.7508336266581573`*^9, 3.7508336530990677`*^9}}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell["Integrals that appear in the finite part", "Subsection",
+ CellChangeTimes->{{3.7514916983936567`*^9, 3.75149170634286*^9}}],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{"Integrate", "[", 
+  RowBox[{
+   RowBox[{"x", 
+    RowBox[{"(", 
+     RowBox[{"1", "-", "x"}], ")"}], " ", 
+    RowBox[{"Log", "[", 
+     RowBox[{"x", 
+      RowBox[{"(", 
+       RowBox[{"1", "-", "x"}], ")"}]}], "]"}]}], ",", 
+   RowBox[{"{", 
+    RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}]], "Input",
+ CellChangeTimes->{{3.751491711647753*^9, 3.7514917340615263`*^9}}],
+
+Cell[BoxData[
+ RowBox[{"-", 
+  FractionBox["5", "18"]}]], "Output",
+ CellChangeTimes->{3.751491740002595*^9}]
+}, Open  ]],
+
+Cell[CellGroupData[{
+
+Cell[BoxData[
+ RowBox[{
+  RowBox[{
+   RowBox[{"1", "/", "12"}], "-", 
+   RowBox[{
+    RowBox[{"1", "/", "2"}], 
+    RowBox[{"(", 
+     RowBox[{
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{"x", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", "x"}], ")"}], " ", 
+         RowBox[{"Log", "[", 
+          RowBox[{"x", 
+           RowBox[{"(", 
+            RowBox[{"1", "-", "x"}], ")"}]}], "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}], "-", 
+      RowBox[{"Integrate", "[", 
+       RowBox[{
+        RowBox[{"x", 
+         RowBox[{"(", 
+          RowBox[{"1", "-", "x"}], ")"}], " ", 
+         RowBox[{"Log", "[", 
+          RowBox[{"1", "-", 
+           RowBox[{"x", 
+            RowBox[{"(", 
+             RowBox[{"1", "-", "x"}], ")"}]}]}], "]"}]}], ",", 
+        RowBox[{"{", 
+         RowBox[{"x", ",", "0", ",", "1"}], "}"}]}], "]"}]}], ")"}]}]}], "//",
+   "Simplify"}]], "Input",
+ CellChangeTimes->{{3.751491711647753*^9, 3.7514917340615263`*^9}, {
+  3.751491774891369*^9, 3.751491858872571*^9}, {3.751492344104289*^9, 
+  3.7514923470644693`*^9}}],
+
+Cell[BoxData[
+ RowBox[{
+  FractionBox["1", "12"], " ", 
+  RowBox[{"(", 
+   RowBox[{
+    RowBox[{"-", "3"}], "+", 
+    RowBox[{
+     SqrtBox["3"], " ", "\[Pi]"}]}], ")"}]}]], "Output",
+ CellChangeTimes->{
+  3.7514918103219013`*^9, {3.751491842498564*^9, 3.751491863690886*^9}, 
+   3.751492351695751*^9}]
+}, Open  ]],
+
+Cell["Same result as in Srednicki... OK. ", "Text",
+ CellChangeTimes->{{3.751492363284281*^9, 3.751492376368585*^9}}]
+}, Open  ]]
 }, Open  ]]
 },
 WindowSize->{808, 655},
-WindowMargins->{{-1074, Automatic}, {-41, Automatic}},
+WindowMargins->{{-998, Automatic}, {-18, Automatic}},
 FrontEndVersion->"11.0 for Mac OS X x86 (32-bit, 64-bit Kernel) (July 28, \
 2016)",
 StyleDefinitions->"Default.nb"
@@ -353,21 +461,40 @@ CellTagsIndex->{}
 (*NotebookFileOutline
 Notebook[{
 Cell[CellGroupData[{
-Cell[580, 22, 282, 8, 32, "Input"],
-Cell[865, 32, 114, 2, 49, "Output"]
+Cell[580, 22, 132, 1, 64, "Section"],
+Cell[CellGroupData[{
+Cell[737, 27, 282, 8, 32, "Input"],
+Cell[1022, 37, 114, 2, 49, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1016, 39, 333, 9, 32, "Input"],
-Cell[1352, 50, 139, 3, 49, "Output"]
+Cell[1173, 44, 333, 9, 32, "Input"],
+Cell[1509, 55, 139, 3, 49, "Output"]
 }, Open  ]],
 Cell[CellGroupData[{
-Cell[1528, 58, 162, 4, 32, "Input"],
-Cell[1693, 64, 122, 2, 32, "Output"]
+Cell[1685, 63, 409, 11, 32, "Input"],
+Cell[2097, 76, 90, 2, 49, "Output"]
 }, Open  ]],
-Cell[1830, 69, 1362, 41, 96, "Input"],
 Cell[CellGroupData[{
-Cell[3217, 114, 1641, 48, 96, "Input"],
-Cell[4861, 164, 9443, 170, 272, "Output"]
+Cell[2224, 83, 162, 4, 32, "Input"],
+Cell[2389, 89, 122, 2, 32, "Output"]
+}, Open  ]],
+Cell[2526, 94, 1362, 41, 96, "Input"],
+Cell[CellGroupData[{
+Cell[3913, 139, 1641, 48, 96, "Input"],
+Cell[5557, 189, 9443, 170, 238, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15037, 364, 129, 1, 44, "Subsection"],
+Cell[CellGroupData[{
+Cell[15191, 369, 400, 12, 32, "Input"],
+Cell[15594, 383, 109, 3, 49, "Output"]
+}, Open  ]],
+Cell[CellGroupData[{
+Cell[15740, 391, 1125, 34, 75, "Input"],
+Cell[16868, 427, 302, 10, 48, "Output"]
+}, Open  ]],
+Cell[17185, 440, 117, 1, 30, "Text"]
+}, Open  ]]
 }, Open  ]]
 }
 ]
