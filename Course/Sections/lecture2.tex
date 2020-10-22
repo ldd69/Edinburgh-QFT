@@ -159,14 +159,14 @@ so that
   S_0[\chi] = 
   \frac12 \int_p \bigg\{
   \tchi(-p) \left[p^2-m^2+i\epsilon\right] \tchi(p)
-  + \tj(-p) \frac{1}{p^2-m^2+i\epsilon} \tj(p)
+  - \tj(-p) \frac{1}{p^2-m^2+i\epsilon} \tj(p)
   \bigg\} \,.
 \end{align}
 Up to a normalization factor
 \begin{align}
-  Z_0[J] &\propto \exp \frac{i}{2} \int_p \tj(-p)
+  Z_0[J] &\propto \exp -\frac{i}{2} \int_p \tj(-p)
            \frac{1}{p^2-m^2+i\epsilon} \tj(p) \\
-  &= \exp \frac{i}{2} \int d^Dx d^Dx'\,  J(x) \Delta(x,x') J(x') \, ,
+  &= \exp -\frac{i}{2} \int d^Dx d^Dx'\,  J(x) \Delta(x,x') J(x') \, ,
 \end{align}
 where
 \begin{align}
@@ -251,7 +251,7 @@ A useful expression is obtained by expanding both exponentials
                       \right]^V \times \\
   \label{eq:DoubleExpExp}
                     & \sum_{P=0}^\infty \frac{1}{P!} \left[
-                      \frac{i}{2} \int d^Dy\, d^Dz\, 
+                      -\frac{i}{2} \int d^Dy\, d^Dz\, 
                       J(y) \Delta(y-z) J(z)
                       \right]^P
 \end{align}
@@ -261,7 +261,8 @@ this contribution.
 \begin{itemize}
 \item the overall factor of '$i$': 
   \begin{align}
-    i^V \left(\frac{1}{i}\right)^{3V} i^P = i^{P-2V} = i^{E-P+V}\, .
+    (-)^P i^V \left(\frac{1}{i}\right)^{3V} i^P = (-)^P i^{P-2V} = (-)^P 
+    i^{E-P+V}\, .
   \end{align}
 \item derivatives acting on sources: 
   \begin{align}
@@ -275,7 +276,7 @@ using a diagrammatic representation.
   represented by a line connecting the points $x$ and $y$. 
   \begin{equation}
     \label{eq:DeltaXYFeynDiag}
-    \frac{1}{i}\Delta(x-y) = 
+    i \Delta(x-y) = 
     \begin{tikzpicture}[baseline={([yshift=1.4ex]current bounding box.center)}]
       \begin{feynman}[inline=(a)]
         \vertex (a);
@@ -325,10 +326,10 @@ using a diagrammatic representation.
     \end{tikzpicture}\, .
   \end{equation}  
 \end{itemize}
-We can then count the number of contractions that yield a particular
-diagram, \ie. a particular contribution. Assuming that there is no
-symmetry in the structure of the diagram, we have the following
-possibilities. 
+We can then count the number of contractions that yield a particular diagram,
+\ie\ a particular integral of products of propagators and sources. Assuming that
+there is no symmetry in the structure of the diagram, we obtain identical
+integrals under the following operations: 
 \begin{itemize}
 \item permutations of the functional derivatives: $(3!)^V$;
 \item permutations of the vertices: $V!$;
@@ -354,9 +355,10 @@ $E=4-3=1$. The term in the double expansion is
   & \left(\frac{1}{i}\frac{\delta}{\delta J(x)}\right)
     \left(\frac{1}{i}\frac{\delta}{\delta J(x)}\right)
     \left(\frac{1}{i}\frac{\delta}{\delta J(x)}\right)\,
-    \frac{1}{2!} \frac{i}{2}\, 
+    \frac{1}{2!} \left(\frac{-i}{2}\right)\, 
     \int d^Dy_1\, d^Dz_1\, J(y_1) \Delta(y_1-z_1) J(z_1) \nonumber \\  
-  & \times \int d^Dy_2\, d^Dz_2\, J(y_2) \Delta(y_2-z_2) J(z_2)\, .
+  & \times  \left(\frac{-i}{2}\right)\, 
+    \int d^Dy_2\, d^Dz_2\, J(y_2) \Delta(y_2-z_2) J(z_2)\, .
 \end{align}
 It can be rewritten as 
 \begin{align}
@@ -397,24 +399,22 @@ The integral can be represented diagrammatically as
 \end{equation}
 Note that there is one source left in the integral, corresponding to
 $E=1$, and hence one external 'dot' in the diagram. 
-\item Let us now try to figure out the symmetry factor by working out
-  the double counting in the general argument spelled out above. In
-  that counting, swapping derivatives and swapping the ends of a
-  propagator have been counted as distinct operations. However you can
-  check that in this particular example swapping \eg $J(y_1)$ and
-  $J(z_1)$ is equivalent to swapping the two derivatives that act on
-  the currents. Hence, in order to take into account this double
-  counting, we need to divide the integral that is
-  represented by the diagram by a symmetry factor $S=2$, which
-  precisely the factor of $1/2$ that appears in front of the integral
-  in Eq.~(\ref{eq:IntWithSymFactOne}).
+\item Let us now try to figure out the symmetry factor by working out the double
+  counting in the general argument spelled out above. In that counting, swapping
+  derivatives and swapping the ends of a propagator have been counted as
+  distinct operations. However you can check that in this particular example
+  swapping \eg $J(y_1)$ and $J(z_1)$ is equivalent to swapping the two
+  derivatives that act on the currents. Hence, in order to take into account
+  this double counting, we need to divide the integral that is represented by
+  the diagram by a symmetry factor $S=2$, which is precisely the factor of $1/2$
+  that appears in front of the integral in Eq.~(\ref{eq:IntWithSymFactOne}).
 \end{enumerate}
 
 \bigskip
 
 \noindent {\bf Another example:} let us now take $P=3$ and $V=2$. The
 number of external legs is $E=2\times 3 - 3 \times 2=0$. The overall
-factor of i is $i^{P-2V}=-i$. The terms appearing in the expansion
+factor of $i$ is $-i^{P-2V}=i$. The terms appearing in the expansion
 are: 
 \begin{align}
   \frac{1}{2!} 

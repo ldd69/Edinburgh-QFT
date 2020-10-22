@@ -1,0 +1,237 @@
+\documentclass[12pt,a4paper]{article}
+%
+\setlength{\oddsidemargin}{  0mm}
+\setlength{\topmargin}    { -12mm}
+\setlength{\textheight}   { 246mm}
+\setlength{\textwidth}    { 165mm}
+\setlength{\parindent}    {  0   pt}  % not actually required but they
+
+\setlength{\parskip}      {  6   pt}  % make paragraphs look less ugly
+
+%
+
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{slashed}
+\pagestyle{empty}
+
+\include{Init}
+
+\newcommand{\tphi}{\tilde{\phi}}
+\newcommand{\tj}{\tilde{J}}
+\newcommand{\tchi}{\tilde{\chi}}
+\newcommand{\psibar}{\bar{\psi}}
+\newcommand{\etabar}{\bar{\eta}}
+\newcommand{\munu}{{\mu\nu}}
+
+\begin{document}
+\begin{center}
+{\bf Quantum Field Theory}\\[\baselineskip]
+\end{center}
+{\bf Hogmanay's Problem Sheet}
+
+\begin{enumerate}
+\item {\it Change of scheme} \\
+
+  Consider two renormalization schemes, leading to two definitions of
+  the renormalized coupling, which we denote respectively $g(\mu)$ and
+  $\tilde{g}(\mu)$. Clearly
+  \[
+    \tilde{g}(\mu) = F\left(g(\mu)\right)\, ,
+  \]
+  and we require
+  \[
+    F(x) = x + \frac{A}{3} x^3 + \ldots\, .
+  \]
+  The latter condition implies that the two couplings are the same at
+  tree level and differ by quantum corrections, \ie the difference can
+  be expanded in powers of $g^2$.
+
+  Let us define (ignoring factors of 4 and $\pi$)
+  \[
+    \alpha(\mu) = g(\mu)^2\, , \quad \tilde{\alpha}(\mu) =
+    \tilde{g}(\mu)^2\, .
+  \]
+  The $\beta$ function can be defined as the logarithmic derivative of
+  $\alpha$ or $g$ -- and you will find both conventions in the
+  literature:
+  \[
+    \mu\frac{d}{d\mu} \alpha(\mu) = \beta_\alpha(\alpha)\, , 
+    \quad 
+    \mu\frac{d}{d\mu} g(\mu) = \beta_g(g)\, . 
+  \]
+  Find the relation between $\beta_\alpha$ and $\beta_g$.
+
+  If
+  \[
+    \beta_\alpha = C_1 \alpha^2 + C_2 \alpha^4 + \ldots\, ,
+  \]
+  and
+  \[
+    \tilde{\beta}_\alpha
+    = \mu\frac{d}{d\mu} \tilde{\alpha}(\mu)
+    = \tilde{C}_1 \tilde{\alpha}^2 + \tilde{C}_2 \tilde{\alpha}^4 +
+    \ldots\, ,
+  \]
+  show that $C_1=\tilde{C}_1$ and $C_2=\tilde{C}_2$, i.e. the first
+  two coefficients of the $\beta$ function are scheme-independent. 
+  
+  \bigskip
+  
+\item {\it $\Lambda$ parameter}\\
+
+  Let us consider the following $\beta$ function:
+  \[
+    \mu\frac{d}{d\mu} g(\mu) = \beta(g) =-\beta_0 g^3 - \beta_1 g^5 +
+    \ldots\, ,
+  \]
+  with $\beta_0,\beta_1>0$.
+  Show that
+  \[
+    \lim_{\mu\to\infty} g(\mu) = 0\, ,
+  \]
+  integrate the RG equation at lowest order in perturbation theory,
+  thereby showing that the running of the coupling is logarithmic.
+
+  The RG equation can be rewritten as
+  \[
+    \frac{d\mu}{\mu} = \frac{dg}{\beta(g)}\, .
+  \]
+  Integrate this equation between two arbitrary scales, and then deduce that
+  \[
+    \Lambda = \mu \left(\beta_0 g(\mu)^2\right)^{-\beta_1/(2\beta_0^2))}\,
+    e^{-1/(2\beta_0 g(\mu)^2)} \,
+    \exp\left\{
+      -\int_0^{g(\mu)} dx \left[
+       \frac{1}{\beta(x)} + \frac{1}{\beta_0 x^3}-\frac{\beta_1}{\beta_0^2x} 
+      \right]
+    \right\}
+  \]
+  is independent of $\mu$. 
+
+  \bigskip
+
+\item {\it Scale dependence in $\phi^4$}\\
+
+  Consider the $\phi^4$ theory in $D=4-2\epsilon$ dimensions,
+  \[
+    \mathcal{L} = \frac12 Z_\phi \partial_\mu \phi_R \partial^\mu \phi_R -
+    \frac12 Z_m m_R^2 \phi_R^2 -\frac{1}{4!} Z_\lambda \lambda_R
+    \phi_R^4\, .
+  \]
+  Compute the beta function to $O(\lambda^2)$, and the mass anomalous
+  dimension to $O(\lambda)$.
+
+  \bigskip
+  
+\item {\it Solution of RGEs for the two-point function}\\
+
+  The Callan-Symanzik equation for the renormalized two-point function
+  is
+  \[
+    \left[
+      \mu \frac{\partial}{\partial \mu} + \beta(\bar\alpha)
+      \frac{\partial}{\partial \bar\alpha} + \gamma_m(\bar\alpha)
+      \bar{m} \frac{\partial}{\partial \bar{m}} +
+      2 \gamma_\phi(\bar\alpha)
+    \right] \Delta_{FR}(p^2; \bar\alpha, \bar{m}, \mu)=0\, , 
+  \]
+  where $\bar\alpha(\mu)$ and $\bar{m}(\mu)$ are renormalized
+  couplings at the scale $\mu$.
+ The product $\mu^2 \Delta_{FR}$ is dimensionless, and therefore
+ invariant under rescaling of all dimensionful parameters, \viz
+ \[
+   \mu \mapsto e^\zeta \mu\, , \quad
+   \bar{m} \mapsto e^\zeta \bar{m}\, , \quad
+   p^\mu \mapsto e^\zeta p^\mu\, .
+ \]
+ Deduce that
+ \[
+   \left[
+      \mu \frac{\partial}{\partial \mu} + 
+      \bar{m} \frac{\partial}{\partial \bar{m}} +
+      p \cdot \frac{\partial}{\partial p} - 2
+    \right] \Delta_{FR}(p^2; \bar\alpha, \bar{m}, \mu)=0\, .
+  \]
+  Combining the two equations above, verify that
+  \[
+    \left[
+      -p\cdot \frac{\partial}{\partial p} + \beta(\bar\alpha)
+      \frac{\partial}{\partial \bar\alpha} - \left[1-
+        \gamma_m(\bar\alpha)\right] 
+      \bar{m} \frac{\partial}{\partial \bar{m}} +
+      2 (1+\gamma_\phi(\bar\alpha))
+    \right] \Delta_{FR}(p^2; \bar\alpha, \bar{m}, \mu)=0\, .
+  \]
+  Let $p^\mu=\lambda p'^\mu$, and show
+  \[
+    p\cdot \frac{\partial}{\partial p} \Delta_{FR}(p^2; \bar\alpha,
+    \bar{m}, \mu) =
+    \lambda \frac{\partial}{\partial\lambda} \Delta_{FR}((\lambda
+    p')^2; \bar\alpha, \bar{m}, \mu)\, ,
+  \]
+  and therefore
+  \[
+    \left[
+      -\lambda \frac{\partial}{\partial \lambda} + \beta(\bar\alpha)
+      \frac{\partial}{\partial \bar\alpha} - \left[1-
+        \gamma_m(\bar\alpha)\right] 
+      \bar{m} \frac{\partial}{\partial \bar{m}} +
+      2 (1+\gamma_\phi(\bar\alpha))
+    \right] \Delta_{FR}((\lambda p)^2; \bar\alpha, \bar{m}, \mu)=0\, .
+  \]
+  In order to solve this equation, we set
+  \[
+    \lambda = e^{-t}\, , \quad \delta(\bar\alpha) = 2 +
+    2\gamma_\phi(\bar\alpha)\, ,
+  \]
+  and hence:
+  \[
+    \left[
+      \frac{\partial}{\partial t} + \beta(\bar\alpha)
+      \frac{\partial}{\partial \bar\alpha} - \left[1-
+        \gamma_m(\bar\alpha)\right] 
+      \bar{m} \frac{\partial}{\partial \bar{m}} +
+      \delta(\bar\alpha)
+    \right] \Delta_{FR}((e^{-t} p)^2; \bar\alpha, \bar{m}, \mu)=0\, .
+  \]
+  Show that the running couplings
+  \[
+    \tilde\alpha(t) = \bar\alpha\left(e^t \mu\right)\, ,
+    \quad
+    \tilde{m}(t) = \bar{m}\left(e^t \mu\right)\, ,
+  \]
+  satisfy
+  \[
+    \frac{d}{dt} \tilde\alpha = \beta(\tilde\alpha) \, , \quad
+    \frac{1}{\tilde{m}} \frac{d}{dt} \tilde{m} = -\left(
+      1-\gamma_m(\tilde\alpha)
+    \right)\, ,
+  \]
+  and finally that
+  \[
+    \left[\frac{d}{dt} + \delta(\tilde\alpha) \right]
+    \Delta_{FR}((e^{-t} p)^2; \tilde\alpha, \tilde{m}, \mu)=0\, . 
+  \]
+  Solve this equation and show that
+  \[
+    \Delta_{FR}\left((e^t p)^2; \bar\alpha, \bar{m}, \mu\right) =
+    \Delta_{FR}(p^2; \tilde\alpha(t), \tilde{m}(t), \mu)
+    \exp\left[\int_0^t dt' \delta\left(\tilde\alpha(t')\right)\right]
+    \, .
+  \]
+  Show that in the absence of divergences, \ie for
+  \[
+    \beta=\gamma_m=\gamma_\phi=0\, ,
+  \]
+  the equation above reproduces the naive scaling predicted from
+  dimensional analysis. This should clarify why $\gamma_m$ and
+  $\gamma_\phi$ are called anomalous dimensions.
+
+  Note that this analysis can be extended to any correlator of fields,
+  with straightforward modifications. 
+\end{enumerate}
+
+\vfill
+\hspace*{\fill}\tiny L Del Debbio, December 2018.
+\end{document}
