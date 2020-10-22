@@ -23,7 +23,7 @@ The perturbative definition of the path integral has led to an
 expansion where we can classify terms according to the number of
 currents that appear. We denoted this number by $E$ above. Clearly the
 only terms that contribute to an $n$-point function are the ones with
-$E=n$. For a given values of $E$ there will be contibutions from all
+$E=n$. For a given value of $E$ there will be contibutions from all
 the values of $V$ that satisfy
 \[
   E =2P- 3V\, ,
@@ -52,12 +52,12 @@ of the functional derivative:
  The two-point function
 \begin{align}
   \label{eq:TwoPtOne}
-  G^{(2)}(x,y) 
+  G^{(2)}(x_1,x_2) 
   &= 
-    \langle T \phi(x) \phi(y) \rangle \\
+    \langle T \phi(x_1) \phi(x_2) \rangle \\
   &= 
-    \left(\frac{1}{i} \frac{\delta}{\delta J(x)}\right)
-    \left(\frac{1}{i} \frac{\delta}{\delta J(y)}\right)
+    \left(\frac{1}{i} \frac{\delta}{\delta J(x_1)}\right)
+    \left(\frac{1}{i} \frac{\delta}{\delta J(x_2)}\right)
     Z[J]\Big|_{J=0} \, .
 \end{align}
 The only terms in Eq.~(\ref{eq:DoubleExpExp}) that contribute are the
@@ -80,14 +80,13 @@ $V=0$, we have
         % \vertex [below=0.2em of b] {\(_{y}\)};  
       \end{feynman}
     \end{tikzpicture} = \frac{i}{2}
-    \int d^Dz_1\, d^Dz_2\, J(z_1) \Delta(z_1-z_2) J(z_2) \, .
+    \int d^Dy\, d^Dz\, J(y) \Delta(y-z) J(z) \, .
 \end{equation}
-Taking the functional derivatives with respect to $J$ we get a factor
-of two, from acting with each derivative on both $J(z_1)$ and
-$J(z_2)$:
+Taking the functional derivatives with respect to $J$ we get a factor of two,
+from acting with the first derivative on both $J(y)$ and $J(z)$:
 \begin{equation}
   \label{eq:2ptOrderZeroTwo}
-  G^{(2,0)}(x,y) = \frac{1}{i} \Delta(x-y)\, ,
+  G^{(2,0)}(x_1,x_2) = i \Delta(x_1-x_2)\, ,
 \end{equation}
 where the second index in the suffix indicates the order in the
 perturbative expansion as discussed above. 
@@ -98,9 +97,8 @@ $E=2$ and $V=1$.
 
 \paragraph{V=2}
 
-The next contributions to the two-point functions
-come from terms with $V=2$, and there are two distinct diagram
-topologies at this order.
+The next contributions to the two-point functions come from terms with $V=2$,
+and there are two distinct connected diagram topologies at this order.
 \begin{enumerate}
 \item [a.] The first diagram topology that contributes to $G^{(2)}$ is
   \begin{align}
@@ -122,9 +120,9 @@ topologies at this order.
   Taking derivatives and inserting the appropriate factor of $i$
   yields a total contribution of
   \begin{align}
-    G^{(2,2)}_a(x,y) = - \frac{1}{2} 
-    \int d^Dw_1\, d^Dw_2\, \Delta(x-w_1) \Delta(w_1-w_2)^2
-    \Delta(w_2-y)\, .
+    G^{(2,2)}_a(x_1,x_2) = - \frac{1}{2} 
+    \int d^Dw_1\, d^Dw_2\, \Delta(x_1-w_1) \Delta(w_1-w_2)^2
+    \Delta(w_2-x_2)\, .
   \end{align}
 
 \item [b.] The other contribution comes from 
@@ -167,8 +165,8 @@ topologies at this order.
   \end{align}
   The net contribution from this diagram is
   \begin{align}
-     G^{(2,2)}_b(x,y) = -\frac{1}{2} 
-    \int d^Dw_1\, d^Dw_2\, \Delta(x-w_1) \Delta(w_1-y) \Delta(w_1-w_2)
+     G^{(2,2)}_b(x_1,x_2) = -\frac{1}{2} 
+    \int d^Dw_1\, d^Dw_2\, \Delta(x_1-w_1) \Delta(w_1-x_2) \Delta(w_1-w_2)
       \Delta(0))\, .
   \end{align}
 \end{enumerate}
@@ -184,18 +182,18 @@ discussed the representation of the free propagator in momentum space:
 \end{align}
 The Fourier transform of the two-point correlator is defined as
 \begin{align}
-  \tilde{G}^{2}\left(p,p'\right) 
+  \tilde{G}^{2}\left(p_1,p_2\right) 
   &= 
-    \int d^Dx\, d^Dy\, e^{ip\cdot x} e^{ip'\cdot y} 
-    G^{(2)}(x,y) \\
-  &= \int d^Dz\, d^Dy\, e^{ip\cdot z} e^{i(p+p')\cdot y} G^{(2)}(z) \\
-  &= \left(2\pi\right)^D \delta(p+p')\, \int d^Dz\, e^{ip\cdot z}
+    \int d^Dx_1\, d^Dx_2\, e^{ip_1\cdot x_1} e^{ip_2\cdot x_2} 
+    G^{(2)}(x_1,x_2) \\
+  &= \int d^Dz\, d^Dx_2\, e^{ip_1\cdot z} e^{i(p_1+p_2)\cdot x_2} G^{(2)}(z) \\
+  &= \left(2\pi\right)^D \delta(p_1+p_2)\, \int d^Dz\, e^{ip_1\cdot z}
     G^{(2)}(z)  \\
-  &= \left(2\pi\right)^D \delta(p+p')\, \frac{1}{i} \tilde{\Delta}_F(p)\, .
+  &= \left(2\pi\right)^D \delta(p_1+p_2)\, \tilde{\Delta}_F(p)\, .
 \end{align}
-Note that translation invariance of $G^{(2)}(x,y)$ produces an overall
+Note that translation invariance of $G^{(2)}(x_1,x_2)$ produces an overall
 Dirac delta that implements conservation of the total momentum. Again
-we can look at the contributions to $\tilde{G}^{(2)}(p,p')$ order by
+we can look at the contributions to $\tilde{G}^{(2)}(p_1,p_2)$ order by
 order in perturbation theory. 
 
 \paragraph{V=0}
@@ -203,28 +201,28 @@ order in perturbation theory.
 At lowest order in $g$, we simply have the Fourier transform of the
 free propagator:
 \begin{align}
-  \tilde{G}^{(2,0)}(p,p') 
+  \tilde{G}^{(2,0)}(p_1,p_2) 
   &= 
-    \left(2\pi\right)^D \delta(p+p')\,
-    \frac{1}{i} \tilde{\Delta}(p) \\
+    \left(2\pi\right)^D \delta(p_1+p_2)\,
+    i \tilde{\Delta}(p) \\
   &=
-    \left(2\pi\right)^D \delta(p+p')\,
-    \frac{1}{i} \frac{1}{p^2-m^2+i\epsilon}\, .
+    \left(2\pi\right)^D \delta(p_1+p_2)\,
+    \frac{i}{p_1^2-m^2+i\epsilon}\, .
 \end{align}
 
 \paragraph{V=2}
 
 At order $g^2$, we obtain
 \begin{align}
-  \tilde{G}^{(2,2)}_a(p,p') 
-  =& - \frac12\, \left(2\pi\right)^D \delta(p+p')\,
-     \frac{1}{p^2-m^2+i\epsilon} \times \nonumber \\
+  \tilde{G}^{(2,2)}_a(p_1,p_2) 
+  =& - \frac12\, \left(2\pi\right)^D \delta(p_1+p_2)\,
+     \frac{1}{p_1^2-m^2+i\epsilon} \times \nonumber \\
    & \times \left\{
      \int \frac{d^D\ell}{(2\pi)^D}\, 
      \frac{1}{\ell^2-m^2+i\epsilon}
-     \frac{1}{(\ell-p)^2-m^2+i\epsilon}
+     \frac{1}{(\ell-p_1)^2-m^2+i\epsilon}
      \right\}
-     \frac{1}{p^2-m^2+i\epsilon} \, .
+     \frac{1}{p_2^2-m^2+i\epsilon} \, .
 \end{align}
 The above expression can be represented by a Feynman diagram in
 momentum space:
