@@ -261,6 +261,7 @@ function for negative integer values of its argument.
 
 It is useful to generalise the result in Eq.~(\ref{eq:IDResult}):
 \begin{equation}
+  \label{eq:DimRegGenForm}
   \boxed{
   \int \frac{d^Dq_E}{(2\pi)^D}\,
   \frac{\left(q_E^2\right)^a}{\left(q_E^2+M^2\right)^b}
@@ -268,7 +269,35 @@ It is useful to generalise the result in Eq.~(\ref{eq:IDResult}):
   \Gamma(D/2)} \left(M^2\right)^{-(b-a-D/2)}\, .}
 \end{equation}
 Manipulations similar to the ones above allow you to derive the
-general formula. 
+general formula.
+
+\noindent
+It is useful to factor out the angular integral in the above expression: 
+\begin{align}
+  \int \frac{d^Dq_E}{(2\pi)^D}\,
+  \frac{\left(q_E^2\right)^a}{\left(q_E^2+M^2\right)^b}
+  &= \frac{2\pi^{D/2}}{\Gamma(D/2)}\, \frac{1}{(2\pi)^D}\,
+  \int_0^\infty dq \frac{q^{2a+D-1}}{(q^2+M^2)^b} \\
+  \label{eq:DimRegRadIntegral}
+  &= \frac{2}{(4\pi)^{D/2} \Gamma(D/2)}\, 
+  \int_0^\infty dq\, \frac{q^{2a+D-1}}{(q^2+M^2)^b} \, .
+\end{align}
+Comparing Eq.~(\ref{eq:DimRegGenForm}) with Eq.~(\ref{eq:DimRegRadIntegral}) we see that
+\begin{equation}
+  \int_0^\infty dq \frac{q^{2a+D-1}}{(q^2+M^2)^b} 
+    = \frac{\Gamma(b-a-D/2)\Gamma(a+D/2)}{2 \Gamma(b)}\, 
+      (M^2)^{-(b-a-D/2)}\, ,
+\end{equation}
+which can be rewritten as
+\begin{equation}
+  \label{eq:DimRegRadIntFormula}
+  \boxed{
+  \int_0^\infty dq \frac{q^{2\alpha}}{(q^2+M^2)^\beta} 
+    = \frac{\Gamma(\beta-\alpha-1/2)\Gamma(\alpha+1/2)}{2 \Gamma(\beta)}\, 
+      (M^2)^{-(\beta-\alpha-1/2)}\, .
+  }
+\end{equation}
+
 
 \subsection{Structure of divergences}
 \label{sec:struct-diverg}
