@@ -6,7 +6,9 @@
 \newcommand{\munu}{{\mu\nu}}
 \newcommand{\tDelta}{\tilde{\Delta}}
 \newcommand{\SProp}[1]{\frac{1}{#1^2-m^2+i\epsilon}}
+\newcommand{\HSProp}[1]{\frac{1}{#1^2-M^2+i\epsilon}}
 \newcommand{\ESProp}[2]{\frac{1}{\left(#1^2+m^2\right)^#2}}
+\newcommand{\EHSProp}[2]{\frac{1}{\left(#1^2+M^2\right)^#2}}
 
 
 \section{A first look at divergences}
@@ -91,7 +93,7 @@ using Feynman parameters. The general formula
 can be applied to the integrand above, yielding
 \begin{align}
   \SProp{\ell} \SProp{(\ell-p)} = \int_0^1dx\,
-  \frac{1}{\left(q^2-M^2 +i\epsilon\right)}\, ,
+  \frac{1}{\left(q^2-M^2 +i\epsilon\right)^2}\, ,
 \end{align}
 where $q=\ell-xp$, and $M^2(x,p)=m^2-x(1-x)p^2$. Hence, we have
 \begin{equation}
@@ -114,7 +116,7 @@ we can rewrite
 \begin{equation}
   \label{eq:PiEuclMom}
   \Pi(p^2) = \frac{g^2}{2} \int_0^1dx\, \int \frac{d^Dq_E}{(2\pi)^D}\, 
-  \ESProp{q_E}{2}\, .
+  \EHSProp{q_E}{2}\, .
 \end{equation}
 
 \paragraph{A comment on divergencies}
