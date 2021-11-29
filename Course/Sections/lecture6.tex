@@ -130,13 +130,13 @@ respect to $p^2$:
 \begin{equation}
   \label{eq:PiPrimeInt}
   \Pi'(p^2) = -g^2 \int_0^1dx\, x(x-1) \int \frac{d^Dq_E}{(2\pi)^D}\,
-  \ESProp{q_E}{3}\, ,
+  \EHSProp{q_E}{3}\, ,
 \end{equation}
 which is still divergent, but only for $D\geq 6$. Similarly
 \begin{equation}
   \label{eq:PiDoublePrimeInt}
   \Pi''(p^2) = 3g^2 \int_0^1dx\, x^2(x-1)^2 \int \frac{d^Dq_E}{(2\pi)^D}\,
-  \ESProp{q_E}{4}
+  \EHSProp{q_E}{4}
 \end{equation}
 is divergent only for $D\geq 8$, and in particular is finite for
 $D=6$. Therefore the function $\Pi(p^2)$ can be reconstructed by
@@ -188,12 +188,12 @@ continuation. Let us look at the integral that we encountered above
 for the two-point function. After Wick rotation, we are interested in
 \begin{equation}
   \label{eq:FirstExDimReg}
-  I_D = \int \frac{d^Dq_E}{(2\pi)^D}\, \ESProp{q_E}{2}\, ,
+  I_D = \int \frac{d^Dq_E}{(2\pi)^D}\, \EHSProp{q_E}{2}\, ,
 \end{equation}
 which is easily computed in spherical coordinates:
 \begin{align}
   I_D &= \int \frac{d\Omega_D}{(2\pi)^D}\,
-        \frac12 \int_0^\infty dq_E^2\, (q_E^2)^{D/2-1} \ESProp{q_E}{2}
+        \frac12 \int_0^\infty dq_E^2\, (q_E^2)^{D/2-1} \EHSProp{q_E}{2}
   \\
       &= \frac{1}{(2\pi)^{D}} \frac{2\pi^{D/2}}{\Gamma(D/2)}\,
         \frac12 \left(\frac{1}{M^2}\right)^{2-D/2} \int_0^1 d\xi \,
@@ -367,7 +367,7 @@ Collecting all contributions yields
            &= \frac{\alpha}{2} \left[
              \left(\frac{1}{\epsilon}+1\right) \left(\frac{1}{6}
              p^2-m^2\right)
-             - \int_0^1dx\, M^2(x,p^2) \log\left(\frac{\mu^2}{M^2}\right)
+             - \int_0^1dx\, M^2(x,p^2) \log\left(\frac{\mu^2}{M^2(x,p^2)}\right)
              \right]
              +O(\epsilon) \, ,
 \end{align}

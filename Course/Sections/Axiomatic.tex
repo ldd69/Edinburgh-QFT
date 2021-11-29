@@ -1,0 +1,186 @@
+\newcommand{\Hin}{\mathcal{H}_{\mathrm{in}}}
+
+\section{Time Evolution Pictures in Quantum Mechanics}
+\label{sec:reps-quant}
+
+In order to set the notation, we briefly summarise the different representations
+used to describe the time evolution of quantum systems. The state of the system
+at $t=0$ is described by a vector $\ket{\psi} \in \mathcal{H}$, where
+$\mathcal{H}$ is the Hilbert space of physical states.
+
+\paragraph{Schr\"odinger Picture}
+
+In the Schr\"odinger representation the time evolution is encoded in the time
+dependence of the state vector, $\ket{\psi_S(t)}$, which evolves according to
+the Schr\"odinger equation
+\begin{equation}
+    \label{eq:SchrodEq}
+    i \partial_t \ket{\psi_S(t)} = H \ket{\psi_S(t)}\, ,
+\end{equation}
+where $H$ is the Hamiltonian operator for the system under study. Operators
+associated to observables, $O_S$, are time independent (unless the observable
+itself has an explicit dependence on time). The expectation value of the
+observable at time $t$ is 
+\begin{equation}
+    \label{eq:SchrodExp}
+    O(t) = \langle \psi_S(t) | O_S | \psi_S(t) \rangle\, .
+\end{equation}
+
+\paragraph{Heisenberg Picture}
+
+In the Heisenberg representation, the state vector does not evolve in time. At
+all times $t$, $\ket{\psi_H(t)}=\ket{\psi}$. We will therefore drop the suffix
+$H$ when we refer to states in the Heisenberg representation. Time evolution is
+encoded in the time dependence of the operators $O_H(t)$. Clearly the
+expectation value at time $t$ should not depend on whether we work in the
+Schr\"odinger or Heisenberg representation:
+\begin{equation}
+    \label{eq:HeisenExp}
+    O(t) = \langle \psi | O_H(t) | \psi \rangle\, .
+\end{equation}
+Comparing Eqs.~\eqref{eq:SchrodExp} and~\eqref{eq:HeisenExp} we deduce that
+\begin{equation}
+    \label{eq:HeisenOp}
+    O_H(t) = e^{iHt} O_S e^{-iHt}\, ,
+\end{equation}
+and therefore 
+\begin{equation}
+    \label{eq:HeisenEvol}
+    i \frac{d}{dt} O_H(t) = - \left[H, O_H(t)\right]\, ,
+\end{equation}
+where $H$ is the Hamiltonian again.~\footnote{Clearly, the Hamiltonian operator
+in the Heisenberg representation is time-independent. Do not confuse the
+Hamiltonian $H$ and the suffix $H$, used to denote the Heisenberg
+representation.}
+
+\paragraph{Interaction Picture}
+
+The interaction picture interpolates between the previous two. In this case the
+Hamiltonian is divided into a {\it free} Hamiltonian $H_0$ and an interaction
+term $V$. The time dependent state vector in the interaction picture is defined
+by 'subtracting' the free evolution from the Schr\"odinger state vector at time
+$t$:
+\begin{equation}
+    \label{eq:IntPictEvol}
+    \ket{\psi_{\mathrm{int}}} = e^{i H_0 t} \ket{\psi_S(t)}\, .
+\end{equation}
+The operators are also time-dependent:
+\begin{equation}
+    \label{eq:IntPictOps}
+    O_{\mathrm{int}}(t) = e^{i H_0 t} O_S e^{-i H_0 t}\, .
+\end{equation}
+In this representation the free Hamiltonian is time independent,
+\begin{equation}
+    \label{eq:H0IntPict}
+    H_{0,\mathrm{int}}(t) = H_0\, ,
+\end{equation}
+and the time evolution of the states is described by a first-order differential
+equation similar to Schr\"odinger's equation, 
+\begin{equation}
+    \label{eq:IntPictEvolEq}
+    i \partial_t \ket{\psi_{\mathrm{int}}(t)} = V_{\mathrm{int}}(t) 
+    \ket{\psi_{\mathrm{int}}(t)}\, .
+\end{equation}
+
+Finally, note that fields in QFT are treated as operator-valued distributions
+and therefore
+\begin{equation}
+    \label{eq:HvIntFields}
+    \phi_H(t,\mathbf{x}) = U(t)^\dagger \phi_{\mathrm{int}}(t,\mathbf{x}) 
+    U(t)\, ,
+\end{equation}
+where
+\begin{equation}
+    \label{eq:Uoperator}
+    U(t) = e^{iH_0t} e^{-iHt}\, .
+\end{equation}
+
+\paragraph{Conventions for Generators of Translations}
+
+Using a $D$-dimensional covariant notation, and a Minkovski metric 
+\begin{equation}
+    \label{eq:MostlyMinus}
+    \eta_{\mu\nu} = \mathrm{diag}\left\{1, -1, -1, \ldots \right\}\, ,
+\end{equation}
+we can write the momentum operator in position space as
+\begin{equation}
+    \label{eq:MomOp}
+    P^\mu = i \partial^\mu\, ,
+\end{equation}
+which reduces to the usual expressions for the Hamiltonian $P^0$ and the spatial
+components of the momentum $P^k$. The momentum being the generator of
+translations, the wave function of a system in the Schr\"odinger picture obeys
+\begin{equation}
+    \label{eq:PsiTranslation}
+    \psi\left(x+a\right) = e^{-i P\cdot a} \psi\left(x\right)\, ,
+\end{equation}
+while for the field operators in the Heisenberg representation
+\begin{equation}
+    \label{eq:PhiTranslation}
+    \phi_H(x+a) = e^{i P\cdot a} \phi_H(x) e^{-i P\cdot a}\, .
+\end{equation}
+
+\section{Asymptotic States}
+\label{sec:AsymptStates}
+
+'In' and 'Out' states are states of the interacting theory in the Heisenberg
+representation, which are characterized by the behaviour of the system in the
+far past and the far future respectively, where the particles can be considered
+to be well separated. The separation between particles implies that these states
+should be in a one-to-one correspondence with free-particle states. Let us focus
+here on in-states, similar results hold for the out-states. The Hilbert space of
+in-states is denoted $\Hin$. A basis of $\Hin$ is made of simultaneous momentum
+eigenstates of $N$ particles, where $N$ spans the set of integer numbers
+\begin{equation}
+    \label{eq:HinBasis}
+    \left\{ \ket{k_1 \ldots k_N}; \mathrm{in}, N \in \mathbb{N} \right\}\, .
+\end{equation}
+Clearly the individual momenta are not conserved quantities, while translation
+invariance guarantees that the total momentum $P$ is conserved
+\begin{equation}
+    \label{eq:TotMomConserv}
+    P^\mu \ket{k_1 \ldots k_N; \mathrm{in}} = 
+    \left(\sum_{m=1}^N k^\mu_m\right) 
+    \ket{k_1 \ldots k_N; \mathrm{in}}\, .
+\end{equation}
+From the definitions summarised in Sec.~\ref{sec:reps-quant}, we see that states
+in the Schr\"odinger and Heisenberg pictures coincide at $t=0$. We can express
+the fact that in-states behave like free-particle states as $T \to -\infty$. Let
+$\ket{a; 0}$ be a free-particle state, we require
+\begin{equation}
+    \label{eq:InAsympOne}
+    \lim_{T\to-\infty} e^{-i H_0 T} \ket{a;0} =
+    \lim_{T\to-\infty} e^{-i H T} \ket{a; \mathrm{in}}\, ,
+\end{equation}
+which we rewrite as~\footnote{There is potential for sloppiness here, but I
+don't think it does matter.}
+\begin{align}
+    \label{eq:InAsympTwo}
+    \ket{a; \mathrm{in}} &= \lim_{T\to-\infty} e^{i H T} e^{-i H_0 T} \ket{a;0}
+    \\
+    \label{eq:MollerOne}
+    &= \Omega^+ \ket{a; 0}\, .
+\end{align}
+Note that 
+\begin{equation}
+    \label{eq:MollerComment}
+    \Omega^+ = \lim_{T\to-\infty} U(T)^\dagger.
+\end{equation}
+Similarly for out-states,
+\begin{align}
+    \label{eq:OutAsympTwo}
+    \ket{a; \mathrm{out}} &= \lim_{T\to\infty} e^{i H T} e^{-i H_0 T} \ket{a;0}
+    \\
+    \label{eq:MollerTwo}
+    &= \Omega^- \ket{a; 0}\, .
+\end{align}
+Finally we recall the definition of the $S$ matrix: 
+\begin{align}
+    \label{eq:SMatOne}
+    S_{ab} &= \langle a; \mathrm{out} | b; \mathrm{in} \rangle \\
+    \label{eq:SMatTwo}
+    &= \langle a; 0 | \left(\Omega^-\right)^\dagger
+    \Omega^+ | b; 0\rangle\, .
+\end{align}
+
+
