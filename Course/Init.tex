@@ -6,6 +6,7 @@
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
+%\usepackage{amsthm}
 \usepackage{dsfont}
 \usepackage{pifont}
 %\usepackage{bbold}
@@ -20,12 +21,21 @@
 \usepackage{makeidx}
 \usepackage{simplewick}
 \usepackage{tikz-feynman}
+\usepackage{slashed}
+\usepackage{appendix}
 
 \tikzfeynmanset{compat=1.0.0}  
 
 \newcommand{\tick}{\ding{52}}
 \newcommand{\notick}{\ding{56}}
 \newcommand{\D}{\displaystyle}
+\newcommand{\mphys}{m_\mathrm{phys}}
+\newcommand{\tphi}{\tilde{\phi}}
+\newcommand{\tj}{\tilde{J}}
+\newcommand{\tchi}{\tilde{\chi}}
+\newcommand{\psibar}{\bar{\psi}}
+\newcommand{\etabar}{\bar{\eta}}
+\newcommand{\munu}{{\mu\nu}}
 \renewcommand{\chaptername}{Lecture}
 
 \def\bfx{{\mathbf x}}
@@ -72,10 +82,12 @@
 \def\bchip{\langle\chi^\prime |}
 \def\kjm{|j,m\rangle}
 \def\tr{\mathrm{Tr}}
+\def\Rn{\mathbb{R}^n}
+\def\Cn{\mathbb{C}^n}
 \def\id{\mathds{1}}
 {\theoremstyle{plain} \theorembodyfont{\rmfamily} \newframedtheorem{Ex}{Exercise}[section]}
-{\theoremstyle{plain} \theorembodyfont{\rmfamily} \newtheorem{Def}{Definition}[section]}
-{\theoremstyle{plain} \theorembodyfont{\rmfamily} \newtheorem{Thm}{Theorem}[section]}
+{\theoremstyle{plain} \theorembodyfont{\rmfamily} \newframedtheorem{Def}{Definition}[section]}
+{\theoremstyle{plain} \theorembodyfont{\rmfamily} \newframedtheorem{Thm}{Theorem}[section]}
 
 \newcommand{\clearemptydoublepage}{\newpage{\pagestyle{empty}\cleardoublepage}}
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}

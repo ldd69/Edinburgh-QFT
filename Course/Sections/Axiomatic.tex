@@ -1,4 +1,10 @@
 \newcommand{\Hin}{\mathcal{H}_{\mathrm{in}}}
+\newcommand{\matH}{\mathcal{H}}
+\newcommand{\Dspace}{\scriptscriptstyle{D-1}}
+\newcommand{\Dall}{\scriptscriptstyle{D}}
+\newcommand{\instate}{\mathrm{in}}
+\newcommand{\outstate}{\mathrm{out}}
+\newcommand{\dddt}{\frac{\overleftrightarrow{\partial}}{\partial t}}
 
 \section{Time Evolution Pictures in Quantum Mechanics}
 \label{sec:reps-quant}
@@ -17,7 +23,13 @@ the Schr\"odinger equation
     \label{eq:SchrodEq}
     i \partial_t \ket{\psi_S(t)} = H \ket{\psi_S(t)}\, ,
 \end{equation}
-where $H$ is the Hamiltonian operator for the system under study. Operators
+where $H$ is the Hamiltonian operator for the system under study. The state of
+the system at time $t$ is 
+\begin{equation}
+    \label{eq:SchrTimeEvol}
+    \ket{\psi_S(t)} = e^{-i H t} \ket{\psi}\, .
+\end{equation}
+Operators
 associated to observables, $O_S$, are time independent (unless the observable
 itself has an explicit dependence on time). The expectation value of the
 observable at time $t$ is 
@@ -58,11 +70,11 @@ representation.}
 The interaction picture interpolates between the previous two. In this case the
 Hamiltonian is divided into a {\it free} Hamiltonian $H_0$ and an interaction
 term $V$. The time dependent state vector in the interaction picture is defined
-by 'subtracting' the free evolution from the Schr\"odinger state vector at time
+by `subtracting' the free evolution from the Schr\"odinger state vector at time
 $t$:
 \begin{equation}
     \label{eq:IntPictEvol}
-    \ket{\psi_{\mathrm{int}}} = e^{i H_0 t} \ket{\psi_S(t)}\, .
+    \ket{\psi_{\mathrm{int}}(t)} = e^{i H_0 t} \ket{\psi_S(t)}\, .
 \end{equation}
 The operators are also time-dependent:
 \begin{equation}
@@ -75,15 +87,15 @@ In this representation the free Hamiltonian is time independent,
     H_{0,\mathrm{int}}(t) = H_0\, ,
 \end{equation}
 and the time evolution of the states is described by a first-order differential
-equation similar to Schr\"odinger's equation, 
+equation similar to Schr\"odinger's equation, where $V_{\mathrm{int}}$ replaces $H$,
 \begin{equation}
     \label{eq:IntPictEvolEq}
-    i \partial_t \ket{\psi_{\mathrm{int}}(t)} = V_{\mathrm{int}}(t) 
+    i \partial_t \ket{\psi_{\mathrm{int}}(t)} = V_{\mathrm{int}}(t) \,
     \ket{\psi_{\mathrm{int}}(t)}\, .
 \end{equation}
 
-Finally, note that fields in QFT are treated as operator-valued distributions
-and therefore
+\paragraph{Fields} Note that fields in QFT are treated as operator-valued 
+distributions and therefore
 \begin{equation}
     \label{eq:HvIntFields}
     \phi_H(t,\mathbf{x}) = U(t)^\dagger \phi_{\mathrm{int}}(t,\mathbf{x}) 
@@ -102,7 +114,7 @@ Using a $D$-dimensional covariant notation, and a Minkovski metric
     \label{eq:MostlyMinus}
     \eta_{\mu\nu} = \mathrm{diag}\left\{1, -1, -1, \ldots \right\}\, ,
 \end{equation}
-we can write the momentum operator in position space as
+we represent the $D$-dimensional momentum operator in position space as
 \begin{equation}
     \label{eq:MomOp}
     P^\mu = i \partial^\mu\, ,
@@ -123,7 +135,7 @@ while for the field operators in the Heisenberg representation
 \section{Asymptotic States}
 \label{sec:AsymptStates}
 
-'In' and 'Out' states are states of the interacting theory in the Heisenberg
+`In' and `Out' states are states of the interacting theory in the Heisenberg
 representation, which are characterized by the behaviour of the system in the
 far past and the far future respectively, where the particles can be considered
 to be well separated. The separation between particles implies that these states
@@ -133,10 +145,10 @@ in-states is denoted $\Hin$. A basis of $\Hin$ is made of simultaneous momentum
 eigenstates of $N$ particles, where $N$ spans the set of integer numbers
 \begin{equation}
     \label{eq:HinBasis}
-    \left\{ \ket{k_1 \ldots k_N}; \mathrm{in}, N \in \mathbb{N} \right\}\, .
+    \left\{ \ket{k_1 \ldots k_N; \mathrm{in}}, N \in \mathbb{N} \right\}\, .
 \end{equation}
 Clearly the individual momenta are not conserved quantities, while translation
-invariance guarantees that the total momentum $P$ is conserved
+invariance guarantees that the total momentum $P^\mu$ is conserved,
 \begin{equation}
     \label{eq:TotMomConserv}
     P^\mu \ket{k_1 \ldots k_N; \mathrm{in}} = 
@@ -161,15 +173,10 @@ don't think it does matter.}
     \label{eq:MollerOne}
     &= \Omega^+ \ket{a; 0}\, .
 \end{align}
-Note that 
-\begin{equation}
-    \label{eq:MollerComment}
-    \Omega^+ = \lim_{T\to-\infty} U(T)^\dagger.
-\end{equation}
 Similarly for out-states,
 \begin{align}
     \label{eq:OutAsympTwo}
-    \ket{a; \mathrm{out}} &= \lim_{T\to\infty} e^{i H T} e^{-i H_0 T} \ket{a;0}
+    \ket{a; \mathrm{out}} &= \lim_{T\to +\infty} e^{i H T} e^{-i H_0 T} \ket{a;0}
     \\
     \label{eq:MollerTwo}
     &= \Omega^- \ket{a; 0}\, .
@@ -183,4 +190,1008 @@ Finally we recall the definition of the $S$ matrix:
     \Omega^+ | b; 0\rangle\, .
 \end{align}
 
+\section{Axiomatic Field Theory - States and Fields}
+\label{sec:AFTONe}
 
+We work with fields in the Heisenberg picture, denoted $\phi(x)$. The axioms
+needed to build a quanutm theory of fields can be divided into three main
+categories: axioms that specify the states of the theory, axioms that establish
+the properties of fields, and axioms that define the field-particle duality. In
+this section we look at the first two categories, while deferring the discussion
+of field-particle duality to a later section. 
+
+\paragraph{State Axioms.}
+
+The structure of the Hilbert space of quantum states, $\mathcal{H}$, is defined
+by the following axioms. 
+
+\begin{enumerate}
+    \item [{\bf Ia.}] $\mathcal{H}$ is a separable~\footnote{
+        A separable space contains a countable, dense subset. For now, we are not 
+        going to pay too much attention to the places where this property is used. 
+    } Hilbert space, which carries
+    a unitary representation $U(\Lambda,a)$ of the Poincar\'e group, 
+    \begin{equation}
+        \label{eq:PoincaRep}
+        \ket{\alpha} \in \matH\, , \quad U(\Lambda,a) \ket{\alpha} \in \matH\, .
+    \end{equation}
+    
+    \item [{\bf Ib.}] The spectrum of $P^\mu$ lies in the forward light-cone,
+    \begin{equation}
+        \label{eq:ForwSpec}
+        P^0 \geq 0\, , \quad P^2 \geq m^2\, ,
+    \end{equation}
+    where $m$ is the mass of the single-particle state. 
+
+    \item [{\bf Ic.}] There is a unique vacuum state $\ket{0}$, normalized such that $\langle 0 | 0\rangle = 1$. Note that this assumption implies the absence of spontaneous symmetry breaking. 
+    
+    \item [{\bf Id.}] Existence of a mass gap, the spectrum of $P^2$ is empty between 0 and $m^2$.
+\end{enumerate}
+
+\paragraph{Field Axioms.}
+
+This set of axioms specifies the properties of quantum fields and their
+expectation values. Details of the theory of distributions are summarised 
+in Chapter~\ref{chap:distr-notes}.
+
+\begin{enumerate}
+    \item [{\bf IIa.}] The Heisenberg fields $\phi(x)$ are operator-valued distributions, \ie
+    \begin{equation}
+        \label{eq:OpValuedDistr}
+        \forall f \in \mathcal{S}(\mathbb{R}^D)\, , 
+        \phi_f = \int d^Dx\, f(x) \phi(x)
+    \end{equation}
+    is an unbounded operator on $D \subset \matH$,~\footnote{
+        Here we use $D$ to denote a dense set, {\em not} the number of 
+        spacetime dimensions. Hopefully the meaning of the symbol is clear
+        from the context. 
+    } where $D$ is dense in $\matH$
+    and $\mathcal{S}$ is the set of Schwartz test functions. The image of $D$ is
+    a subset of $D$ itself, which allows to perform subsequent applications of
+    the smeared operators, \eg
+    \begin{align}
+        \langle 0 | \phi_{f_1} \ldots \phi_{f_n} | 0\rangle 
+        &= \int d^Dx_1 \ldots d^Dx_n\, f_1(x_1) \ldots f_n(x_n) \, 
+        W(x_1 \ldots x_n) \, , \\
+        W(x_1 \ldots x_n)
+        &= \langle 0 | \phi(x_1) \ldots \phi(x_n) | 0\rangle\, .
+    \end{align} 
+    The correlators $W(x_1 \ldots x_n)$ are called {\em Wightman functions}. The
+    Wightman functions are {\em tempered}\ distributions, \ie
+    \begin{equation}
+        \label{eq:TempDistr}
+        W(z) = D^m F(z)\, , \quad F(z) < C (1 + |z_E|^2)^p\, ,
+    \end{equation}
+    for some integer values of $p$. Note that $z$ is a generalized coordinate
+    that collects $x_1, \ldots x_n$, $m=(m_1 \ldots m_n)$ is a vector of
+    integers, $D^m$ is a short-hand for 
+    \begin{equation}
+        \label{eq:MultiDeriv}
+        D^m = 
+        \frac{\partial^{|m|}}{\partial x_1^{m_1} \partial x_2^{m_2} \ldots}\, ,
+    \end{equation}
+    and $|m| = m_1 + \ldots + m_n$.
+
+    \item [{\bf IIb.}] Under Poincar\'e transformations $\left\{\Lambda, a\right\}$
+    \begin{align}
+        & U(\Lambda,a)\, \phi_f\, U(\Lambda,a)^\dagger 
+            = \phi_{f_{\Lambda,a}} \, , \\
+        & f_{\Lambda,a}(x) = f\left(\Lambda^{-1}(x-a)\right)\, .
+    \end{align}
+
+    \item [{\bf IIc.}] If $f_1$ and $f_2$ have compact supports $V_1$ and $V_2$ respectively, and if 
+    \[
+        \forall x_1 \in V_1\, , \forall x_2 \in V_2 \, ,    
+        \quad (x_1 - x_2)^2 < 0\, ,
+    \]
+    then 
+    \begin{equation}
+        \label{eq:SmearedLightConeComm}
+        \left[ \phi_{f_1} , \phi_{f_2} \right] = 0\, .
+    \end{equation}
+
+    \item [{\bf IId.}] Polynomials of $\phi_f$, with all possible choices of $f$, 
+    acting on $\ket{0}$ form a dense set in $\matH$.
+\end{enumerate}
+
+Because of translation invariance, the Wightman functions only depend on $n-1$
+variables
+\begin{equation}
+    \label{eq:WightFunTransInv}
+    W(x_1 \ldots x_n) = \mathcal{W}\left(\xi_1 \ldots \xi_{n-1}\right)\, ,
+\end{equation}
+where $\xi_i = x_i - x_{i+1}$. They can be extended by
+analytical continuation to the tube $\mathcal{T}_n$, as discussed in Chapter~\ref{chap:distr-notes}, 
+$\zeta_i = \xi_i - i \eta_i$, with $\eta_i^2>0$.
+The latter functions are invariant under complex Lorentz transformations
+\begin{equation}
+    \label{eq:ComplexLorentzInv}
+    \mathcal{W}(\Lambda\zeta_1 \ldots \Lambda\zeta_{n-1}) =
+    \mathcal{W}(\zeta_1 \ldots \zeta_{n-1})\, ,
+\end{equation}
+which in turn implies that $\mathcal{W}$ is an analytical function of the scalar
+products $\zeta_i \cdot \zeta_j$. Note that the Euclidean {\em Schwinger
+functions}\ are defined by analytical continuation~\footnote{In Euclidean space 
+the spacetime vectors $x_E$ have $D$ components that are related to the Minkowski 
+ones as follows
+\[
+ x_E^i = x^i\, ,~\mathrm{for}~i=1, \ldots,D-1\, , \quad x_E^D = i x^0\, .   
+\] }
+\begin{equation}
+    \label{eq:SchwingFunDef}
+    S(x_1 \ldots x_n) = 
+        W\left((-i x_1^D, \mathbf{x}_1) 
+        \ldots (-i x_n^D, \mathbf{x}_n)\right)\, .
+\end{equation}
+
+We can define an $x$-dependent smeared field
+\begin{align}
+    \label{eq:XdepPhiSmeared}
+    \phi_f(x) 
+    &= e^{i P \cdot x} \phi_f e^{-i P \cdot x} \\
+    &= \int d^Dz\, f(z-x) \phi(z)\, ,
+\end{align}
+and bilocal smeared operators
+\begin{equation}
+    \label{eq:BilocalSmeared}
+    \phi_f = \int d^Dx_1 d^Dx_2\, f\left(x_1 - x_2\right) 
+    \phi(x_1) \phi(x_2)\, .
+\end{equation}
+The Fourier transform of a local smeared operator
+\begin{equation}
+    \label{eq:FourierSmeared}
+    \tilde\phi_f(p) = \int d^Dx\, e^{i p\cdot x} \phi_f(x)
+\end{equation}
+carries exactly momentum $p$. The smearing of the field in position space does
+not affect the momentum of the Fourier transform, and hence
+\begin{equation}
+    \label{eq:DeltaMomSmeared}
+    \langle \alpha | \tilde\phi_p(p) | \beta\rangle 
+    \propto \delta\left(P_\alpha-P_\beta-p\right)\, .
+\end{equation}
+
+\subsection{An Example Proof: Space-like Commutation}
+\label{sec:ExampleProof}
+
+In order to develop some familiarity with the concepts we introduce above, it is
+interesting to work out explicitly the proof of the following property. Let
+$a=\left(0, \mathbf{a}\right)$, then axiom {\bf IIc} implies
+\begin{equation}
+    \label{eq:FasterThanPoly}
+    \left| \langle 0 |
+        \left[ \phi_{f_1}(-a), \phi_{f_2}(a)\right]
+        | 0 \rangle 
+    \right| < C \left|\mathbf{a}\right|^{-N}\, , \quad \forall N\, , 
+    \mathrm{for}~\left|\mathbf{a}\right|\to\infty\, .
+\end{equation}
+
+\paragraph{Proof}
+
+The expectation value in \eqref{eq:FasterThanPoly} can be written as
+\begin{align}
+    \label{eq:ExpComm}
+    \langle 0 |
+        \left[ \phi_{f_1}(-a), \phi_{f_2}(a)\right]
+        | 0 \rangle =
+        \int d^Dx_1 d^Dx_2\, f_1(x_1) f_2(x_2)\,
+        \langle 0 | 
+        \left[\phi(x_1-a), \phi(x_2+a)\right]
+        | 0 \rangle\, .
+\end{align}
+Introducing $2D$-dimensional vectors $z=(x_1,x_2)$ and $\alpha=(a,-a)$, we define 
+$F(z) = f_1(x_1) f_2(x_2)$, which is a fast-decreasing function of $z$, and
+\begin{align}
+    \label{eq:CommZvar}
+    \langle 0 | 
+        \left[\phi(x_1-a), \phi(x_2+a)\right]
+        | 0 \rangle 
+        &= W\left(x_1-a,x_2+a\right) - W\left(x_2+a,x_1-a\right) \\
+        &= W\left(z-\alpha\right)\, .
+\end{align} 
+We can then rewrite
+\begin{equation}
+    \label{eq:SmearedCorrZvar}
+    \langle 0 |
+        \left[ \phi_{f_1}(-a), \phi_{f_2}(a)\right]
+        | 0 \rangle 
+        = \int dz\, F(z) W(z-\alpha)\, ,
+\end{equation}
+where $W(z)$ is a tempered distribution, 
+\begin{align}
+    \label{eq:WTempDist}
+    W(z) &= D^m \mathcal{P}(z)\, , \\
+    \mathcal{P}(z) &= c_1 \left(1 + |z|_E^2\right)^p\, , \quad \mathrm{for\ all\ } p\, .
+\end{align}
+If $|z|_E<|\mathbf{a}|$ then the separation between $(x_1-a)$ and $(x_2+a)$ is space-like 
+and $W(z-\alpha)$ vanishes, hence, after integrating by parts, 
+\begin{equation}
+    \label{eq:CutIntegralW}
+    \left|\langle 0 |
+        \left[ \phi_{f_1}(-a), \phi_{f_2}(a)\right]
+        | 0 \rangle \right| = \int_{|z|_E>|\mathbf{a}|}
+        dz\, \mathcal{P}(z-\alpha)\, D^mF(z)\, .
+\end{equation}
+Because $W$ is a tempered distribution, we know that 
+\begin{equation}
+    \label{eq:PFastDecrease}
+    \mathcal{P}(z-\alpha) < c_1 \left(1 + |z-\alpha|_E\right)^p 
+    < c_1 \left(1 + |z|_E\right)^p  \left(1 + |\alpha|_E\right)^p \, ,
+\end{equation}
+for all values of $p$. The smearing functions are also fast decreasing, therefore for 
+any value of $N$, 
+\begin{equation}
+    \label{eq:SmearFastDecrease}
+    \left| D^m F(z)\right| < c_2 \left|z\right|_E^{-(N+2p+2D)}\, \left(1 + |z|_E^2\right)^p \, ,
+\end{equation}
+where $p$ is the same power that appears in \eqref{eq:PFastDecrease}. Finally, in spherical coordinates, 
+we have that 
+\[
+    d^Dz = S_{2D}\, |z|_E^{2D-1} d|z|_E\, .   
+\]
+Putting everything together and performing the integral over $z$ outside the sphere of radius 
+$|\mathbf{a}|$ yields
+\begin{equation}
+    \label{eq:BoundOnSmearCorr}
+    \left|\langle 0 |
+        \left[ \phi_{f_1}(-a), \phi_{f_2}(a)\right]
+        | 0 \rangle \right| < 
+        c_1 c_2 \frac{S_{2D}}{N+2p} \left(1 + 2 |\mathbf{a}|\right)^p
+        |\mathbf{a}|^{-N-2p}\, , 
+\end{equation}
+which shows explicitly the fast decay of the correlator as a function of the distance $|\mathbf{a}|$.
+
+\section{Ruelle Clustering Theorem}
+\label{sec:RuelleClust}
+
+Connected correlators of smeared fields can be defined in the usual way:
+\begin{align}
+    &\langle 0 | \phi_{f_1}(x_1) | 0 \rangle_c 
+        = \langle 0 | \phi_{f_1}(x_1) | 0 \rangle \, , \\
+    &\langle 0 | \phi_{f_1}(x_1) \phi_{f_2}(x_2) | 0 \rangle_c 
+        = \langle 0 | \phi_{f_1}(x_1) \phi_{f_2}(x_2) | 0 \rangle -
+           \langle 0 | \phi_{f_1}(x_1) | 0 \rangle \langle 0 | \phi_{f_2}(x_2) | 0 \rangle\, , \\
+    &\ldots \nonumber
+\end{align}
+The Clustering Theorem states that: 
+
+\begin{Thm}
+    for a set of coordinates at equal time $x_i=(t,\mathbf{x}_i)$, 
+    with $d=\max_{i,j} |\mathbf{x}_i - \mathbf{x}_j|$, for any $N>0$, 
+    the {\em connected} correlators satisfy
+    \begin{equation}
+        \label{eq:RuelleClusteringThm}
+        \langle 0 | \phi_{f_1}(x_1) \ldots \phi_{f_n}(x_n) | 0 \rangle_c < C_N\, d^{-N}\, .
+    \end{equation}        
+\end{Thm}
+
+We are going to summarise the proof of the theorem for $n=2$ only; as we will see, the existence of a 
+mass gap in the theory plays an important role in establishing the clustering property. Let us consider 
+$a,b<m$, where $m$ is the mass gap of the theory. We introduce the function 
+\begin{equation}
+    \label{eq:FPlusFunction}
+    F_+\left(p^0\right) = 
+    \begin{cases}
+        0\, &\quad \mathrm{for}\ p^0<a , \\
+        \frac{\exp\left[-\frac{\kappa}{\left(p^0-a\right)^2}\right]}
+        {\exp\left[-\frac{\kappa}{\left(p^0-a\right)^2}\right] + \exp\left[-\frac{\kappa}{\left(p^0-b\right)^2}\right]} 
+        \, &\quad \mathrm{for}\ a<p^0<b , \\
+        1\, &\quad \mathrm{for}\ b<p^0\, ,
+    \end{cases}
+\end{equation}
+and then 
+\begin{align}
+    \label{eq:FMinusFunction}
+    F_-\left(p^0\right) 
+        &= F_+\left(-p^0\right)\, , \\
+    \label{eq:FZeroFunction}
+    F_0\left(p^0\right)
+        &= 1 - F_+\left(p^0\right) - F_-\left(p^0\right)\, .
+\end{align}
+The three functions are shown in Fig.~\ref{fig:PartitionOfUnity}. 
+Notice that $F_0$ has a compact support in a range below $m$, \ie
+where the spectrum of the theory is empty. Similarly $F_-$ vanishes 
+for all positive values of the energy.  
+
+\begin{figure}[ht]
+    \centering
+    \includegraphics[scale=0.75]{Sections/plots/PartitionOfUnity.png}
+    \caption{The three functions $F_+$, $F_-$ and $F_0$, for 
+    $\kappa=0.1$, $a=1/4$, $b=3/4$, in units of $m$.}
+    \label{fig:PartitionOfUnity}
+\end{figure}
+
+These functions can be used to decompose every smeared field 
+\begin{equation}
+    \label{eq:FieldDecompF}
+    \phi_f(x) = \phi_f^{(+)}(x) + \phi_f^{(-)}(x) + \phi_f^{(0)}(x)\, ,
+\end{equation}
+where 
+\begin{align}
+    \phi_f^{(+)}(x) 
+        &= \int \frac{d^Dp}{(2\pi)^D}\, e^{-ip\cdot x}\, F_+\left(p_0\right)\, 
+        \tilde{\phi}_f\left(p\right) \\
+        &= \int \frac{d^Dp}{(2\pi)^D}\, d^Dy\, e^{-ip\cdot (x-y)}\, F_+\left(p^0\right)\,
+        \phi_f(y)\, .
+\end{align}
+Similar relations define $\phi_f^{(-)}$ and $\phi_f^{(0)}$. Note that each of
+these three fields is a bona fide smeared field itself. 
+
+Using the properties of the spectrum of $p^0$, we have
+\begin{equation}
+    \label{eq:FieldsAndSpectrum}
+    \begin{cases}
+        &\phi_f^{(-)}(x) |0\rangle = 0 \, , \\        
+        &\langle 0 | \phi_f^{(+)}(x) = 0 \, , \\
+        & \phi_f^{(0)}(x) |0\rangle = C |0\rangle\, .
+    \end{cases}
+\end{equation}
+We can therefore decompose the correlator
+\begin{equation}
+    \label{eq:CorrelatorSplit}
+    \begin{split}
+        \langle 0 | &\phi_{f_1}(x_1) \phi_{f_2}(x_2) | 0\rangle = 
+            \langle 0 | \phi_{f_1}^{(0)}(x_1) \phi_{f_2}^{(0)}(x_2) | 0\rangle + \\
+        & + \langle 0 | \left[\phi_{f_1}^{(0)}(x_1), \phi_{f_2}^{(+)}(x_2)      \right] | 0\rangle 
+        + \langle 0 | \left[\phi_{f_1}^{(-)}(x_1), \phi_{f_2}^{(+)}(x_2)\right] | 0\rangle \\
+        & + \langle 0 | \left[\phi_{f_1}^{(-)}(x_1), \phi_{f_2}^{(0)}(x_2)  \right] | 0\rangle \, .
+    \end{split}
+\end{equation}
+Now for the commutators that appear in Eq.~\eqref{eq:CorrelatorSplit}, we
+already established that they vanish faster than any power of the distance
+between the points. For the first term
+\begin{align}
+    \langle 0 | \phi_{f_1}^{(0)}(x_1) \phi_{f_2}^{(0)}(x_2) | 0\rangle 
+    &= \langle 0 | \phi_{f_1}^{(0)}(x_1) | 0\rangle\, 
+        \langle 0 | \phi_{f_2}^{(0)}(x_2) | 0\rangle \\
+    &=  \langle 0 | \phi_{f_1}(x_1) | 0\rangle\, 
+    \langle 0 | \phi_{f_2}(x_2) | 0\rangle \, .
+\end{align}
+Taking this term to the left-hand side yields the desired bound for the
+connected correlator. 
+
+\section{Axiomatic Field Theory - Particle-Field Duality}
+\label{sec:PartFieldDual}
+
+Finally we have two axioms that relate the fields and their correlators to the
+physical states. 
+
+\begin{enumerate}
+    \item [{\bf IIIa.}] For some one-particle state
+    \begin{equation}
+        \label{eq:OnePartStateEx}
+        \ket{\alpha} = \int \frac{d^{\Dspace}k}{(2\pi)^{\Dspace}}\, 
+        g(\mathbf{k}) \, \ket{\mathbf{k}}\, , \quad g\left(\mathbf{k}\right) \in L_2\, ,
+    \end{equation}
+    corresponding to a discrete $m^2$ eigenvalue of $P^2$, the smeared field $\phi_f(x)$ has a 
+    non-vanishing matrix element
+    \begin{equation}
+        \label{eq:PhiFME}
+        \bra{0} \phi_f(x) \ket{\alpha} \neq 0\, .
+    \end{equation}
+    The field $\phi_f$ is called an interpolating Heisenberg field for the 
+    state $\ket{\alpha}$.
+    \item [{\bf IIIb.}] We denote by $\matH_\mathrm{in}$ the Hilbert space of
+    states of far-separated, freely-moving stable particles in the far {\em
+    past}. And similarly $\matH_\mathrm{out}$ for the same states in the far
+    {\em future}. We postulate that  $\matH_\mathrm{in}$ and
+    $\matH_\mathrm{out}$ are unitarily equivalent to $\matH$, which can be
+    generated by applications of smeared fields. 
+\end{enumerate}
+
+\section{Haag-Ruelle Scattering Theory}
+\label{sec:HaagRuelleScat}
+
+We start by constructing a smeared field such that
+\begin{enumerate}
+    \item [(a)] acting on the vacuum, it produces single-particle states only; 
+    \item [(b)] these states are time-independent.
+\end{enumerate}
+The construction proceeds in two steps. First we build a smeared field
+$\phi_1(x)$ that satisfies property (a). The suffix `1' denotes precisely the
+fact that this field overlpas with one-particle states. Then, by further
+smearing, we ensure that the state is time-independent. 
+
+\subsection{One-Particle States}
+\label{sec:OnePartStat}
+
+We start by considering a smearing function in momentum space
+$\tilde{f}^{(1)}(p)$, which has its support for $am^2 < p^2 < bm^2$, where
+$0<a<1$ and $1<b<4$. We choose $\tilde{f}^{(1)}(p)$ to be $C^\infty$ and
+fast-decreasing. The Fourier transform of $\tilde{f}^{(1)}(p)$ is 
+\begin{equation}
+    \label{eq:FourierInvSmear}
+    f^{(1)}(x) = \int \frac{d^{\Dall}\!p}{(2\pi)^{\Dall}}\, 
+    e^{-ip\cdot x}\, \tilde{f}^{(1)}(p)\, .
+\end{equation}
+We use this smearing function to define the field 
+\begin{equation}
+    \label{eq:SmearedOnePart}
+    \phi_1(x) = \int d^{\Dall}\!z\, f^{(1)}(z-x)\, \phi(z)\, .
+\end{equation}
+The matrix element of $\phi_1$ between the vacuum and a one-particle state with 
+momentum $\mathbf{k}$ is 
+\begin{equation}
+    \label{eq:OnePartPhi}
+    \bra{\mathbf{k}} \phi_1(x) \ket{0} = 
+        e^{ik\cdot x} \tilde{f}^{(1)}(E_k,\mathbf{k})\, \bra{\mathbf{k}} \phi(0) \ket{0}\, ,
+\end{equation}
+where we used $E_k=\sqrt{\mathbf{k}^2+m^2}$.
+By Axiom {\bf IIIa} the field $\phi_1$ will create a one-particle state when acting on 
+the vacuum. Because of the properties of the smearing function $f^{(1)}$, it will {\em only}\ 
+produce a one-particle state. The matrix element on the right-hand side of Eq.~\eqref{eq:OnePartPhi} 
+is a scalar, 
+\ie it is a number that is independent of $\mathbf{k}$, and is fixed by the normalization of 
+the elementary field $\phi$ and the normalization of the states $\ket{\mathbf{k}}$. We choose to 
+normalize the field $\phi$ in the interacting theory so that its matrix element with the one-particle state
+is equal to the one in the free theory~\footnote{Here we are going to diverge from the conventions
+used in Duncan's book and stick to the Lorentz-invariant normalization.}, \ie
+\begin{equation}
+    \label{eq:InteractFieldNorm}
+    \bra{\mathbf{k}} \phi(0) \ket{0} = 1\, . 
+\end{equation}
+
+\paragraph{Digression on Normalizations}
+
+The free scalar field is decomposed in a superposition of creation and annihilation 
+operators
+\begin{equation}
+    \label{eq:FreeScalModeDecomp}
+    \phi(x) = 
+    \int \frac{d^{\Dspace} \!p}{(2\pi)^{\Dspace} 2E_p}\,
+    \left\{
+        e^{-ip\cdot x} a(\mathbf{p}) + e^{ip\cdot x} a(\mathbf{p})^\dagger
+    \right\}\, ,    
+\end{equation}
+where the creation and annihilation operators have the {\em canonical} commutation 
+relations
+\begin{equation}
+    \label{eq:CreatAnnihilComm}
+    \left[a(\mathbf{p}), a(\mathbf{p}')\right] 
+    = 2 E_p (2\pi)^{\Dspace} \delta\left(\mathbf{p}-\mathbf{p}'\right)\, .
+\end{equation}
+One-particle states are constructed acting with a creation operator on the vacuum
+\begin{equation}
+    \label{eq:OnePartCreation}
+    \ket{\mathbf{k}} = 
+    a(\mathbf{k})^\dagger \ket{0}\, ,
+\end{equation}
+and obey a Lorentz-invariant normalization condition
+\begin{equation}
+    \label{eq:OnePartLorentzNorm}
+    \langle \mathbf{k} | \mathbf{k}' \rangle = 
+    2E_k \, (2\pi)^{\Dspace} \delta\left(\mathbf{k}-\mathbf{k}'\right) \, .
+\end{equation}
+Using these conventions, the matrix element of the free field with the one-particle state is 
+\begin{equation}
+    \label{eq:FreeOnePartME}
+    \bra{\mathbf{k}} \phi(x) \ket{0} = e^{ik\cdot x}\, ,
+\end{equation}
+where $k^0=E_k=\sqrt{\mathbf{k}^2 + m^2}$.
+
+\subsection{Time-Independent States}
+\label{sec:TimeIndepStates}
+
+Let us consider a positive-energy solution of the Klein-Gordon equation
+\begin{equation}
+    \label{eq:KGSolution}
+    g\left(t,\mathbf{x}\right) = 
+        \int \frac{d^{\Dspace}\!p}{(2\pi)^{\Dspace}\, 2E_p}\,
+        e^{-ip\cdot x}\, \tilde{g}(\mathbf{p})\, ,
+\end{equation}
+where $p\cdot x = E_p t - \mathbf{p}\cdot\mathbf{x}$ and $\tilde{g}(\mathbf{p})$ is 
+$C^\infty$ and fast decreasing. The smeared operator
+\begin{equation}
+    \label{eq:Phi1gDef}
+    \phi_{1g}(t) = -i 
+        \int d^{\Dspace}\!x \left\{ g(t,\mathbf{x}) 
+        \frac{\overleftrightarrow{\partial}}{\partial t} \phi_1(t,\mathbf{x})\right\} 
+\end{equation}
+is such that 
+\begin{equation}
+    \label{eq:TimeIndepOnePartState}
+    \frac{d}{dt} \phi_{1g}(t) \ket{0} = 0\, .
+\end{equation}
+The proof is straightforward, using the fact that $g$ is a solution of Klein-Gordon, 
+integration by parts and the fact that $\phi_1(x) \ket{0}$ is a one-particle state. 
+It can be readily checked that the wave function of the state in momentum space is 
+\begin{equation}
+    \label{eq:MomentumWaveFuncState}
+    \begin{split}
+        \psi_{1g}(\mathbf{k}) 
+            &= \bra{\mathbf{k}} \phi_{1g}(t) \ket{0} \\
+            &= \tilde{g}(\mathbf{k})\, \tilde{f}^{(1)}(E_k,\mathbf{k})\, .
+    \end{split}
+\end{equation}
+
+\subsection{Asymptotic Behaviour}
+\label{sec:AsympTimeBehaviour}
+
+An important ingredient in deriving Haag's Asymptotic Theorem is the 
+behaviour of $g(t,\mathbf{x})$ for large values of $t$. Setting 
+$\mathbf{x}=\mathbf{v} t$, we can rewrite
+\begin{equation}
+    \label{eq:LargeTExp}
+    g\left(t,\mathbf{x}\right) = 
+        \int \frac{d^{\Dspace}\!p}{(2\pi)^{\Dspace}\, 2E_p}\,
+        e^{it \left(\mathbf{p}\cdot \mathbf{v} - E_p\right)}\, 
+        \tilde{g}(\mathbf{p})\, .
+\end{equation}
+For large $t$ and fixed $\mathbf{v}$, we can evaluate the integral expanding around 
+its stationary point,
+\begin{equation}
+    \label{eq:StationaryPoint}
+    \frac{\partial}{\partial p_k} \left(\mathbf{p}\cdot \mathbf{v} - E_p\right) = 
+    v_k - \frac{p_k}{E_p}=0 \quad \Longrightarrow \quad 
+    \mathbf{p} = m \gamma \mathbf{v}\, , \quad 
+    \gamma = \frac{1}{\sqrt{1-v^2}}\, .
+\end{equation}
+Expanding to second order around the stationary point yields
+\begin{equation}
+    \label{eq:StatPtExpand}
+    \left(\mathbf{p}\cdot \mathbf{v} - E_p\right) = 
+    -\frac{m}{\gamma} - \frac12 \left(p-m\gamma v\right)_i
+    \mathcal{M}_{ij} \left(p-m\gamma v\right)_j\, ,
+\end{equation}
+where 
+\begin{equation}
+    \label{eq:MMatrixAbove}
+    \mathcal{M}_{ij} = \frac{1}{m\gamma} \, 
+    \left(\delta_{ij} - v_i v_j\right)\, .
+\end{equation}
+In $D-1$ spatial dimensions this matrix has eigenvalues $1/m\gamma^3$ and $1/m\gamma$, 
+with degeneracies 1 and $D-2$ respectively, and hence
+\begin{equation}
+    \label{eq:DetMMatrixAbove}
+    \det \mathcal{M} = \frac{1}{\gamma^2} \left(\frac{1}{m\gamma}\right)^{D-1}\, .
+\end{equation}
+Putting everything together, we get the asymptotic behaviour
+\begin{equation}
+    \label{eq:GFunAsymp}
+    g\left(t,\mathbf{v}t\right) \sim
+        C \left|t\right|^{-(D-1)/2}\, e^{-imt/\gamma}\, 
+        \left[\gamma^{(D-1)/2} \tilde{g}\left(m\gamma \mathbf{v}\right) +
+        O\left(1/t\right)\right]\, .
+\end{equation}
+
+
+\subsection{Two Lemmas}
+\label{sec:TwoLemmas}
+
+Let us now consider a smeared field~\footnote{Note that the field $\phi_{1,g}$ that we 
+considered above is the sum of two such fields.} 
+\begin{equation}
+    \label{eq:GenericGSmearing}
+    \phi_{1,g}(t) = \int d^{\Dspace}x\, g(t,\mathbf{x}) \phi_{1}(t,\mathbf{x})\, .
+\end{equation}
+
+\paragraph{Lemma 1}
+
+For large times, $t\to\pm\infty$, correlators of the smeared field 
+\begin{equation}
+    \label{eq:SmearedCorrs}
+    \mathcal{M}_{m,n}(t) = \langle 0 | \phi_{1,g'_1}(t)^\dagger \ldots \phi_{g'_m}(t)^\dagger \, 
+    \phi_{1,g_1}(t) \ldots \phi_{1,g_n}(t) | 0 \rangle
+\end{equation}
+behave like
+\begin{equation}
+    \label{eq:LemmaOne}
+    \begin{cases}
+        & O\left(|t|^{-(D-1)/2}\right)\, , \quad \mathrm{for}\ m\neq n\, , \\
+        & \\
+        & \sum_\mathrm{pairs} \prod_p 
+            \langle 0 | 
+            \phi_{1,g'_{i_p}}(t)^\dagger
+            \phi_{1,g_{j_p}}(t) 
+            | 0\rangle + 
+            O\left(|t|^{-(D-1)}\right)\, , \quad \mathrm{for}\ m=n \, .
+    \end{cases}
+\end{equation}
+
+\noindent
+{\bf Proof}\ 
+
+\noindent
+The correlator $\mathcal{M}_{m,n}$ has a cluster expansion, \ie it
+can be written as a sum of terms in which the $m+n$ fields are distributed in
+$N_c$ clusters made of connected correlators. We denote by $m_r$ and $n_r$ the
+number of $\phi^\dagger$ and $\phi$ fields respectively that appear in the
+$r$-th cluster, with $r=1, \ldots N_c$. The contribution of the $r$-th cluster
+can be written as
+\begin{align}
+    \label{eq:RthClusterContrib}
+    \int d^{\Dspace}x_1 \ldots &d^{\Dspace}x_{m_r+n_r}\, G_1(t,\mathbf{x}_1)
+      \ldots G_{m_r+n_r}(t,\mathbf{x}_{m_r+n_r})\, \times \nonumber \\
+        &\times \langle \phi_{1}(t,\mathbf{x}_1) \ldots 
+            \phi_{1}(t,\mathbf{x}_{m_r+n_r})
+        \rangle_c \, ,
+\end{align}
+where $G_i(t,\mathbf{x})$ denotes either $g(t,\mathbf{x})$ or
+$g(t,\mathbf{x})^*$, and the field $\phi_{1}$ may also represent a
+$\phi_{1}^\dagger$. We can rewrite the integral above by introducing the
+relative distance from $\mathbf{x}_1$:
+\begin{equation}
+    \label{eq:ShiftedClusterIntegral}
+    \begin{split}
+        \int & d^{\Dspace}x_1 G_1(t,\mathbf{x}_1) \, \\
+        &\int d^{\Dspace}\xi_2 
+            \ldots d^{\Dspace}\xi_{m_r+n_r}\, 
+            G_2(t,\mathbf{x}_1+\mathbf{\xi}_2) 
+            \ldots G_{m_r+n_r}(t,\mathbf{x}_1+\mathbf{\xi}_{m_r+n_r}) 
+        \\
+        & \quad \times \langle\phi_{1}(t,0) \phi_{1}(t,\mathbf{\xi}_2) \ldots 
+        \phi_{1}(t,\mathbf{\xi}_{m_r+n_r}) \rangle_c\, , 
+    \end{split}
+\end{equation}
+where translation invariance was used in the last line. 
+
+Let us now investigate the asymptotic behaviour
+of these contributions for large times $t$. From Ruelle's Clustering Theorem, we
+know that the connected correlator in Eq.~\eqref{eq:ShiftedClusterIntegral} is a
+fast decreasing function of the space vectors $\mathbf{\xi}_i$. Setting
+$\mathbf{x}_1=\mathbf{v}_1 t$, we have
+\begin{equation}
+    \label{eq:AsymptoticBehaviourGn}
+    \left|G_n(t,t\mathbf{v}_1+\mathbf{\xi}_n)\right| \sim
+    |t|^{-(\Dspace)/2}\, \gamma_1^{(\Dspace)/2} \, 
+    \left|\tilde{G}_n(m\gamma_1 \mathbf{v}_1)\right|\, , \quad \mathrm{for}\ t\to\pm\infty\, .
+\end{equation}
+where, as usual, $\gamma_1=(1-\mathbf{v}_1^2)^{-1/2}$. Finally, we note that 
+\begin{equation}
+    \int d^{\Dspace}x_1 \longrightarrow 
+    t^{\Dspace}\, \int_{|\mathbf{v}_1|<1} d^{\Dspace}v_1 \,.
+\end{equation}
+Let us remember that we are considering the contribution where the fields are
+distributed amongst $N_c$ clusters, and therefore
+\begin{equation}
+    \label{eq:CountingFieldsInClusters}
+    \sum_{r=1}^{N_c} m_r = m\, , \quad 
+    \sum_{r=1}^{N_c} n_r = n\, , \quad 
+    m+n = N\, .
+\end{equation}
+Collecting all the terms that we have discussed above we see that
+\begin{equation}
+    \label{eq:ClusterAsymptTotal}
+    \mathcal{M}_{m,n}(t) \sim t^{(\Dspace) \left(N_c - N/2\right)}\, .
+\end{equation}
+Since $\phi_{1}$ only overlaps with one-particle states, 
+\begin{equation}
+    \label{eq:OneParticlePhase}
+    \langle 0 | \phi_{1}(0) | 0 \rangle = 0\, .
+\end{equation}
+Therefore every cluster must have at least {\bf two} fields. If each cluster has
+exactly two fields, then $N_c-N/2=0$ and the contribution of that particular
+configuration does not vanish as a power of $t$. On the other hand, if at least
+one cluster contains three fields, then $N \geq 2(N_c-1) + 3$, which in turn
+implies
+\begin{equation}
+    \label{eq:ThreeFieldClusterSuppression}
+    N_c - N/2 \leq -\frac12\, ,
+\end{equation}
+and therefore those contributions are suppressed by powers of $t$. So the only
+contributions that survive in the large-time limit are the ones where each
+cluster contains exactly one pair of fields, as stated by the Lemma. 
+
+\paragraph{Lemma 2 (Permutation Symmetry)}
+
+Consider the two states
+\begin{align}
+    \label{eq:ProdPhiState}
+    \ket{\Psi(t)} 
+        &= \phi_{1,g_{1}}(t) \ldots \phi_{1,g_{n}}(t) \ket{0}\, , \\
+    \label{eq:ProdPhiStatePerm}
+    \ket{\Psi'(t)}
+        &= \phi_{1,g_{P_1}}(t) \ldots \phi_{1,g_{P_n}}(t) \ket{0}\, , 
+\end{align}
+where $\left\{P_1 \ldots P_n\right\}$ is a permutation of $\left\{1 \ldots
+n\right\}$, then 
+\begin{equation}
+    \label{eq:PermutationSymmetry}
+    || \left(\ket{\Psi'(t)} - \ket{\Psi(t)}\right) || \sim
+    t^{-(\Dspace)/2}\, .
+\end{equation}
+We will not discuss the proof of this Lemma in this notes. 
+
+We end this section by noting that these two Lemmas guarantee that fields that
+have been smeared with solutions of the Klein-Gordon equation behave in the
+large-time limit like elementary fields in the free theory. Lemma 1 is
+reminescent of Wick's theorem, while Lemma 2 reflects the usual symmetry under
+permutations that we have in a Fock space constructed with
+creation and annihilation operators. 
+
+\subsection{Haag's Asymptotic Theorem}
+\label{sec:HaggAsympThm}
+
+The theorem guarantees
+that states built from smeared interacting fields converge for asymptotic times to 
+the in and out states of the theory. 
+
+\paragraph{Theorem}
+
+The state
+\begin{equation}
+    \label{eq:HaagAsymptState}
+    \ket{\Psi(t)} = 
+    \phi_{1,g_1}(t) \ldots \phi_{1,g_n}(t) \ket{0}
+\end{equation}
+converges strongly for $t \to -\infty$ to the $n$-particle {\em in-state}
+\begin{align}
+    \ket{\Psi_\mathrm{in}} 
+        &= \ket{g_1 \ldots g_n; \instate} \\
+        &= \int d^{\Dspace}k_1 \ldots d^{\Dspace}k_n\,
+            \psi_{1,g_1}(\mathbf{k}_1) \ldots \psi_{n,g_n}(\mathbf{k}_n) \,
+            \ket{\mathbf{k}_1 \ldots \mathbf{k}_n; \instate}\, ,
+\end{align}
+where the wave functions $\psi_{1,g_i}(\mathbf{k}_i)$ have been introduced in 
+\eqref{eq:MomentumWaveFuncState},
+\begin{equation}
+    \psi_{1,g_i}(\mathbf{k}_i) =
+    \bra{\mathbf{k}_i} \phi_{1,g_i}(t) \ket{0}\, .
+\end{equation}
+
+\noindent
+{\bf Sketch of the proof}
+
+\noindent
+Using the previous results we can show that the time derivative of the state
+$\ket{\Psi(t)}$ is $O(t^{-(\Dspace)/2})$. Therefore 
+\begin{equation}
+    \label{eq:CauchySeries}
+    || \left(\ket{\Psi(t)} - \ket{\Psi(t')}\right) || 
+        < \frac{C}{T^{-(D-3)/2}}\, , 
+    \quad \mathrm{for}\ t,t'>T\, .
+\end{equation}
+Hence the sequence of states is a Cauchy series and does converge to a given 
+state, which we identify with $\ket{\Psi_\mathrm{in}}$. The smeared fields define 
+wave packets whose overlap vanishes as we go to asymptotic times. 
+
+\subsection{Asymptotic Condition}
+\label{sec:AsymptCondition}
+
+We can use the Haag-Ruelle results to derive the connection between the Heisenberg 
+field $\phi(x)$ and the free `in' field $\phi_\mathrm{in}$. 
+
+\paragraph{Smeared Heisenberg Field}
+
+The starting point of 
+our analysis is a smeared field $\phi_g(t)$, defined as the $\phi_{1,g}$ fields above
+except for the fact that the smearing function $f$ is a generic Schwartz function, 
+whose support in momentum space does not need to sandwich the one-particle mass 
+hyperboloid. The function $g(t,\mathbf{x})$ is still a positive-energy solution of 
+the Klein-Gordon equation. Under these hypotheses, $\phi_{g} \ket{0}$ is no longer 
+time-independent, nor is it a one-particle state, but Lemma 1 can still be used and 
+therefore
+\begin{align}
+    \bra{0} &\phi_{1,g'_1}(t)^\dagger \ldots \phi_{1,g'_m}(t)^\dagger \, 
+        \phi_{g}(t) \, 
+        \phi_{1,g_1}(t) \ldots \phi_{1,g_n}(t) \ket{0} = \nonumber \\
+        &= \sum_{i=1}^m \bra{0} \phi_{1,g'_i}(t)^\dagger \phi_{g}(t) \ket{0}_c \,
+        \bra{0} \phi_{1,g'_1}(t)^\dagger \ldots \widehat{\phi_{1,g'_i}(t)^\dagger}
+        \ldots \phi_{1,g'_m}(t)^\dagger \, 
+        \phi_{1,g_1}(t) \ldots \phi_{1,g_n}(t) \ket{0} \nonumber \\
+        &+ \sum_{i=1}^n \bra{0} \phi_{g}(t) \phi_{1,g_i}(t) \ket{0}_c \,
+        \bra{0} \phi_{1,g'_1}(t)^\dagger \ldots \phi_{1,g'_m}(t)^\dagger \, 
+        \phi_{1,g_1}(t) \ldots \widehat{\phi_{1,g_i}(t)}
+        \ldots \phi_{1,g_n}(t) \ket{0} \nonumber \\
+        \label{eq:HaagRuelleOne}
+        & + O\left(|t|^{-(\Dspace)/2}\right)\, ,
+\end{align}
+where the `hat' indicates that the field drops from the correlation function. Let us
+now assume that for some reason, possibly a symmetry of the theory, 
+\begin{equation}
+    \label{eq:SymmetryCondition}
+    \bra{0} \phi_{g}(t) \ket{0} = 0 \, ,
+\end{equation}
+so that we can replace the connected two-point correlator in \eqref{eq:HaagRuelleOne}
+with the ordinary two-point one: 
+\begin{align}
+    \label{eq:ConnectNormalReplaceOne}
+    \bra{0} \phi_{1,g'_i}(t)^\dagger \phi_{g}(t) \ket{0}_c &= 
+    \bra{0} \phi_{1,g'_i}(t)^\dagger \phi_{g}(t) \ket{0} \\
+    \label{eq:ConnectNormalReplaceTwo}
+    \bra{0} \phi_{g}(t) \phi_{1,g_i}(t) \ket{0}_c &= 
+    \bra{0} \phi_{g}(t)  \phi_{1,g_i}(t) \ket{0} \, .
+\end{align}
+The field $\phi_{1,g}$ only overlaps with one-particle states, according to 
+Haag's theorem
+\begin{align}
+    \label{eq:OneParticleOverlap}
+    \phi_{1,g_j}(t) \ket{0} 
+        &= \ket{g_j; \mathrm{in}} = \int \frac{d^{\Dspace}k}{(2\pi)^{\Dspace} 2E_k}\, 
+        \psi_{1,g_j}(\mathbf{k}) \ket{\mathbf{k};\instate} \, , \\
+    \bra{0} \phi_{1,g'_i}(t)^\dagger
+        &= \bra{g'_i;\instate} = \int \frac{d^{\Dspace}k}{(2\pi)^{\Dspace} 2E_k}\, 
+        \psi_{1,g'_i}(\mathbf{k})^* \bra{\mathbf{k};\instate} \, .
+\end{align}
+Finally, for a smeared field $\phi_{f}$,
+\begin{equation}
+    \label{eq:SmearedFieldOneParticleME}
+    \bra{\mathbf{k};\instate} \phi_f(x) \ket{0} = 
+        Z^{1/2} \tilde{f}(\mathbf{k}) e^{ik\cdot x}\, .
+\end{equation}
+Here and below, keep in mind that the momenta are on-shell, 
+\begin{equation}
+    \label{eq:OnShellMomenta}
+    k\cdot x = E_k t - \mathbf{k} \cdot \mathbf{x}\, .
+\end{equation}
+Collecting all these equations, we deduce
+\begin{align}
+    &\bra{0} \phi_{1,g'_i}(t)^\dagger \phi_{g}(t) \ket{0} 
+        = \int \frac{d^{\Dspace}k}{(2\pi)^{\Dspace} 2E_k}\, 
+        \psi_{1,g'_i}(\mathbf{k})^* \bra{\mathbf{k};\instate} \phi_{g}(t) \ket{0} \\
+    & \quad = \int \frac{d^{\Dspace}k}{(2\pi)^{\Dspace} 2E_k}\, d^{\Dspace}x\, 
+        \psi_{1,g'_i}(\mathbf{k})^* \left\{ -i g(x) 
+        \frac{\overleftrightarrow{\partial}}{\partial t}
+        \bra{\mathbf{k};\instate} \phi_{f}(t) \ket{0} \right\} \\
+    & \quad = -i \int \frac{d^{\Dspace}k}{(2\pi)^{\Dspace} 2E_k}\, d^{\Dspace}x\, 
+        \frac{d^{\Dspace}p}{(2\pi)^{\Dspace} 2E_p}\,
+        \psi_{1,g'_i}(\mathbf{k})^* \tilde{g}(\mathbf{p}) 
+        \left\{ e^{-ip\cdot x}
+        \frac{\overleftrightarrow{\partial}}{\partial t}
+        e^{i k\cdot x}\right\} \tilde{f}(\mathbf{k})\, .
+\end{align}
+This expression can be simplified using the following relations: 
+\begin{align}
+    \label{eq:OrthoRelationOne}
+    \int d^{\Dspace}x\, 
+        \left\{ e^{-ip\cdot x}
+            \frac{\overleftrightarrow{\partial}}{\partial t}
+            e^{i k\cdot x}
+        \right\} &= 
+        i\, 2E_k (2\pi)^{\Dspace} \delta\left(\mathbf{p}-\mathbf{k}\right)\, , \\
+    \label{eq:OrthoRelationTwo}
+    \int d^{\Dspace}x\, 
+        \left\{ e^{-ip\cdot x}
+            \frac{\overleftrightarrow{\partial}}{\partial t}
+            e^{-i k\cdot x}
+        \right\} &= 
+        0\, ,    
+\end{align}
+Using Eq.~\eqref{eq:OrthoRelationOne} yields
+\begin{align}
+    \label{eq:PhigMatrixElement}
+    \bra{0} \phi_{1,g'_i}(t)^\dagger \phi_{g}(t) \ket{0} 
+    &= Z^{1/2} \int \frac{d^{\Dspace}k}{(2\pi)^{\Dspace} 2E_k}\,
+    \psi_{1,g'_i}(\mathbf{k})^* \psi_g(\mathbf{k})\, , \\
+    \psi_g(\mathbf{k})
+    &= \tilde{g}(\mathbf{k})\, \tilde{f}(\mathbf{k})\, .
+\end{align}
+The second relation, Eq.~\eqref{eq:OrthoRelationTwo}, guarantees that 
+\begin{equation}
+    \bra{0} \phi_{g}(t)  \phi_{1,g_i}(t) \ket{0} = 0\, .
+\end{equation}
+The bottom line of this lengthy computation is 
+\begin{align}
+    &\bra{g'_1 \ldots g'_m; \instate} \phi_{g}(t) \ket{g_1 \ldots g_n; \instate} 
+    \nonumber \\
+    \label{eq:SmearedFieldInstateME}
+    & \quad \stackrel{t\to\infty}{\longrightarrow}
+    Z^{1/2} \sum_{i=1}^m \int \frac{d^{\Dspace}k}{(2\pi)^{\Dspace} 2E_k}\,
+    \psi_{1,g'_i}(\mathbf{k})^* \psi_g(\mathbf{k})\,
+    \braket{g'_1 \ldots \widehat{g'_i} \ldots g'_m; \instate} 
+    {g_1 \ldots g_n; \instate}\, .
+\end{align}
+
+\paragraph{Free Asymptotic Field}
+
+The matrix element in Eq.~\eqref{eq:SmearedFieldInstateME} can be compared with the
+matrix element of the smeared field $\phi_{\instate,g}$, which is defined using the same 
+smearing procedure, but starting from a free local field 
+\begin{equation}
+    \label{eq:InFieldDefinition}
+    \phi_\instate(x) =
+    \int \frac{d^{\Dspace} \!p}{(2\pi)^{\Dspace} 2E_p}\,
+    \left\{
+        e^{-ip\cdot x} a_\instate(\mathbf{p}) + 
+        e^{ip\cdot x} a_\instate(\mathbf{p})^\dagger
+    \right\}\, ,
+\end{equation}
+where $a_\instate$ and $a_\instate^\dagger$ are the annihilation and creation 
+operators in $\mathcal{H}_\instate$:
+\begin{align}
+    a_\instate(\mathbf{k}) \ket{\mathbf{k}_1 \ldots \mathbf{k}_n; \instate} 
+    &= \sum_{r=1}^n 2E_k (2\pi)^{\Dspace} \delta\left(\mathbf{k}-\mathbf{k}_r\right) 
+    \ket{\mathbf{k}_1 \ldots \widehat{\mathbf{k}}_r \ldots \mathbf{k}_n; \instate}\, , \\
+    a_\instate(\mathbf{k})^\dagger \ket{\mathbf{k}_1 \ldots \mathbf{k}_n; \instate} 
+    &= \ket{\mathbf{k} \mathbf{k}_1 \ldots \mathbf{k}_n; \instate} \, .
+\end{align}
+The contribution from the annihilation operator to the matrix element vanishes 
+because of Eq.~\eqref{eq:OrthoRelationTwo} again, and hence we only need to compute 
+the matrix element of the creation part of the smeared field 
+\begin{equation}
+    \label{eq:CreationInSmeared}
+    \phi_{\instate,g}(t) = \int \frac{d^{\Dspace} k}{(2\pi)^{\Dspace} 2 E_k}\, 
+    \psi_{g}(\mathbf{k}) a_\instate(\mathbf{k})^\dagger\, ,
+\end{equation}
+which yields 
+\begin{align}
+    \bra{g'_1 \ldots g'_m; \instate} &\phi_{\instate,g} 
+    \ket{g_1 \ldots g_n;\instate} = \nonumber \\
+    \label{eq:InFieldInstateME}
+    &=\sum_{i=1}^m \int \frac{d^{\Dspace} k}{(2\pi)^{\Dspace} {2 E_k}}\, 
+    \psi_{1,g'_i}(\mathbf{k})^* \psi_{g}(\mathbf{k})
+    \braket{g'_1 \ldots \widehat{g'_i} \ldots g'_m; \instate}{g_1 \ldots g_n;\instate}\, .
+\end{align}
+Comparing Eqs.~\eqref{eq:SmearedFieldInstateME} and~\eqref{eq:InFieldInstateME}, 
+we see that the two matrix elements coincide in the limit $t\to -\infty$, up to a 
+normalization factor $Z^{1/2}$. Because the sets of states run over a dense subset of 
+$\mathcal{H}_\instate$, we can deduce that the smeared field $\phi_{g}(t)$ converges to 
+$\phi_{\instate,g}$ in a {\em weak}\ sense, thus establishing the {\em asymptotic condition}
+\begin{equation}
+    \label{eq:AsymptConnection}
+    \bra{\beta;\instate} \phi_{g}(t) \ket{\alpha;\instate} 
+    \stackrel{t\to-\infty}{\longrightarrow} 
+    Z^{1/2} \bra{\beta;\instate} \phi_{\instate,g}(t) \ket{\alpha;\instate} \, .
+\end{equation}
+
+\section{LSZ Reduction}
+\label{sec:LSZRedux}
+
+The asymptotic condition is the starting point to derive the LSZ reduction formula. Noting that
+the creation part of the smeared in-field $\phi_{\instate,g}(t)$ is time-independent, we can 
+think of it as a smeared creation operator of an in-state, 
+\begin{equation}
+    \label{eq:SmearedInCreation}
+    a_{\instate,g}^\dagger = \int \frac{d^{\Dspace} k}{(2\pi)^{\Dspace} 2 E_k}\, 
+    \psi_{g}(\mathbf{k}) a_\instate(\mathbf{k})^\dagger\, .
+\end{equation}
+Using asymptotic completeness, i.e. the fact that $\mathcal{H}_\instate$ and $\mathcal{H}_\outstate$ 
+coincide, we can write the asymptotic condition at early times as
+\begin{align}
+    -i \int d^{\Dspace}x \, g(x) \dddt \bra{\beta; \outstate} \phi(x) \ket{\alpha;\instate}
+    \stackrel{t\to -\infty}{\longrightarrow} 
+    Z^{1/2} \bra{\beta; \outstate} a_{\instate,g}^\dagger \ket{\alpha;\instate} \, ,\\
+    i \int d^{\Dspace}x \, g(x)^* \dddt \bra{\beta; \outstate} \phi(x) \ket{\alpha;\instate}
+    \stackrel{t\to -\infty}{\longrightarrow} 
+    Z^{1/2} \bra{\beta; \outstate} a_{\instate,g} \ket{\alpha;\instate} \, ,
+\end{align}
+while for large times 
+\begin{align}
+    -i \int d^{\Dspace}x \, g(x) \dddt \bra{\beta; \outstate} \phi(x) \ket{\alpha;\instate}
+    \stackrel{t\to +\infty}{\longrightarrow} 
+    Z^{1/2} \bra{\beta; \outstate} a_{\outstate,g}^\dagger \ket{\alpha;\instate} \, ,\\
+    i \int d^{\Dspace}x \, g(x)^* \dddt \bra{\beta; \outstate} \phi(x) \ket{\alpha;\instate}
+    \stackrel{t\to +\infty}{\longrightarrow} 
+    Z^{1/2} \bra{\beta; \outstate} a_{\outstate,g} \ket{\alpha;\instate} \, .
+\end{align}
+
+The S-matrix element for the scattering of $n$ incoming particles, with momentum wave 
+functions $\psi_{g_i}(\mathbf{k})$, $i=1 \ldots n$, going into $m$ outgoing 
+particles, with momentum wave functions $\psi_{g'_j}$, $j=1 \ldots m$, is 
+\begin{equation}
+    \label{eq:SMatrixNToM}
+    S_{g'_1 \ldots g'_m, g_1 \ldots g_n} =
+    \langle g'_1 \ldots g'_m; \outstate | g_1 \ldots g_n; \instate \rangle\, , 
+\end{equation}
+where we assume that the momentum wave functions have disjoint supports. As a consequence of 
+the latter assumption
+\begin{equation}
+    a_{\outstate, g_1} \ket{g'_1 \ldots g'_m; \outstate} = 0\, ,
+\end{equation}
+and therefore
+\begin{equation}
+    \label{eq:ReductionStepOne}
+    S_{g'_1 \ldots g'_m, g_1 \ldots g_n} =
+    \langle g'_1 \ldots g'_m; \outstate |
+    \left(a_{\instate,g_1}^\dagger - a_{\outstate, g_1}^\dagger\right)
+    | g_2 \ldots g_n; \instate \rangle \, .
+\end{equation}
+Using the asymptotic condition, we can rewrite the matrix element using the smeared
+Heisenberg field 
+\begin{align}
+    &S_{g'_1 \ldots g'_m, g_1 \ldots g_n} = 
+    i Z^{1/2} \left(\lim_{t\to +\infty} - \lim_{t\to -\infty}\right) 
+    \int d^{\Dspace}x \, g_1(x) \dddt 
+    \bra{g'_1 \ldots g'_m; \outstate} \phi(x) \ket{g_2 \ldots g_n;\instate} 
+    \nonumber \\
+    & \quad = 
+    i Z^{1/2} \int d^{\Dall}x\, \frac{\partial}{\partial t} 
+    \left\{
+        g_1(x) \dddt 
+    \bra{g'_1 \ldots g'_m; \outstate} \phi(x) \ket{g_2 \ldots g_n;\instate}
+    \right\} \\
+    & \quad = 
+    i Z^{1/2} \int d^{\Dall}x\, 
+    g_1(x) \left(\partial_x^2 + m^2\right)  
+    \bra{g'_1 \ldots g'_m; \outstate} \phi(x) \ket{g_2 \ldots g_n;\instate}
+    \, .
+\end{align}

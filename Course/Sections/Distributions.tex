@@ -1,0 +1,555 @@
+\section{Definitions}
+\label{sec:distr-defs}
+
+We collect here a quick summary of definitions and properties of distributions.
+These are commonly used in QFT -- often without paying too much attention to
+them. 
+
+\begin{Def}
+    A {\em distribution} is a continuous linear functional on a space of 
+    test functions. 
+\end{Def}
+The space of test functions may vary. We will mostly focus on {\em tempered}
+distributions, \ie distributions that act on
+$\mathcal{S}\left(\mathbb{R}^n\right)$, the space of complex-vaued, infinitely
+differentiable functions, which, together with their derivatives, approach zero
+at infinity, faster than any inverse power of the Euclidean distance. In order
+to make this statement mathematically precise, we need to introduce some
+notation. We denote by $k$ a generic $n$-tuple of integers, 
+\begin{equation}
+    \label{eq:MultiIndexDef}\
+    k = \left\{ k_1, \ldots k_n\right\}\, ,
+\end{equation}
+then 
+\begin{align}
+    \label{eq:modk-def}
+    |k| &= k_1 + \ldots + k_n\, , \\
+    \label{eq:x-power-k}
+    x^k &= x_1^{k_1} \ldots x_n^{k_n}\, , \\
+    \label{eq:factk-def}
+    k! &= k_1! \ldots k_n!\, , \\
+    \label{eq:dx-def}
+    dx &= \prod_{i=1, \ldots, n} dx_i\, , \\
+    \label{eq:derivs}
+    D^k &= \frac{\partial^{|k|}}{\partial x_1^{k_1} \ldots \partial x_n^{k_n}}\, .
+\end{align}
+For each pair of integers, $(r,s)$, a norm can be defined for functions in
+$\mathbb{R}^n$,
+\begin{Def}
+    \[
+    ||f||_{r,s} = \sum_{|k|\leq r} \sum_{|l|\leq s} \, 
+    \sup_{x\in \Rn} \left| x^k D^l f(x)\right| \, .
+    \]
+\end{Def}
+The set of tempered functions is the set of functions with finite norm, 
+\[
+    f \in \mathcal{S}(\Rn) \quad 
+    \Longleftrightarrow \quad
+    ||f||_{r,s} < \infty\, , \quad \forall r,s \in \mathbb{N}\, .    
+\]
+We can now introduce the concept of convergence in $\mathcal{S}$.
+\begin{Def}
+    The series $\{f_m\}$ converges to $f$, 
+    \[
+        \lim_{m\to\infty} f_m = f\, , \quad \mathrm{if} \ 
+        \lim_{m\to\infty} ||f_m -f||_{r,s} = 0 \, .
+    \] 
+\end{Def}
+Finally, we can define the notion of continuity for functionals acting on
+$\mathcal{S}$. A {\em tempered distribution} $T$ is continuous in $\mathcal{S}$,
+\ie
+\[
+    \lim_{m\to\infty} ||f_m - f||_{r,s} \quad
+    \Longrightarrow \quad
+    \lim_{m\to\infty} |Tf_m - Tf| = 0\, .
+\]
+Note that a necessary and sufficient condition for continuity is 
+\[
+    |Tf| \leq C ||f||_{r,s}\, , 
+    \quad \mathrm{for\ some\ values\ of}\ r,s\, .    
+\]
+A very useful result states that every tempered distribution can be written as
+\begin{align}
+    \label{eq:TempConv}
+    Tf 
+        &= \sum_{|k|\leq s} \int dx\, 
+            F_k(x_1 \ldots x_n) D^k f(x_1 \ldots x_n) \\
+        &= \int dx\, T(x) f(x)\, ,
+\end{align}
+where $k$ is a multi-index as defined in Eq.~\eqref{eq:MultiIndexDef}, and the
+coefficients $F_k$ are continuous functions that satisfy
+\begin{equation}
+    \label{eq:FkBound}
+    \left|F_k(x)\right| \leq C_k \left(1 + |x|^j\right)\, ,
+\end{equation}
+for some $j$ that depends on $k$. We integrate by parts (when possible) and
+write
+\begin{align}
+    \label{eq:TempKernel}
+    T(x) = \sum_{|k|\leq s} (-)^{|k|} D^k F_k(x)\, .
+\end{align}
+The set of tempered distributions is denoted $\mathcal{S}'$. At times we will
+encounter distributions that do not belong to $\mathcal{S}'$, but to the larger
+set $\mathcal{D}'$, of linear continuous functionals acting on $\mathcal{D}$,
+the space of infinitely differentiable functions with compact support in $\Rn$.
+Clearly $\mathcal{D}\subset\mathcal{S}$ and therefore $\mathcal{S}' \subset
+\mathcal{D}'$. Examples of elements of $\mathcal{D}'$ that do not belong to
+$\mathcal{S}'$ are exponentially growing functions, or 
+\[
+    T(x) = \sum_{m=0}^\infty \delta^{(m)}(x-m)\, .   
+\]
+
+\section{Miscellaneous Properties}
+\label{sec:MiscProp}
+
+Let us consider invertible inhomogeneous transformations in $\Rn$
+\begin{equation}
+    \label{eq:RnInhomogeneous}
+    \{a, L\}:\, x \mapsto L x + a\, ,
+\end{equation}
+for any function $f\in\mathcal{S}$, we define the {\em shifted} function
+\begin{equation}
+    \label{eq:ShiftedFun}
+    \left(\{a,L\} f\right)(x) = 
+        f\left(L^{-1}(x-a)\right)\, .
+\end{equation}
+The shifted distribution in $\mathcal{S}'$ is defined by
+\begin{equation}
+    \label{eq:ShiftedDistr}
+    T_{\{a,L\}} f = \left|\det L\right|^{-1} 
+        T\left(\{a,L\}f\right)\, .
+\end{equation}
+If $T$ is a function
+\begin{equation}
+    \label{eq:ShiftedDistrFun}
+    T_{\{a,L\}}(x) = T(Lx+a)\, .
+\end{equation}
+
+The derivatives of a distribution are defined by the relation
+\begin{equation}
+    \label{eq:DistrDeriv}
+    D^p T(f) = (-)^{|p|}\, T\left(D^pf\right)\, .
+\end{equation}
+Note that using the definition in Eq.~\eqref{eq:ShiftedDistr}, the derivative of
+a distribution can be equivalently defined as
+\begin{equation}
+    \label{eq:EquivDerivDef}
+    \frac{\partial}{\partial x_j} T (f) =
+    \lim _{a_j\to 0} \frac{1}{a_j} \left(T_{\{a_j\}} - T\right)(f)\, .
+\end{equation}
+We do not want to write a book on distributions here, so we will not dwell on
+proving nice identities. Instead we refer the reader to the book by Streater \&
+Wightman for the details.  
+
+Multiplication by a function, tensor product of distributions, and convolution
+with a function can be defined in the {\em obvious} way. The only subtlety to
+keep in mind is that when we multiply a tempered distribution by a generic,
+infinitely differentiable function $g$, the result may not be a tempered
+distribution. In order to guarantee that we recover a tempered distribution, we
+need to require $g$ and all its derivatives are bounded by polynomials. 
+
+\paragraph{Nuclear Theorem}
+
+It is necessary at times to consider multilinear functionals that are separately
+continuous in all their arguments. An obvious way to construct such
+distributions is to consider a distribution $G$ in all the variables together,
+and specialize it to test functions that are products $f_1(x_1) \ldots
+f_m(x_m)$. The nuclear theorem found by Schwartz guarantees that these are the
+only possible distributions. 
+\begin{Thm}
+    Let $T$ be a multilinear functional of arguments 
+    $f_1, \ldots, f_m \in \mathcal{S} (\in \mathcal{D})$, which is continuous in 
+    each of its arguments while the others are fixed, then there exists a unique 
+    distribution $G \in \mathcal{S}' (\in \mathcal{D}')$ such that
+    \[
+        T(f_1, \ldots, f_m) = G(f_1 \ldots f_m)\, .    
+    \]
+\end{Thm}
+
+\section{Fourier Transforms}
+\label{sec:FTDistr}
+
+Let us recall briefly the conventions used here for the Fourier transform. In
+Euclidean space, we use
+\begin{align}
+    P_k = -i \partial_k 
+    \quad \Longrightarrow \quad 
+    \braket{x}{p} = e^{i p\cdot x}\, .
+\end{align}
+The Fourier transform is 
+\begin{align}
+    \left(\mathcal{F}f\right)(p) 
+        &= \braket{p}{f} = \int d^Dx\, \braket{p}{x} \braket{x}{f} \\
+        &= \int d^Dx\, e^{-i p\cdot x} f(x)\, ,
+\end{align}
+and similarly for the inverse transform
+\begin{align}
+    \left(\bar{\mathcal{F}} f\right)(x) = 
+    \int \frac{d^Dp}{(2\pi)^D}\, e^{i p\cdot x} 
+    f(p)\, .
+\end{align}
+With these conventions
+\begin{align}
+    \mathcal{F} \bar{\mathcal{F}} =
+    \bar{\mathcal{F}} \mathcal{F} = 
+    1\, .
+\end{align}
+Using these definitions we have
+\begin{equation}
+    \label{eq:Fdkf}
+    \mathcal{F}\left(D^kf\right)(p) = 
+        \left(ip\right)^k \left(\mathcal{F}f\right)(p)\, .
+\end{equation}
+
+\begin{Def}
+    The Fourier transform of a distribution $T$ is defined by imposing
+    \begin{equation}
+        \label{eq:FTDistrDef}
+        \left(\mathcal{F}T\right) (f) = 
+        T\left(\mathcal{F}f\right)\, .
+    \end{equation}
+\end{Def}
+
+\begin{Ex}
+    Show that with the definitions above
+    \begin{align}
+        \mathcal{F}[\delta(x)] 
+            &= 1\, ,    \\
+        \mathcal{F}[e^{ikx}] 
+            &= (2\pi) \delta(p-k)\, \quad \forall k \in \mathbb{R}\, .
+    \end{align}
+    where $\delta(x)$ is Dirac's delta function (which is actually a
+    distribution). Check that you can generalize these expressions to the case
+    of $x,p \in \Rn$.
+\end{Ex}
+
+\section{Laplace Transform}
+\label{sec:LaplaceTransf}
+
+\begin{Def}
+    The Laplace transform of a function $f\in \mathcal{S}(\mathbb{R})$ is 
+    defined as
+    \begin{align}
+        \label{eq:LaplaceTransfDef}
+        g(z) = \int_0^\infty dk\, e^{i k (x+iy)} f(k)\, , \quad z=x+iy\, .
+    \end{align}
+\end{Def}
+The function $g(z)$ is holomorphic in the plane $y>0$. This definition can be
+generalized to the case of multiple variables, where the integral over the
+positive $k$ axis is replaced by an integral in a {\em convex cone}. We admit
+distributions as boundary values of these Laplace transforms. The generalization
+of the upper half-plane is a so-called {\em tube}, where the imaginary parts of
+the complex variables are constrained to be in a cone. In the multi-dimensional
+case, we can extend the definition of holomorphic function as follows. 
+
+\begin{Def}
+    A function $f$, defined in a neighbourhood of $w \in \Cn$, is {\em
+    holomorphic} (or analytic) at the point $w$ if there exists a series
+    \begin{align}
+        \label{eq:HoloSeriesDef}
+        \sum_{k_1, \ldots, k_n=0}^\infty &a_{k_1 \ldots k_n} (z_1-w_1)^{k_1} \ldots
+            (z_n - w_n)^{k_n} \\
+        & \sum_k a_k (z-w)^k\, ,
+    \end{align}
+    which converges for $z$ in a neighbourhood of $w$, and is equal to $f(w)$
+    when $z=w$. 
+\end{Def}
+Note that the second line is a compact rewriting of the first one using the
+multi-index notation. If the series converges at $z$, then it converges
+absolutely and uniformly in the polydisc
+\begin{align}
+    \left| \zeta_j - w_j \right| \leq |z_j - w_j| - \epsilon\, .
+\end{align}
+The coefficients are obtained by differentiating the function at $w$, 
+\begin{align}
+    \label{eq:CoeffsFromDerivs}
+    a_{k_1\ldots k_n} = 
+        \left. \frac{1}{k!} D^{k}f(z_1, \ldots, z_n) \right|_{w_1=z_1 \ldots w_n=z_n}\, .
+\end{align}
+Cauchy's formula yields
+\begin{align}
+    f(z_1, \ldots, z_n) = \frac{1}{(2\pi i)^n} \int_{R_1} \ldots \int_{R_n}
+        d\zeta_1 \ldots d\zeta_n\,  
+        \frac{f(\zeta_1, \ldots, \zeta_n)}{(\zeta_1 - z_1) \ldots (\zeta_n - z_n)}\, , 
+\end{align}
+inside a polydisc of uniform convergence. Holomorphic functions of several
+variables can be extended by analytical continuation. The coefficients of the
+power series that defines a holomorphic function can be obtained by computing
+the derivatives along the real axis, \ie by varying only the real part of the
+complex arguments. 
+
+A holomorphic function $F$ defined in an open set $\mathcal{O}$ is a
+distribution in $\mathcal{D}(\mathcal{O})'$. If $T$ is a distribution in
+$\mathcal{D}_p'$, it may happen that $e^{-\eta \cdot p} T$ is a distribution in
+$\mathcal{S}_p'$. Then we can define the Laplace transform of $T$ as the
+distribution
+\begin{align}
+    \label{eq:LaplaceDistrDef}
+    \mathcal{L}(T) = \mathcal{F}\left(e^{\eta\cdot p} T\right)\, .
+\end{align}
+For a function $T$ we get
+\begin{align}
+    \label{eq:LaplaceDistrFunc}
+    \mathcal{L}(T)(\xi,\eta) = 
+        \int \frac{d^Dp}{(2\pi)^D}\, e^{-i p (\xi - i \eta)} T(p)\, .
+\end{align}
+Here there are no requirements on the support of $T$; this is called a two-sided
+Laplace transform. The one-dimensional definition in
+Eq.~\eqref{eq:LaplaceTransfDef} is a special case of this more general
+definition. 
+
+\subsection{Properties}
+\label{sec:LaplaceProperties}
+
+We list here some useful properties, without getting into the details of the
+proofs.
+
+\begin{Thm}
+    Let $T \in \mathcal{D}_p'$, the set of all $\eta$ such that 
+    $e^{-p\cdot \eta} T \in \mathcal{S}_p'$ is {\em convex}.
+\end{Thm}
+The proof is very nice, but we do not have time for it right now. See Thm. 2.5
+in Streater \& Wightman for the details. 
+
+\begin{Thm}
+    Let $\Gamma$ be a convex open set in $\Rn$, $T \in \mathcal{D}_p'$ such that
+    \[
+        \forall \eta \in \Gamma\, , e^{-\eta\cdot p} T \in \mathcal{S}_p'\, ,   
+    \]
+    then $\mathcal{L}(T)$ is a holomorphic function of $\xi-i\eta$ in the tube
+    $\Rn - i\Gamma$. $\mathcal{L}(T)$ satisfies
+    \begin{align}
+        \label{eq:PolyBound}
+        |\mathcal{L}(T)(\xi-i\eta)| \leq \left|P_k(\xi)\right|\, ,           
+    \end{align}
+    where $P_k$ is a polynomial, and $\eta$ varies over any compact 
+    subset $K \subset\Gamma$.
+
+    Conversely, every function holomorphic in the tube, and satisfying the bound
+    in Eq.~\eqref{eq:PolyBound} is the Laplace transform of a uniquely
+    determined $T \in \mathcal{D}_p'$, such that $e^{-\eta\cdot p} T \in
+    \mathcal{S}_p'$ for all $\eta\in\Gamma$.
+\end{Thm}
+
+\begin{Thm}
+    \label{thm:TranslationTube}
+    Let $T\in\mathcal{D}_p'$ and $\Gamma\in\Rn$, convex, such that 
+    \[
+        \forall\eta\in\Gamma\, , e^{-p\cdot\eta} T \in \mathcal{S}_p'\, .    
+    \]
+    If $T$ has its support in a half-space such that $p\cdot a > A$, then
+    $\Gamma$ contains all the points of the form $\eta + t a$, with $t\geq 0$.
+\end{Thm}
+
+The `plus' lightcone, $V_+$, is defined as the set of $D$-momenta $p$ such that
+\begin{align}
+    \label{eq:PlusLightConeDef}
+    p^2 = (p^0)^2 - \mathbf{p}^2 > 0\, , \quad p^0 > 0\, .
+\end{align}
+Its closure is denoted $\bar{V}_+$. In QFT we find distributions $T$ that are
+functions of $n$ $D$-momenta $p_1,\dots, p_n$. These distributions vanish if
+some momentum $p_i$ is outside $\bar{V}_+$, and are also tempered. Using
+Theorem~\ref{thm:TranslationTube}, we deduce that $\mathcal{L}(T)(\xi-ia)$ is
+analytic in the {\em tube}:
+\begin{align}
+    \label{eq:ForwardTube}
+    \mathcal{T}_n=\Rn - i\Gamma\, ,
+\end{align}
+where
+\[
+    \Gamma = \left\{
+        (a_1, \ldots a_n)\, , \, a_j \in V_+\, , \, j=1, \ldots n
+    \right\}\, .    
+\]
+Note that here we use the fact that if $p,q \in V_+$, then $p\cdot q > 0$. 
+For functions that have support in the cone $\mathcal{T}_n$, we have the 
+following property. 
+
+\begin{Thm}
+    Let $T \in \mathcal{D}_p'$ and $e^{-p\cdot\eta} T \in\mathcal{S}_p'$ 
+    for $\eta\in\Gamma$, where $\Gamma$ is the cone $\eta_j\in V_+$ for 
+    $j=1, \ldots, n$. Let also 
+    \begin{equation}
+        p \in \mathrm{supp}\ T 
+        \quad \Longrightarrow \quad
+        p_j \in V_+\, , j=1, \ldots, n\, .    
+    \end{equation}
+    Then for each $\eta\in\Gamma$, there is a polynomial $P_\eta$ 
+    such that
+    \begin{align}
+        \label{eq:InequalityAbove}
+        |\mathcal{L}(T)\left(\xi - i (\eta+a)\right)|
+        \leq |P_\eta(\xi-ia)|\, ,
+    \end{align}
+    for all $\xi$ and all $a\in\Gamma$.
+
+    Conversely, if $F$ is holomorphic in $\mathcal{T}_n$ and 
+    satisfying Eq.~\eqref{eq:InequalityAbove} for each 
+    $\eta\in\Gamma$ and some polynomial $P_\eta$, then $F$ is the 
+    Laplace transform of a distribution with support in $\Gamma$.
+\end{Thm}
+
+The existence of a boundary value of Laplace transforms is dictated
+by the following theorem. 
+\begin{Thm}
+    If $T\in\mathcal{S}_p'$ and $\mathcal{L}(T)$ exists for all $\eta\in\Gamma$, 
+    then
+    \begin{align}
+        \label{eq:BoundaryValueThm}
+        \lim_{\eta\to 0} \int d\xi\, \mathcal{L}(T)(\xi-i\eta) f(\xi) 
+        = \mathcal{F}(T)(f)\, ,
+    \end{align}
+    \ie $\mathcal{L}(T)$ converges in $\mathcal{S}_p'$ to $\mathcal{F}(T)$ 
+    as $\eta\to 0$ inside a cone $\Gamma$.
+
+    Conversely if $\mathcal{L}(T)$ converges in $\mathcal{S}_\xi'$ as $\eta\to 0$
+    in a cone $\Gamma$, then $T$ is the Laplace transform of a tempered distribution.
+\end{Thm}
+
+\section{Extended Tubes}
+\label{sec:ExtTubes}
+
+The {\em extended tube}, $\mathcal{T}_n'$, is the union of the open sets
+obtained from $\mathcal{T}_n$ by applying proper complex Lorentz
+transformations:
+\begin{align}
+    &\zeta_1, \ldots, \zeta_n \in \mathcal{T}_n' 
+    \quad \Longleftrightarrow \quad
+    \zeta_1, \ldots, \zeta_n = \Lambda w_1, \ldots, \Lambda w_n\, , \\
+    &\quad w_1, \ldots, w_n \in \mathcal{T}_n\, ,  \quad
+    \Lambda \in L_+(\mathbb{C})\, . \nonumber
+\end{align}
+The holomorphic functions that we find in QFT transform according to
+some representation $S(A)$ of $\mathrm{SL}(2,\mathbb{C})$:
+\begin{align}
+    \label{eq:TransfPropFunc}
+    f_\alpha(\Lambda(A)\zeta_1, \ldots, \Lambda(A)\zeta_n) =
+    S(A)_{\alpha\beta} f_\beta(\zeta_1, \ldots, \zeta_n)\,.
+\end{align}
+The main result about extended tubes in Streater \& Wightman is the following
+theorem.
+\begin{Thm}
+    If $f_\alpha(\zeta_1, \ldots, \zeta_n)$ transforms according to 
+    Eq.~\eqref{eq:TransfPropFunc} and is holomorphic in the tube 
+    $\eta_j \in V_+$, where $\zeta_j=\xi_j-i\eta_j$, $j=1, \ldots, n$, 
+    then $f_\alpha$ possesses a single-valued analytical continuation
+    into the extended tube $\mathcal{T}_n'$.
+\end{Thm}
+
+\paragraph{Jost points}
+
+By definition the tube $\mathcal{T}_n$ does not contain real points, 
+since $z \in \mathcal{T}_n$ implies $\mathrm{Im}\ z \in V_+$, and 
+therefore $\mathrm{Im}\ z \neq 0$.The extended tube contains real points, 
+called {\em Jost points}. 
+
+\begin{Ex}
+    For the case of one vector, show that a real point 
+    $\zeta \in \mathcal{T}_1'$ if and only if $\zeta^2 < 0$.
+\end{Ex}
+
+For the general case, we have a theorem by Jost. 
+\begin{Thm}
+    A real point $\zeta_1,\ldots,\zeta_n$ is in the extended tube
+    $\mathcal{T}_n'$ if and only if all vectors of the form 
+    \[
+     \sum_{j=1}^n \lambda_j \zeta_j\, , \quad \lambda_j\geq 0\, , \sum_j \lambda_j >0\, ,
+    \]
+    are space-like.
+\end{Thm}
+
+\section{The Edge of the Wedge Theorem}
+\label{eq:EdgeOfTheWedge}
+
+For one complex variable there is a proof of the edge of the wedge 
+theorem that goes back to Painlev\'e in 1888. 
+
+\begin{Thm}
+    Let $F_1$ be a holomorphic function in an open set $D_1$ in the upper half
+    plane, with an interval $a<x<b$ as part of its boundary. Let $F_2$ be
+    holomorphic in an open set $D_2$ in the lower half-plane, with the interval
+    $a<x<b$ as part of its boundary. Suppose 
+    \begin{align}
+        F_1(x) &= \lim_{y\to 0^+} F_1(x+iy) \nonumber \\
+        F_2(x) &= \lim_{y\to 0^+} F_2(x-iy) \nonumber 
+    \end{align}
+    exist uniformly in $a<x<b$, are continuous and satisfy
+    \begin{align}
+        F_1(x) = F_2(x)\, , \quad \forall x\in (a,b)\, .
+    \end{align}
+    Then $F_1$ and $F_2$ are the same holomorphic function on 
+    $a<x<b$.
+\end{Thm}
+The proof is reported in Streater \& Wightman. Add it to the notes at a later
+stage. 
+
+\paragraph{Schwarz reflection principle} 
+
+This is a corollary of the theorem above. It can be stated as follows. 
+
+If $F_1$ is holomorphic in $D_1$ and converges uniformly to boundary values for
+$a<x<b$ which define a real continuous function, then $F_1$ is holomorphic in
+$\bar{D}_1$, and
+\begin{equation}
+    \label{eq:SchwarzAnalytical}
+    F_1(z) = F_1(z^*)^*
+\end{equation}
+defines its analytical continuation. 
+
+For applications in QFT we need a generalization of the edge of the wedge
+theorem to the case of several complex variables and to distributions. We are
+not going to report the proofs, as they can be found in Streater \& Wightman. We
+only state two theorems, which summarise the properties that we encounter in
+QFT. 
+
+\begin{Thm}
+    \label{thm:EdgeWedgeMultiDim}
+    Let $\mathcal{O}$ be open in $\Cn$, containing an open set $E$ of $\Rn$. 
+    Let $\mathcal{C}$ be an open convex cone of $\Rn$. Suppose $F_1$ is 
+    holomorphic in
+    \begin{equation}
+        D_1 = \left(\Rn + i \mathcal{C}\right) \cap \mathcal{O} 
+    \end{equation} 
+    and $F_2$ in 
+    \begin{equation}
+        D_2 = \left(\Rn - i \mathcal{C}\right) \cap \mathcal{O} \, .
+    \end{equation} 
+    Suppose the limits for $x\in E$
+    \begin{equation}
+        \label{eq:UpperEdgeFun}
+        \lim_{y\to 0,\; y\in \mathcal{C}} F_1(x+iy) = F_1(x) 
+    \end{equation}
+    and
+    \begin{equation}
+        \label{eq:LowerEdgeFun}
+        \lim_{y\to 0,\; y\in \mathcal{C}} F_2(x-iy) = F_2(x) 
+    \end{equation}
+    exist and are continuous and coincide on $E$, with the limit
+    being uniform on $E$. 
+
+    Then there exists a complex neighbourhood $N$ of $E$ and a 
+    holomorphic function $G$ which coincides with $F_1$ in $D_1$ 
+    and $F_2$ in $D_2$. 
+\end{Thm}
+
+A similar theorem is valid even in the case where the boundary 
+values do not define a continuous function. 
+
+\begin{Thm}
+    \label{thm:EdgeWedgeDistr}
+    Let us replace hypotheses~\eqref{eq:UpperEdgeFun} 
+    and~\eqref{eq:LowerEdgeFun} with the condition that for every 
+    test function of compact support in $E$
+    \begin{equation}
+        \label{eq:UpperEdgeDistr}
+        \lim_{y\to 0,\; y\in \mathcal{C}} 
+        \int dx\, F_1(x+iy) f(x) = T(f)
+    \end{equation}
+    and 
+    \begin{equation}
+        \label{eq:LowerEdgeDistr}
+        \lim_{y\to 0,\; y\in \mathcal{C}} 
+        \int dx\, F_2(x-iy) f(x) = T(f)\, ,
+    \end{equation}
+    where $T$ is a distribution in $\mathcal{D}(E)'$.
+\end{Thm}
