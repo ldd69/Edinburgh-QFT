@@ -94,12 +94,13 @@ Hence
 \end{align}
 where $\tilde{q}_k=\frac{q_k-q_{k-1}}{2}$. Therefore
 \begin{align}
-  \braket{q't'}{qt} =& \lim_{n\to\infty} \int \prod_{k=1}^{n-1}dq_k\, 
-  \prod_{j=1}^{n} \frac{dp_j}{2\pi}\, \times \\
+  \braket{q't'}{qt} =& \lim_{n\to\infty} \int 
+  \left(\prod_{k=1}^{n-1}dq_k\right)\, 
+  \left(\prod_{j=1}^{n} \frac{dp_j}{2\pi}\right)\, \times \\
   &\times \exp \left\{
     i\epsilon \sum_{m=1}^{n} \left[
     p_m \frac{q_m-q_{m-1}}{\epsilon} - H\left(p_m, 
-    \frac{q_m+q_{m-1}}{2}\right)
+    \tilde{q}_m \right)
     \right]
     \right\}\, ,
 \end{align}
@@ -115,6 +116,14 @@ where $q_0 = q$, and $q_n = q'$. The limit above defines the {\em
   \right\}\, .
 \end{align}
 
+It is essential to remark at this stage that we have rewritten
+a quantum amplitude as an infinite-dimensional integral. On the LHS
+of the equation above we have the scalar product of two states in 
+the Hilbert space of quantum states of the theory. On the RHS we 
+have expressed this scalar product as the result of an integral. 
+In the expression on the RHS there are no physical states, no 
+operators; just integration variables. 
+
 \section{Quadratic P dependence}
 \label{sec:quadr-kinet-term}
 
@@ -122,9 +131,9 @@ For hamiltonians like the one above, \ie hamiltonians that are only
 quadratic in the momentum $\hat{P}$, the expression above can be
 simplified by performing the integral over the momenta $p_j$:
 \begin{align}
-  \int \frac{dp}{2\pi}\, \exp\left\{
+  \int \frac{dp_k}{2\pi}\, \exp\left\{
   i\epsilon\left[
-  p \left(\frac{q_k-q_{k-1}}{\epsilon}\right) - \frac12 p^2
+  p_k \left(\frac{q_k-q_{k-1}}{\epsilon}\right) - \frac12 p_k^2
   \right]
   \right\} = \left(2\pi i \epsilon\right)^{-1/2}\,
   \exp\left\{i\epsilon
@@ -172,7 +181,7 @@ The first example that we are going to consider is the matrix element
 \begin{align}
   \label{eq:OnePtDef}
   \langle q't' | \hat{Q}(\bar{t}) | q t\rangle = 
-  \langle q' | e^{-i \hat{H}(t'-t)} \hat{Q} e^{-i \hat{H}(\bar{t}-t)}
+  \langle q' | e^{-i \hat{H}(t'-\bar{t})} \hat{Q} e^{-i \hat{H}(\bar{t}-t)}
   | q\rangle\, ,
 \end{align}
 where we assume $t<\bar{t}<t'$, and we have used
@@ -187,13 +196,14 @@ Proceeding as we did in the previous section, we can write
   \bra{q'} \epsstep \ldots \epsstep \hat{Q} \epsstep \ldots
   \epsstep \ket{q}\, ,
 \end{align}
-where we assumed that $\bar{t}=t_k$, and the first and second ellipses
+where we assumed that $\bar{t}=t_{\bar k}$, and the first and second ellipses
 denote respectively $(n-k)$, and $k$ factors of $\epsstep$. Performing
 the same manipulations as before we obtain
 \begin{align}
   \langle q't' | \hat{Q}(\bar{t}) | q t\rangle =& 
-  \lim_{n\to\infty} \int \prod_{k=1}^{n-1}dq_k\, 
-  \prod_{j=1}^{n} \frac{dp_j}{2\pi}\, q_k \times \\
+  \lim_{n\to\infty} \int 
+  \left(\prod_{k=1}^{n-1}dq_k\right) \, 
+  \left(\prod_{k=1}^{n} \frac{dp_k}{2\pi}\right)\, q_{\bar k} \times \\
   &\times \exp \left\{
     i\epsilon \sum_{m=1}^{n} \left[
     p_m \frac{q_m-q_{m-1}}{\epsilon} - H\left(p_m, 
@@ -227,15 +237,16 @@ element of the product of two position operators
   \label{eq:TwoPtDef}
   \bra{q't'} \hat{Q}(\bar{t}_1) \hat{Q}(\bar{t}_2)\ket{qt}\, , 
 \end{align}
-where now we assume $\bar{t}_1=t_k$, $\bar{t}_2=t_\ell$,
+where now we assume $\bar{t}_1=t_{\bar k_1}$, $\bar{t}_2=t_{\bar k_2}$,
 $t<\bar{t}_2<\bar{t}_1<t'$. We can write this correlator as:
 \begin{align}
     \bra{q't'} \hat{Q}(\bar{t}_1) \hat{Q}(\bar{t}_2)\ket{qt} = 
   \bra{q'} \epsstep \dots \hat{Q} \ldots \hat{Q} \ldots \epsstep
   \ket{q}\, ,
 \end{align}
-where the three ellipses here denote respectively $(n-k)$, $(k-\ell)$,
-and $\ell$ factors of $\epsstep$. Proceeding exactly as above yields: 
+where the three ellipses here denote respectively 
+$(n-\bar k_1)$, $(\bar k_1-\bar k_2)$,
+and $\bar k_2$ factors of $\epsstep$. Proceeding exactly as above yields: 
 \begin{align}
   \label{eq:TwoPtPathInt}
   \bra{q't'} \hat{Q}(\bar{t}_1) \hat{Q}(\bar{t}_2)\ket{qt} = 
