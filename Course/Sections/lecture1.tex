@@ -35,7 +35,7 @@ the size of the time interval, and $\epsilon=T/n$, where $n$ is an
 integer. Then 
 \begin{align}
   t_0 &= t \\
-  t_k &= t_0 = k \epsilon, \quad \text{for}\ k=1, \ldots, n-1 \\
+  t_k &= t_0 + k \epsilon, \quad \text{for}\ k=1, \ldots, n-1 \\
   t_n &= t + n \epsilon = t'\, .
 \end{align}
 \begin{align}
@@ -82,17 +82,17 @@ introduce eigenstates of the momentum operator $\ket{p}$
 and use the completeness of the states $\ket{p}$:
 \begin{align}
   \langle q_k | \hat{P}^2 | q_{k-1}\rangle = 
-  \int \frac{dp}{2\pi}\, p^2 e^{ip(q_k-q_{k-1})}\, .
+  \int \frac{dp_k}{2\pi}\, p^2 e^{ip_k(q_k-q_{k-1})}\, .
 \end{align}
 Hence
 \begin{align}
   \langle q_k | e^{-i\hat{H}\epsilon} | q_{k-1}\rangle = 
-  \int \frac{dp}{2\pi}\, \exp\left\{i\epsilon \left[
-  p \frac{q_k-q_{k-1}}{\epsilon} - H\left(p,\tilde{q}\right)
+  \int \frac{dp_k}{2\pi}\, \exp\left\{i\epsilon \left[
+  p_k \frac{q_k-q_{k-1}}{\epsilon} - H\left(p_k,\tilde{q}_k\right)
   \right]
   \right\} + O(\epsilon^2)\, ,
 \end{align}
-where $\tilde{q}=\frac{q_k-q_{k-1}}{2}$. Therefore
+where $\tilde{q}_k=\frac{q_k-q_{k-1}}{2}$. Therefore
 \begin{align}
   \braket{q't'}{qt} =& \lim_{n\to\infty} \int \prod_{k=1}^{n-1}dq_k\, 
   \prod_{j=1}^{n} \frac{dp_j}{2\pi}\, \times \\
