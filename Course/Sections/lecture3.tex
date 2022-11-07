@@ -79,8 +79,8 @@ $V=0$, we have
         % \vertex [below=0.2em of a] {\(_{x}\)};  
         % \vertex [below=0.2em of b] {\(_{y}\)};  
       \end{feynman}
-    \end{tikzpicture} = \frac{i}{2}
-    \int d^Dy\, d^Dz\, J(y) \Delta(y-z) J(z) \, .
+    \end{tikzpicture} = -\frac{1}{2}
+    \int d^Dy\, d^Dz\, J(y) \left(i\Delta(y-z)\right) J(z) \, .
 \end{equation}
 Taking the functional derivatives with respect to $J$ we get a factor of two,
 from acting with the first derivative on both $J(y)$ and $J(z)$:
@@ -255,10 +255,7 @@ The Feynman rules in momentum space can be summarised as follows
   conserved at each vertex. For a diagram without loops, this fixes
   the momentum of {\em all} internal lines. 
 \item The value of the diagram is given by the product of a factor of
-  $i/(p^2-m^2+i\epsilon)$ for each line with momentum $p$, a factor of
-  $1/i$ for the external end of a line, and a factor $ig (1/i)^\#$ for
-  each vertex, where $\#$ is the number of legs connecting at each
-  vertex. 
+  $i/(p^2-m^2+i\epsilon)$ for each line with momentum $p$, and a factor $ig$ for each vertex. 
 \item A diagram with $L$ loops will have $L$ internal momenta that are
   not fixed by momentum conservation. We integrate over those momenta,
   with measure $d^p/(2\pi)^D$. 
