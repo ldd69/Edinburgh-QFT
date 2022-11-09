@@ -6,7 +6,9 @@
 % \newcommand{\munu}{{\mu\nu}}
 \newcommand{\tDelta}{\tilde{\Delta}}
 \newcommand{\SProp}[1]{\frac{1}{#1^2-m^2+i\epsilon}}
+\newcommand{\ISProp}[1]{\frac{i}{#1^2-m^2+i\epsilon}}
 \newcommand{\HSProp}[1]{\frac{1}{#1^2-M^2+i\epsilon}}
+\newcommand{\IHSProp}[1]{\frac{i}{#1^2-M^2+i\epsilon}}
 \newcommand{\ESProp}[2]{\frac{1}{\left(#1^2+m^2\right)^#2}}
 \newcommand{\EHSProp}[2]{\frac{1}{\left(#1^2+M^2\right)^#2}}
 
@@ -37,42 +39,48 @@ Working in perturbation theory, we compute the two-point function
 \begin{equation}
   \label{eq:TwoPtMom}
   \tilde{G}^{(2)}\left(p,p'\right) =
-  (2\pi)^D \delta\left(p+p'\right) \frac{1}{i} \tilde{\Delta}_F(p)\, ,
+  (2\pi)^D \delta\left(p+p'\right) i\tilde{\Delta}_F(p)\, ,
 \end{equation}
-as a Taylor expansion in powers of the coupling constant
-\begin{equation}
-  \label{eq:TwoPtMomPert}
-  \tilde{G}^{(2)}\left(p,p'\right) = \sum_k g^k
-  \tilde{G}^{(2,k)}\left(p,p'\right)\, .
-\end{equation}
+as a Taylor expansion in powers of the coupling constant.
+% \begin{equation}
+%   \label{eq:TwoPtMomPert}
+%   \tilde{G}^{(2)}\left(p,p'\right) = \sum_k g^k
+%   \tilde{G}^{(2,k)}\left(p,p'\right)\, .
+% \end{equation}
 As discussed before, the delta function in Eq.~\ref{eq:TwoPtMom}
 ensures momentum conservation. For all practical purposes, we should
-remember that it is there, and work on the perturbative expansion of
-the full propagator 
+remember that it is there, and focus on the perturbative expansion of
+the {\em full} propagator 
 \begin{equation}
   \label{eq:PropMomPert}
-  \tilde{\Delta}_F(p) = \sum_k g^k \tilde{\Delta}^{(k)}_F(p)\, .
+  i\tilde{\Delta}_F(p) = \sum_k g^k i\tilde{\Delta}^{(k)}_F(p)\, .
 \end{equation}
-From our previous computations
+The term {\em full} here refers to the fact that we want to 
+take into account the contributions from the interaction 
+termi in the potential. Ths suffix $F$ is meant to remind us
+that we are considering the full propagator. 
+From our previous computations, the 1PI one-loop contribution
+to the propagator is 
 \begin{align}
-   \frac{1}{i} \tDelta_F^{(2)}(p)
-  &= -\frac{1}{2} \SProp{p} \left(\int \frac{d^D\ell}{(2\pi)^D}\,
-    \SProp{\ell} \SProp{(\ell-p)}\right) \times \nonumber \\
-  &\quad \times \SProp{p}\, .,
+   g^2 i \tDelta_F^{(2)}(p)
+  &= \frac{1}{2} (ig)^2\, \ISProp{p} \left(\int \frac{d^D\ell}{(2\pi)^D}\,
+    \ISProp{\ell} \ISProp{(\ell-p)}\right) \times \nonumber \\
+  &\quad \times \ISProp{p}\, .,
 \end{align}
 and therefore the $O(g^2)$ contribution to the correlator can be
 written as
 \begin{equation}
   \label{eq:OneLoopPi}
-  \frac{1}{i} \tDelta(p) \left(i\Pi(p^2)\right) \frac{1}{i}
-  \tDelta(p)\, ,
+  i\tDelta(p) \left(-i\Pi(p^2)\right) i\tDelta(p)\, ,
 \end{equation}
 where
 \begin{equation}
   \label{eq:PiFun}
-  i\Pi(p^2) = \frac{g^2}{2} \int  \frac{d^D\ell}{(2\pi)^D}\,
+  -i\Pi(p^2) = \frac{g^2}{2} \int \frac{d^D\ell}{(2\pi)^D}\,
   \SProp{\ell} \SProp{(\ell-p)}\, .
 \end{equation}
+
+{\bf changed signs up to here!}
 
 \subsection{Evaluation of $\Pi(p^2)$}
 \label{sec:evaluation-pi}
