@@ -27,6 +27,24 @@ $t$ to evolve in state $\ket{q'}$ at time $t'$,
 \end{equation}
 where $\hat{H}$ is the Hamiltonian of the system. 
 
+Alternatively, we can think of $\ket{q,t}$ as the eigenvector of the 
+position operator in the Heisenberg representation, 
+\begin{align}
+  \label{eq:QHeisenberg}
+  \hat{Q}_H(t) = e^{i \hat{H} t} \hat{Q} e^{-i \hat{H}t}\, .
+\end{align}
+Then, letting 
+\begin{align}
+  \label{eq:HeisenbergEigenvect}
+  \ket{q,t} = e^{i \hat{H}t} \ket{q}\, ,
+\end{align}
+we can easily check that
+\begin{align}
+  \label{eq:HeisenbergCheck}
+  \hat{Q}_H(t) \ket{q,t} = q \ket{q,t}\, ,
+\end{align}
+and $\braket{q't'}{qt}$ reproduces Eq.~\eqref{eq:AmplitudeDef}.
+
 \section{Setting Up the Path Integral}
 \label{sec:setting-up-path}
 
@@ -50,7 +68,7 @@ where the expression in the second line contains $n$ factors.
 Inserting the completeness relation $n-1$ times,
 \begin{align}
   \label{eq:AmplitudeStepOne}
-  \braket{q't'}{qt} = \int \prod_{k=1}^{n-1}dq_k\,
+  \braket{q't'}{qt} = \int \left(\prod_{k=1}^{n-1}dq_k\right)\,
   \langle q' | \left(e^{-i \hat{H} \epsilon}\right) |q_{n-1}\rangle
   \langle q_{n-1} | \left(e^{-i \hat{H} \epsilon}\right) |
   q_{n-2}\rangle \ldots \langle q_1 | \left(e^{-i \hat{H}
@@ -86,6 +104,7 @@ and use the completeness of the states $\ket{p}$:
 \end{align}
 Hence
 \begin{align}
+  \label{eq:EpsStepBraKet}
   \langle q_k | e^{-i\hat{H}\epsilon} | q_{k-1}\rangle = 
   \int \frac{dp_k}{2\pi}\, \exp\left\{i\epsilon \left[
   p_k \frac{q_k-q_{k-1}}{\epsilon} - H\left(p_k,\tilde{q}_k\right)
@@ -96,7 +115,8 @@ where $\tilde{q}_k=\frac{q_k-q_{k-1}}{2}$. Therefore
 \begin{align}
   \braket{q't'}{qt} =& \lim_{n\to\infty} \int 
   \left(\prod_{k=1}^{n-1}dq_k\right)\, 
-  \left(\prod_{j=1}^{n} \frac{dp_j}{2\pi}\right)\, \times \\
+  \left(\prod_{j=1}^{n} \frac{dp_j}{2\pi}\right)\, \times \nonumber\\
+  \label{eq:DiscretePhaseSpaceIntegral}
   &\times \exp \left\{
     i\epsilon \sum_{m=1}^{n} \left[
     p_m \frac{q_m-q_{m-1}}{\epsilon} - H\left(p_m, 
@@ -109,7 +129,7 @@ where $q_0 = q$, and $q_n = q'$. The limit above defines the {\em
 \begin{align}
   \label{eq:PathIntDefZero}
   \braket{q't'}{qt} = 
-  \int \mathcal{D}q \mathcal{D}p \exp \left\{
+  \int_{q,q'} \mathcal{D}q \mathcal{D}p \exp \left\{
   i \int_t^{t'} d\tau\, \left[
   p \dot{q} - H(p,q)
   \right]
@@ -122,7 +142,9 @@ of the equation above we have the scalar product of two states in
 the Hilbert space of quantum states of the theory. On the RHS we 
 have expressed this scalar product as the result of an integral. 
 In the expression on the RHS there are no physical states, no 
-operators; just integration variables. 
+operators; just integration variables. Note that we added the suffix
+$q,q'$ to the integral sign, in order to keep track of the value of 
+the position variables at the boundaries of the time interval. 
 
 \section{Quadratic P dependence}
 \label{sec:quadr-kinet-term}
@@ -180,19 +202,19 @@ above.
 The first example that we are going to consider is the matrix element
 \begin{align}
   \label{eq:OnePtDef}
-  \langle q't' | \hat{Q}(\bar{t}) | q t\rangle = 
+  \langle q't' | \hat{Q}_H(\bar{t}) | q t\rangle = 
   \langle q' | e^{-i \hat{H}(t'-\bar{t})} \hat{Q} e^{-i \hat{H}(\bar{t}-t)}
   | q\rangle\, ,
 \end{align}
 where we assume $t<\bar{t}<t'$, and we have used
 \begin{equation}
   \label{eq:HeisenOpEvol}
-  \hat{Q}(t) = e^{i\hat{H} t} \hat{Q} e^{-i\hat{H} t}\, .
+  \hat{Q}_H(t) = e^{i\hat{H} t} \hat{Q} e^{-i\hat{H} t}\, .
 \end{equation}
 Proceeding as we did in the previous section, we can write
 \begin{align}
   \label{eq:CorrOne}
-  \langle q't' | \hat{Q}(\bar{t}) | q t\rangle = 
+  \langle q't' | \hat{Q}_H(\bar{t}) | q t\rangle = 
   \bra{q'} \epsstep \ldots \epsstep \hat{Q} \epsstep \ldots
   \epsstep \ket{q}\, ,
 \end{align}
@@ -200,7 +222,7 @@ where we assumed that $\bar{t}=t_{\bar k}$, and the first and second ellipses
 denote respectively $(n-k)$, and $k$ factors of $\epsstep$. Performing
 the same manipulations as before we obtain
 \begin{align}
-  \langle q't' | \hat{Q}(\bar{t}) | q t\rangle =& 
+  \langle q't' | \hat{Q}_H(\bar{t}) | q t\rangle =& 
   \lim_{n\to\infty} \int 
   \left(\prod_{k=1}^{n-1}dq_k\right) \, 
   \left(\prod_{k=1}^{n} \frac{dp_k}{2\pi}\right)\, q_{\bar k} \times \\
@@ -211,11 +233,11 @@ the same manipulations as before we obtain
     \right]
     \right\}\, .
 \end{align}
-Note that now there is an extra factor of $q_k$ in the integrand,
-corresponding to the insertion of the operator $\hat{Q}(\bar{t})$. The
+Note that now there is an extra factor of $q_{\bar k}$ in the integrand,
+corresponding to the insertion of the operator $\hat{Q}_H(\bar{t})$. The
 limit above  is denoted
 \begin{align}
-  \langle q't' | \hat{Q}(\bar{t}) | q t\rangle &= 
+  \langle q't' | \hat{Q}_H(\bar{t}) | q t\rangle &= 
   \int \mathcal{D}q \mathcal{D}p \, q(\bar{t}) 
   \exp \left\{
   i \int_t^{t'} d\tau\, \left[
@@ -235,12 +257,12 @@ Let us now consider the slightly more complicated case of the matrix
 element of the product of two position operators
 \begin{align}
   \label{eq:TwoPtDef}
-  \bra{q't'} \hat{Q}(\bar{t}_1) \hat{Q}(\bar{t}_2)\ket{qt}\, , 
+  \bra{q't'} \hat{Q}_H(\bar{t}_1) \hat{Q}_H(\bar{t}_2)\ket{qt}\, , 
 \end{align}
 where now we assume $\bar{t}_1=t_{\bar k_1}$, $\bar{t}_2=t_{\bar k_2}$,
-$t<\bar{t}_2<\bar{t}_1<t'$. We can write this correlator as:
+$t'>\bar{t}_1>\bar{t}_2>t$. We can write this correlator as:
 \begin{align}
-    \bra{q't'} \hat{Q}(\bar{t}_1) \hat{Q}(\bar{t}_2)\ket{qt} = 
+    \bra{q't'} \hat{Q}_H(\bar{t}_1) \hat{Q}_H(\bar{t}_2)\ket{qt} = 
   \bra{q'} \epsstep \dots \hat{Q} \ldots \hat{Q} \ldots \epsstep
   \ket{q}\, ,
 \end{align}
@@ -249,7 +271,7 @@ $(n-\bar k_1)$, $(\bar k_1-\bar k_2)$,
 and $\bar k_2$ factors of $\epsstep$. Proceeding exactly as above yields: 
 \begin{align}
   \label{eq:TwoPtPathInt}
-  \bra{q't'} \hat{Q}(\bar{t}_1) \hat{Q}(\bar{t}_2)\ket{qt} = 
+  \bra{q't'} \hat{Q}_H(\bar{t}_1) \hat{Q}_H(\bar{t}_2)\ket{qt} = 
   \int_{qq'} \mathcal{D}q\, q(\bar{t}_1) q(\bar{t}_2) 
   \exp \left\{
   i \int_t^{t'} d\tau\, \mathcal{L}(q,\dot{q})
@@ -262,12 +284,12 @@ RHS of \Eqref{eq:TwoPtPathInt} where $q(\bar{t}_1)$ and $q(\bar{t}_1)$
 are just integration variables. If $\bar{t}_2>\bar{t}_1$, then the RHS
 of \Eqref{eq:TwoPtPathInt} corresponds to
 \begin{align}
-  \bra{q't'} \hat{Q}(\bar{t}_2) \hat{Q}(\bar{t}_1) \ket{qt}\, .
+  \bra{q't'} \hat{Q}_H(\bar{t}_2) \hat{Q}_H(\bar{t}_1) \ket{qt}\, .
 \end{align}
 Both results can be summarised as
 \begin{align}
   \label{eq:TOrderPathInt}
-  \bra{q't'} T\left(\hat{Q}(\bar{t}_1) \hat{Q}(\bar{t}_2)
+  \bra{q't'} T\left(\hat{Q}_H(\bar{t}_1) \hat{Q}_H(\bar{t}_2)
   \right)\ket{qt} = 
   \int_{qq'} \mathcal{D}q\, q(\bar{t}_1) q(\bar{t}_2) 
   \exp \left\{
@@ -277,21 +299,146 @@ Both results can be summarised as
 where we have introduced the T-ordered product of operators: 
 \begin{align}
   \label{eq:TOrderDef}
-   T\left(\hat{Q}(t) \hat{Q}(t')\right) = \theta(t-t') \hat{Q}(t)
-  \hat{Q}(t') + \theta(t'-t) \hat{Q}(t') \hat{Q}(t)\, .
+   T\left(\hat{Q}_H(t) \hat{Q}_H(t')\right) = \theta(t-t') \hat{Q}_H(t)
+  \hat{Q}_H(t') + \theta(t'-t) \hat{Q}_H(t') \hat{Q}_H(t)\, .
 \end{align}
 
 You can easily verify that the derivation can be extended to
 an arbitrary number of insertions of the operator $\hat{Q}$:
 \begin{align}
 \label{eq:TOrderNPt}
-\bra{q't'} T\left(\hat{Q}(\bar{t}_1) \ldots \hat{Q}(\bar{t}_n)
+\bra{q't'} T\left(\hat{Q}_H(\bar{t}_1) \ldots \hat{Q}_H(\bar{t}_n)
   \right)\ket{qt} = 
   \int_{qq'} \mathcal{D}q\, q(\bar{t}_1) \ldots q(\bar{t}_n) 
   \exp \left\{
   i \int_t^{t'} d\tau\, \mathcal{L}(q,\dot{q})
   \right\}\, .
 \end{align}
+
+\subsection{Mixed Correlators}
+\label{sec:MixedCorrelators}
+
+Finally, we are going to consider mixed correlators of the form
+\begin{align}
+  \label{eq:MixedCorrOne}
+  \bra{q't'} T\left(\hat{Q}_H(\bar{t}_1) \hat{P}_H(\bar{t}_2)\right)\ket{q,t}\, .
+\end{align}
+Clearly in this case we need to work in the full phase space, \ie\ keeping both the 
+integrals over positions and momenta. 
+Following the derivation in Sec.~\ref{sec:setting-up-path} and~\ref{sec:two-point-function}, 
+we assume $\bar{t}_1=t_{\bar k_1}$, $\bar{t}_2=t_{\bar k_2}$, and split the time evolution 
+into steps of size $\epsilon$, 
+\begin{align}
+  \bra{q't'} \hat{Q}_H(\bar{t}_1) \hat{P}_H(\bar{t}_2)\ket{qt} 
+    &= \int \left(\prod_{k=1}^{n-1}dq_k\right)\,
+      \bra{q'} \epsstep \ket{q_{n-1}} \dots \bra{q_{\bar k_1}}\hat{Q}\epsstep \ket{q_{\bar k_1 -1}} \ldots \times \nonumber \\
+    & \quad \times \bra{q_{\bar k_2}}\hat{P}\epsstep \ket{q_{\bar{k}_2-1}} \ldots \bra{q_1}\epsstep \ket{q}\, .
+\end{align}
+Note that we have adopted the convention of including the operators $\hat{Q}$ and $\hat{P}$ to {\em the left}\ 
+of the factor $\epsstep$ in the matrix elements above. This has consequences for the value of $q$ at which the 
+Hamiltonian is evaluated, see below. With this convention, we can mimic the manipulations in the sections above, 
+which yield Eq.~\eqref{eq:EpsStepBraKet}
+\begin{align}
+  \langle q_k | e^{-i\hat{H}\epsilon} | q_{k-1}\rangle = 
+  \int \frac{dp_k}{2\pi}\, \exp\left\{i\epsilon \left[
+  p_k \frac{q_k-q_{k-1}}{\epsilon} - H\left(p_k,\tilde{q}_k\right)
+  \right]
+  \right\} + O(\epsilon^2)\, ,
+\end{align}
+except for the two matrix elements with the operator insertions, 
+\begin{align}
+  \bra{q_{\bar k_1}}\hat{Q}\epsstep \ket{q_{\bar k_1 -1}} &= 
+    \int \frac{dp_{\bar k_1}}{2\pi}\, q_{\bar k_1}\, \exp\left\{i\epsilon \left[
+    p_{\bar k_1} \frac{q_{\bar k_1}-q_{\bar k_1-1}}{\epsilon} - H\left(p_{\bar k_1},\tilde{q}_{\bar k_1}\right)
+    \right]
+    \right\} + O(\epsilon^2)\, , \\
+  \label{eq:SkipABeat}  
+  \bra{q_{\bar k_2}}\hat{P}\epsstep \ket{q_{\bar{k}_2-1}} &=
+    \int \frac{dp_{\bar k_2}}{2\pi}\, p_{\bar k_2}\, \exp\left\{i\epsilon \left[
+    p_{\bar k_2} \frac{q_{\bar k_2}-q_{\bar k_2-1}}{\epsilon} - H\left(p_{\bar k_2},q_{\bar k_2-1}\right)
+    \right]
+    \right\} + O(\epsilon^2)\, .
+\end{align}
+As already mentioned above, the argument at which the Hamiltonian is evaluated in 
+Eq.~\eqref{eq:SkipABeat} is $q_{\bar k_2-1}$ instead of $\tilde{q}_{\bar k_2}$. The 
+difference between the two arguments is $O(\epsilon)$ and therefore irrelevant. 
+Collecting all the terms, we obtain
+\begin{align}
+  \bra{q't'} T\left(\hat{Q}_H(\bar{t}_1) \hat{P}_H(\bar{t}_2)\right) \ket{qt} =& \lim_{n\to\infty} \int 
+  \left(\prod_{k=1}^{n-1}dq_k\right)\, 
+  \left(\prod_{j=1}^{n} \frac{dp_j}{2\pi}\right)\, q_{\bar k_1} p_{\bar k_2} \times \nonumber\\
+  \label{eq:DiscretePhaseSpaceIntegralMixedCorr}
+  &\quad \times \exp \left\{
+    i\epsilon \sum_{m=1}^{n} \left[
+    p_m \frac{q_m-q_{m-1}}{\epsilon} - H\left(p_m, 
+    \tilde{q}_m \right)
+    \right]
+    \right\}\, ,
+\end{align}
+where $q_0 = q$, and $q_n = q'$.
+
+\section{Canonical Commutation Relations}
+\label{sec:CCR}
+The expressions we found in the sections above must be consistent with the canonical 
+commutation relation (CCR) between position and momentum, which we used implicitly 
+when we wrote 
+\begin{align}
+  \braket{q}{p} = \exp \left(i q p \right)\, .
+\end{align}
+In order to check the CCR, we define the commutator of $\hat{Q}$ and $\hat{P}$ as
+\begin{align}
+  \label{eq:CCRDef}
+  \bra{q't'} \left(\hat{Q}_H(t_{m+1}) \hat{P}_H(t_m) - \hat{P}_H(t_m) \hat{Q}_H(t_{m+1})\right) \ket{qt}\, .
+\end{align}
+With this definition, when we take the limit $\epsilon\to 0$, the operator are all evaluated at the same 
+time, but the limit is reached with the correct ordering of the operators, 
+\begin{align}
+  \lim_{\epsilon\to 0} \hat{Q}_H(t_m+\epsilon) \hat{P}_H(t_m) = \hat{Q}_H(t_m) \hat{P}_H(t_m)\, , \\
+  \lim_{\epsilon\to 0} \hat{P}_H(t_m) \hat{Q}_H(t_m-\epsilon) = \hat{P}_H(t_m) \hat{Q}_H(t_m)\, . 
+\end{align}
+With this convention we get for the CCR
+\begin{align}
+  \lim_{n\to\infty} & \int 
+  \left(\prod_{k=1}^{n-1}dq_k\right)\, 
+  \left(\prod_{j=1}^{n} \frac{dp_j}{2\pi}\right)\, p_{m} \left(q_{m+1}-q_{m-1}\right) \times \nonumber\\
+  &\qquad\quad \times \exp \left\{
+    i\epsilon \sum_{m=1}^{n} \left[
+    p_m \frac{q_m-q_{m-1}}{\epsilon} - H\left(p_m, 
+    \tilde{q}_m \right)
+    \right]
+    \right\} \\
+  &= \int 
+  \left(\prod_{k=1}^{n-1}dq_k\right)\, 
+  \left(\prod_{j=1}^{n} \frac{dp_j}{2\pi}\right)\, 
+  p_{m} \left[\left(q_{m+1}-q_{m}\right) + \left(q_{m}-q_{m-1}\right)\right] \times \nonumber\\
+  & \qquad \quad \times \exp \left\{
+    i\epsilon \sum_{m=1}^{n} \left[
+    p_m \frac{q_m-q_{m-1}}{\epsilon} - H\left(p_m, 
+    \tilde{q}_m \right)
+    \right]
+    \right\} \\ 
+  &= \int 
+  \left(\prod_{k=1}^{n-1}dq_k\right)\, 
+  \left(\prod_{j=1}^{n} \frac{dp_j}{2\pi}\right)\, 
+  p_{m} \left[-i \frac{\partial}{\partial p_{m+1}} -i \frac{\partial}{\partial p_{m}}\right] \times \nonumber\\
+  & \qquad \quad \times \exp \left\{
+      i\epsilon \sum_{m=1}^{n} \left[
+      p_m \frac{q_m-q_{m-1}}{\epsilon} - H\left(p_m, 
+      \tilde{q}_m \right)
+      \right]
+      \right\} + O(\epsilon) \\
+  &= \int 
+  \left(\prod_{k=1}^{n-1}dq_k\right)\, 
+  \left(\prod_{j=1}^{n} \frac{dp_j}{2\pi}\right)\, 
+  p_{m} \left[ 0 - i \right] \times \nonumber\\
+  & \qquad \quad \times \exp \left\{
+        i\epsilon \sum_{m=1}^{n} \left[
+        p_m \frac{q_m-q_{m-1}}{\epsilon} - H\left(p_m, 
+        \tilde{q}_m \right)
+        \right]
+        \right\} + O(\epsilon)\, ,
+\end{align}
+where in the last step we integrated by parts in $p_m$.
 
 \section{Generating functional}
 \label{sec:gener-funct}
